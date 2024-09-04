@@ -10,7 +10,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,6 +28,7 @@ jobs:
         repository: djradon/wiki
         #token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
         path: 'wiki'
+        fetch-depth: 0
 
     - name: Clone Dendron (public-notes) repo
       uses: actions/checkout@v2
