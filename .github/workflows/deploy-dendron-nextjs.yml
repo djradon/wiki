@@ -1,0 +1,63 @@
+name: Dendron
+
+on:
+  # Runs on pushes targeting the default branch
+  #push:
+  #  branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: "pages"
+
+jobs:
+  build-nextjs-site:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone Dendron (main) repo
+      uses: actions/checkout@v2
+      with:
+        repository: djradon/wiki
+        #token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        path: 'wiki'
+
+    #- name: Clone Dendron (wiki) repo
+    #  uses: actions/checkout@v2
+    #  with:
+    #    path: 'wiki'
+    #    ref: main
+    #    fetch-depth: 0
+
+    - name: Delete wiki cached files if present
+      run: "rm -rf .next && rm -rf docs && rm -rf node_modules"
+      working-directory: ./wiki
+
+    - name: Install node dependencies of wiki
+      run: npm install @dendronhq/dendron-cli@0.122.0
+      working-directory: ./wiki
+
+    - name: Clone the Dendron Next.js repository and install dependencies
+      run: npx dendron publish init
+      working-directory: ./wiki
+
+    - name: Build static HTML and create the Nextjs static website
+      run: npx dendron publish export --target github --yes
+      working-directory: ./wiki
+
+    - name: 🚀 Deploy site to GH Pages
+      uses: peaceiris/actions-gh-pages@v3.8.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: pages
+        publish_dir: wiki # deploy wiki directory in the runner to pages branch
+        force_orphan: true
+        enable_jekyll: false
+        cname: "djradon.github.io"

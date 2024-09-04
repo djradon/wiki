@@ -127,4 +127,4 @@ publishing:
             - classes
             - predicates
     siteUrl: https://djradon.github.io
-    assetsPrefix: wiki
+    assetsPrefix: /wiki
