@@ -1,0 +1,28 @@
+<h1 id="repast4py">Repast4py<a aria-hidden="true" class="anchor-heading icon-link" href="#repast4py"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Agent Framework (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Simulation-Framework (Private)</a></li>
+<li>repo: <a href="https://github.com/Repast/repast4py">https://github.com/Repast/repast4py</a></li>
+</ul>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>"distributed" means that the simulation is spread over multiple computer processes none of which have access to each other’s memory, and communicate via message passing using the <a href="/wiki/notes/zvxfz6f9dcxb43wbghtfbva">Message Passing Interface</a>.</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9912342/">DISTRIBUTED AGENT-BASED SIMULATION WITH REPAST4PY</a>
+<ul>
+<li>"the user must implement a save method that returns the state of the agent as a tuple."
+<ul>
+<li>hah! how about a reference to save state</li>
+</ul>
+</li>
+<li>event scheduling
+<ul>
+<li>"events are scheduled to occur at a particular tick. Ticks do not represent clock-time but rather the priority of its associated event"</li>
+<li>A floating point tick, together with the ability to order the priority of events scheduled for the same tick, provides for flexible scheduling.</li>
+</ul>
+</li>
+<li>"components are of three types: 1) agents and their environments; 2) logging and data collection; and 3) simulation utility functions (e.g., random number management, input parameter parsing, and so on)"</li>
+</ul>
+</li>
+</ul>

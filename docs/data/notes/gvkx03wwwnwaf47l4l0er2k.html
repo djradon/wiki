@@ -1,0 +1,23 @@
+<h1 id="datahub">Datahub<a aria-hidden="true" class="anchor-heading icon-link" href="#datahub"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Data Discovery (Private)</a></li>
+<li>repo: <a href="https://github.com/datahub-project/datahub">https://github.com/datahub-project/datahub</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>You may be familiar with this <a href="https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying">popular blog post</a> on why logs should be at the heart of your data ecosystem. Turns out, the same is actually true about metadata as well. A modern data catalog  should enable real-time subscription to changes in the metadata as a first-class offering. </li>
+<li>graph!</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.linkedin.com/blog/engineering/data-management/datahub-popular-metadata-architectures-explained">https://www.linkedin.com/blog/engineering/data-management/datahub-popular-metadata-architectures-explained</a>
+<ul>
+<li>"Out of all the systems out there that we’ve surveyed, the only ones that have a third-generation metadata architecture are <a href="/wiki/notes/rc1l7qdtaf0ukvti9tuxlap">Atlas</a>, <a href="/wiki/notes/9mv0i20dy7qqiqfzxfgvwwn">Egeria</a>, <a href="/wiki/notes/p69dy4qtyplqt53j8cv5oc7">Databook</a>, and <a href="/wiki/notes/gvkx03wwwnwaf47l4l0er2k">Datahub</a>. Among these, Apache Atlas is tightly coupled with the Hadoop ecosystem. Some companies are experimenting with attaching Amundsen on top of Atlas to try to get the best of both worlds, but it seems like there are several challenges with this integration. For example, you must ingest your metadata and store it in Atlas’s graph and search index, bypassing Amundsen’s data ingestion, storage, and indexing modules completely. This means any new concepts you want to model need to be introduced as Atlas concepts, and then bridged with Amundsen’s UI, leading to quite a bit of complexity. Egeria supports an integration of different catalogs through a metadata event bus, but it doesn’t seem to be feature complete yet as of this writing. Uber Databook seems to be based on very similar design principles as DataHub, but is not available as open source. Of course, we are biased due to our personal experience with DataHub, but the open-sourced DataHub offers all the benefits of a third-generation metadata system with the ability to support multiple types of entities and relationships and a stream-first architecture."</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/gvkx03wwwnwaf47l4l0er2k">Datahub (public-notes)</a></li>
+</ul>

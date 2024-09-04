@@ -1,0 +1,81 @@
+<h1 id="fluree">Fluree<a aria-hidden="true" class="anchor-heading icon-link" href="#fluree"></a></h1>
+<p>supports: </p>
+<ul>
+<li>
+<p>type: storage
+products: ["<a href="/wiki/notes/9RJeQbVSjrGvcl0gNgGTH">InterPlanetary File System</a>", "<a href="/wiki/notes/9lejpyggjda6skw04wpez2z">S3</a>"]</p>
+</li>
+<li>
+<p>type: data_format
+products: prdct.json-ld</p>
+</li>
+<li>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Graph Database (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Rdf Graph Database (Private)</a></p>
+</li>
+<li>
+<p>written-in: <a class="color-tag" style="--tag-color: #650021;" href="/wiki/notes/3hom4lbxewgqda5j1sur7xr">#clojure</a> JVM!</p>
+</li>
+<li>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasApplication (Private)</a> <a href="/wiki/notes/vIqEXHhsLSqul2AkxL5pJ">Knowledge Management</a></p>
+</li>
+<li>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasBlog (Private)</a> <a href="https://flur.ee/blog/">https://flur.ee/blog/</a></p>
+</li>
+<li>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasFeature (Private)</a> </p>
+<ul>
+<li><a href="/wiki/notes/Xc1Bz9oFeoNhPDd9VoJOf">Time Travel</a>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Resource (Private)</a> <a href="https://flur.ee/2019/02/21/time-travel-with-fluree/">https://flur.ee/2019/02/21/time-travel-with-fluree/</a> x</li>
+</ul>
+</li>
+<li>" optionally decentralized (e.g. using StorJ via Tardigrade)"
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasSource (Private)</a> <a href="https://github.com/athensresearch/athens/issues/9#issuecomment-786844129">https://github.com/athensresearch/athens/issues/9#issuecomment-786844129</a></li>
+</ul>
+</li>
+<li><a href="/wiki/notes/rgof5gwgwgrz3vp3394kfmq">JSON-LD</a> support</li>
+</ul>
+</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>a query peer "runs as an in-memory database peer to the ledger it's subscribed to. But like you mention, it doesn't only need (or need at all) to do so because it's intended to answer Fluree queries from other clients. It could very usefully just subscribe to a ledger in order to monitor data events like newly committed blocks and then to evaluate if that data meets a certain criteria, and--if so--to then trigger some downstream function or additional side effect... the NodeJS peer subscribes to the ledger as a particular cryptographic identity, which means that the listener itself will only be privy to data updates that that identity SHOULD be able to access."</li>
+<li>"can be embedded inside of your applications (Clojure, NodeJS for now)"</li>
+<li><a href="https://www.youtube.com/watch?v=CLZm3ZjvQqM&#x26;t=1972s">Time and Immutability in Data Systems</a>... probably only for clock-time, natively.  </li>
+<li>inferencing (e.g., equivalent properties, but that's only useful if you're using data from different ontologies; okay, it's just useful, period) and 
+<ul>
+<li>Aliasing makes it possible to not only find equivalent data, but return it in the terms that are useful to us.</li>
+</ul>
+</li>
+<li>Objects: you can further describe the subgraph you want to build by including nested objects. Our dataset doesn't actually include any data with multiple layers of connections</li>
+<li>History Queries: also powered by immutability, but are preformed differently than time-travel queries. While time-travel allows users to view the ledger from different points in history, history queries capture each of the data state changes that effected a given entity up until the present moment.</li>
+</ul>
+<h2 id="use-cases">Use Cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h2>
+<ul>
+<li>A particular use case around user-specific ledgers, where each user has their own ledger, would demonstrate this perfectly. Given the ability to run database/query peers directly off of an individual ledger, this would also allow ledger-specific users to efficiently build their own applications off their own database peers without any of the security complexities of establishing a downstream peer to a multi-tenant ledger</li>
+</ul>
+<h2 id="learning-resources">Learning Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resources"></a></h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> <a href="https://www.youtube.com/watch?v=USh0-b-f5fo">Building a Front-End App on Fluree.</a></li>
+</ul>
+<h2 id="learning-resources-private"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Learning Resources (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resources-private"></a></h2>
+<ul>
+<li><a href="/wiki/notes/q3adibst9mxllnhhfd8exfv">Working with Graph Data</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://next.developers.flur.ee/docs/learn/guides/working-with-ontologies/">https://next.developers.flur.ee/docs/learn/guides/working-with-ontologies/</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/gi70tkc04ypd9f0dqtwn98x">Flureeql</a></li>
+<li><a href="/wiki/notes/zm87fjevmc91s5ka0m3jo9j">Nexus</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/f1NRb172HfsDVGSJiwQqZ">TerminusDB (public-notes)</a></li>
+<li><a href="/wiki/notes/s0drwuebztgg4pj3i1lsgi4">Logosphere (public-notes)</a></li>
+</ul>

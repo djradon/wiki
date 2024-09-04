@@ -1,0 +1,47 @@
+<h1 id="tekton">Tekton<a aria-hidden="true" class="anchor-heading icon-link" href="#tekton"></a></h1>
+<ul>
+<li><a href="/wiki/notes/08k9bzf078nrt71hp1rxaao">Orchestration</a> vs <a href="/wiki/notes/3tczusavbqsr54n2gp88jl1">Choreography</a></li>
+</ul>
+<h2 id="component-private"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Component (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#component-private"></a></h2>
+<ul>
+<li><strong>Pipeline:</strong> Pipeline defines a set of Kubernetes <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">Custom Resources</a> that act as building blocks you use to assemble your CI/CD pipelines.</li>
+<li><strong>Triggers:</strong> Triggers is a Kubernetes Custom Resource that allows you to create pipelines based on information extracted from event payloads. For example, you can trigger the instantiation and execution of a pipeline every time a merge request gets opened against a Git repository.</li>
+<li><strong>CLI:</strong> CLI provides a command-line interface called <code>tkn</code> that allows you to interact with Tekton from your terminal.</li>
+<li><strong>Dashboard:</strong> Dashboard is a web-based graphical interface for Tekton pipelines that displays information about the execution of your pipelines.</li>
+<li><strong>Catalog:</strong> Catalog is a repository of high-quality, community-contributed Tekton building blocks (tasks, pipelines, and so on) ready for use in your own pipelines.</li>
+<li><strong>Hub:</strong> Hub is a web-based graphical interface for accessing the Tekton catalog.</li>
+<li><strong>Operator:</strong> Operator is a Kubernetes <a href="https://operatorhub.io/what-is-an-operator">Operator pattern</a> that allows you to install, update, upgrade, and remove Tekton projects on a Kubernetes cluster.</li>
+<li><strong>Chains:</strong> Chains is a Kubernetes Custom Resource Definition (CRD) controller that allows you to manage your supply chain security in Tekton. It is currently a work-in-progress.</li>
+<li><strong>Results:</strong> Results aims to help users logically group CI/CD workload history and separate out long-term result storage away from the pipeline controller.</li>
+</ul>
+<h2 id="term-private"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Term (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#term-private"></a></h2>
+<ul>
+<li>
+<p><strong>Step:</strong> A step is the most basic entity in a CI/CD workflow, such as running some unit tests for a Python web app or compiling a Java program. Tekton performs each step with a provided container image.</p>
+</li>
+<li>
+<p><strong>Task:</strong> A task is a collection of steps in a specific order. Tekton runs a task in the form of a <a href="https://kubebyexample.com/en/concept/pods">Kubernetes pod</a>, where each step becomes a running container in the pod.</p>
+</li>
+<li>
+<p><strong>Pipelines:</strong> A pipeline is a collection of tasks in a specific order. Tekton collects all tasks, connects them in a directed acyclic graph (DAG), and executes the graph in sequence. In other words, it creates a number of Kubernetes pods and ensures that each pod completes running successfully as desired.  </p>
+<p><img src="https://opensource.com/sites/default/files/uploads/tekton-pipelines.png" alt="Tekton pipelines" title="Tekton pipelines"></p>
+</li>
+<li>
+<p><strong>PipelineRun:</strong> A PipelineRun, as its name implies, is a specific execution of a pipeline.</p>
+</li>
+<li>
+<p><strong>TaskRun:</strong> A TaskRun is a specific execution of a task. TaskRuns are also available when you choose to run a task outside a pipeline, with which you may view the specifics of each step execution in a task.</p>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.redhat.com/en/blog/tekton-vs-jenkins-whats-better-cicd-pipelines-red-hat-openshift">https://www.redhat.com/en/blog/tekton-vs-jenkins-whats-better-cicd-pipelines-red-hat-openshift</a>
+<ul>
+<li>"the notion of formal dev, test and UAT type environments is largely an old-world concept."</li>
+</ul>
+</li>
+</ul>
+<h2 id="comparison">Comparison<a aria-hidden="true" class="anchor-heading icon-link" href="#comparison"></a></h2>
+<ul>
+<li><a href="https://platform9.com/blog/argo-cd-vs-tekton-vs-jenkins-x-finding-the-right-gitops-tooling/">https://platform9.com/blog/argo-cd-vs-tekton-vs-jenkins-x-finding-the-right-gitops-tooling/</a></li>
+</ul>

@@ -1,0 +1,38 @@
+<h1 id="owl-dl">OWL-DL<a aria-hidden="true" class="anchor-heading icon-link" href="#owl-dl"></a></h1>
+<h2 id="gotachas">Gotachas<a aria-hidden="true" class="anchor-heading icon-link" href="#gotachas"></a></h2>
+<ul>
+<li>The sets of object properties, datatype properties, annotation properties and ontology properties must be mutually disjoint. Thus, in OWL DL dc:creator cannot be at the same time a datatype property and an annotation property.
+<ul>
+<li>? so you would use an alternate suffix? Guessing that prefixing can work for single resources</li>
+<li>lacks direct support for meta-modeling</li>
+</ul>
+</li>
+</ul>
+<h2 id="effective-use">Effective Use<a aria-hidden="true" class="anchor-heading icon-link" href="#effective-use"></a></h2>
+<h3 id="insight-1-concept-vs-aspect">Insight 1: Concept vs Aspect<a aria-hidden="true" class="anchor-heading icon-link" href="#insight-1-concept-vs-aspect"></a></h3>
+<p>OWL defines a thing called Class; a Class is a set of individuals. We use Class to define things like Requirement and Interface. Although it’s implicit, what we mean when we define classes like Requirement and Interface is that nothing can be both a Requirement and an Interface. In OWL, if that’s what you mean, you have to say it, either explicitly</p>
+<pre><code>DisjointClasses(:Requirement :Interface)
+</code></pre>
+<p>or implicitly via incompatible constraints.</p>
+<p>We also use Class to define things like IdentifiedThing and AggregatedThing. In this case we do not mean that nothing can be both; it makes perfect sense for an aggregate to have an identifier. OWL gives us the low-level tools to distinguish between these use cases, but in practice it is tedious and error-prone to manage large taxonomies with only low-level tools.</p>
+<p>In our practice we distinguish between what we call a Concept (e.g., Requirement, Interface) and what we call an Aspect (e.g. IdentifiedThing, AggregatedThing). For Concepts we apply a disjointness management policy that generates disjointness axioms by machine reasoning. For Aspects we do not. Formalizing this distinction has dramatically reduced the effort and error risk of managing taxonomies.</p>
+<p>We have five such distinct use cases for OWL Class.</p>
+<h3 id="insight-2-object-property-reification">Insight 2: Object Property Reification<a aria-hidden="true" class="anchor-heading icon-link" href="#insight-2-object-property-reification"></a></h3>
+<p>In OWL we can say a camera acquires an image like this</p>
+<pre><code>ObjectPropertyAssertion(:acquires :camera :image)
+</code></pre>
+<p>The assertion itself has no identity, which means we can’t say anything about it. It would be useful, however to be able to express “Requirement <em>R.x.y</em> specifies that the camera shall acquire an image”, i.e., to state a functional requirement. It’s possible, using a technique called reification, to create a named individual to represent the condition that the camera acquires an image in such a way that implies the assertion above–in which a reasoner will conclude that. Because the reification itself has an identity, and we can make that the target of another assertion like this</p>
+<pre><code>ObjectPropertyAssertion(:specifies :R.x.y :camera_acquires_image)
+</code></pre>
+<p>This reification technique is extremely useful and we have incorporated it into our practice; nearly every relationship is reified.</p>
+<p>There’s nothing particularly deep about reification. It’s using the standard expressivity of OWL in a repeatable pattern to convey the meaning we want. But it is, again, tedious and error-prone to do manually.</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.opencaesar.io/blog/2021/06/19/OML-Origin-and-Rationale.html">https://www.opencaesar.io/blog/2021/06/19/OML-Origin-and-Rationale.html</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/uup0x4gcs3ilsku9xbw4xcx">Semantic Modeling for Data (public-notes)</a></li>
+<li><a href="/wiki/notes/stdy7h7as46ehxupm66538k">Reasoner (public-notes)</a></li>
+</ul>

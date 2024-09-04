@@ -1,0 +1,154 @@
+<h1 id="representing-temporal-information-in-lexical-linked-data">Representing Temporal Information in Lexical Linked Data<a aria-hidden="true" class="anchor-heading icon-link" href="#representing-temporal-information-in-lexical-linked-data"></a></h1>
+<ul>
+<li><a href="https://aclanthology.org/2020.ldl-1.3.pdf">https://aclanthology.org/2020.ldl-1.3.pdf</a></li>
+<li>author: <a href="/wiki/notes/lejbfns8lpugknlzkofn7d6">@anas-fahad-khan</a></li>
+</ul>
+<h2 id="introduction">Introduction<a aria-hidden="true" class="anchor-heading icon-link" href="#introduction"></a></h2>
+<ul>
+<li>The difficulties of representing relationships that change with time – also referred to as fluents or diachronic rela- tions in the literature – in RDF have been by now well- rehearsed ( <a href="/wiki/notes/nd9jv0vxttzc1gadynsa7ks">@christopher-welty</a> et al., 2006)</li>
+</ul>
+<h2 id="temporal-information-in-lexical-datasets">Temporal Information in Lexical Datasets<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-information-in-lexical-datasets"></a></h2>
+<ul>
+<li>in previous related work we have looked at how to represent etymologies, viewed as hypotheses about word histories, explictly both in RDF (Khan, 2018) and in the Lexical Markup Framework (Khan and Bowers, 2020).</li>
+<li>temporal information is not always explicitly included in the form of an etymology.</li>
+<li>common for resources to list the senses in each lexical entry in some order of temporal precedence</li>
+<li>Other resources in- clude descriptions of the semantic shift processes which led from temporally antecedent senses to subsequent senses;</li>
+<li>others mark senses (or forms, etc) as obsolete and/or give some basic information on the time period in which a sense or form (or grammatical construct) was in use or was most commonly in use
+<ul>
+<li>in fact, in these and in other contexts, one frequently finds reference to a particular historical stage of a language, such as Old French or Middle English, something which also helps to group together lexical phenomena in time.</li>
+</ul>
+</li>
+</ul>
+<h2 id="our-approach">"Our approach"<a aria-hidden="true" class="anchor-heading icon-link" href="#our-approach"></a></h2>
+<ul>
+<li>firstly, we propose the use of qualitative intervals to model temporal vagueness in lexical data;</li>
+<li>secondly, we define a ‘perdurantist’ version of certain classes in the ontolex-lemon model in order to allow lexical entries, senses, etc, to each have a ‘lifespan’ as well as temporal parts.</li>
+<li>there already exists a set of SWRL rules which allow for reasoning over data that describes intervals qualitatively using these relations (Batsakis et al., 2017)</li>
+<li></li>
+</ul>
+<h2 id="perdurantism-v-endurantism">Perdurantism v. Endurantism<a aria-hidden="true" class="anchor-heading icon-link" href="#perdurantism-v-endurantism"></a></h2>
+<p>topics: <a href="/wiki/notes/g09smnhcw1nclhr5qfrvnyc">Perdurantism</a> <a href="/wiki/notes/5hdfbk9zglerfs4mqnmsckk">Endurantism</a></p>
+<ul>
+<li>Perdurantism by treating people, animals, and things in general like processes, only parts of which exist at different times, has the clear shortcoming that it can be unintuitive and difficult to understand.
+<ul>
+<li>countierintuitive</li>
+<li>helps to resolve a number of longstanding metaphysical conundrums relating to change over time.</li>
+<li>provides a very useful way of modelling vagueness</li>
+<li>able to meet several of the challenges raised against more traditional the- ories of time and change by the theory of special relativity (Effingham, 2012)</li>
+</ul>
+</li>
+<li>Note that although the names ‘three- dimensionalism’ and ‘four-dimensionalism’ might suggest that we are only dealing with ‘concrete’ objects, namely those that occupy a continuous physical portion of space, this is not in fact the case and perdurantism has in fact been applied to musical works (Caplan and Matheson, 2006) and institutional objects (Hansson Wahlberg, 2014)</li>
+<li>Our proposal in this work is to apply it to language and linguistic phenomena.</li>
+</ul>
+<h3 id="non-liguistic-example-capitalcity-of-italy">non-liguistic Example: capitalCity of Italy<a aria-hidden="true" class="anchor-heading icon-link" href="#non-liguistic-example-capitalcity-of-italy"></a></h3>
+<ul>
+<li>Turin from 1861 to 1865 (period t1), Florence from 1865 to 1871 (the period t2), and Rome from 1871 to the current day (the interval t3).</li>
+<li>We define separate time slices (or temporal parts) TurinCapital, FlorenceCapital, RomeCapital of each of the Italian cities mentioned above, Turin, Florence, Rome respectively. Note that each of these time slices are also typed as cities, e.g., city(Turin) and city(TurinCapital)</li>
+<li>We relate the temporal parts of these cities to- gether with their wholes using the property tem- poralPartOfwhich relates a perdurant together with another perdurant of which it is a temporal part, i.e., temporalPartOf(TurinCapital, Turin), temporalPartOf(FlorenceCapital, Florence), and temporalPartOf(RomeCapital, Rome)</li>
+<li>Each of these timeslices is associated with its lifespan using the temporalExtent property which relates a perdurant together with the interval during which it exists, i.e., temporalExtent(TurinCapital, t1), temporalExtent(FlorenceCapital, t2), temporalExtent(RomeCapital, t3).</li>
+<li>We also create time slices of Italy for each of these periods, Italyt1,Italyt2 and Italyt3 where: temporalExtent(Italyt1,t1),temporalExtent(Italyt2,t2), and temporalExtent(Italyt3,t3)</li>
+<li>Finally we relate these timeslices of Italy using the capitalCity relation: capitalCity(TurinCapital,Italyt1), capitalCity(FlorenceCapital,Italyt2), capitalCity(RomeCapital,Italyt3)</li>
+<li>This is a version of the kind of perdurantist approach initially proposed for RDF in (Welty et al., 2006);
+<ul>
+<li>? <a href="/wiki/notes/jxej1bzfm42cbouwzcl0cd4">A Reusable Ontology for Fluents in Owl</a></li>
+<li>our version is more directly based on (Krieger, 2014) <a href="/wiki/notes/8sxm32xsm2tdkfwu4edqju3">Detailed Comparison of Seven Approaches for the Annotation of Time Dependent Factual Knowledge in Rdf and Owl</a></li>
+<li>HOWEVER, when it comes to creating diachronic versions of relationships between a lexical entry and its lexical senses and forms we can make a simplification: since the lifespan of a sense/form is necessarily contained in the lifespan of an entry, when it comes to perdurants versions of these classes, to define sense as holding between lexical entries and senses (and form as holding between lexical en- tries and forms) rather than timeslice of these, as in the case of capitalCity.</li>
+</ul>
+</li>
+</ul>
+<h3 id="first-defintions">First Defintions<a aria-hidden="true" class="anchor-heading icon-link" href="#first-defintions"></a></h3>
+<ul>
+<li>perdurantist sub-classes of the ontolex-lemon classes Lexical Entry, Lexical Sense, and Lexical Form; these are pLexical Entry, pLexical Sense, and pLexical Form</li>
+<li>In order to define these classes we will make use of the new object property mentioned above, temporalExtent, whose range is the owl-time class time:Interval, and whose purpose is to relate a perdurant to its temporal dimension
+<ul>
+<li>thereafter we impose the restriction that each member of the p-classes is related to exactly one time:Interval individual via the property temporalExtent</li>
+</ul>
+</li>
+</ul>
+<h3 id="girl">Girl<a aria-hidden="true" class="anchor-heading icon-link" href="#girl"></a></h3>
+<ul>
+<li>we start by defining the entry as a pLexicalEntry with an associated temporal extent (girl_time) and relating the entry with its forms using the (non-fluent) ontolex-lemon property lexicalForm</li>
+</ul>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">girl</span></span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pLexicalEntry</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">girl_time</span></span><span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">ontolex<span class="token punctuation">:</span></span><span class="token local-name">lexicalForm</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">garl_form</span></span> <span class="token punctuation">,</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">garle_form</span></span> <span class="token punctuation">,</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">geerl_form</span></span> <span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">.</span>
+</code></pre>
+<ul>
+<li>The first two forms which we will look at from the list given in Listing 7 are garl and girle, the first of which the OED tells us was in use during the Middle English period and the second of which was in use from the Middle English period through to the 15th century.</li>
+<li>after we introduce them as elements of type pForm we thereafter associate them with a given temporal interval using the property temporalExtent. </li>
+</ul>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">garl_form</span></span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pForm</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">ontolex<span class="token punctuation">:</span></span><span class="token local-name">writtenRep</span></span> <span class="token string">"garl"</span><span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">enm_interval</span></span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">girle_form</span></span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pForm</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">ontolex<span class="token punctuation">:</span></span><span class="token local-name">writtenRep</span></span> <span class="token string">"girle"</span><span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">ME-16</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<ul>
+<li>we have added a new datatype property hasUsageNote to our model; this allows for the encoding of geographical and dialectal constraints on the usage of a lexical element as free text.</li>
+<li>we model the temporal interval associated with gurl_form as consisting of two separate temporal part: relating it to the interval enm_interval using interval- StartedBy and the interval 18- using intervalFinishedBy</li>
+</ul>
+<pre class="language-turtle"><code class="language-turtle">gurl_form <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pForm</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasTemporalPart</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">gurl_form_IEN</span></span> <span class="token punctuation">,</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">gurl_form_ME</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token punctuation">[</span>
+    <span class="token keyword">a</span> <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">Interval</span></span><span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">intervalStartedBy</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">enm_interval</span></span><span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">intervalFinishedBy</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">18-</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function"><span class="token prefix">ontolex<span class="token punctuation">:</span></span><span class="token local-name">writtenRep</span></span> <span class="token string">"gurl"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">gurl_form_ME</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pForm</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">enm_interval</span></span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">gurl_form_IEN</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pForm</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">18-</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasUsageNote</span></span>
+    <span class="token string">"chiefly Irish English and nonstandard"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">.</span>
+</code></pre>
+<ul>
+<li>the entry for this sense also identifies a temporal part of this sense with a particular quality not shared by the whole: that of being limited to a certain geographically defined dialect (Irish English, or more precisely the dialect of Wexford)</li>
+</ul>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">girl</span></span> <span class="token function"><span class="token prefix">ontolex<span class="token punctuation">:</span></span><span class="token local-name">sense</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1</span></span> <span class="token punctuation">,</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_irish_english</span></span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pLexicalSense</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasTemporalPart</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_irish_english</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_interval</span></span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_irish_english</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">pLexicalSense</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExtent</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_irish_english_interval</span></span> <span class="token punctuation">;</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> hasUsageNote <span class="token string">"Irish English (Wexford)"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">.</span>
+</code></pre>
+<ul>
+<li>then we use the temporal examples to enrich the representation of each sense</li>
+</ul>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_interval</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">Interval</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">hasEnd</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">present</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">intervalFinishedBy</span></span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_irish_english_interval</span></span><span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">intervalContains</span></span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">a1475</span></span> <span class="token punctuation">,</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">circa_1300</span></span> <span class="token punctuation">,</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">year_1996</span></span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_irish_english_interval</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">Interval</span></span><span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">intervalFinishes</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">sense_I1_interval</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">owl-time<span class="token punctuation">:</span></span><span class="token local-name">intervalContains</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">a1827</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<h3 id="modeling-semantic-shifts">Modeling semantic shifts<a aria-hidden="true" class="anchor-heading icon-link" href="#modeling-semantic-shifts"></a></h3>
+<ul>
+<li>given two lexical senses l_1, l_2 which have un- dergone a process of semantic shift of type s, to model the typed sense shift relationship semanticShift between them: semanticShift (l_1, l_2, s)</li>
+<li>We can also choose to make this a fluent, a diachronic relationship and add a temporal parameter, i.e., semanticShift (l_1, l_2, s, t)
+<ul>
+<li>decided not to</li>
+<li>We also introduce a new object property between senses senseShiftsTo which enables us to model the fact that one sense ‘gives birth to’ another</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/g09smnhcw1nclhr5qfrvnyc">Perdurantism (public-notes)</a></li>
+</ul>

@@ -1,0 +1,107 @@
+<h1 id="class-vs-individual">Class Vs Individual<a aria-hidden="true" class="anchor-heading icon-link" href="#class-vs-individual"></a></h1>
+<ul>
+<li>aka: <a href="/wiki/notes/1sgpngmizmjzz7pjcmb3q6o">Type Token Distinction</a> </li>
+<li>Superclasses/supertypes define inheritance relationships between classes or types.</li>
+<li>Metaclasses/metatypes (or more accurately, powerclasses/powertypes) define properties of their classes/types
+<ul>
+<li><a href="/wiki/notes/c3cf5t7ybox6k56n992pnkr">gUFO</a> has gufo:Type which is the powerclass </li>
+</ul>
+</li>
+</ul>
+<h2 id="definitions">Definitions<a aria-hidden="true" class="anchor-heading icon-link" href="#definitions"></a></h2>
+<ul>
+<li>Only classes have superclasses, while other classifiers have supertypes.
+<ul>
+<li>Since Class is also a Classifier, a superclass is always a supertype</li>
+</ul>
+</li>
+<li>powertype is a type whose instances are themselves types.</li>
+</ul>
+<h2 id="conclusion">Conclusion<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h2>
+<ul>
+<li>t.2024.07.11.09 after trying to formulate a comment for <a href="/wiki/notes/xbun6qr56z6y7lqrq8nc8q4">The Nature of Knowledge Graph Predicates</a>, I feel a small a-ha!
+<ul>
+<li>Data Scientist, as a sub-class of Occupation, requires that all its instances are occupations</li>
+</ul>
+</li>
+<li>2+: </li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>just like my Dendron notes, do we have separate classes for things, or can concepts just double as classes?
+<ul>
+<li>based on my experience, it's better to just have one class/concept/universal, but can be aliased from multiple places</li>
+</ul>
+</li>
+</ul>
+<h3 id="classes-as-values">Classes as Values<a aria-hidden="true" class="anchor-heading icon-link" href="#classes-as-values"></a></h3>
+<h4 id="approach-3-create-a-parallel-hierarchy-of-instances-as-property-values">Approach 3: Create a parallel hierarchy of instances as property values<a aria-hidden="true" class="anchor-heading icon-link" href="#approach-3-create-a-parallel-hierarchy-of-instances-as-property-values"></a></h4>
+<ul>
+<li>
+<p>rdfs:seeAlso</p>
+</li>
+<li>
+<p>in addition to <a href="/wiki/notes/uup0x4gcs3ilsku9xbw4xcx#class-or-individual">Semantic Modeling for Data</a>, there's:</p>
+</li>
+</ul>
+<h2 id="second-option--linking-annotation">Second Option + Linking Annotation<a aria-hidden="true" class="anchor-heading icon-link" href="#second-option--linking-annotation"></a></h2>
+<ul>
+<li>aka "Create a parallel hierarchy of instances as property values"</li>
+<li>use one of the class annotation properties, e.g.
+<ul>
+<li>rdfs:comment, <strong>rdfs:seeAlso</strong>, rdfs:isDefinedBy, or</li>
+<li>a custom annotation defined with owl:AnnotationProperty
+<ul>
+<li>used to add additional information to classes, properties, or individuals without affecting the logical structure of the ontology.
+<ul>
+<li>t.2024.05.25.14 well, kinda</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="annotationproperty-example">AnnotationProperty example<a aria-hidden="true" class="anchor-heading icon-link" href="#annotationproperty-example"></a></h3>
+<h2 id="fourth-option-using-annotations-as-non-logical-properties">Fourth Option: Using annotations as (non-logical) properties<a aria-hidden="true" class="anchor-heading icon-link" href="#fourth-option-using-annotations-as-non-logical-properties"></a></h2>
+<ul>
+<li>maybe losing reasoning isn't important?
+<ul>
+<li>transitive might be important,
+<ul>
+<li>e.g.
+<ul>
+<li>CharacterClassChoice shouldOccurBefore CharacterAbilityScoreChoice</li>
+<li>CharacterAbilityScoreChoice shouldOccurBefore CharacterSkillChoice</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<h3 id="punning">Punning<a aria-hidden="true" class="anchor-heading icon-link" href="#punning"></a></h3>
+<ul>
+<li>"Punning is a simple way to provide for metamodeling that (a) does not require a major change to OWL 1.1 (DL) reasoners and (b) usually seems to satisfy the semantic requirements."</li>
+<li>"An IRI I can be used in an OWL 2 ontology to refer to more than one type of entity. Such usage of I is often called metamodeling, because it can be used to state facts about classes and properties themselves. In such cases, the entities that share the same IRI I should be understood as different "views" of the same underlying notion identified by the IRI I."</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="/wiki/notes/07cx1ov2u8m5hxkatx2g512">Onto Clean in Owl with a Dl Reasoner a Tutorial</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.w3.org/2007/OWL/wiki/Punning">https://www.w3.org/2007/OWL/wiki/Punning</a></li>
+<li><a href="https://stackoverflow.com/questions/38208212/does-owl-punning-treats-class-and-individual-with-same-name-as-same-semantically">https://stackoverflow.com/questions/38208212/does-owl-punning-treats-class-and-individual-with-same-name-as-same-semantically</a></li>
+<li><a href="https://lists.w3.org/Archives/Public/semantic-web/2011Jun/0245.html">https://lists.w3.org/Archives/Public/semantic-web/2011Jun/0245.html</a></li>
+<li><a href="https://www.w3.org/TR/swbp-classes-as-values/">https://www.w3.org/TR/swbp-classes-as-values/</a></li>
+<li><a href="/wiki/notes/zzoajb1hp4gezmidmjgeyll">Towards Ontological Foundations for Conceptual Modeling the Unified Foundational Ontology Ufo Story</a></li>
+</ul>
+<p>reification-and-truthmaking-patterns</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/cQHSPbwz5JLE40UxftY7w">RDF (public-notes)</a></li>
+</ul>

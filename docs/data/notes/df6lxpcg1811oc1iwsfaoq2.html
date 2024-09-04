@@ -1,0 +1,27 @@
+<h1 id="graphology">Graphology<a aria-hidden="true" class="anchor-heading icon-link" href="#graphology"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Property Graph Database (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">isComponentOf (Private)</a> <a href="/wiki/notes/pimnpdtiby6jl92f80hx07q">Sigma JS</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Resource (Private)</a>
+<ul>
+<li><a href="https://archive.fosdem.org/2017/schedule/event/graph_library_javascript/attachments/slides/1803/export/events/attachments/graph_library_javascript/slides/1803/Graphology___FOSDEM_2017.pdf">https://archive.fosdem.org/2017/schedule/event/graph_library_javascript/attachments/slides/1803/export/events/attachments/graph_library_javascript/slides/1803/Graphology___FOSDEM_2017.pdf</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<h3 id="native-filtering">native filtering<a aria-hidden="true" class="anchor-heading icon-link" href="#native-filtering"></a></h3>
+<pre><code>// From a filtering function
+const sub = subgraph(graph, function (key, attr) {
+  return key.startsWith('J') || attr.color === 'red';
+});
+</code></pre>
+<h3 id="copying-to-array-from-chatgpt35-yuck">copying to array (from <a href="/wiki/notes/73znrcqbj4h0nfmkjkixer7">@chatgpt.3.5</a>), yuck<a aria-hidden="true" class="anchor-heading icon-link" href="#copying-to-array-from-chatgpt35-yuck"></a></h3>
+<pre><code>const { Graph } = require('graphology');
+
+const graph = new Graph();
+
+graph.addNode('Alice', { age: 30 });
+graph.addNode('Bob', { age: 25 });
+
+const nodesOver25 = Array.from(graph.nodes()).filter(node => graph.getNodeAttribute(node, 'age') > 25);
+</code></pre>

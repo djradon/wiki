@@ -1,0 +1,36 @@
+<h1 id="fipa_rdf_content_language_specification">Fipa_rdf_content_language_specification<a aria-hidden="true" class="anchor-heading icon-link" href="#fipa_rdf_content_language_specification"></a></h1>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>for actions, the action "verb" is just a text string</li>
+<li>foreshadowing of rdf-star:</li>
+</ul>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<h3 id="belief">Belief<a aria-hidden="true" class="anchor-heading icon-link" href="#belief"></a></h3>
+<pre><code>  &#x3C;fipa:Proposition>
+
+    &#x3C;rdf:subject>TCP/IP Illustrated&#x3C;/rdf:subject>
+
+    &#x3C;rdf:predicate rdf:resource="http://description.org/ schema#author"/>
+
+    &#x3C;rdf:object>W. Richard Stevens&#x3C;/rdf:object/>
+
+    &#x3C;fipa:belief>true&#x3C;/fipa:belief>
+
+  &#x3C;/fipa:Proposition>
+</code></pre>
+<h3 id="action">Action<a aria-hidden="true" class="anchor-heading icon-link" href="#action"></a></h3>
+<pre><code>@prefix fipa: &#x3C;http://www.fipa.org/schemas#> .
+@prefix rdf: &#x3C;http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+&#x3C;http://issemantic.net/#JohnAction1> a fipa:Action ;
+    fipa:act "open" ;
+    fipa:actor "John" ;
+    fipa:argument [ a rdf:bag ;
+            rdf:_1 "door1" ;
+            rdf:_2 "door2" ] .
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/sXAc6YNOEMFUcRv84RDFy">FIPA (public-notes)</a></li>
+</ul>

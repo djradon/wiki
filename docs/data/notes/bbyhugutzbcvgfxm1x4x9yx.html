@@ -1,0 +1,15 @@
+<h1 id="flowable">Flowable<a aria-hidden="true" class="anchor-heading icon-link" href="#flowable"></a></h1>
+<ul>
+<li>repo: <a href="https://github.com/flowable/flowable-engine">https://github.com/flowable/flowable-engine</a></li>
+<li>written_in: java</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>fully supports the <a href="/wiki/notes/mmytejxznjmj3oakm472yzd">Bpmn</a>, <a href="/wiki/notes/krxmaqh11x7obj9erhkwugw">Cmmn Case Management Model and Notation</a>, and <a href="/wiki/notes/kto0z4ilta4qe58kbw9ajs6">Decision Model and Notation</a> open standards.</li>
+<li>data dictionary for type definitions, see <a href="https://www.flowable.com/blog/engineering/data-structure-with-data-dictionary">https://www.flowable.com/blog/engineering/data-structure-with-data-dictionary</a></li>
+<li>default tenant backstops regular tenants</li>
+</ul>
+<h2 id="interesting">Interesting<a aria-hidden="true" class="anchor-heading icon-link" href="#interesting"></a></h2>
+<ul>
+<li>There is no simple way in Flowable to list tasks that have not occurred yet. Tasks are not created until execution gets to them and the engine makes no assumption about what tasks are upcoming or even what the next task is until the last task is complete. Due things to gateways, conditional sequence flows, multi-instance tasks, and workflows that iterate multiple times by looping back on themselves, knowing what tasks are coming up is very difficult, if not impossible without limiting processes or making assumptions... For you, your best alternative is to retrieve and parse the model, find the currently active task and follow the sequence flows out of it.</li>
+</ul>

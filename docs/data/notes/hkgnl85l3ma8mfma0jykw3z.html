@@ -1,0 +1,171 @@
+<h1 id="workflow-engine">Workflow Engine<a aria-hidden="true" class="anchor-heading icon-link" href="#workflow-engine"></a></h1>
+<h2 id="im-looking-for-a-workflow-engine-for-world-simulation-and-a-role-playing-experience-platform-must-be-open-source-ideally-would-integrate-with-semantic-web-technologies">I'm looking for a workflow engine for world simulation and a role-playing experience platform. Must be open source. ideally would integrate with semantic web technologies.<a aria-hidden="true" class="anchor-heading icon-link" href="#im-looking-for-a-workflow-engine-for-world-simulation-and-a-role-playing-experience-platform-must-be-open-source-ideally-would-integrate-with-semantic-web-technologies"></a></h2>
+<p>Given your requirements for a workflow engine suitable for world simulation and a role-playing experience platform that is open-source and ideally integrates with semantic web technologies, here's a tailored evaluation of the options you've listed:</p>
+<h3 id="top-recommendations">Top Recommendations:<a aria-hidden="true" class="anchor-heading icon-link" href="#top-recommendations"></a></h3>
+<h4 id="1-zeebe--camunda">1. <strong>Zeebe / Camunda</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#1-zeebe--camunda"></a></h4>
+<ul>
+<li><strong>Strengths</strong>: Zeebe, especially as part of Camunda's offerings, is designed for high-throughput and distributed environments, making it a strong candidate for complex simulations and large-scale role-playing platforms. It supports BPMN 2.0 and is well-suited for microservices and event-driven architectures, which are often required in dynamic simulation environments.</li>
+<li><strong>Integration with Semantic Web</strong>: Camunda has a flexible API and can be integrated with other systems, including those using RDF or OWL for semantic data. However, it doesn’t natively support semantic web technologies out-of-the-box.</li>
+<li><strong>Considerations</strong>: Requires some effort to integrate with semantic web technologies, but its scalability makes it a top choice for large, complex workflows.</li>
+</ul>
+<h4 id="2-flowable">2. <strong>Flowable</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#2-flowable"></a></h4>
+<ul>
+<li><strong>Strengths</strong>: Flowable is another BPMN engine that is highly extensible and supports CMMN (Case Management Model and Notation) for more dynamic, case-based workflows. This could be beneficial for the non-linear nature of role-playing scenarios.</li>
+<li><strong>Limitations</strong>: The open-source version has some limitations, especially regarding enterprise features, but it still provides a strong base for BPMN/CMMN workflows.</li>
+<li><strong>Integration with Semantic Web</strong>: Like Zeebe, integration with semantic web technologies would need to be custom-built, but the flexibility of Flowable might make this easier.</li>
+</ul>
+<h3 id="other-considerations">Other Considerations:<a aria-hidden="true" class="anchor-heading icon-link" href="#other-considerations"></a></h3>
+<h4 id="3-kogito-red-hat">3. <strong>Kogito (Red Hat)</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#3-kogito-red-hat"></a></h4>
+<ul>
+<li><strong>Strengths</strong>: Built on top of Drools, Kogito focuses on cloud-native and event-driven applications, which is beneficial for world simulations. It also supports BPMN, DMN (Decision Model and Notation), and is designed to be highly flexible.</li>
+<li><strong>Integration with Semantic Web</strong>: Kogito is designed with a modern architecture that could be extended to integrate with semantic web technologies. Its close ties with Drools (a rules engine) can also add more complex logic capabilities to your workflows.</li>
+</ul>
+<h4 id="4-drools">4. <strong>Drools</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#4-drools"></a></h4>
+<ul>
+<li><strong>Strengths</strong>: A powerful rules engine that can handle complex logic, which is often required in simulation environments. Drools integrates well with BPMN, making it possible to handle complex workflows with intricate decision logic.</li>
+<li><strong>Integration with Semantic Web</strong>: While not directly supporting semantic web technologies, Drools is highly customizable and could be integrated with RDF/OWL through custom code.</li>
+</ul>
+<h3 id="niche-options">Niche Options:<a aria-hidden="true" class="anchor-heading icon-link" href="#niche-options"></a></h3>
+<h4 id="5-behavior-tree">5. <strong>Behavior Tree</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#5-behavior-tree"></a></h4>
+<ul>
+<li><strong>Strengths</strong>: Well-suited for AI-driven behavior modeling, which could be useful in simulation aspects of your platform. It’s more of a lower-level solution compared to BPMN engines.</li>
+<li><strong>Limitations</strong>: Lacks the broader workflow management features provided by BPMN engines, making it less suitable if you need comprehensive process management.</li>
+</ul>
+<h4 id="6-temporal">6. <strong>Temporal</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#6-temporal"></a></h4>
+<ul>
+<li><strong>Strengths</strong>: Temporal provides a microservices-friendly workflow engine that excels in handling stateful long-running workflows.</li>
+<li><strong>Limitations</strong>: While powerful, it’s more focused on microservices orchestration and may require significant customization to fit a simulation and role-playing platform.</li>
+</ul>
+<h4 id="7-elsa">7. <strong>Elsa</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#7-elsa"></a></h4>
+<ul>
+<li><strong>Strengths</strong>: Elsa is a modern, .NET-based workflow engine with a focus on extensibility and easy integration into .NET applications.</li>
+<li><strong>Limitations</strong>: The lack of certain features like multi-tenancy and "hot" deployable workflow packages might be limiting, but it is a promising option for .NET-centric environments.</li>
+</ul>
+<h3 id="final-recommendation">Final Recommendation:<a aria-hidden="true" class="anchor-heading icon-link" href="#final-recommendation"></a></h3>
+<p>If you are leaning towards a BPMN-based engine that can scale well and has broad support for complex workflows, <strong>Zeebe/Camunda</strong> or <strong>Flowable</strong> would be your best bet. For a rules-engine-centric approach, <strong>Kogito</strong> or <strong>Drools</strong> could be ideal, especially if you anticipate needing extensive decision logic.</p>
+<p>Given the importance of integrating with semantic web technologies, these engines would require some custom development to fully meet your needs, particularly if you plan on leveraging RDF/OWL-based ontologies within your workflow engine.</p>
+<p>Each of these tools has strengths that could be beneficial depending on your specific requirements, so considering how these align with your overall architecture and technology stack will help you make the best choice.</p>
+<h2 id="do-any-support-cmmn-other-than-flowable">do any support CMMN other than flowable?<a aria-hidden="true" class="anchor-heading icon-link" href="#do-any-support-cmmn-other-than-flowable"></a></h2>
+<p>As of now, <strong>Flowable</strong> is one of the few open-source workflow engines that supports CMMN (Case Management Model and Notation). Most other workflow engines focus primarily on BPMN (Business Process Model and Notation) or DMN (Decision Model and Notation) and do not natively support CMMN.</p>
+<h3 id="specific-details">Specific Details:<a aria-hidden="true" class="anchor-heading icon-link" href="#specific-details"></a></h3>
+<ol>
+<li><strong>Flowable</strong>:
+<ul>
+<li><strong>CMMN Support</strong>: Flowable supports CMMN alongside BPMN and DMN. This makes it particularly strong for case management scenarios where workflows are not strictly predefined and can start in various states or evolve dynamically.</li>
+<li><strong>Open Source</strong>: Flowable offers its CMMN capabilities in the open-source version, though some advanced features may require the enterprise edition.</li>
+</ul>
+</li>
+</ol>
+<h3 id="engines-without-cmmn-support">Engines Without CMMN Support:<a aria-hidden="true" class="anchor-heading icon-link" href="#engines-without-cmmn-support"></a></h3>
+<ol>
+<li>
+<p><strong>Zeebe / Camunda</strong>:</p>
+<ul>
+<li><strong>Focus</strong>: Zeebe (and by extension, Camunda) focuses heavily on BPMN for workflow management and DMN for decision management. It does not natively support CMMN.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kogito</strong>:</p>
+<ul>
+<li><strong>Focus</strong>: Kogito, built on top of Drools, supports BPMN and DMN but does not offer CMMN capabilities.</li>
+</ul>
+</li>
+<li>
+<p><strong>Activiti</strong>:</p>
+<ul>
+<li><strong>Focus</strong>: Activiti focuses on BPMN and has some support for DMN but does not support CMMN natively.</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary">Summary:<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h3>
+<p>If CMMN support is a crucial requirement for your project, <strong>Flowable</strong> is your primary open-source option. It is well-suited for applications that require flexible case management alongside traditional BPMN workflows. For other engines like Zeebe, Camunda, or Kogito, you would need to explore workarounds or custom implementations if you require CMMN-like functionality.</p>
+<h2 id="the-flexibility-of-cmmn-is-attractive-for-modeling-rpg-style-games-but-visual-only-notation-seems-imprecise-and-impractical-is-there-a-textual-alternative">the flexibility of cmmn is attractive for modeling RPG-style games, but visual-only notation seems imprecise and impractical. is there a textual alternative?<a aria-hidden="true" class="anchor-heading icon-link" href="#the-flexibility-of-cmmn-is-attractive-for-modeling-rpg-style-games-but-visual-only-notation-seems-imprecise-and-impractical-is-there-a-textual-alternative"></a></h2>
+<p>CMMN (Case Management Model and Notation) is indeed a powerful tool for modeling flexible and non-deterministic workflows, such as those found in RPG-style games. However, as you've identified, its visual notation can be imprecise and impractical for certain use cases. For those seeking a more textual or code-based approach, there are a few alternatives and strategies you might consider:</p>
+<h3 id="1-cmmn-xml-representation">1. <strong>CMMN XML Representation</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#1-cmmn-xml-representation"></a></h3>
+<ul>
+<li><strong>Textual Format</strong>: While CMMN is often used with graphical tools, it is inherently based on XML. You can directly author or manipulate CMMN models using XML, which provides a textual, precise, and version-controllable way to define cases.</li>
+<li><strong>Tooling Support</strong>: Many CMMN-compliant tools allow you to export and edit CMMN models as XML files. This gives you the ability to define your models textually, though it requires familiarity with the XML schema of CMMN.</li>
+</ul>
+<h3 id="2-declarative-workflow-languages">2. <strong>Declarative Workflow Languages</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#2-declarative-workflow-languages"></a></h3>
+<ul>
+<li><strong>Declarative Languages</strong>: If you are looking for flexibility similar to CMMN but with a focus on textual representation, declarative workflow languages like <strong><a href="/notes/rrvbpmq9y9myt2kk6jodt98">Declare</a></strong> (or languages inspired by it) might be of interest. Declare is designed for specifying constraints rather than fixed sequences of tasks, which aligns well with the flexibility of RPG scenarios.</li>
+<li><strong>Pros</strong>: These languages offer a balance between flexibility and precision, allowing you to define rules and constraints textually while maintaining the non-deterministic nature of the workflows.</li>
+</ul>
+<h3 id="3-drools-rule-engine">3. <strong>Drools Rule Engine</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#3-drools-rule-engine"></a></h3>
+<ul>
+<li><strong>Rules-Based Approach</strong>: Using a rules engine like <strong>Drools</strong> allows you to define complex conditions and actions in a textual format. This can be particularly powerful for RPG-style games where game states and outcomes can be managed through a set of rules rather than a predefined workflow.</li>
+<li><strong>Integration with BPM</strong>: Drools integrates well with BPM engines, allowing you to combine the flexibility of rules with more structured workflows.</li>
+</ul>
+<h3 id="4-scripting-languages-in-game-engines">4. <strong>Scripting Languages in Game Engines</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#4-scripting-languages-in-game-engines"></a></h3>
+<ul>
+<li><strong>Custom Scripting</strong>: Many RPG-style games use custom scripting languages (e.g., Lua, Python) embedded within game engines to define the flow of gameplay. These languages can offer the same flexibility as CMMN but with the added benefit of being tailored to game development.</li>
+<li><strong>Pros</strong>: Scripting languages offer precise control over game mechanics, are highly flexible, and can easily integrate with other game components.</li>
+</ul>
+<h3 id="5-textual-modeling-languages-tml">5. <strong>Textual Modeling Languages (TML)</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#5-textual-modeling-languages-tml"></a></h3>
+<ul>
+<li><strong>Textual DSLs</strong>: Some modeling tools offer Textual DSLs (Domain-Specific Languages) that provide the power of models with the flexibility of code. These DSLs allow you to define workflows, rules, and cases in a textual format that can be transformed into executable models.</li>
+<li><strong>Example</strong>: Xtext is a framework that allows you to create textual DSLs for various domains, including workflow modeling. This approach could be customized to reflect CMMN-like flexibility while maintaining the precision of textual notation.</li>
+</ul>
+<h3 id="6-business-process-model-and-notation-bpmn-with-extensions">6. <strong>Business Process Model and Notation (BPMN) with Extensions</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#6-business-process-model-and-notation-bpmn-with-extensions"></a></h3>
+<ul>
+<li><strong>Textual BPMN</strong>: BPMN itself can be represented in XML and manipulated textually. Additionally, some tools allow for extensions to BPMN that can capture more dynamic, case-like behavior while still using a textual format.</li>
+<li><strong>Pros</strong>: This approach leverages the widespread tooling and support for BPMN while introducing the flexibility needed for more dynamic scenarios.</li>
+</ul>
+<h3 id="conclusion">Conclusion:<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h3>
+<p>For RPG-style game modeling, where flexibility is crucial, using a declarative language like <strong>Declare</strong>, a rules-based approach with <strong>Drools</strong>, or even custom scripting in game engines may be more suitable than relying on visual CMMN notation alone. These options offer the textual precision you’re looking for, combined with the flexibility needed for complex, non-linear workflows.</p>
+<p>If you still prefer to stay within the CMMN ecosystem, directly working with <strong>CMMN XML</strong> provides a more hands-on, text-based approach to defining your models.</p>
+<h2 id="has-anyone-done-an-owl-ontology-for-cmmn-concepts">has anyone done an OWL ontology for CMMN concepts?<a aria-hidden="true" class="anchor-heading icon-link" href="#has-anyone-done-an-owl-ontology-for-cmmn-concepts"></a></h2>
+<p>It seems that no comprehensive OWL ontology specifically for CMMN (Case Management Model and Notation) concepts has been widely adopted or documented. While there are tools and research efforts aimed at integrating CMMN with other semantic technologies, a dedicated OWL ontology capturing the full range of CMMN concepts appears to be a niche or yet-to-be-developed area.</p>
+<p>However, creating such an ontology is feasible and could be beneficial for projects requiring semantic interoperability between case management systems and other ontological frameworks. If you're considering this, you might need to start from the foundational concepts of CMMN and build an ontology that captures the core elements such as cases, stages, tasks, milestones, and sentries, possibly extending existing business process ontologies.</p>
+<p>For existing tools, you may find partial mappings or semantic annotations in tools like Trisotech or other business process modeling environments that could serve as a starting point.</p>
+<h2 id="can-you-site-some-existing-business-process-ontologies">can you site some existing business process ontologies?<a aria-hidden="true" class="anchor-heading icon-link" href="#can-you-site-some-existing-business-process-ontologies"></a></h2>
+<p>Certainly! There are several established ontologies in the domain of business processes that have been developed to model various aspects of business process management, workflows, and related concepts. Here are some notable examples:</p>
+<h3 id="1-business-process-model-and-notation-bpmn-ontology">1. <strong>Business Process Model and Notation (BPMN) Ontology</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#1-business-process-model-and-notation-bpmn-ontology"></a></h3>
+<ul>
+<li><strong>Description</strong>: Several ontologies have been developed to model BPMN concepts. These ontologies typically capture BPMN elements like tasks, events, gateways, and the relationships between them.</li>
+<li><strong>Examples</strong>:
+<ul>
+<li><strong>BPMN 2.0 Ontology</strong>: Developed to map BPMN 2.0 concepts to OWL. It includes classes for process elements like activities, events, and flows.</li>
+<li><strong>Process Ontology by Hepp and Roman</strong>: An early attempt to create a comprehensive ontology for business processes based on BPMN.</li>
+</ul>
+</li>
+<li><strong>Use Case</strong>: Useful for integrating BPMN diagrams with semantic web technologies, enabling automated reasoning over business processes.</li>
+</ul>
+<h3 id="2-process-specification-language-psl">2. <strong>Process Specification Language (PSL)</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#2-process-specification-language-psl"></a></h3>
+<ul>
+<li><strong>Description</strong>: <a href="/notes/be10v5o38t7hpj9dr7zbq94">Process Specification Language (PSL)</a> is an ontology developed by NIST (National Institute of Standards and Technology) to represent the semantics of process descriptions. It aims to facilitate interoperability between different process-related applications.</li>
+<li><strong>Components</strong>: PSL includes concepts like activities, states, timepoints, and objects, which can be used to describe processes in a standardized way.</li>
+<li><strong>Use Case</strong>: Standardization and interoperability in manufacturing, engineering, and other industries where process descriptions need to be shared across systems.</li>
+</ul>
+<h3 id="3-enterprise-ontology">3. <strong>Enterprise Ontology</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#3-enterprise-ontology"></a></h3>
+<ul>
+<li><strong>Description</strong>: Developed as part of the Enterprise Project, this ontology captures core business concepts, including organizational structure, activities, processes, and resources.</li>
+<li><strong>Components</strong>: Includes a comprehensive set of concepts related to enterprise functions, such as roles, goals, and processes.</li>
+<li><strong>Use Case</strong>: Business process modeling, organizational modeling, and enterprise architecture.</li>
+</ul>
+<h3 id="4-rea-resources-events-agents-ontology">4. <strong>REA (Resources, Events, Agents) Ontology</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#4-rea-resources-events-agents-ontology"></a></h3>
+<ul>
+<li><strong>Description</strong>: The REA ontology is based on the REA accounting model, which is used for modeling economic resources, events, and agents involved in business transactions.</li>
+<li><strong>Components</strong>: Key concepts include resources, events, agents, commitments, and contracts.</li>
+<li><strong>Use Case</strong>: Accounting and financial modeling, particularly in the context of enterprise resource planning (ERP) systems.</li>
+</ul>
+<h3 id="5-the-semantic-business-process-management-sbpm-ontology">5. <strong>The Semantic Business Process Management (SBPM) Ontology</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#5-the-semantic-business-process-management-sbpm-ontology"></a></h3>
+<ul>
+<li><strong>Description</strong>: SBPM aims to semantically enhance traditional business process management by integrating ontological concepts. It includes concepts from BPMN and extends them with semantic annotations.</li>
+<li><strong>Components</strong>: Process, activity, role, goal, and data are among the key concepts.</li>
+<li><strong>Use Case</strong>: Enhancing BPM systems with semantic reasoning capabilities, improving process automation and compliance.</li>
+</ul>
+<h3 id="6-dolcedns-ultralite-dul">6. <strong>DOLCE+DnS Ultralite (DUL)</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#6-dolcedns-ultralite-dul"></a></h3>
+<ul>
+<li><strong>Description</strong>: While not specifically a business process ontology, DUL (a lightweight version of the DOLCE ontology) includes a framework for describing events and processes in a generic way. It has been used as a foundation for developing domain-specific ontologies, including those related to business processes.</li>
+<li><strong>Components</strong>: Concepts include actions, plans, roles, tasks, and events.</li>
+<li><strong>Use Case</strong>: Provides a formal ontological framework that can be extended for domain-specific applications, including business processes.</li>
+</ul>
+<h3 id="7-value-delivery-modeling-language-vdml-ontology">7. <strong>Value Delivery Modeling Language (VDML) Ontology</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#7-value-delivery-modeling-language-vdml-ontology"></a></h3>
+<ul>
+<li><strong>Description</strong>: VDML is a standard developed by the Object Management Group (OMG) for modeling value creation and delivery in business processes. The VDML ontology captures the key concepts of this modeling language.</li>
+<li><strong>Components</strong>: Concepts include value propositions, activities, roles, and deliverables.</li>
+<li><strong>Use Case</strong>: Modeling value networks and business ecosystems, analyzing value creation in business processes.</li>
+</ul>
+<h3 id="summary-1">Summary:<a aria-hidden="true" class="anchor-heading icon-link" href="#summary-1"></a></h3>
+<p>These ontologies offer a range of tools for modeling different aspects of business processes. Depending on your specific needs—whether you’re focusing on workflow management, enterprise architecture, or economic transactions—one of these ontologies or a combination of them might be suitable for your project. If you are interested in CMMN-specific concepts, you may consider extending one of these ontologies or developing a new one that integrates with CMMN's case management concepts.</p>

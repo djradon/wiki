@@ -1,0 +1,2 @@
+
+- publisher: [[org.triply]]

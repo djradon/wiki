@@ -1,0 +1,271 @@
+<h1 id="rdf">RDF<a aria-hidden="true" class="anchor-heading icon-link" href="#rdf"></a></h1>
+<ul>
+<li>related: <a href="/wiki/notes/3qkop07okl626mmlmu94uk2">Rdf Processing Toolkit</a> <a href="/wiki/notes/tqj6kdyaahl2jwfa2o0rlos">Spin</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">instanceOf (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Specification (Private)</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<h3 id="blank-nodes">Blank Nodes<a aria-hidden="true" class="anchor-heading icon-link" href="#blank-nodes"></a></h3>
+<ul>
+<li>Blank (or anonymous) nodes are RDF resources with identifiers that exist only locally. In other words, their identifiers are not URLs. They are sometimes also called anonymous nodes. They make life easier for data producers, who can easily create (nested) resources without having to mint all the URLs. In most non-RDF data models, blank nodes are the default. For example, we nest JSON object without thinking twice.</li>
+<li><a href="/wiki/notes/m02bqcl7fands7puxc0v92t">@chatgpt.4</a>: "While you can avoid using blank nodes, it often results in more verbose RDF graphs and might require additional effort to manage URIs for entities that do not need global identification. If your use case involves a lot of ephemeral, intermediary, or context-specific data, blank nodes can be very useful. However, for datasets that require high interoperability and ease of querying, minimizing the use of blank nodes and favoring URIs might be beneficial."</li>
+</ul>
+<h2 id="namespaces">Namespaces<a aria-hidden="true" class="anchor-heading icon-link" href="#namespaces"></a></h2>
+<h3 id="namespace-prefixes">Namespace Prefixes<a aria-hidden="true" class="anchor-heading icon-link" href="#namespace-prefixes"></a></h3>
+<ul>
+<li>
+<p>"The XML Namespaces specification (Namespaces in XML 1.0) states that a prefix must be a valid XML name, which means it must conform to the following constraints:</p>
+</li>
+<li>
+<p>It must start with a letter or underscore (_).</p>
+</li>
+<li>
+<p>It cannot start with a number.</p>
+</li>
+<li>
+<p>Subsequent characters can be letters, digits, hyphens (-), underscores (_), or periods (.)."</p>
+</li>
+</ul>
+<h2 id="datasets">Datasets<a aria-hidden="true" class="anchor-heading icon-link" href="#datasets"></a></h2>
+<ul>
+<li>
+<p>An RDF dataset is a collection of RDF graphs, and comprises:</p>
+<ul>
+<li>Exactly one default graph, being an RDF graph. The default graph does not have a name and MAY be empty.</li>
+<li>Zero or more named graphs. Each named graph is a pair consisting of an IRI or a blank node (the graph name), and an RDF graph. Graph names are unique within an RDF dataset.</li>
+</ul>
+</li>
+<li>
+<p>"We informally use the term RDF source to refer to a persistent yet mutable source or container of RDF graphs."</p>
+</li>
+</ul>
+<h3 id="dataset-thoughts">Dataset Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#dataset-thoughts"></a></h3>
+<ul>
+<li>[-][p.summarized]] <a href="https://www.w3.org/TR/rdf11-datasets/">RDF datasets</a>
+<ul>
+<li>the concept of the "unnamed default graph"/master-graph is interesting; 
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Resource (Private)</a> <a href="https://github.com/w3c/sparql-12/issues/43">The unnamed/default graph should have a standard name</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="typed-literals">Typed Literals<a aria-hidden="true" class="anchor-heading icon-link" href="#typed-literals"></a></h2>
+<ul>
+<li>RDF does not place any limits on what datatypes might be associated with a literal. The model recommends using a standard type library, like XML Schema, wherever possible but the only real constraint is that datatypes should be identified by a URI. Creating a new URI for an application or domain specific datatype allows the type system to be easily extended. The datatype URI can be annotated with additional RDF statements, e.g. a label or description, to describe its usage.</li>
+<li>The key limitation to custom datatypes is that SPARQL query engines will not understand how to compare values of that type. Some SPARQL query processors may provide support for understanding the range of types it understands.</li>
+<li>Note that a typed literal with a custom datatype can also be modelled as a sub-property.
+<ul>
+<li>Advantages
+<ul>
+<li>Simpler querying of data by allowing the use of triple patterns, rather than FILTERs for extracting data of a common type.</li>
+<li>More explicit, fine-grained semantics</li>
+</ul>
+</li>
+<li>Disadvantages
+<ul>
+<li>Increases the number of very similar properties, requiring redundancy of data or reasoning to allow applications to treat them generically</li>
+<li>Doesn't address the core requirement to indicate the lexical form of a structured value</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Recommendation:
+<ul>
+<li>Use a custom datatype to label particular types of structured value that share a common lexical form. These values may be associated with a broad range of different properties. Processing applications may want to implement a common set of type conversions or display options for the values.</li>
+<li>Use a sub-property in all other cases</li>
+<li>Note that these options aren't always mutually exclusive. It might be useful in some scenarios to have an explicit property for associating a general class of code, identifier, or other Literal Key with a resource, but also assign a specific datatype to the identifier as a cue for applications and reasoners</li>
+</ul>
+</li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>the property "a" is used to indicate the "type" or "class" of a resource. It is a shorthand notation for the "rdf:type" predicate.</li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<h3 id="n-ary-relations">n-ary relations<a aria-hidden="true" class="anchor-heading icon-link" href="#n-ary-relations"></a></h3>
+<ul>
+<li>
+<p>aka <a href="/wiki/notes/cd43bm85eemff81n7gufn99">Relationship to Entity Conversion</a></p>
+<ul>
+<li>although you can also express multiple "arguments" as a list, see <a href="http://www.ninebynine.org/RDFNotes/RDFFactsAndRules.html#xtocid-75600719">http://www.ninebynine.org/RDFNotes/RDFFactsAndRules.html#xtocid-75600719</a></li>
+</ul>
+</li>
+<li>
+<p>sure you can use a class per relation, but...</p>
+</li>
+<li>
+<p>"Considerations when introducing a new class for a relation</p>
+<ul>
+<li>
+<p>In our example, we did not give meaningful names to instances of properties or to the classes used to represent instances of n-ary relations, but merely label them _:Temperature_Observation_1, Purchase_1, etc. In most cases, these individuals do not stand on their own but merely function as auxiliaries to group together other objects. Hence a distinguishing name serves no purpose. Note that a similar approach is taken when reifying statements in RDF.</p>
+</li>
+<li>
+<p>Creating a class to represent an n-ary relation limits the use of many OWL constructs and creates a maintenance problem. The problem arises when we want to have local range or cardinality restrictions on some role in the n-ary relation that depend on the class of some other role. For example, we might want to say that we buy only instances of a class Book from companies in the category Bookseller (cf. use case 3). Expressing this constraint requires a special subclass of the n-ary relation class that represents the combination of restrictions. For instance, we will have to create a class Book_Purchase with the corresponding range restrictions for the property seller (allValuesFrom Bookseller) and object (allValuesFrom Book). We end up having to build an explicit lattice of classes to represent all the possible combinations.   </p>
+<ul>
+<li>OWL allows definition of inverse properties. Defining inverse properties with n-ary relations, using any of the patterns above, requires more work than with binary relations. In order to specify inverse properties for n-ary relations, we must specify an inverse for each of the properties participating in the n-ary relation (with the proper constraints). Consider the example of John buying the Lenny_The_Lion book. We may want to have an instance of an inverse relation pointing from the Lenny_The_Lion book to the person who bought it. If we had a simple binary relation John buys Lenny_The_Lion, defining an inverse is simple: we simply define a property is_bought_by as an inverse of buys:</li>
+</ul>
+<p>:is_bought_by
+a       owl:ObjectProperty ;
+owl:inverseOf :buys .</p>
+<p>With the purchase relation represented as an instance, however, we need to add inverse relations between participants in the relation and the instance relation itself:"</p>
+</li>
+</ul>
+</li>
+<li>
+<p>t.2024.06.10.22 "Moreover, the use of cardinality re-
+strictions becomes limiting on some roles that depend on the class of some other roles"</p>
+</li>
+</ul>
+<h3 id="ordering">Ordering<a aria-hidden="true" class="anchor-heading icon-link" href="#ordering"></a></h3>
+<ul>
+<li><a href="https://ontola.io/blog/ordered-data-in-rdf">ordering</a>, although maybe <a href="/wiki/notes/nbxck363lsj67x8fk7jiric">Hydra</a> collections could help</li>
+</ul>
+<h3 id="other-issues">Other Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#other-issues"></a></h3>
+<ul>
+<li>contrary to <a href="https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf/">some claims</a>, RDF and OWL are not fluent, at least compared to GraphDown</li>
+<li>calls verbs properties / predicates</li>
+<li>confuses properties and predicates</li>
+<li>can't easily express intransitive relations (properties)</li>
+<li><a href="/wiki/notes/c8fGFc04CU0O6zEOgg8OT">Resources That Refer Vs Resources That Are</a> 
+<ul>
+<li>aka "indicator vs subject"</li>
+</ul>
+</li>
+<li><a href="https://www.w3.org/2007/OWL/wiki/Punning">punning</a>: also a solution
+<ul>
+<li><a href="/wiki/notes/m02bqcl7fands7puxc0v92t">@chatgpt.4</a>: 
+<ul>
+<li><strong>Class-Individual Punning</strong>: This is where the same URI is used to denote a class in one context and an individual in another. For example, you might have a class <code>:Person</code> and also use <code>:Person</code> as an individual to represent the generic concept of a person. In RDF and OWL, this is legal because classes in OWL are also individuals in the sense of RDF.
+<ul>
+<li>t.2024.05.24.11 see <a href="/wiki/notes/x4h93xhzc9ab85h4x3tlfko">Class Vs Individual</a></li>
+</ul>
+</li>
+<li><strong>Class-Property Punning</strong>: Similarly, the same URI can be used to denote a class in one context and a property in another. This can be useful for modeling certain kinds of relationships in a more flexible way.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Class vs Individual
+<ul>
+<li>see <a href="/wiki/notes/uup0x4gcs3ilsku9xbw4xcx#class-or-individual">Semantic Modeling for Data</a></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="temporal-problems">temporal problems<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-problems"></a></h3>
+<ul>
+<li>see <a href="/wiki/notes/l3kei9ohjtb2qg0mmaemwyw">A Temporal Rdf Model for Multi Grained Time Information Modeling</a></li>
+<li><a href="https://blog.iandavis.com/2009/08/representing-time-in-rdf-part-1/">https://blog.iandavis.com/2009/08/representing-time-in-rdf-part-1/</a></li>
+<li><a href="http://www.dcc.uchile.cl/~cgutierr/papers/temporalRDF.pdf">Temporal RDF</a> introduces a fourth time component to the triple. "I chose not to cover this approach in a lot of detail because it extends the RDF model in a way that no current triple store implements"</li>
+</ul>
+<h3 id="ordering-1">Ordering<a aria-hidden="true" class="anchor-heading icon-link" href="#ordering-1"></a></h3>
+<p>There are no arrays in RDF, and don't use the order in which serialized triples appear.</p>
+<p>RDF Containers:</p>
+<ul>
+<li>Come in three forms: rdf:Seq (ordered), rdf:Bag (unordered), rdf:Alt (alternatives with default)</li>
+<li>You can add new items by simply adding RDF triples</li>
+<li>Inserting items is hard: requires rewriting many statements</li>
+<li>Must be stored in a single graph / machine / server (centralized)</li>
+<li>Have a formally unknown ending (open world assumption)</li>
+</ul>
+<p>RDF Collections:</p>
+<ul>
+<li>An ordered chain of rdf:List resources</li>
+<li>You have to edit / remove statements before you can add new items</li>
+<li>Inserting items is easy: requires changing just a few statements</li>
+<li>Can span many graphs / machines / servers (decentralized)</li>
+<li>Have a known ending (the rdf:nil)</li>
+</ul>
+<p>Pagination:</p>
+<ul>
+<li>Use ActivityStreams collections</li>
+</ul>
+<p>Converting to arrays:</p>
+<ul>
+<li>Use a library, such as <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@rdfdev/collections (Private)</a></li>
+</ul>
+<h2 id="abstract-model">Abstract Model<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract-model"></a></h2>
+<h3 id="15-rdf-and-change-over-time">1.5 RDF and Change over Time<a aria-hidden="true" class="anchor-heading icon-link" href="#15-rdf-and-change-over-time"></a></h3>
+<p>The RDF data model is atemporal: RDF graphs are static snapshots of information.</p>
+<p>However, RDF graphs can express information about events and about temporal aspects of other entities, given appropriate vocabulary terms.</p>
+<p>Since RDF graphs are defined as mathematical sets, adding or removing triples from an RDF graph yields a different RDF graph.</p>
+<p>We informally use the term RDF source to refer to a persistent yet mutable source or container of RDF graphs. An RDF source is a resource that may be said to have a state that can change over time. A snapshot of the state can be expressed as an RDF graph. For example, any web document that has an RDF-bearing representation may be considered an RDF source. Like all resources, RDF sources may be named with IRIs and therefore described in other RDF graphs.</p>
+<p>Intuitively speaking, changes in the universe of discourse can be reflected in the following ways:</p>
+<ul>
+<li>An IRI, once minted, should never change its intended referent. (See URI persistence [WEBARCH].)</li>
+<li>Literals, by design, are constants and never change their value.</li>
+<li>A relationship that holds between two resources at one time may not hold at another time.</li>
+<li>RDF sources may change their state over time. That is, they may provide different RDF graphs at different times.</li>
+<li>Some RDF sources may, however, be immutable snapshots of another RDF source, archiving its state at some point in time.</li>
+</ul>
+<h2 id="can-be-expressed-as">can be expressed as<a aria-hidden="true" class="anchor-heading icon-link" href="#can-be-expressed-as"></a></h2>
+<ul>
+<li><a href="/wiki/notes/MTkn3kZmBJAu5v86AQroO">aREF</a></li>
+<li><a href="/wiki/notes/Zky5xjNTxp2PENk30AyVs">RDF Turtle</a></li>
+<li><a href="/wiki/notes/xqyv74byikdfixf87o22lcq">HexTuples</a></li>
+<li><a href="/wiki/notes/rgof5gwgwgrz3vp3394kfmq">JSON-LD</a></li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li><a href="/wiki/notes/eehbsw306elseuor5emukb0">RDFSharp</a></li>
+<li><a href="/wiki/notes/7ntybecy7k6jxyte6dhfpil">BiTRDF</a></li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.w3.org/TR/rdf11-datasets/">https://www.w3.org/TR/rdf11-datasets/</a>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">begsQuestion (Private)</a> [-] What is <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">the difference betwee the union of the graphs and their merge (Private)</a>? Is the distinction meaningful for <a href="/wiki/notes/YLmAMnIoOcUUOlbXQGNFl">Dendron</a>?</li>
+</ul>
+</li>
+<li><a href="https://www.w3.org/TR/rdf-concepts">https://www.w3.org/TR/rdf-concepts</a></li>
+<li><a href="https://www.w3.org/TR/rdf-schema/">https://www.w3.org/TR/rdf-schema/</a></li>
+<li><a href="https://www.orpha.net/sparql?nsdecl">Predefined Namespace Prefixes</a></li>
+<li><a href="https://ontola.io/blog/rdf-serialization-formats">https://ontola.io/blog/rdf-serialization-formats</a>
+<ul>
+<li>mentions <a href="/wiki/notes/lsqn84g8faksg2jxvbj9e1f">JSON-AD</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="haslearningresource-private"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasLearningResource (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#haslearningresource-private"></a></h3>
+<ul>
+<li><a href="https://www.w3.org/TR/rdf11-primer/">https://www.w3.org/TR/rdf11-primer/</a></li>
+<li><a href="https://open.hpi.de/">https://open.hpi.de/</a></li>
+</ul>
+<h3 id="haswishlist-private"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasWishList (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#haswishlist-private"></a></h3>
+<ul>
+<li><a href="https://lists.w3.org/Archives/Public/semantic-web/2009Nov/0040.html">https://lists.w3.org/Archives/Public/semantic-web/2009Nov/0040.html</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://patterns.dataincubator.org/book/custom-datatype.html">https://patterns.dataincubator.org/book/custom-datatype.html</a></li>
+<li><a href="https://www.w3.org/TR/swbp-n-aryRelations/">https://www.w3.org/TR/swbp-n-aryRelations/</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/ajtyyiy5j7attle4zo8h8im">Datasets</a></li>
+<li><a href="/wiki/notes/pi9eqxk27aaedm6ae8tn180">Dcat Data Catalog Vocabulary</a></li>
+<li><a href="/wiki/notes/Zky5xjNTxp2PENk30AyVs">RDF Turtle</a></li>
+<li><a href="/wiki/notes/aibx109ic3oriwspthogcqk">RDF/XML</a></li>
+<li><a href="/wiki/notes/hsk3vbae9mhogfwudnjis79">RDFa</a></li>
+<li><a href="/wiki/notes/068lb8b13d47lqgjm78w2iz">Rdf Mapping Language</a></li>
+<li><a href="/wiki/notes/ebgo4gmu67lty6zvgjankwg">Rtc</a></li>
+<li><a href="/wiki/notes/cws2vz3drugg149i058hz4n">Trig</a></li>
+<li><a href="/wiki/notes/MTkn3kZmBJAu5v86AQroO">aREF</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/t6ebsghgw5xwdiku27e1kx7">Decentralized Collaborative Knowledge Management Using Git (public-notes)</a></li>
+<li><a href="/wiki/notes/dzalivqcjbn3xbqqu1gtjfu">Fuzzy Spatiotemporal Data Modeling and Operations in Rdf (public-notes)</a></li>
+<li><a href="/wiki/notes/f1NRb172HfsDVGSJiwQqZ">TerminusDB (public-notes)</a></li>
+<li><a href="/wiki/notes/ps7m8l5a6xa52tbssq7f8pp">API Platform (public-notes)</a></li>
+<li><a href="/wiki/notes/13s2lqwflayx6ft508wgzpw">Atomic Data (public-notes)</a></li>
+<li><a href="/wiki/notes/uhagejfd79c8isushtaciux">LinkML (public-notes)</a></li>
+<li><a href="/wiki/notes/89gf0cjq73ftfn7ezvgrthq">Milleniumdb (public-notes)</a></li>
+<li><a href="/wiki/notes/LjgZuNgAdf2e35spGXhEq">Unrival Protocol (public-notes)</a></li>
+<li><a href="/wiki/notes/nfwxllOsJ5Xne268kb784">Class vs. Type vs. Category (public-notes)</a></li>
+<li><a href="/wiki/notes/TIehWkHNVWQJk4RFT5EBX">Property Graph (public-notes)</a></li>
+<li><a href="/wiki/notes/NnQfjjgVbR3bZB9zjlK6z">Dynamic-RDF (public-notes)</a></li>
+</ul>

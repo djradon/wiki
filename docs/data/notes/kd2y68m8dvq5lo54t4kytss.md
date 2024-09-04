@@ -1,0 +1,2 @@
+
+- [[p.equivalentPredicate]] [[p.hasTopic]]

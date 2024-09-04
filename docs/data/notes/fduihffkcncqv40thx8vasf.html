@@ -1,0 +1,15 @@
+<h1 id="snowflake">Snowflake<a aria-hidden="true" class="anchor-heading icon-link" href="#snowflake"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">mentionedOn (Private)</a> <a href="https://interviewnoodle.com/how-discord-stores-billions-of-messages-big-surprises-in-system-design-e48fa07a2665">https://interviewnoodle.com/how-discord-stores-billions-of-messages-big-surprises-in-system-design-e48fa07a2665</a> d</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>tens of thousands of ids per second in a highly available manner. This naturally led us to choose an uncoordinated approach.</li>
+</ul>
+<p>These ids need to be roughly sortable, meaning that if tweets A and B are posted around the same time, they should have ids in close proximity to one another since this is how we and most Twitter clients sort tweets.[1]</p>
+<p>Additionally, these numbers have to fit into 64 bits.</p>
+<h2 id="implementations">Implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#implementations"></a></h2>
+<ul>
+<li><a href="https://github.com/AkashRajpurohit/snowflake-id">https://github.com/AkashRajpurohit/snowflake-id</a> javascript</li>
+<li></li>
+</ul>

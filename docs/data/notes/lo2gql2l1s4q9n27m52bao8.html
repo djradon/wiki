@@ -1,0 +1,43 @@
+<h1 id="ontogen">Ontogen<a aria-hidden="true" class="anchor-heading icon-link" href="#ontogen"></a></h1>
+<ul>
+<li><a href="https://ontogen.io/">https://ontogen.io/</a></li>
+<li>tested-with: <a href="/wiki/notes/sxearsf749tnwbfp4nohb4d">Fuseki</a> and <a href="/wiki/notes/4qan8gd97h7bajr4zf4s8qt">Oxigraph</a></li>
+<li>related: <a href="/wiki/notes/jc8fv59is3vyq5uo1e42efi">RTC.ex</a></li>
+<li>docs: <a href="https://ontogen.io/docs/user-guide/">https://ontogen.io/docs/user-guide/</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>RDF Triple Compounds (RTC) allow named-graph-like functionality without using named graphs</li>
+<li>uses <a href="/wiki/notes/lTim9plsY3OzVv6gn7TBR">RDF-star</a> for annotations</li>
+</ul>
+<h3 id="versioning">Versioning<a aria-hidden="true" class="anchor-heading icon-link" href="#versioning"></a></h3>
+<ul>
+<li>the version-controlled data in Ontogen is kept in a triple store.</li>
+<li>A SpeechAct represents a group of changes to the repository, similar to a commit in traditional VCS, but with additional metadata such as speaker, timestamp, and data source.</li>
+<li>SpeechActs are prepared through the staging system and then stored as commits in the repository.</li>
+<li>This staging system allows users to carefully prepare and review changes before they are committed as a SpeechAct. It provides more control and transparency in the versioning process, especially when working with complex RDF data.</li>
+</ul>
+<h4 id="staging-file">Staging file<a aria-hidden="true" class="anchor-heading icon-link" href="#staging-file"></a></h4>
+<ul>
+<li>Instead of an implicitly held staging area, there is a single staging file with which the next SpeechAct to be committed can be incrementally prepared. </li>
+<li>By default, this file is called STAGE.trig and contains an RDF dataset consisting of specially named graphs for the different action types:
+<ul>
+<li><code>og:Addition</code> graph with changes that should simply be added to the repository without overwriting existing statements</li>
+<li><code>og:Update</code> graph with changes that should overwrite existing statements with the same subject and predicate</li>
+<li><code>og:Replacement</code> graph with changes that should replace all existing statements with the same subject</li>
+<li><code>og:Removal</code> graph with statements that should be removed from the repository</li>
+</ul>
+</li>
+<li>currently only one SpeechAct per staging file</li>
+<li>in addition to TriG, N-Quads (with file extension .nq) and JSON-LD (with file extension .jsonld) are also supported.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/lkkkisrk9liyko1av5yoos2">Introducing Ontogen</a> </li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/ltiyv8l9yf3r2be95czfzxf">Bog (public-notes)</a></li>
+<li><a href="/wiki/notes/731hfzx8esogb3ncbesro7v">Marcel Otto (public-notes)</a></li>
+</ul>

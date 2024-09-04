@@ -1,0 +1,29 @@
+<h1 id="nu">Nu<a aria-hidden="true" class="anchor-heading icon-link" href="#nu"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Game Framework (Private)</a></li>
+<li>repo: <a href="https://github.com/bryanedds/Nu">https://github.com/bryanedds/Nu</a></li>
+<li>related: <a href="/wiki/notes/k4oq4zy12p4rarxjfj33mlp">Platform as a Reflection of Values</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>first practical functional 2D and 3D cross-platform game engine. Built in F#, it offers a declarative MVU-based API called MMCC (Model-Message-Command-Content</li>
+<li>Real-time WYSIWYG editing with hot asset and live code reloading, and the ability to undo and redo gameplay.</li>
+<li>Recursive Prefab-like functionality via Entity Structure Propagation.</li>
+</ul>
+<h3 id="mvcc">MVCC<a aria-hidden="true" class="anchor-heading icon-link" href="#mvcc"></a></h3>
+<p>Model-View-Update (or MVU) is the 'killer app' of functional programming. Until MVU came along, most arguments about the benefits of functional programming resided primarily in the space of the theoretical. But when Elm introduced the world to MVU with its incredibly clean authoring form factor, the space of discussion changed forever.</p>
+<p>With Nu's generalization of MVU via MMCC (Model-Message-Command-Content), it is the first and still only practical game engine positioned to bring the killer benefits of this declarative development form factor to game developers.</p>
+<h3 id="immutability">Immutability<a aria-hidden="true" class="anchor-heading icon-link" href="#immutability"></a></h3>
+<ul>
+<li>By default in the editor, Nu is configured to run in an immutable mode. In this mode, all of the simulation backing data encapsulated behind the World API is implemented with functional data structures that can be snapshotted and restored. This snapshotting is how Nu's editor, Gaia, implements its Undo and Redo operations. However, for optimal performance, Nu is configured to use mutating data structures under the hood instead when outside of the editor. Nu can be configured to run either way in both contexts, however.</li>
+</ul>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<ul>
+<li><a href="/wiki/notes/tuphh99pphwa4pdaywzswz8">Omniblade</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/m0gpz2t84rrja5zqfjcm0p1">Are There Game Engines That Use a Functional Programming Language for Scripting (public-notes)</a></li>
+<li><a href="/wiki/notes/xuimwuix4x5o6qljpy8480n">Functional Programming (public-notes)</a></li>
+</ul>

@@ -1,0 +1,32 @@
+<h1 id="server-sent-events">Server Sent Events<a aria-hidden="true" class="anchor-heading icon-link" href="#server-sent-events"></a></h1>
+<h2 id="cons">Cons<a aria-hidden="true" class="anchor-heading icon-link" href="#cons"></a></h2>
+<ul>
+<li>maximum 6 per browser + domain,</li>
+<li>unidirectional, but
+<ul>
+<li>"When subscribing to an information source, you make one descriptive request in order to receive multiple responses. Specifically, when using GraphQL subscriptions or streaming operations (like with <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@defer (Private)</a> and <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@stream (Private)</a> directives), you do exactly this - you send one request and expect multiple responses (events) in return. Having said this, Server-Sent Events seem like a perfect fit!"</li>
+</ul>
+</li>
+</ul>
+<h2 id="comparison">Comparison<a aria-hidden="true" class="anchor-heading icon-link" href="#comparison"></a></h2>
+<h3 id="vs-websocket">vs <a href="/wiki/notes/tj550clre68gvbtj42x7fqi">Websocket</a><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-websocket"></a></h3>
+<ul>
+<li>"Built-in support for reconnection"</li>
+<li>You can only have six concurrent open SSE connections per browser at any one time. This can be especially painful when you want to open multiple tabs with SSE connections. See '<a href="https://stackoverflow.com/questions/18584525/server-sent-events-and-browser-limits">Server-Sent Events and browser limits</a>' for more information and workaround suggestions.</li>
+</ul>
+<h3 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h3>
+<ul>
+<li><a href="https://ably.com/blog/websockets-vs-sse">https://ably.com/blog/websockets-vs-sse</a></li>
+<li><a href="https://the-guild.dev/blog/graphql-over-sse">https://the-guild.dev/blog/graphql-over-sse</a>
+<ul>
+<li>mentions: <a href="/wiki/notes/h0axurclgbeyjcvt6tfje2q">GraphQL Sse</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/czg6ttu0qd5f5bxvfrdh6ga">Insomnia (public-notes)</a></li>
+<li><a href="/wiki/notes/xp7fzyz8v3hiv6ihabpp1qk">Mercure (public-notes)</a></li>
+<li><a href="/wiki/notes/dcb34z9w48p21mpzuib95ez">The Guild (public-notes)</a></li>
+</ul>

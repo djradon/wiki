@@ -1,0 +1,119 @@
+<h1 id="sparql">Sparql<a aria-hidden="true" class="anchor-heading icon-link" href="#sparql"></a></h1>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>BGP (Basic Graph Pattern) Matching refers to the process of finding matching sets of triples (subject-predicate-object) in an RDF dataset based on a basic graph pattern specified in a SPARQL query.
+Understanding BGP:
+<pre><code>- A Basic Graph Pattern (BGP) is essentially a collection of triple patterns.
+- Each triple pattern in the BGP can consist of variables, IRIs (Internationalized Resource Identifiers), or literals in the subject, predicate, and object positions.
+- The task of BGP matching is to identify all sets of RDF triples in the dataset that correspond to the given patterns in the query.
+</code></pre>
+</li>
+</ul>
+<h3 id="property-paths">Property Paths<a aria-hidden="true" class="anchor-heading icon-link" href="#property-paths"></a></h3>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@chatgpt (Private)</a>: Property paths in SPARQL are a powerful feature that allows you to write queries that navigate through RDF graphs in more complex ways than simple triple patterns. Property paths can be used to traverse multiple relationships, specify optional or alternative paths, and query over arbitrary lengths of paths.</p>
+<h3 id="key-property-path-operators">Key Property Path Operators:<a aria-hidden="true" class="anchor-heading icon-link" href="#key-property-path-operators"></a></h3>
+<ol>
+<li>
+<p><strong>Concatenation (<code>/</code>)</strong>:</p>
+<ul>
+<li>Specifies a sequence of properties.</li>
+<li>Example: <code>:parent/:child</code> retrieves all grandchildren by following a <code>:parent</code> relationship and then a <code>:child</code> relationship.</li>
+</ul>
+</li>
+<li>
+<p><strong>Alternatives (<code>|</code>)</strong>:</p>
+<ul>
+<li>Specifies a choice between properties.</li>
+<li>Example: <code>:spouse|:partner</code> retrieves relationships where either <code>:spouse</code> or <code>:partner</code> applies.</li>
+</ul>
+</li>
+<li>
+<p><strong>Zero or More (<code>*</code>)</strong>:</p>
+<ul>
+<li>Matches a property path of any length, including zero.</li>
+<li>Example: <code>:ancestor*</code> finds any number of <code>:ancestor</code> relationships, including direct and indirect ancestors.</li>
+</ul>
+</li>
+<li>
+<p><strong>One or More (<code>+</code>)</strong>:</p>
+<ul>
+<li>Matches a property path of at least one step.</li>
+<li>Example: <code>:ancestor+</code> retrieves all direct and indirect ancestors, but not the individual itself.</li>
+</ul>
+</li>
+<li>
+<p><strong>Zero or One (<code>?</code>)</strong>:</p>
+<ul>
+<li>Matches a property path of zero or one step.</li>
+<li>Example: <code>:spouse?</code> retrieves relationships where the <code>:spouse</code> property exists or matches no property.</li>
+</ul>
+</li>
+<li>
+<p><strong>Inverse (<code>^</code>)</strong>:</p>
+<ul>
+<li>Inverts the direction of the property.</li>
+<li>Example: <code>^:parent</code> retrieves all entities that are children of a given individual.</li>
+</ul>
+</li>
+</ol>
+<h3 id="examples-of-sparql-queries-using-property-paths">Examples of SPARQL Queries Using Property Paths:<a aria-hidden="true" class="anchor-heading icon-link" href="#examples-of-sparql-queries-using-property-paths"></a></h3>
+<h4 id="1-find-all-descendants">1. Find All Descendants:<a aria-hidden="true" class="anchor-heading icon-link" href="#1-find-all-descendants"></a></h4>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://example.org/<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?descendant</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">parent</span></span>+ <span class="token variable">?descendant</span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><strong>Explanation</strong>: This query finds all descendants of <code>:John</code> by following the <code>:parent</code> property one or more times.</li>
+</ul>
+<h4 id="2-find-direct-or-indirect-ancestors">2. Find Direct or Indirect Ancestors:<a aria-hidden="true" class="anchor-heading icon-link" href="#2-find-direct-or-indirect-ancestors"></a></h4>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://example.org/<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?ancestor</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token variable">?ancestor</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">parent</span></span>* <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><strong>Explanation</strong>: This query finds all direct or indirect ancestors of <code>:John</code>, including <code>:John</code> itself.</li>
+</ul>
+<h4 id="3-find-individuals-related-by-spouse-or-partner">3. Find Individuals Related by Spouse or Partner:<a aria-hidden="true" class="anchor-heading icon-link" href="#3-find-individuals-related-by-spouse-or-partner"></a></h4>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://example.org/<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?related</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">spouse</span></span>|<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">partner</span></span><span class="token punctuation">)</span> <span class="token variable">?related</span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><strong>Explanation</strong>: This query finds individuals related to <code>:John</code> by either the <code>:spouse</code> or <code>:partner</code> relationship.</li>
+</ul>
+<h4 id="4-query-for-connections-through-multiple-properties">4. Query for Connections through Multiple Properties:<a aria-hidden="true" class="anchor-heading icon-link" href="#4-query-for-connections-through-multiple-properties"></a></h4>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://example.org/<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?person</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">knows</span></span>/<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">friendOf</span></span><span class="token punctuation">)</span> <span class="token variable">?person</span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><strong>Explanation</strong>: This query finds all individuals who are friends of people that <code>:John</code> knows.</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://medium.com/wallscope/constructing-sparql-queries-ca63b8b9ac02">https://medium.com/wallscope/constructing-sparql-queries-ca63b8b9ac02</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/scjfgpz07ccqs6pwln5qpnd">GeoSPARQL</a></li>
+<li><a href="/wiki/notes/ej5w4j96vscd0jx1ip8dr8c">SPARQL-MM</a></li>
+<li><a href="/wiki/notes/j3ya6csu07nhrvfmh4suywm">Star</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/r0rp3pu6sf0opkx0rp5v0ok">Vector Databases (classes)</a></li>
+<li><a href="/wiki/notes/s0zlr77ing9di5oip0s0s7y">Anzograph DB (public-notes)</a></li>
+<li><a href="/wiki/notes/colifmdgrpheolby8rpaunn">json-rql (public-notes)</a></li>
+<li><a href="/wiki/notes/jhopk9p3diourocvkbdeswf">Full Stack Linked Data (public-notes)</a></li>
+</ul>

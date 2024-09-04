@@ -1,0 +1,33 @@
+<h1 id="domain-events-versus-event-sourcing">Domain Events versus Event Sourcing<a aria-hidden="true" class="anchor-heading icon-link" href="#domain-events-versus-event-sourcing"></a></h1>
+<ul>
+<li>url: <a href="https://www.innoq.com/en/blog/2019/01/domain-events-versus-event-sourcing/">https://www.innoq.com/en/blog/2019/01/domain-events-versus-event-sourcing/</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Comparand (Private)</a> : <a href="/wiki/notes/prbis54rvnvjcg4y74map4h">Event Sourcing</a> <a href="/wiki/notes/zi949w2922jz7ep056ufvqw">Domain Event</a></li>
+</ul>
+<h2 id="conclusion">Conclusion<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h2>
+<ul>
+<li>"The events from event sourcing should therefore only be used internally in the corresponding aggregate or in the context of CQRS to build related read models.</li>
+</ul>
+<p>Domain events, on the other hand, represent a specific fact or happening that is relevant regardless of the type of persistence strategy for aggregates, for example, for integrating bounded contexts</p>
+<p>Event sourcing and domain events can of course be used both at the same time, but should not influence each other. The two concepts are used for different purposes and should therefore not be mixed."</p>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>"the semantics of the fine-grained events from event sourcing is too low-level, both in terms of the event itself and the associated information (the “payload”) [to use those events in other contexts]"</li>
+</ul>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>interesting point, clarifying example
+<ul>
+<li>similar: <a href="/wiki/notes/prbis54rvnvjcg4y74map4h#^vnn4oe20j4t5">Should event objects used in the event-sourcing implementation also be directly used for communication? No! When solely depending on events used in the event-sourcing pattern, a direct dependency is created on the application's internal data.</a></li>
+<li>but it seems like at least sometimes, domain events could qualify as event sourcing events, and vice versa
+<ul>
+<li>e.g. 
+<ul>
+<li>user clicks "battle axe" -> app constructs intentional-command and submits to approval queue (DM, world-service)"</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>"Domain events are a domain modeling pattern" and "Event sourcing is a data modeling pattern"</li>
+</ul>
+</li>
+</ul>

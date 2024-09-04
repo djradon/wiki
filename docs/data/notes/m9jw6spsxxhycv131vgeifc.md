@@ -1,0 +1,4 @@
+
+## Solutions
+
+- [[prdct.cogniam]]

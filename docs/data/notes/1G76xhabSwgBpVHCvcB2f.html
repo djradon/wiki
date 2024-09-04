@@ -1,0 +1,38 @@
+<h1 id="act-r">ACT-R<a aria-hidden="true" class="anchor-heading icon-link" href="#act-r"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Cognitive Architecture (Private)</a></li>
+<li>written-in:   <a href="/wiki/notes/xutowhgh9j0z9wmmwnls609">Lisp</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasSite (Private)</a> <a href="http://act-r.psy.cmu.edu/">http://act-r.psy.cmu.edu/</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasSense (Private)</a>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">instanceOf (Private)</a> <a href="/wiki/notes/tvqKwaM1LyS2KerHje03z">Cognitive Architecture</a></li>
+<li>a theory for simulating and understanding human cognition</li>
+</ul>
+</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<p>ACT-R’s main components are:</p>
+<pre><code>modules,
+buffers,
+pattern matcher.
+</code></pre>
+<p>Modules</p>
+<p>There are two types of modules:</p>
+<pre><code>perceptual-motor modules, which take care of the interface with the real world (i.e., with a simulation of the real world), The most well-developed perceptual-motor modules in ACT-R are the visual and the manual modules.
+memory modules.
+</code></pre>
+<p>There are two kinds of memory modules in ACT-R:</p>
+<pre><code>declarative memory , consisting of facts such as Washington, D.C. is the capital of United States, France is a country in Europe, or 2+3=5, and
+procedural memory, made of productions. Productions represent knowledge about how we do things: for instance, knowledge about how to type the letter “Q” on a keyboard, about how to drive, or about how to perform addition.
+</code></pre>
+<p>Buffers</p>
+<p>ACT-R accesses its modules (except for the procedural-memory module) through buffers. For each module, a dedicated buffer serves as the interface with that module. The contents of the buffers at a given moment in time represents the state of ACT-R at that moment.
+Pattern Matcher</p>
+<p>The pattern matcher searches for a production that matches the current state of the buffers. Only one such production can be executed at a given moment. That production, when executed, can modify the buffers and thus change the state of the system. Thus, in ACT-R cognition unfolds as a succession of production firings.</p>
+<p>ACT-R Structure</p>
+<p>ACT-R is a hybrid cognitive architecture. Its symbolic structure is a production system; the subsymbolic structure is represented by a set of massively parallel processes that can be summarized by a number of mathematical equations. The subsymbolic equations control many of the symbolic processes. For instance, if several productions match the state of the buffers, a subsymbolic utility equation estimates the relative cost and benefit associated with each production and decides to select for execution the production with the highest utility. Similarly, whether (or how fast) a fact can be retrieved from declarative memory depends on subsymbolic retrieval equations, which take into account the context and the history of usage of that fact. Subsymbolic mechanisms are also responsible for most learning processes in ACT-R.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/r4q8ystwpluezrvhx3y8m3s">The Matrix ABM (public-notes)</a></li>
+</ul>

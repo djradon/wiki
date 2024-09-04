@@ -1,0 +1,38 @@
+<h1 id="virtual-threads">Virtual Threads<a aria-hidden="true" class="anchor-heading icon-link" href="#virtual-threads"></a></h1>
+<h2 id="use-cases">Use cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h2>
+<ul>
+<li>"If your application frequently performs heavy computation for very long durations, then virtual threads may be a bad fit to begin with because your system may easily become overcommitted by orders of magnitude."</li>
+<li>"If you're using SQLite or RocksDB, think carefully before adopting virtual threads."</li>
+<li>"We have had a quick glimpse at using virtual threads with Groovy and <a href="/wiki/notes/9sx20jjy82xlrv12mk70yo9">Gpars</a>"</li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li><a href="/wiki/notes/4r1abumcp532n2549s9pfgm">Helidon</a> is the first Java microservices framework based on virtual threads.</li>
+</ul>
+<h2 id="comparisons">Comparisons<a aria-hidden="true" class="anchor-heading icon-link" href="#comparisons"></a></h2>
+<h3 id="vs-denoweb-workers">vs Deno/Web Workers<a aria-hidden="true" class="anchor-heading icon-link" href="#vs-denoweb-workers"></a></h3>
+<ul>
+<li>
+<p>"Performance Management and Scalability:</p>
+<p>  Java Virtual Threads: They are designed to be lightweight and highly scalable, especially for IO-bound tasks. The JVM manages these threads efficiently, allowing for the creation of thousands to millions of concurrent threads with a much lower memory footprint compared to traditional threads.
+Deno Web Workers: While powerful for CPU-bound tasks and parallel processing, each worker is a heavier construct compared to a Virtual Thread. This means that while they're excellent for offloading intensive tasks, they might not be as scalable as Virtual Threads for handling many small, concurrent tasks.</p>
+<p>Concurrency Model:</p>
+<p>  Java Virtual Threads: They offer a straightforward model for writing concurrent code, similar to traditional threading but with a much lower overhead. This makes them ideal for applications with a large number of concurrent, mostly idle tasks.
+Deno Web Workers: They follow a message-passing model which can be more robust in terms of avoiding shared state problems, but it might require a different way of thinking about problem-solving, particularly for those used to shared-state concurrency models."</p>
+<pre><code>- @chatgpt.4
+</code></pre>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://spring.io/blog/2022/10/11/embracing-virtual-threads">https://spring.io/blog/2022/10/11/embracing-virtual-threads</a></li>
+<li><a href="https://dev.to/devsegur/java-virtual-threads-vs-kotlin-coroutines-4ma8">https://dev.to/devsegur/java-virtual-threads-vs-kotlin-coroutines-4ma8</a></li>
+<li><a href="https://itnext.io/kotlin-coroutines-vs-java-virtual-threads-a-good-story-but-just-that-91038c7d21eb">https://itnext.io/kotlin-coroutines-vs-java-virtual-threads-a-good-story-but-just-that-91038c7d21eb</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/vfnzshdv7ty6hiqhdtbfmt8">Actr (public-notes)</a></li>
+<li><a href="/wiki/notes/tvixlgcjkhkfp3xm9ouuk8b">Fibry (public-notes)</a></li>
+<li><a href="/wiki/notes/9sx20jjy82xlrv12mk70yo9">Gpars (public-notes)</a></li>
+</ul>

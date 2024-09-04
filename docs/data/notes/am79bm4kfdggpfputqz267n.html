@@ -1,0 +1,27 @@
+<h1 id="design-issues">Design Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#design-issues"></a></h1>
+<ul>
+<li><a href="https://www.w3.org/DesignIssues/">https://www.w3.org/DesignIssues/</a></li>
+</ul>
+<h2 id="linked-data">Linked Data<a aria-hidden="true" class="anchor-heading icon-link" href="#linked-data"></a></h2>
+<ul>
+<li><a href="https://www.w3.org/DesignIssues/LinkedData.html">https://www.w3.org/DesignIssues/LinkedData.html</a></li>
+</ul>
+<ul>
+<li>Use URIs as names for things</li>
+<li>Use HTTP URIs so that people can look up those names</li>
+<li>When someone looks up a URI, provide useful information, using the standards (RDF*, SPARQL)</li>
+<li>Include links to other URIs. so that they can discover more things. (sic)</li>
+</ul>
+<h2 id="icing-on-the-cake">Icing on the cake<a aria-hidden="true" class="anchor-heading icon-link" href="#icing-on-the-cake"></a></h2>
+<ul>
+<li>"It would certainly be interesting for someone to make a web interface for a version control system which is all icing on the original cake, where at any point you can strip off the ,stuff and get back to the original file live on the web site"
+<ul>
+<li><a href="/wiki/notes/8kx0my2jgso4ip2mo61tyax">@tim-berners-lee</a></li>
+</ul>
+</li>
+<li>"The <a href="/wiki/notes/oav7t04pwgiql9e7l2jfdxa">Memento</a> protocol is a good example of a machine-readable icing on the cake. It adds HTTP headers to allow older versions of a web page to be found, allowing a momento-equipped browser to explore the timeline of a web page's histroy.'"</li>
+</ul>
+<h3 id="conclusion">Conclusion<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h3>
+<ul>
+<li>the "icing on the cake" pattern, in which all services around a live web page are available at URIs made by adding small strings to the same URI, has many nice properties. It is easy to use, and scales well as new facilities are added. Future systems, especially version control systems, but also access control systems, should be desigend with that in mind. Not only should one make the facilities available to a human user by adding (say) the comma by hand, but also make the facilities visible to software by adding a link of some sort.</li>
+</ul>

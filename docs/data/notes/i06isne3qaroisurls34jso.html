@@ -1,0 +1,47 @@
+<h1 id="wolverine">Wolverine<a aria-hidden="true" class="anchor-heading icon-link" href="#wolverine"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">c.software.message-bus (Private)</a></li>
+<li>url: <a href="https://wolverine.netlify.app/">https://wolverine.netlify.app/</a></li>
+<li>similar_to: <a href="/wiki/notes/vmuutz9km59eyd7qxs6c8p2">MassTransit</a></li>
+<li>requires: <a href="/wiki/notes/0cqaqq7sa8g4d533ro77knx">Lamar</a> <a href="/wiki/notes/bvqecybtit80as0koga8eth">Oakton</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">workedWith (Private)</a> <a href="/wiki/notes/hp8v82dnpu6jcovegtw1zyf">Marten</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">supports (Private)</a> <a href="/wiki/notes/ye18o9yvi293lwythpaii3d">RabbitiMQ</a></li>
+</ul>
+<h2 id="description">Description<a aria-hidden="true" class="anchor-heading icon-link" href="#description"></a></h2>
+<ul>
+<li>Wolverine is a framework built around the idea of message processing where “messages” could be coming from inline invocation like MediatR or local in process queues or external message brokers through asynchronous messaging ala the much older MassTransit or NServiceBus frameworks.</li>
+<li>Wolverine was largely rescued off the scrap heap and completely rebooted specifically to work in conjunction with Marten as a full blow event driven architecture stack.</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>the message handlers are found by default through naming conventions. But if you hate that, no worries, there are options to use much more explicit approaches.
+<ul>
+<li>Wolverine happily lets you eschew any of the conventional magic and write explicit code where you would be completely in charge of all the EF Core usage. The importance of being able to immediately bypass any conventions and drop into explicit code as needed was an important takeaway from my earlier FubuMVC failure.</li>
+</ul>
+</li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>Some folks complain that Wolverine forces you to use Lamar as the DI container for your application, but doing so enabled Wolverine to do the codegen the way that it is.
+<ul>
+<li>"the fasted DI container is “no DI container”"</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.dotnetrocks.com/details/1823">https://www.dotnetrocks.com/details/1823</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://jeremydmiller.com/2024/02/15/answering-some-concerns-about-wolverine/">https://jeremydmiller.com/2024/02/15/answering-some-concerns-about-wolverine/</a>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/lj53v2crj0cec9kv9qejtfj">Messaging (public-notes)</a></li>
+</ul>

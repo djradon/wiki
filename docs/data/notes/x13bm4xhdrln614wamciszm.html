@@ -1,0 +1,62 @@
+<h1 id="protoactor">Proto.Actor<a aria-hidden="true" class="anchor-heading icon-link" href="#protoactor"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Distributed-Systems-Runtime (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Actor Framework (Private)</a></li>
+<li>url: <a href="https://proto.actor">https://proto.actor</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">similarTo (Private)</a> <a href="/wiki/notes/utmsc3ewjjs81fsgw9q48kf">Orleans</a> <a href="/wiki/notes/8ghc5nmww1hu02p2nypbicw">Akka Net</a> </li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Implementation (Private)</a>
+<ul>
+<li><a href="https://github.com/asynkron/protoactor-go">https://github.com/asynkron/protoactor-go</a> <a class="color-tag" style="--tag-color: #a8a495;" href="/wiki/notes/7a7eoq5rguwn7l3efzxk3yl">#go</a> </li>
+<li><a href="https://github.com/asynkron/protoactor-dotnet">https://github.com/asynkron/protoactor-dotnet</a> c#</li>
+<li><a href="https://github.com/asynkron/protoactor-kotlin">https://github.com/asynkron/protoactor-kotlin</a> <a class="color-tag" style="--tag-color: #960056;" href="/wiki/notes/5wipjx5zn5s2mdmr1tsbz8a">#kotlin</a></li>
+</ul>
+</li>
+<li>uses: gRPC with protobuf</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>migration -> local affinity <a href="https://proto.actor/docs/local-affinity/">https://proto.actor/docs/local-affinity/</a></li>
+<li>"Proto.Actor uses Protobuf for serialization, a decision that vastly simplifies the way Proto.Actor works. Message based systems should be about passing information, not passing complex OOP object graphs or code." </li>
+<li>"Proto.Actor also uses gRPC, leveraging HTTP/2 streams for network communication."</li>
+<li>Proto.Persistence module allows an actor to recover its state when it is started and supports three modes of operation:
+<ul>
+<li>Event Sourcing</li>
+<li>Snapshotting</li>
+<li>Event Sourcing with Snapshotting 
+<ul>
+<li>snapshotting becomes a performance optimisation for cases when you have large numbers of events to replay to rebuild the state of your actor</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>"Just like everything else in Proto.Actor where we have re-used proven technologies such as Protobuf and gRPC, we do the same for clustering, we do not reinvent the wheel and create our own cluster mechanics. Instead, we leverage proven technologies such as Consul, ETCD or Kubernetes to power our Cluster member management."</li>
+</ul>
+<h3 id="behaviors">Behaviors<a aria-hidden="true" class="anchor-heading icon-link" href="#behaviors"></a></h3>
+<ul>
+<li>Actors can change their behavior at any time. This is achieved through the Behavior class included with the core Proto.Actor library.</li>
+</ul>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>"Message based systems should be about passing information, not passing complex OOP object graphs or code." <a href="https://proto.actor/docs/what-is-protoactor/">1</a></li>
+</ul>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<ul>
+<li><a href="https://github.com/asynkron/realtimemap-dotnet">https://github.com/asynkron/realtimemap-dotnet</a></li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://proto.actor/docs/what-is-protoactor/">https://proto.actor/docs/what-is-protoactor/</a></li>
+</ul>
+<h3 id="learning-resource">Learning Resource<a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resource"></a></h3>
+<ul>
+<li><a href="https://proto.actor/docs/bootcamp/">https://proto.actor/docs/bootcamp/</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/exxdl5e1tjctca2adjhzxmo">Elsa (public-notes)</a></li>
+<li><a href="/wiki/notes/s1b2hshk9rfo7xvnozu5s03">Actors (public-notes)</a></li>
+</ul>

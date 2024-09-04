@@ -1,0 +1,51 @@
+<h1 id="schemaorg">Schema.org<a aria-hidden="true" class="anchor-heading icon-link" href="#schemaorg"></a></h1>
+<h2 id="overview">Overview<a aria-hidden="true" class="anchor-heading icon-link" href="#overview"></a></h2>
+<ul>
+<li>There are three kinds of schema.org term in the schema.org data model: types, properties and enumerated values</li>
+</ul>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<h3 id="reservationfor-rdfobject-schemathing">"reservationFor" rdf:object schema:Thing<a aria-hidden="true" class="anchor-heading icon-link" href="#reservationfor-rdfobject-schemathing"></a></h3>
+<ul>
+<li>in common language, this property could imply "who is the reservation for" instead of "what is being reserved"</li>
+<li>'underName' takes a Person or Organization... so I guess you just re-use that property to list all the people. But in a programmatic domain model, you'd use a collection, ideally a typed collection... I guess a weakness of RDF, not schema.org</li>
+<li>what's the point of specifying 'schema:rangeIncludes": { "@id": "schema:Thing" }'</li>
+</ul>
+<h2 id="style-guide">Style Guide<a aria-hidden="true" class="anchor-heading icon-link" href="#style-guide"></a></h2>
+<h3 id="naming-conventions">Naming conventions<a aria-hidden="true" class="anchor-heading icon-link" href="#naming-conventions"></a></h3>
+<ul>
+<li>Do not give the same name to a type and a property.
+<ul>
+<li>Note that schema.org has some legacy cases where this was done in the past. This practice should be avoided.</li>
+<li>E.g. Avoid creating both <a href="https://schema.org/ContactPoint">ContactPoint</a> and <a href="https://schema.org/contactPoint">contactPoint</a>.</li>
+</ul>
+</li>
+<li><em>Term names should use Singular naming only</em>, even if the semantics call for a plural.
+<ul>
+<li>E.g. <a href="https://schema.org/parent">parent</a> and not parents, even though for each type, there will always be multiple values for the property <a href="https://schema.org/parent">parent</a>.</li>
+</ul>
+</li>
+<li><em>Prepositions</em> should come after the type or property name.
+<ul>
+<li>E.g. <a href="https://schema.org/reservationFor">reservationFor</a>.</li>
+</ul>
+</li>
+<li><em>Abbreviations</em>: When creating new types, spell out abbreviations, unless the result is painfully verbose.
+<ul>
+<li>Due to legacy entries, sometimes certain words may be abbreviated, or not, in schema.org. Due to lack of consistency, should search for both when looking for a schema term.</li>
+<li>E.g. <a href="https://schema.org/numTracks">numTracks</a> exists in schema.org as a legacy property. If we were creating this property now, it would be <em>numberOfTracks</em> (or better yet, name it <em>trackCount</em> to be semantically aligned with other counting properties).</li>
+</ul>
+</li>
+<li><em>Spelling</em>: US spellings must be used.
+<ul>
+<li>E.g. <a href="https://schema.org/color">color</a> and not colour.</li>
+</ul>
+</li>
+</ul>
+<h4 id="thoughts-on-naming-conventions">Thoughts on Naming Conventions<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts-on-naming-conventions"></a></h4>
+<ul>
+<li>it's a red flag that types and properties could have the same name. I've grappled with this for <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">gd (Private)</a>... if you're going to say "has <type>", having a separate property seems redundant</type></li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://schema.org/docs/styleguide.html">https://schema.org/docs/styleguide.html</a></li>
+</ul>

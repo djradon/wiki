@@ -1,0 +1,60 @@
+<h1 id="when-you-use-rdfstype-on-classes-i-guess-it-gets-back-to-the-difference-between-superclass-and-powerclass">When You Use rdfs:type on Classes I Guess It Gets Back to the Difference between Superclass and Powerclass<a aria-hidden="true" class="anchor-heading icon-link" href="#when-you-use-rdfstype-on-classes-i-guess-it-gets-back-to-the-difference-between-superclass-and-powerclass"></a></h1>
+<p>Sure! Below are examples of how to use <code>rdfs:subClassOf</code> and <code>rdfs:type</code> on classes in RDF using the Turtle syntax.</p>
+<h3 id="1-superclass-subclass-relationship">1. Superclass-Subclass Relationship<a aria-hidden="true" class="anchor-heading icon-link" href="#1-superclass-subclass-relationship"></a></h3>
+<p>This example shows a superclass-subclass relationship where <code>Car</code> is a subclass of <code>Vehicle</code>.</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Vehicle</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Car</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">;</span>
+       <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">subClassOf</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Vehicle</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<h3 id="2-metaclass-instance-relationship-powertype">2. Metaclass-Instance Relationship (Powertype)<a aria-hidden="true" class="anchor-heading icon-link" href="#2-metaclass-instance-relationship-powertype"></a></h3>
+<p>This example demonstrates a metaclass-instance relationship where <code>Car</code> is an instance of the <code>VehicleType</code> metaclass.</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">VehicleType</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Car</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">VehicleType</span></span> <span class="token punctuation">;</span>
+       <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<h3 id="explanation">Explanation<a aria-hidden="true" class="anchor-heading icon-link" href="#explanation"></a></h3>
+<ul>
+<li>
+<p><strong>Superclass-Subclass Example</strong>:</p>
+<ul>
+<li><code>ex:Vehicle</code> is defined as a class.</li>
+<li><code>ex:Car</code> is also defined as a class and is specified to be a subclass of <code>ex:Vehicle</code> using <code>rdfs:subClassOf</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Metaclass-Instance Example</strong>:</p>
+<ul>
+<li><code>ex:VehicleType</code> is defined as a class that serves as a metaclass (powertype).</li>
+<li><code>ex:Car</code> is defined as an instance of <code>ex:VehicleType</code> and also as a class itself.</li>
+</ul>
+</li>
+</ul>
+<h3 id="complete-example-with-both-concepts">Complete Example with Both Concepts<a aria-hidden="true" class="anchor-heading icon-link" href="#complete-example-with-both-concepts"></a></h3>
+<p>To provide a more comprehensive example, here’s how both relationships can coexist in a single Turtle file:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://www.w3.org/1999/02/22-rdf-syntax-ns#<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://www.w3.org/2000/01/rdf-schema#<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://example.org/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token comment"># Define Vehicle as a class</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Vehicle</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">.</span>
+
+<span class="token comment"># Define VehicleType as a metaclass</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">VehicleType</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">.</span>
+
+<span class="token comment"># Define Car as both a subclass of Vehicle and an instance of VehicleType</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Car</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">;</span>
+       <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">subClassOf</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Vehicle</span></span> <span class="token punctuation">;</span>
+       <span class="token keyword">a</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">VehicleType</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<h3 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h3>
+<ul>
+<li><strong>Superclass-Subclass Relationship</strong>: Use <code>rdfs:subClassOf</code> to define a class hierarchy where one class is a subclass of another.</li>
+<li><strong>Metaclass-Instance Relationship</strong>: Use <code>rdfs:type</code> on classes to define that a class is an instance of a metaclass, establishing a higher-level classification.
+<ul>
+<li>t.2024.08.23.23 aka <a href="/notes/64ugzw02qgdm4umxjzj2mv1">Multi Level Theory</a>
+These examples should help clarify how to use <code>rdfs:subClassOf</code> and <code>rdfs:type</code> on classes in RDF using the Turtle syntax.</li>
+</ul>
+</li>
+</ul>

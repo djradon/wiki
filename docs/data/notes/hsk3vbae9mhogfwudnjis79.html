@@ -1,0 +1,21 @@
+<h1 id="rdfa">RDFa<a aria-hidden="true" class="anchor-heading icon-link" href="#rdfa"></a></h1>
+<h2 id="cons">Cons<a aria-hidden="true" class="anchor-heading icon-link" href="#cons"></a></h2>
+<ul>
+<li>adding inline semantic markup to existing web pages can be tricky and time-consuming when it is necessary to understand the existing page structure and the hierarchical nesting of various <code>&#x3C;div></code> and <code>&#x3C;span></code> elements - and care must be taken to check that the RDF triples that can be extracted from the page are as intended, without mis-connected nodes or dangling nodes. Sometimes it is necessary to re-assert the <code>Subject</code> of a set of RDF triples using the about attribute.</li>
+<li>inline semantic markup can break very easily if further HTML edits are made to a semantically annotated page, without involving the semantic annotator in the discussion. A simple example of this is that the person adding the inline semantic annotations might use an attribute such as <code>property="schema:image"</code> or <code>itemprop="schema:image"</code> to indicate that a specific image on the page is a depiction of the <code>Subject</code>. Now if someone else wraps an <code>&#x3C;a href></code> hyperlink around the annotated image, then the image is then considered to be a <code>schema:image</code> property of the thing identified by the URL of the new hyperlink, rather than the <code>schema:image</code> of the original <code>Subject</code>. The original triple can be restored by inserting an <code>about</code> attribute within the <code>&#x3C;img></code> image tag - but it seems undesirable that this kind of defensive coding must be used merely to ensure that another web editor cannot easily break the RDF triples that were originally intended to be present.</li>
+<li>compare "single block markup using <a href="/wiki/notes/rgof5gwgwgrz3vp3394kfmq">JSON-LD</a>": 
+<ul>
+<li>the single block of JSON-LD markup is decoupled from the human-readable HTML markup appearing in the  of the page, which means that if changes are made to the structure of the  section, there is much less risk of breaking or misconnecting the collection of RDF triples that can be extracted from the page.</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.w3.org/2006/07/SWD/RDFa/primer/">https://www.w3.org/2006/07/SWD/RDFa/primer/</a></li>
+</ul>
+<p><a href="https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/docs/Part%201%20-%20Designing%20the%20API&#x27;s.md">https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/docs/Part%201%20-%20Designing%20the%20API's.md</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/qo9w39vhuarh6517tlgy38n">Osds (public-notes)</a></li>
+</ul>

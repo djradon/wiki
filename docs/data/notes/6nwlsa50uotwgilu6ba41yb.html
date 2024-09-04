@@ -1,0 +1,87 @@
+<h1 id="abc-ontology">Abc Ontology<a aria-hidden="true" class="anchor-heading icon-link" href="#abc-ontology"></a></h1>
+<ul>
+<li><a href="https://dcpapers.dublincore.org/article/952106556">https://dcpapers.dublincore.org/article/952106556</a>
+<ul>
+<li><a href="https://dcpapers.dublincore.org/files/articles/952106556/dcmi-952106556.pdf">https://dcpapers.dublincore.org/files/articles/952106556/dcmi-952106556.pdf</a> has an appendix with the ontology represented in RDF</li>
+</ul>
+</li>
+</ul>
+<p><img src="/wiki/assets/images/2024-08-19-11-30-47.png"></p>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>tries to describe everything using the same basic structures and had its roots in factual events outside the document. <a id="fnref-1" class="fnref" href="#fn-1">1</a></li>
+</ul>
+<h2 id="model">Model<a aria-hidden="true" class="anchor-heading icon-link" href="#model"></a></h2>
+<ul>
+<li>entity
+<ul>
+<li>temporality</li>
+<li>actuality</li>
+<li>abstraction</li>
+</ul>
+</li>
+</ul>
+<h3 id="temporality">Temporality<a aria-hidden="true" class="anchor-heading icon-link" href="#temporality"></a></h3>
+<ul>
+<li>the ABC model makes it possible to unambiguously express states in which object properties exist, the transitions that demark those states, and the actions and agency that participate in those transitions.</li>
+<li>A state provides the context for framing time- dependent properties of entities. Every ABC description has an implicit global context and can have additional states that are local contexts. Effectively, entities and their property sets that are not associated with a state (through an instate property) exist across time in the world view of the description.</li>
+<li>An event marks a transition from one state to another. Events always have time properties. The effect is that a state implicitly has time duration as defined by its bounding events
+<ul>
+<li>e.g.: the model could express the loan of the Mona Lisa to the Metropolitan Museum as follows: a instance of the Mona Lisa with a property “located at the Metropolitan” could be associated with a state that is that associated via hasInput and hasOut properties with two events, one of which gives the time of the loan, the other the time of the return</li>
+</ul>
+</li>
+<li>An action denotes a verb in the context of event– the hasAction property connects an action to an event. Actions provide the locus for Agents and express the responsibility of a person or organization in some act.</li>
+</ul>
+<h3 id="actuality">Actuality<a aria-hidden="true" class="anchor-heading icon-link" href="#actuality"></a></h3>
+<ul>
+<li>encompasses entities that are sensible – they can be heard, seen, smelled, or touched. </li>
+<li>entities that are Actualities, can have a time-independent facet and many time-dependent facets. ABC expresses this notion through the inState and hasInstance properties.
+<ul>
+<li>e.g.: Bill Clinton might have one entity (resource) with the property “born in Arkansas” that is related via the hasInstance property to an entity (resource) with property “President of the United States”
+<ul>
+<li>The latter would be related via the inState property to a State that resulted from an Event representing Clinton’s election in 1992.</li>
+<li>The result is a statement that expresses the “sameness” of the two entities (they are both “Bill Clinton”), but the fact that one is an occurrent facet and one is a continuant facet.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ABC model also incorporates intellectual creation semantics influenced by the <a href="/wiki/notes/u1040plcuvr7vug0brx3sve">Ifla Functional Requirements for Bibliographic Records</a>
+<ul>
+<li>subcategory of actuality is Artifact, expresses sensible entities that are tangible realizations of preconceived concepts, and that can be manifested in multiple ways; e.g., as Manifestations and Items (<a href="/wiki/notes/gpjt0tgwkb6khor1tcvlgmb">Work, Expression, Manifestation, Item</a>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="abstraction">Abstraction<a aria-hidden="true" class="anchor-heading icon-link" href="#abstraction"></a></h3>
+<ul>
+<li>concepts or ideas
+<ul>
+<li>never stateful</li>
+<li>While it can be argued that an idea is “born” at some time, ABC treats the “birth of an idea” when it is manifested in some sensible way; e.g., when it is told, demonstrated, or shown in some manner.</li>
+<li>ideas cannot exist in isolation in the model. They must be bound to some Actuality through the hasRealization property.
+<ul>
+<li>t.2024.05.31.10 since psychological modeling is important for <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">sh.compnts.cognitive-engine (Private)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="foundations">Foundations<a aria-hidden="true" class="anchor-heading icon-link" href="#foundations"></a></h2>
+<ul>
+<li><a href="/wiki/notes/oj87ka6r4ftvin1t3t68tgf">Situational Calculus</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<hr>
+<h2 id="footnotes">Footnotes<a aria-hidden="true" class="anchor-heading icon-link" href="#footnotes"></a></h2>
+<ol>
+<li><span id="fn-1" style="width: 0; height: 0;"></span><p><a href="/wiki/notes/psmltou2po857f068x03d7x">Onto Media Creating an Ontology for Marking up the Contents of Fiction and Other Media</a><a class="fn" href="#fnref-1">˄</a></p></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/bp4xf4smzbtvrq14zbt1vwf">Linked Data and Time Modeling Researcher Life Lines by Events (public-notes)</a></li>
+<li><a href="/wiki/notes/wpwzq9ttwck0zgdxivomgiq">Lode Linking Open Descriptions of Events (public-notes)</a></li>
+<li><a href="/wiki/notes/ibynfb2m7ohzzufji9m063s">Onto Media an Ontology for the Representation of Heterogeneous Media (public-notes)</a></li>
+<li><a href="/wiki/notes/psmltou2po857f068x03d7x">Onto Media Creating an Ontology for Marking up the Contents of Fiction and Other Media (public-notes)</a></li>
+<li><a href="/wiki/notes/lcbxpavzjfy9p71s6ick0a7">Instances Are Sometimes Classes (public-notes)</a></li>
+<li><a href="/wiki/notes/twccw0iaye1yncgudxrr8a1">Ontomedia (public-notes)</a></li>
+</ul>

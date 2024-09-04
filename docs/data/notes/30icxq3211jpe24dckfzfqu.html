@@ -1,0 +1,29 @@
+<h1 id="screeps">Screeps<a aria-hidden="true" class="anchor-heading icon-link" href="#screeps"></a></h1>
+<ul>
+<li>repo: <a href="https://github.com/screeps/screeps">https://github.com/screeps/screeps</a></li>
+<li>written_in: javascript</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^zwsvp7ab3c0e" href="#^zwsvp7ab3c0e"></a>similar: <a href="/wiki/notes/m0r1e3imt2m3cdpw1ewdkxu">Robocode</a> <a href="/wiki/notes/mk3tbn601x0ha5q125ly3ia">Tank Royale</a> <a href="/wiki/notes/30icxq3211jpe24dckfzfqu">Screeps</a> <a href="/wiki/notes/mlv4hxyo6rufbtiwa0o86wc">Battlecode</a> <a href="/wiki/notes/jqdwn822o8ul8cvuyna51cy">Space Traders</a> </li>
+</ul>
+<h2 id="architecture">Architecture<a aria-hidden="true" class="anchor-heading icon-link" href="#architecture"></a></h2>
+<ul>
+<li><img src="/wiki/assets/images/2024-04-04-21-40-04.png"></li>
+<li><a href="https://github.com/screeps/launcher"><code>launcher</code></a> launches the rest of the processes, and it includes the server control GUI.</li>
+<li><a href="https://github.com/screeps/storage"><code>storage</code></a> contains a LokiJS-based database, a key-value storage, and a Pub/Sub mechanism. The rest of the processes connect to <code>storage</code> to exchange data.</li>
+<li><a href="https://github.com/screeps/backend-local"><code>backend</code></a> contains an HTTP server accessed by clients and a CLI server for administration.</li>
+<li><a href="https://github.com/screeps/engine"><code>engine</code></a> is the game core. It executes game scripts and interacts with game world objects.</li>
+<li><a href="https://github.com/screeps/driver"><code>driver</code></a> is a link between the environment-independent <code>engine</code> (that is shared for the official server, standalone server, and in-browser simulation) and the immediate environment that hosts the game engine. You can replace this module with your own one, if you wish to use another method of storing and handling data.</li>
+<li><a href="https://github.com/screeps/common"><code>common</code></a> is a shared code base with useful utilities.</li>
+</ul>
+<ul>
+<li>repo: <a href="https://github.com/screeps/screeps">https://github.com/screeps/screeps</a></li>
+<li></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/30icxq3211jpe24dckfzfqu">Screeps (public-notes)</a></li>
+<li><a href="/wiki/notes/jqdwn822o8ul8cvuyna51cy">Space Traders (public-notes)</a></li>
+<li><a href="/wiki/notes/mlv4hxyo6rufbtiwa0o86wc">Battlecode (public-notes)</a></li>
+<li><a href="/wiki/notes/oQytHEpI883rvZExLhPl6">Jint (public-notes)</a></li>
+<li><a href="/wiki/notes/m0r1e3imt2m3cdpw1ewdkxu">Robocode (public-notes)</a></li>
+</ul>

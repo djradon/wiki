@@ -1,0 +1,88 @@
+<h1 id="functional-requirements-for-information-resource-provenance-on-the-web">Functional Requirements for Information Resource Provenance on the Web<a aria-hidden="true" class="anchor-heading icon-link" href="#functional-requirements-for-information-resource-provenance-on-the-web"></a></h1>
+<ul>
+<li><a href="https://link.springer.com/chapter/10.1007/978-3-642-34222-6_5">https://link.springer.com/chapter/10.1007/978-3-642-34222-6_5</a></li>
+<li>topic: <a href="/wiki/notes/xx6jmndrvckn906kc2thmmj">Functional Requirements for Information Resources (FRIR)</a></li>
+<li>authors: <a href="/wiki/notes/ol9oumgrl5somo2kivp9okt">@jamie-mccusker</a> <a href="/wiki/notes/6kqzxh75ro3qxusmqv2o7dm">@deborah-mcguinness</a></li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<h3 id="the-semiotics-of-http-urls">The Semiotics of HTTP URLs<a aria-hidden="true" class="anchor-heading icon-link" href="#the-semiotics-of-http-urls"></a></h3>
+<p><img src="/wiki/assets/images/2024-08-21-12-51-39.png"></p>
+<ul>
+<li>the document retrieved cannot be defined only as a representation of a resource
+<ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^w1t3fxtaiozl" href="#^w1t3fxtaiozl"></a>The document can be described in terms of either its content or the set of bytes used to represent it – or both </li>
+</ul>
+</li>
+</ul>
+<h3 id="frbr-and-frir">FRBR and FRIR<a aria-hidden="true" class="anchor-heading icon-link" href="#frbr-and-frir"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Frbr</span></div>
+<a href="/wiki/notes/dek450y2cja0kq309elq8ch" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^kph9708t2eod" href="#^kph9708t2eod"></a>FRBR can describe how different copies of the same book, or differ- ent editions of the book, relate to each other. The most concrete aspect is the Item – the physical book that exists in the world. Items are singular entities; making a copy of an Item results in a new Item. Items are exemplars of Manifes- tations, which represent similar physical structure. For instance, an exact copy of an Item preserves the original Manifestation. If the copy is inexact, or if the book is turned into an audio book, then the Manifestation changes. However, the Expression of the paperback and audio book remains the same, because the Expression reflects particular content regardless of physical configuration. An Expression in turn realizes a Work, which is “a distinct intellectual or artistic creation.” [7] A Work remains the same through different realized Expressions that result from translation, revision, or any other change. </li>
+</ul>
+</div></div><p></p><p></p>
+<ul>
+<li>Functional Requirements for Information Resources5 (FRIR) extends the use of frbr:Work, frbr:Expression, frbr:Manifestation, and frbr:Item to electronic resources, and therefore any information resource. </li>
+<li>a frbr:Work remains a distinct intellectual or artistic creation. 
+<ul>
+<li>A frbr:Work corresponds to the Resource or Referent in the semiotic framework discussed above, and is identified by a URL, as was shown in Figure 2</li>
+</ul>
+</li>
+<li>frbr:Expression corresponds to a specific set of content regardless of its serialization.
+<ul>
+<li>For instance, two files would have the same frbr:Expression if they are the same picture stored in two different formats
+<ul>
+<li>t.2024.08.21.15 this is a bit blurry, but a Turtle and JSON-LD could be expressions of the same ontology</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>frbr:Manifestations correspond to a specific bit pattern. If a file is an exact copy of another file, they have the same frbr:Manifestation.</li>
+<li>An frbr:Item is a specific copy of information stored somewhere or transmitted through a communication link. If a copy of the frbr:Item is made, it results in a new frbr:Item.</li>
+<li>FRIR also integrates FRBR with the W3C Provenance Ontology (PROV-O) by declaring frbr:Endeavour to be a subclass of prov:Entity and mapping 14 of 18 frbr:relatedEndeavour subproperties as subproperties of one or more of prov:wasDerivedFrom, prov:alternateOf, and prov:specializationOf, as shown in Figure 3.</li>
+</ul>
+<p><img src="/wiki/assets/images/2024-08-21-12-56-17.png"></p>
+<ul>
+<li>As part of FRIR we have identified two levels of cryptographically computable identity: content and message.
+<ul>
+<li>Conventional message digests correspond to frbr:Manifestation</li>
+<li>content digests correspond to frbr:Expressions
+<ul>
+<li>content digests have been developed for RDF graphs, spreadsheets, images, and XML documents that provide the same digest hash regardless of any particular serialization</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="explaining-http-with-frbr-frir-and-prov-o">Explaining HTTP with FRBR, FRIR, and PROV-O<a aria-hidden="true" class="anchor-heading icon-link" href="#explaining-http-with-frbr-frir-and-prov-o"></a></h3>
+<ul>
+<li>n.b.: two identifiers can potentially denote the same thing, e.g. a mirror is the same work
+<ul>
+<li>t.2024.08.21.15 it's an interesting case when a single identifier can identify a work, an expression, a manifestation, and arguably an item.</li>
+</ul>
+</li>
+<li>We uniquely identify the data streamed over a particular HTTP transaction using the combined message digest of the HTTP header and content.</li>
+<li>This enables provenance trace assertions to be applied to individual HTTP transactions without having to store the entire transaction.</li>
+</ul>
+<h2 id="implementation">Implementation<a aria-hidden="true" class="anchor-heading icon-link" href="#implementation"></a></h2>
+<ul>
+<li><a href="https://github.com/timrdf/csv2rdf4lod-automation/wiki/Script:-pcurl.py">https://github.com/timrdf/csv2rdf4lod-automation/wiki/Script:-pcurl.py</a>
+<ul>
+<li>uses <a href="/wiki/notes/f96iivjd66qtwplr6hg2qr5">Nepomuk File Ontology (NFO)</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/dek450y2cja0kq309elq8ch">Frbr (public-notes)</a></li>
+<li><a href="/wiki/notes/xx6jmndrvckn906kc2thmmj">Functional Requirements for Information Resources (FRIR) (public-notes)</a></li>
+<li><a href="/wiki/notes/gpjt0tgwkb6khor1tcvlgmb">Work, Expression, Manifestation, Item (public-notes)</a></li>
+</ul>

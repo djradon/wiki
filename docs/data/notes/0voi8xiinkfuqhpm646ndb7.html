@@ -1,0 +1,94 @@
+<h1 id="ontology-a-practical-guide">Ontology a Practical Guide<a aria-hidden="true" class="anchor-heading icon-link" href="#ontology-a-practical-guide"></a></h1>
+<ul>
+<li>author: <a href="/wiki/notes/q4za8t1xiieq02vktxe8bl4">@adam-pease</a></li>
+</ul>
+<h2 id="chapter-2">Chapter 2<a aria-hidden="true" class="anchor-heading icon-link" href="#chapter-2"></a></h2>
+<ul>
+<li>concerned with knowledge representation languages that allow for deduction. 
+<ul>
+<li>schema are low-expressivity and low-formality, e.g. relational database, XML</li>
+<li>taxonomy are in the middle, e.g. RDF/S, UML, OWL</li>
+<li>Logical Theory are high, e.g. <a href="/wiki/notes/wjqwfsygua76y58la0e2wop">Knowledge Interchange Format</a> and <a href="/wiki/notes/9ts960upwaa3qs5rc424g6y">Tptp</a> are the most expressive and most formal</li>
+</ul>
+</li>
+<li>"every software system has an ontology", it maybe just isn't made explicit</li>
+<li>"semantic networks" is one of the earliest <a href="/wiki/notes/lk5x1k6394y1u5ceynvzp4g">Knowledge Representation</a></li>
+<li><a href="/wiki/notes/ojx2sbje1tc61cefor2clb7">Object Orientation</a> combine procedural specification with a small amount of declarative (e.g., classes, instances, class-subclass relations), i.e., the barest minimum</li>
+<li>Frame languages lack a facility for expressing rules</li>
+<li><a href="/wiki/notes/2drmesk5l5u1s06f71yp5v4">Description Logic</a></li>
+</ul>
+<h3 id="first-order-logic-in-suo-kif"><a href="/wiki/notes/9pp740i22jtygx09fo4bdfa">First Order Logic</a> in <a href="/wiki/notes/oytk0u6z5i3xav1rab2kbr7">SUO-KIF</a><a aria-hidden="true" class="anchor-heading icon-link" href="#first-order-logic-in-suo-kif"></a></h3>
+<ul>
+<li>no embedded formulas/propositions (only in higher-order logics)</li>
+</ul>
+<h3 id="ontology-development-pitfalls">Ontology Development Pitfalls<a aria-hidden="true" class="anchor-heading icon-link" href="#ontology-development-pitfalls"></a></h3>
+<ul>
+<li>Confusing Instance and Subclass</li>
+<li>Part-of vs. Subclass</li>
+<li></li>
+</ul>
+<h3 id="modeling-events-as-relations">Modeling Events as Relations<a aria-hidden="true" class="anchor-heading icon-link" href="#modeling-events-as-relations"></a></h3>
+<ul>
+<li>don't do (eats Bill HamSandwich); 
+<ul>
+<li>presumably, model events as things unto themselves</li>
+</ul>
+</li>
+<li>"Davisonian event representation" looks a lot like what I was planning to do with hypergraphs</li>
+<li>most languages that have some use in inference, like OWL, don't allow statements as arguments to relations, because it's extremely difficult to reason with.</li>
+</ul>
+<h4 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h4>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"ex:Brutus-stabbed-Caesar"</span><span class="token punctuation">,</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> "ont.occurence.
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>another reason to do kebab or snake case... preservation of capitalization (if you wanna go that route)</li>
+</ul>
+<h3 id="ontological-promiscuity--confusing-language-and-concepts">Ontological Promiscuity / Confusing Language and Concepts<a aria-hidden="true" class="anchor-heading icon-link" href="#ontological-promiscuity--confusing-language-and-concepts"></a></h3>
+<ul>
+<li>terms need to be well-defined</li>
+</ul>
+<h3 id="modelling-roles-as-classes">Modelling Roles as Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#modelling-roles-as-classes"></a></h3>
+<ul>
+<li>yay, typedb</li>
+</ul>
+<h3 id="modal-vs-normative">Modal vs Normative<a aria-hidden="true" class="anchor-heading icon-link" href="#modal-vs-normative"></a></h3>
+<ul>
+<li>can, may, should != obliged to, allowed to</li>
+</ul>
+<h3 id="chapter-2-exercises">Chapter 2 Exercises<a aria-hidden="true" class="anchor-heading icon-link" href="#chapter-2-exercises"></a></h3>
+<h4 id="an-elephant-is-a-mammal">An elephant is a mammal<a aria-hidden="true" class="anchor-heading icon-link" href="#an-elephant-is-a-mammal"></a></h4>
+<p>(forall (?X)
+(=>
+(instance ?X Elephant)
+(instance ?X Mammal)))</p>
+<h4 id="bob-likes-sue">Bob Likes Sue<a aria-hidden="true" class="anchor-heading icon-link" href="#bob-likes-sue"></a></h4>
+<p>(likes Bob Sue)</p>
+<h4 id="koko-is-a-gorilla">Koko is a gorilla<a aria-hidden="true" class="anchor-heading icon-link" href="#koko-is-a-gorilla"></a></h4>
+<p>(instance Koko Gorilla)</p>
+<h4 id="every-farmer-like-a-horse">Every farmer like a horse<a aria-hidden="true" class="anchor-heading icon-link" href="#every-farmer-like-a-horse"></a></h4>
+<p>(forall (?X)
+(=>
+(instance ?X Farmer)
+(exists (?Y)
+(and
+(likes ?X ?Y)
+(instance ?Y Horse)))))</p>
+<h2 id="chapter-3-ontologies-in-the-broadest-sense">Chapter 3: Ontologies (in the broadest sense)<a aria-hidden="true" class="anchor-heading icon-link" href="#chapter-3-ontologies-in-the-broadest-sense"></a></h2>
+<ul>
+<li>DOLCE universals are only employed in the service of describing particulars</li>
+<li>SUMO is an ontology of both particulars and universals
+<ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^79dmzjqovfhx" href="#^79dmzjqovfhx"></a>SUMO has a hierarchy of properties as well as classes </li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/9t4gwbk0fqhawfob2u74pxl">A Comparison of Upper Ontologies (public-notes)</a></li>
+<li><a href="/wiki/notes/r7wmmwwaws15llja6y5ng7h">Sumo (public-notes)</a></li>
+<li><a href="/wiki/notes/2drmesk5l5u1s06f71yp5v4">Description Logic (public-notes)</a></li>
+</ul>

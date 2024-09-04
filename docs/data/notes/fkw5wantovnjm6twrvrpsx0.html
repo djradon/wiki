@@ -1,0 +1,39 @@
+<h1 id="why-i-use-shacl-for-defining-ontology-models">Why I Use Shacl for Defining Ontology Models<a aria-hidden="true" class="anchor-heading icon-link" href="#why-i-use-shacl-for-defining-ontology-models"></a></h1>
+<ul>
+<li><a href="https://www.topquadrant.com/resources/why-i-use-shacl-for-defining-ontology-models/">https://www.topquadrant.com/resources/why-i-use-shacl-for-defining-ontology-models/</a></li>
+<li>author: <a href="/wiki/notes/3vvieuk4z83ef6pepgai4ub">@irene-polikoff</a></li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul class="contains-task-list">
+<li>
+<p>"When you create a model in SHACL, you do not need to think whether you should use rdfs:subClassOf or owl:equivalentClass in defining restriction on property values."</p>
+<ul>
+<li>
+<p>related: <a href="https://stackoverflow.com/questions/65052036/what-is-the-difference-between-owlequivalentclass-and-rdfssubclassof-when-maki">https://stackoverflow.com/questions/65052036/what-is-the-difference-between-owlequivalentclass-and-rdfssubclassof-when-maki</a></p>
+<ul>
+<li>"Semantically, you are defining the class as Primitive (subClassOf) versus Defined (equivalentClass). The main difference is in inferencing in one or both directions.</li>
+</ul>
+<p>The Primitive class is single direction:</p>
+<pre><code>any Thing with ShipsTo with values from Italy can be inferred to be a deliversToItaly 
+</code></pre>
+<p>The Defined class is both directions:
+as above, and
+any Thing that is a deliversToItay can be inferred to have shipTo with values from Italy</p>
+<p>A Defined class is used when you are confident that you have necessary and sufficient rules for class membership - otherwise Primitive is used for necessary rules only."</p>
+</li>
+<li>
+<p>t.2024.07.11.12 but OWL doesn't define restriction in the same way as shacl</p>
+</li>
+</ul>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" disabled> While you could use types from OWL to say that a property is an Object or a Datatype property, SHACL does not consider this. It will be looking only at the constraints specified in the shape e.g., datatype and class constraints!</p>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/qcjpr0re3geqygx0tftlc3a">Rdfs (public-notes)</a></li>
+<li><a href="/wiki/notes/ahbj9ejugov8rjiywj5qqc8">Shacl (public-notes)</a></li>
+<li><a href="/wiki/notes/n3nb7chx9s16p158u9d6eoh">Why I Dont Use Owl Anymore (public-notes)</a></li>
+</ul>

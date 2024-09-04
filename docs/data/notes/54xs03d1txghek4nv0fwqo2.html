@@ -1,0 +1,25 @@
+<h1 id="v3">V3<a aria-hidden="true" class="anchor-heading icon-link" href="#v3"></a></h1>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<h3 id="versioning">Versioning<a aria-hidden="true" class="anchor-heading icon-link" href="#versioning"></a></h3>
+<ul>
+<li>In DCAT 3 (Data Catalog Vocabulary version 3), versioning is managed using properties that allow you to describe different versions of datasets, distributions, and other cataloged resources. Specifically, DCAT 3 introduces the <code>dcterms:hasVersion</code>, <code>dcterms:isVersionOf</code>, and <code>adms:versionNotes</code> properties to indicate relationships between versions, and to describe changes across versions.</li>
+<li>This enables users to track the evolution of datasets and maintain a clear history of modifications, ensuring that consumers of the data are aware of its version history and any updates that have occurred.</li>
+</ul>
+<h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">catalog</span></span>
+  <span class="token keyword">a</span> <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">Catalog</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span><span class="token local-name">title</span></span> <span class="token string">"Imaginary Catalog"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span><span class="token local-name">title</span></span> <span class="token string">"Catálogo imaginario"</span><span class="token tag"><span class="token punctuation">@</span>es</span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Imaginary Catalog"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Catálogo imaginario"</span><span class="token tag"><span class="token punctuation">@</span>es</span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">homepage</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://dcat.example.org/catalog<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span><span class="token local-name">publisher</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">transparency-office</span></span> <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span><span class="token local-name">language</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://id.loc.gov/vocabulary/iso639-1/en<span class="token punctuation">></span></span>  <span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">dataset</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">dataset-001</span></span> <span class="token punctuation">,</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">dataset-002</span></span> <span class="token punctuation">,</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">dataset-003</span></span> <span class="token punctuation">;</span>
+  <span class="token punctuation">.</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/GfW1qP1ZvFxHSaJiguPzh">DCATv2 (public-notes)</a></li>
+</ul>

@@ -1,0 +1,2 @@
+
+The "personal wikipedia" namespace

@@ -1,0 +1,2 @@
+
+- description: Cyber-investigation Analysis Standard Expression (CASE) is a community-developed evolving standard that provides a structured (ontology-based) specification for representing information commonly analyzed and exchanged by people and systems during investigations involving digital evidence.

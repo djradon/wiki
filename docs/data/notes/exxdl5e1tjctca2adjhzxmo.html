@@ -1,0 +1,43 @@
+<h1 id="elsa">Elsa<a aria-hidden="true" class="anchor-heading icon-link" href="#elsa"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Workflow Software (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Business Process Management (Private)</a></li>
+<li>repo: <a href="https://github.com/elsa-workflows/elsa-core">https://github.com/elsa-workflows/elsa-core</a></li>
+<li>different_from: <a href="/wiki/notes/6r7n0kbuqnfwuzsdsqlyg5l">Elsa Speak</a></li>
+<li>similar: <a href="/wiki/notes/k5epegwnd7iyvcmrxtagyn4">Copper</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>multi-tenancy coming in 3.1?</li>
+<li>Support for both short-running and long-running workflows.</li>
+<li>A web-based drag &#x26; drop designer with support for custom activities.</li>
+<li>Native support for activity composition, including activities like <code>Sequence</code>, <code>Flowchart</code>, and <code>ForEach</code>.</li>
+<li>Parallel execution of activities.</li>
+<li>Built-in activities for common scenarios, such as sending emails, making HTTP calls, scheduling tasks, sending and receiving messages, and more.</li>
+<li>Workflow versioning and migration via API.</li>
+<li>Easy integration with external applications via HTTP, message queues, and more.</li>
+<li>Actor model for increased workflow throughput. (used <a href="/wiki/notes/x13bm4xhdrln614wamciszm">Proto.Actor</a>)</li>
+<li>Dynamic expressions with support for C#, JavaScript, Python, and Liquid.</li>
+<li>Alterations API: Modify existing workflow instances at runtime.</li>
+<li>activities can schedule other activities</li>
+<li>Service Bus Broker: <a href="/wiki/notes/e3472xdc0i3144yqep7qwp6">Rebus</a> for sending messages via service bus brokers. Out of the box, it uses a memory provider.</li>
+<li>Distributed Lock Provider: filesystem, <a href="/wiki/notes/4wb58zg41h6yd7x5nqj9kgb">Redis</a>, <a href="/wiki/notes/cwnw1etsssj53n4yhr92g7k">Sql Server</a>, Azure</li>
+<li>Distributed Temporal Services: A temporal service provides functionality to schedule a workflow to execute at a specific time and/or on a recurring interval. Elsa uses these services to implement the Timer, Cron and StartAt activities; supports <a href="/wiki/notes/87e42c9bakpd06v4j534hsw">Quartz.NET</a> and <a href="/wiki/notes/p22vbhjhqz4tbehe17u3k1o">Hangfire</a></li>
+</ul>
+<h2 id="cons">Cons<a aria-hidden="true" class="anchor-heading icon-link" href="#cons"></a></h2>
+<ul>
+<li>The designer is not yet fully embeddable in other applications; this feature is planned for a future release.</li>
+<li>The designer currently only supports Flowchart activities. Support for Sequence and StateMachine activities is planned for a future release.</li>
+<li>UI input validation is not yet implemented.</li>
+</ul>
+<h2 id="tips">Tips<a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a></h2>
+<ul>
+<li>you might be able to achieve [per-user execute permission] by setting up a Policy from Program.cs that has a set of Requirements that the inbound principal needs to meet. From the HTTP endpoint activity, you then tock the "Authorize" checkboz and then provide the name of the Policy to evaluate.</li>
+<li>Short-running Workflows can be useful to implement a business rules engine, while long-running workflows greatly simplify the implementation of complex processes that involve coordinating between multiple agents (users &#x26; machines).</li>
+<li><a href="https://github.com/elsa-workflows/elsa-core/discussions/4425">How to Dynamically Create Workflows in Elsa Using C#? · elsa-workflows/elsa-core · Discussion #4425 · GitHub</a> suggests checking out BlobStorageWorkflowProvider and ClrWorkflowProvider</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://sipkeschoorstra.medium.com/part-7-of-building-workflow-driven-net-applications-with-elsa-2-e369e7784555">https://sipkeschoorstra.medium.com/part-7-of-building-workflow-driven-net-applications-with-elsa-2-e369e7784555</a></li>
+<li><a href="https://sipkeschoorstra.medium.com/elsa-3-0-2b341e7cbfa7">https://sipkeschoorstra.medium.com/elsa-3-0-2b341e7cbfa7</a></li>
+<li><a href="https://medium.com/codenx/elsa-workflow-engine-in-net-core-applications-812b745b7385">https://medium.com/codenx/elsa-workflow-engine-in-net-core-applications-812b745b7385</a></li>
+</ul>

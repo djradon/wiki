@@ -1,0 +1,111 @@
+<h1 id="why-we-need-a-polymorphic-database">Why We Need a Polymorphic Database<a aria-hidden="true" class="anchor-heading icon-link" href="#why-we-need-a-polymorphic-database"></a></h1>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>document paradigm references via IDs:
+<ul>
+<li>they're not pointers, they're just values and doc dbs aren't designed to use references</li>
+<li>"document object mismatch"</li>
+</ul>
+</li>
+<li>graph dbs have attributes as part of node structure, but relationships (modeled as an edge) leads to object-graph mismatch because a node and two edges represent an atomic relationship; also no n-ary relations, nested relations, or undirected/two-way relations
+<ul>
+<li>? but in object models, two way relations might get modelled with two directions</li>
+</ul>
+</li>
+</ul>
+<h2 id="semantic-integrity">Semantic Integrity<a aria-hidden="true" class="anchor-heading icon-link" href="#semantic-integrity"></a></h2>
+<ul>
+<li>matching integrity of polymorphic data</li>
+<li>inheritance polymorphism
+<ul>
+<li>with relational, patterns are:
+<ul>
+<li>single-table pattern (big table with fields for each type)
+<ul>
+<li>can't control "type integrity" for subtypes</li>
+</ul>
+</li>
+<li>concrete-table pattern (one table for employees, one for contractors)
+<ul>
+<li>can't enforce global uniqueness with IDs, so all references need multiple </li>
+</ul>
+</li>
+<li>class-table pattern (employee table, permanent employees table, contractors table)
+<ul>
+<li>can't enforce object identity</li>
+</ul>
+</li>
+<li>rows are one-dimensional</li>
+</ul>
+</li>
+<li>with documents
+<ul>
+<li>"polymorphic pattern" (coupal et al, 2023)</li>
+<li>maintaining consistency is difficult</li>
+<li>using ObjectIDs are values, not pointers
+<ul>
+<li>so deleting the target, there's a null reference
+<ul>
+<li>i.e., no cascading delete</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>graphs
+<ul>
+<li><img src="/wiki/assets/images/2023-11-30-09-29-47.png"></li>
+<li>not possible to control the types of relationships that can be made between nodes
+<ul>
+<li>so cannot enforce semantic integrity</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="example-simple-filesystem">Example: Simple Filesystem<a aria-hidden="true" class="anchor-heading icon-link" href="#example-simple-filesystem"></a></h2>
+<p><img src="/wiki/assets/images/2023-11-30-09-32-04.png">
+<img src="/wiki/assets/images/2023-11-30-09-38-17.png">
+<img src="/wiki/assets/images/2023-11-30-09-39-13.png">
+<img src="/wiki/assets/images/2023-11-30-09-47-34.png"></p>
+<ul>
+<li>for docDBs
+<ul>
+<li>return types are hardcoded with unmions and lookups</li>
+<li>attribute interfaces are hardcoded</li>
+<li>?</li>
+</ul>
+</li>
+<li>for graphDBs
+<ul>
+<li>can use generic pattern matching for multiple return types, but</li>
+<li>attribute interfaces hardcoded</li>
+<li>type inheritance hardcoded</li>
+</ul>
+</li>
+<li>all require metadata hardcoded into polymorphic queries becuase
+<ul>
+<li>queries do not represent the natural language meaning/intent</li>
+</ul>
+</li>
+</ul>
+<h2 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h2>
+<p><img src="/wiki/assets/images/2023-11-30-09-54-25.png"></p>
+<h2 id="questions">Questions<a aria-hidden="true" class="anchor-heading icon-link" href="#questions"></a></h2>
+<ul>
+<li>Does TypeDB have Object-PolymorphicDB mapping technology (OPM?), a la ORM/ODM/OGM
+<ul>
+<li>not yet</li>
+</ul>
+</li>
+<li>Why not just use in-memory object models with object serialization (say, to the filesystem) and then for requests, use streams/filters and programmatic/native code for queries and semantically-consistent updates?
+<ul>
+<li>(misunderstood, but) databases are good for sharing the data, persisting it, etc. </li>
+</ul>
+</li>
+<li>it seems like you should be able to just update the string-based reference identity everywhere it occurs, just like a dendron Move Note or Refactor</li>
+<li></li>
+</ul>

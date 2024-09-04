@@ -1,0 +1,54 @@
+<h1 id="feature-slices">Feature Slices<a aria-hidden="true" class="anchor-heading icon-link" href="#feature-slices"></a></h1>
+<h2 id="code-organization">Code Organization<a aria-hidden="true" class="anchor-heading icon-link" href="#code-organization"></a></h2>
+<h3 id="by-modulefolder">By Module/Folder<a aria-hidden="true" class="anchor-heading icon-link" href="#by-modulefolder"></a></h3>
+<pre><code>Features/
+├── Users/
+│   ├── GetUsers/
+│   ├── CreateUser/
+│   ├── SetUserActive/
+│   └── ...
+├── Orders/
+│   ├── PlaceOrder/
+│   ├── CancelOrder/
+│   └── ...
+</code></pre>
+<h3 id="onion-by-modulefolder">Onion by Module/Folder<a aria-hidden="true" class="anchor-heading icon-link" href="#onion-by-modulefolder"></a></h3>
+<pre><code>MyApplication.sln
+│
+├── Modules/
+│   ├── UsersModule/
+│   │   ├── UsersModule.csproj
+│   │   ├── Domain/
+│   │   │   └── ...
+│   │   ├── Application/
+│   │   │   ├── Services/
+│   │   │   ├── DTOs/
+│   │   │   └── ...
+│   │   └── Infrastructure/
+│   │       ├── Repositories/
+│   │       └── ...
+│   │
+│   ├── OrdersModule/
+│   │   ├── OrdersModule.csproj
+│   │   ├── Domain/
+│   │   │   └── ...
+│   │   ├── Application/
+│   │   │   ├── Services/
+│   │   │   ├── DTOs/
+│   │   │   └── ...
+│   │   └── Infrastructure/
+│   │       ├── Repositories/
+│   │       └── ...
+│   │
+│   └── ...
+│
+└── WebApp/
+    ├── WebApp.csproj
+    ├── Pages/
+    ├── Program.cs
+    └── ...
+</code></pre>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://levelup.gitconnected.com/the-core-question-are-vertical-slices-just-modular-monoliths-9b1ef2358c53">https://levelup.gitconnected.com/the-core-question-are-vertical-slices-just-modular-monoliths-9b1ef2358c53</a></li>
+</ul>

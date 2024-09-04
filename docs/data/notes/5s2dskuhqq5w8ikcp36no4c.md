@@ -1,0 +1,19 @@
+
+- https://zazuko.com/products/trifid/
+- [[c.software.semantic.browser]] [[c.software.semantic.site-generator]]
+- repo: https://github.com/zazuko/trifid
+- written_in: javascript
+- published-by: [[org.zazuko]]
+- built_on: [[prdct.node]]
+![[prdct.pubby#^4ldbidz2j6c8]]
+
+## Features
+
+-   Provides a Linked Data interface to SPARQL protocol servers
+-   Provides an in-memory store suitable for smaller data sets and testing environments
+-   Provides a simple HTML interface showing the data available about each resource
+-   Support for multiple HTML templates based on namespace patterns
+-   HTML view is providing embedded JSON-LD, which is rendered by client-side JavaScript
+-   Takes care of content-negotiation
+-   Runs well behind HTTP reverse proxies like Varnish
+-   Provides a SPARQL proxy and [YASGUI](http://about.yasgui.org/)

@@ -1,0 +1,13 @@
+
+- [[p.hasTopic]]
+  - [[prdct.darktrace-prevent]]
+  - [[prdct.darktrace-detect]]
+  - [[prdct.darktrace-respond]]
+  - [[prdct.darktrace-heal]]
+- [[p.hasFeature]] Cyber AI Loop
+  - [[p.managed]] [[t.cs.security.cyber-risk]]
+    - [[t.cs.security.attack-simulations]]
+    - [[t.cs.itsm.it-asset-discovery]] 
+    - [[t.cs.security.attack-surface-management]]
+    - [[t.cs.security.penetration-testing]]
+    - [[t.cs.security.risk-management.prioritization]]

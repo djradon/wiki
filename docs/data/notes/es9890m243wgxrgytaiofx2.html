@@ -1,0 +1,21 @@
+<h1 id="json-hyper-schema">JSON Hyper-Schema<a aria-hidden="true" class="anchor-heading icon-link" href="#json-hyper-schema"></a></h1>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<p>Here is an example hyper-schema that adds a single link, with the IANA-registered link relation type "self", that is built from an instance with one known object field named "id":</p>
+<pre><code>{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "number",
+            "readOnly": true
+        }
+    },
+    "links": [
+        {
+            "rel": "self",
+            "href": "thing/{id}"
+        }
+    ]
+}
+                
+</code></pre>
+<p>If the instance is {"id": 1234}, and its base URI according to <a href="https://json-schema.org/draft/2019-09/json-schema-hypermedia.html#RFC3986">RFC 3986 section 5.1</a>, is "<a href="https://example.com/api/%22">https://example.com/api/"</a>, then "<a href="https://example.com/api/thing/1234%22">https://example.com/api/thing/1234"</a> is the resulting link's target URI.</p>

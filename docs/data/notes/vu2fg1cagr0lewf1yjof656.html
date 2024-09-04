@@ -1,0 +1,59 @@
+<h1 id="skos">SKOS<a aria-hidden="true" class="anchor-heading icon-link" href="#skos"></a></h1>
+<h2 id="description">Description<a aria-hidden="true" class="anchor-heading icon-link" href="#description"></a></h2>
+<ul>
+<li>designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or any other type of structured controlled vocabulary.</li>
+<li>SKOS has been designed to provide a low-cost migration path for porting existing organization systems to the Semantic Web. SKOS also provides a lightweight, intuitive conceptual modeling language for developing and sharing new KOSs. It can be used on its own, or in combination with more-formal languages such as the Web Ontology Language (OWL) [OWL]. SKOS can also be seen as a bridging technology, providing the missing link between the rigorous logical formalism of ontology languages such as OWL and the chaotic, informal and weakly-structured world of Web-based collaboration tools, as exemplified by social tagging applications.</li>
+</ul>
+<h2 id="topics">Topics<a aria-hidden="true" class="anchor-heading icon-link" href="#topics"></a></h2>
+<h3 id="concept-scheme-vs-collection">Concept Scheme vs Collection<a aria-hidden="true" class="anchor-heading icon-link" href="#concept-scheme-vs-collection"></a></h3>
+<ul>
+<li>SKOS collections are intended to represent groupings of closely-related concepts within a particular thesaurus.</li>
+<li>Concept Schemes... are intended to capture/identify a single complete thesaurus/taxonomy, which is useful in a situation where several such thesauri/taxonomies co-exist. Items in a ConceptScheme are not necessarily a "grouping" of closely-related terms, but are all part of the same overall hierarchy of terms.</li>
+</ul>
+<h3 id="intransitive-vs-not-transitive">Intransitive vs Not Transitive<a aria-hidden="true" class="anchor-heading icon-link" href="#intransitive-vs-not-transitive"></a></h3>
+<ul>
+<li>the SKOS model does not state that skos:broader and skos:narrower are transitive. Yet this does not imply that these properties are intransitive.</li>
+</ul>
+<h3 id="compositionality-and-concept-typing">Compositionality and Concept Typing<a aria-hidden="true" class="anchor-heading icon-link" href="#compositionality-and-concept-typing"></a></h3>
+<ul>
+<li>start with a common vocabulary for the whole enterprise, but have customizations of it for each line of business... SKOS defines a class called skos:Concept, for any vocabulary concept. Users of SKOS are encouraged to extend SKOS by creating their own subclasses of skos:Concept; each vocabulary will do this in a different way (e.g., defining subdomains in their own vocabularies), while adhering to the basic structure of SKOS.
+<ul>
+<li>A good example of this is the structure of the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6751214/">GACS Agricultural Vocabulary</a>, which uses several subclasses of skos:Concept to provide organizational structure to the vocabulary.
+<ul>
+<li>"GACS Core distinguishes five types of concept: Chemical, Geographical, Organism, Product, and Topic—a minimal set of generic types for exploring the benefits of concept typing before committing to anything more granular."</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="agrovoc-use-case">AGROVOC use case<a aria-hidden="true" class="anchor-heading icon-link" href="#agrovoc-use-case"></a></h4>
+<ul>
+<li>maintainers re-engineered thesaurus to “fully fledged ontology” but a study of users 6 years later found little support for the use of these custom relation properties.13 In the absence of specific tools and requirements for reasoning, it was unclear to some users what purpose they served.</li>
+</ul>
+<h3 id="skos-and-owl">SKOS and OWL<a aria-hidden="true" class="anchor-heading icon-link" href="#skos-and-owl"></a></h3>
+<ul>
+<li>"crossing the streams" results in OWL Full</li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li><a href="/wiki/notes/d9dr80zbt25s7jsb2s79vka">Skosmos</a></li>
+</ul>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<ul>
+<li><a href="/wiki/notes/gz6djl7i011bjmse7xdpf4q">Redaktor Vocab</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://medium.com/@dallemang/jug-o-cool-things-i-do-with-rdf-3cdb5b059192">https://medium.com/@dallemang/jug-o-cool-things-i-do-with-rdf-3cdb5b059192</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6751214/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6751214/</a></li>
+<li><a href="https://www.w3.org/TR/skos-primer/">https://www.w3.org/TR/skos-primer/</a></li>
+<li><a href="/wiki/notes/c42mztophejelcfldriet8b">Common Slips in Skos Vocabularies</a></li>
+<li><a href="https://stackoverflow.com/questions/32573812/whats-the-difference-between-skosconceptscheme-and-skoscollection">https://stackoverflow.com/questions/32573812/whats-the-difference-between-skosconceptscheme-and-skoscollection</a></li>
+<li><a href="https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html">https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/ahbj9ejugov8rjiywj5qqc8">Shacl (public-notes)</a></li>
+<li><a href="/wiki/notes/vtbo2mc1en3r5vpj6vsl2gd">Classonomies (public-notes)</a></li>
+</ul>

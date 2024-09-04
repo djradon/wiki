@@ -1,0 +1,66 @@
+<h1 id="foundational-ontologies-in-action">Foundational Ontologies in Action<a aria-hidden="true" class="anchor-heading icon-link" href="#foundational-ontologies-in-action"></a></h1>
+<ul>
+<li>author: <a href="/wiki/notes/c8p54xuevxvj26945yl7hsl">@stefano-borgo</a></li>
+<li>url:
+<ul>
+<li><a href="https://drive.google.com/open?id=1-M83WYA8yDFSL8I4ZmzSgBRmkZ6O5qOI&#x26;usp=drive_fs">https://drive.google.com/open?id=1-M83WYA8yDFSL8I4ZmzSgBRmkZ6O5qOI&#x26;usp=drive_fs</a></li>
+<li><a href="https://www.academia.edu/80990810/Foundational_ontologies_in_action">https://www.academia.edu/80990810/Foundational_ontologies_in_action</a></li>
+</ul>
+</li>
+<li>mentions: <a href="/wiki/notes/1eyfzmwyvvwwkcdf21sj8j1">International Association for Ontology and Its Applications</a></li>
+<li>compares: <a href="/wiki/notes/u69ohenrjzegyb4ta4bp07j">Basic Formal Ontology</a> <a href="/wiki/notes/mjcpuwi7bne4r8moc0uruzx">DOLCE</a> <a href="/wiki/notes/pfdqhyncw7rype44ediqswf">GFO</a> <a href="/wiki/notes/0ptd5d6cj48uh04bzcvvbw6">GUM</a> <a href="/wiki/notes/9y4w4ta2cp3pirtaf6lr06d">Tupper</a> <a href="/wiki/notes/rtuuqd5q8nrxidfii77jh9n">Unified Foundational Ontology</a> <a href="/wiki/notes/ywbyvrp3m0x78m3zcjejhh5">Yamato</a></li>
+</ul>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>Only a programmer would define Red as a literal <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#FF0000 (Private)</a> - That's why LLMs are so great... they support fuzziness.</li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>"All ontologies recognise the distinction between terms denoting individuals and terms denoting generic covering entities by which individuals may be counted as in some way the “same” – whether these be classes, containing individuals as members (e.g., the class of all cats), concepts by which we group together individuals sharing a salient set of common properties (e.g., the idea of cats in general), or some hard-to-define notion of categories, kinds, or universals to which particular individuals are related as instances (the generic cat)... This was already a topic of concern in mediaeval philosophy, where it showed up as the debate between Realists, for whom universals were real-world entities, and Nominalists, for whom they were merely labels, or concepts, used to impose an intelligible order on reality but not themselves part of that reality. The debate is alive and kicking in modern ontology too, as witness the debate between realism and conceptualism played out in the recent exchange of articles (Merrill, 2010a; Smith and Ceusters, 2010; Merrill, 2010b)."</li>
+<li>"some ontologies (e.g., DOLCE) include a category of abstracts in their taxonomy, whereas others (e.g., BFO) do not. Ontologies of the former kind treat times and places, for example, as abstract entities, whereas for those of the latter, they are regarded as concrete, times being occurrents and places continuants."</li>
+<li>"Substance vs Accident. In classical logic, an entity’s properties are expressed by means of pred- icates such as “. . . is red”, where the dots represent the fact that, as Frege held, predicates are “unsaturated”. This means that a predicate only expresses a thought when combined with a term denoting an entity that may or may not have the property expressed by the predicate.13 Here prop- erties are not themselves entities and so have no place within an ontology’s taxonomy. But this is not the only possible approach. Instead of seeing “Mars is red”, in Fregean fashion, as the result of applying the predicate “. . . is red” to the name “Mars” (where the latter, but not the former, denotes an individual entity), we could rather see it as the result of applying a relational predicate “. . . is . . . ” to two entity-denoting expressions “Mars” and “red”, so that the thought is of a rela- tion holding between the entities they denote. To complete this picture, though, we must specify what kind of entity “red” denotes, and various possibilities have been explored in the literature. One is that “red” denotes a trope – the individual redness of Mars itself, as distinct from that of, say, the star Antares, even if these are qualitatively identical. Another is to take “red” to denote a universal, the same redness featuring in the thoughts expressed by “Mars is red” and “Antares is red”. A third possibility, used in several ontologies, invokes entities called “qualities”, unique to individuals, such as, for example the colour of Mars and the colour of Antares, and then takes “red” to denote a value that such a quality can assume."</li>
+</ul>
+<h3 id="constitution--composition">Constitution / Composition<a aria-hidden="true" class="anchor-heading icon-link" href="#constitution--composition"></a></h3>
+<ul>
+<li>an ontology may be compatible with different ‘interpretations’ of the given description, leading to the construction of distinct models, each one compatible and aligned with that ontology</li>
+</ul>
+<h3 id="roles">Roles<a aria-hidden="true" class="anchor-heading icon-link" href="#roles"></a></h3>
+<ul>
+<li>In some approaches, a role is a dependent entity that exists only when played by some other entity (e.g., when roles are taken as ‘realisable entities’, like dispositions, as in BFO). In other views, roles may exist also when no entity is playing them (e.g., when roles are taken as concepts as in DOLCE and YAMATO).</li>
+<li>sometimes an ontology allows one to talk about an entity as player of a role, e.g., a person-as-client in a
+business relationship. In the literature, this special kind of entity is known as a qua-entity</li>
+</ul>
+<h3 id="qualities-of-objects-and-events">Qualities of objects and events<a aria-hidden="true" class="anchor-heading icon-link" href="#qualities-of-objects-and-events"></a></h3>
+<ul>
+<li>A further level of sophistication is to regard the colour of the flower as an entity distinct from either the flower itself or its redness. The colour is an entity specifically dependent on the flower, and at dif- ferent times it may assume different values. Logically, we might crudely characterise this position as HasColour(flower, colour) ∧ HasValue(colour, red, t)</li>
+<li>Traditionally, logical analysis has favoured what might be called a ‘snapshot’ view, according to which there is nothing to change over and above the holding of different static states (‘snapshots’) at different times. Against this, many have argued that changes – represented by, for example, processes or events – should be regarded as some kind of entities in their own right, and indeed most of the ontologies here do indeed include a category of occurrents or perdurants to put them in. Despite this, the analyses offered by the papers collected here are for the most part content to represent the change in colour of the flower in terms of the succession of two states of the world, in one of which the flower is red, and in the other, brown.</li>
+<li>"How is the value of the individual colour of the flower (if reified) related to whatever is denoted by the names such as ‘red’ and ‘brown’ we use to describe them? The different ontologies exhibit a variety of approaches here, the relationship in question depending on what the references of colour names are taken to be. For BFO and GFO, they are universals and the relationship is ‘instance of’; for DOLCE, they are regions and the relationship is ‘part of’; for UFO they are classes and the relationship is ‘member of’; for YAMATO the relationship given is identity."</li>
+<li>"For BFO ‘red’ and ‘brown’ denote subclasses of ‘colour’ whereas for DOLCE they are parts of a colour space and for UFO they are members of a class of colour concepts. GFO states that the universal ‘red’, of which the value of the individual flower colour may be an instance, is part of the “value structure” for measuring and depicting colours, but the nature of this value structure is not further specified. In DOLCE, by contrast, with a colour space corresponding to GFO’s value structure, it is clear that, as in item (3), the parthood relation here is that of subregion"</li>
+<li>YAMATO models the change as a transition between start and end states but it could also represent colour change as an ongoing process. DOLCE even provides a formula to ensure that the change is continuous across the colour space</li>
+</ul>
+<h3 id="qualities-of-events">Qualities of events<a aria-hidden="true" class="anchor-heading icon-link" href="#qualities-of-events"></a></h3>
+<ul>
+<li>"YAMATO, takes a very different approach, drawing a sharp distinction between events, which are classical occurrents as just described, and processes, which are more continuant-like in the sense that they can change while unfolding... an event is constituted by one or more processes,"</li>
+</ul>
+<h3 id="events-and-goals">Events and Goals<a aria-hidden="true" class="anchor-heading icon-link" href="#events-and-goals"></a></h3>
+<ul>
+<li>For BFO a plan is a concretisation of a plan specification whose proper parts include action and objective specifications. The former prescribes a process in which the bearer of the plan (the man) may participate over some interval; this process may or may not achieve the specified objective. In the given scenario the initial plan (walk to the station) is replaced by a new plan (return home) before its objective is achieved.</li>
+<li>In Yamato, "processes are treated as ongoing entities capable of undergoing change as they progress. A plan is understood as a representation of a sequence of actions; it is executed by performing a sequence of actions satisfying it, but may be abandoned if only part of the sequence is performed. In the modelled scenario, a walking process is present over an interval. Over some initial subinterval, this process constitutes an uncompleted execution of the plan to walk to the station. After that the process changes so that during an immediately succeeding subinterval it constitutes a turning event. This is followed by a final subinterval over which the process constitutes a completed execution of a plan to go home."</li>
+<li>In DOLCE a plan is modelled as a concept, which is a non-physical endurant. </li>
+<li>the UFO analysis uses the walker’s intentions, via the notion of intended destination. A walking event cannot change, so the analysis uses an associated endurant Walk which encapsulates the walker’s intention with his capabilities qua walker. In the given scenario, Walk changes from an ‘ongoing walk’, in which the destination has not yet been reached, to a ‘finalised walk’, in which it has.</li>
+</ul>
+<h3 id="social-concept-evolution">Social concept evolution<a aria-hidden="true" class="anchor-heading icon-link" href="#social-concept-evolution"></a></h3>
+<ul>
+<li>In one case, for instance, the ontology recognises that a term persists in the language but not the meaning it denotes. In another reading, the ontology takes the meaning as persisting even though some regulatory aspects of it may change as time goes on. Another way to tackle the use case is by distinguishing the intensional vs. extensional content of the concept: the intensional content of a concept is the set of properties (including their relationships) that defines the concept, the extensional content is the set of instances of the concept</li>
+</ul>
+<ul>
+<li>Depending on the ontological view, one can decide to read this case in different ways. In one case, forinstance, the ontology recognises that a term persists in the language but not the meaning it denotes. In another reading, the ontology takes the meaning as persisting even though some regulatory aspects of it may change as time goes on. Another way to tackle the use case is by distinguishing the intensional vs. extensional content of the concept: the intensional content of a concept is the set of properties (including their relationships) that defines the concept, the extensional content is the set of instances of the concept.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/u69ohenrjzegyb4ta4bp07j">Basic Formal Ontology (public-notes)</a></li>
+<li><a href="/wiki/notes/ochyyjuij2gxurefxn9scp0">Romulus (public-notes)</a></li>
+<li><a href="/wiki/notes/ywbyvrp3m0x78m3zcjejhh5">Yamato (public-notes)</a></li>
+<li><a href="/wiki/notes/r4s8HiOEaLW0Z3lvFUvHL">Ontology (public-notes)</a></li>
+</ul>

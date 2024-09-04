@@ -1,0 +1,18 @@
+<h1 id="materialized-view">Materialized View<a aria-hidden="true" class="anchor-heading icon-link" href="#materialized-view"></a></h1>
+<h2 id="comparisons">Comparisons<a aria-hidden="true" class="anchor-heading icon-link" href="#comparisons"></a></h2>
+<h3 id="materialized-views-vs-read-through-cache">Materialized Views vs Read-Through Cache<a aria-hidden="true" class="anchor-heading icon-link" href="#materialized-views-vs-read-through-cache"></a></h3>
+<ul>
+<li>With the materialized view, there is a principled <em>translation process</em> from the write-optimized data in the log into the read-optimized data in the view. That translation runs in a separate process which you can monitor, debug, scale and maintain independently from the rest of your application. By contrast, in the typical read-through caching approach, the cache management logic is deeply intertwined with the rest of the application, it’s easy to introduce bugs, and it’s difficult to understand what is happening.</li>
+<li>A cache is filled on demand when there is a cache miss (so the first request for a given object is always slow). By contrast, a materialized view is <em>precomputed</em>, i.e. its entire contents are computed before anyone asks for it — just like a secondary index. This means there is no such thing as a cache miss: if an item doesn’t exist in the materialized view, it doesn’t exist in the database. There is no need to fall back to some kind of underlying database.</li>
+<li>Once you have this process for translating logs into views, you have great flexibility to create new views: if you want to present your existing data in some new way, you can simply create a new stream processing job, consume the input log from the beginning, and thus build a completely new view onto all the existing data. (If you think about it, this is pretty much what a database does internally when you create a new secondary index on an existing table.) You can then maintain both views in parallel, gradually move applications to the new view, and eventually discard the old view. No more scary stop-the-world schema migrations.</li>
+<li></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/">https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/2a9xr9s81spagppn7iywlls">Apache Samza (public-notes)</a></li>
+</ul>

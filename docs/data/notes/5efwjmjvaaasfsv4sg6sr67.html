@@ -1,0 +1,39 @@
+<h1 id="decentralization">Decentralization<a aria-hidden="true" class="anchor-heading icon-link" href="#decentralization"></a></h1>
+<ul>
+<li><a href="https://subconscious.substack.com/p/decentralizability">https://subconscious.substack.com/p/decentralizability</a></li>
+<li></li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<h3 id="what-is-the-minimum-set-of-mechanisms-we-need-to-make-software-decentralizable">What is the minimum set of mechanisms we need to make software decentralizable?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-the-minimum-set-of-mechanisms-we-need-to-make-software-decentralizable"></a></h3>
+<p>Some answers will vary from project-to-project, but I see some common patterns:</p>
+<ul>
+<li>Immutable data</li>
+<li>Universal identifiers</li>
+<li>User-controlled keys</li>
+</ul>
+<h3 id="things-fall-out-of-sync-or-rather-they-were-never-in-sync-to-begin-with">Things fall out of sync, or rather, they were never in sync to begin with.<a aria-hidden="true" class="anchor-heading icon-link" href="#things-fall-out-of-sync-or-rather-they-were-never-in-sync-to-begin-with"></a></h3>
+<p>So, we often need mechanisms to resolve conflicting understandings of the world.</p>
+<p>Instead of trying to modify a single shared state, just pass messages. Each message is immutable—it doesn’t change after being sent. That means the message can be sent to many different places and these places don’t need to coordinate to find out if the message has changed. It won’t.</p>
+<p>How do you represent change? Multiple messages can tell a story about how something changes. This is how Git, CRDTs, <a href="/wiki/notes/tofc1gr0lhls9ry6rnfx2rc">Nostr</a>, and <a href="/wiki/notes/u9du3ro2al7vsk6pybvkoh9">Noosphere</a> model changes.</p>
+<h3 id="universal-identifiers">Universal Identifiers<a aria-hidden="true" class="anchor-heading icon-link" href="#universal-identifiers"></a></h3>
+<p>At some point you’re going to want to be able to identify some data independent of where it lives.</p>
+<ul>
+<li>
+<p>UUID4</p>
+</li>
+<li>
+<p>Content hashes</p>
+<ul>
+<li>have a 1:1 correspondence with content</li>
+<li>self-verifying</li>
+<li>not friendly</li>
+</ul>
+</li>
+<li>
+<p>t.2024.04.14.17 why no mention of URIs?</p>
+</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/2f80irygyfi94c83m1jjd5z">The Minimal Definition of User Agency</a></li>
+</ul>

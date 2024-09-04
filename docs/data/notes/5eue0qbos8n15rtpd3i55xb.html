@@ -1,0 +1,44 @@
+<h1 id="abstract-meaning-representation">Abstract Meaning Representation<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract-meaning-representation"></a></h1>
+<ul>
+<li>url: <a href="https://amr.isi.edu">https://amr.isi.edu</a> <a href="https://catalog.ldc.upenn.edu/LDC2020T02">https://catalog.ldc.upenn.edu/LDC2020T02</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasSpecification (Private)</a> <a href="https://github.com/amrisi/amr-guidelines/blob/master/amr.md">https://github.com/amrisi/amr-guidelines/blob/master/amr.md</a></li>
+</ul>
+<h2 id="cons">Cons<a aria-hidden="true" class="anchor-heading icon-link" href="#cons"></a></h2>
+<ul>
+<li>It does not represent quantifier scope, or even universal quantification at all.</li>
+<li>It does not represent co-references that cross sentence boundaries.</li>
+<li>It drops grammatical number, tense, aspect, quotation marks, etc.</li>
+<li>It does not deeply capture many noun-noun or noun-adjective relations.</li>
+<li>It does not include deep frames such as Earthquake (with roles for magnitude, epicenter, casualties, etc) or Pregnancy (with roles for mother, father, baby gender, time since inception, etc). AMR 1.2 looks forward to AMR 2.0!</li>
+</ul>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<ul>
+<li>"About 14,000 people fled their homes at the weekend after a local tsunami warning was issued, the UN said on its Web site"</li>
+</ul>
+<pre><code>(s / say-01
+  :ARG0 (g / organization
+          :name (n / name
+                  :op1 "UN"))
+  :ARG1 (f / flee-01
+          :ARG0 (p / person
+                  :quant (a / about
+                           :op1 14000))
+          :ARG1 (h / home
+                  :poss p)
+          :time (w / weekend)
+          :time (a2 / after
+                  :op1 (w2 / warn-01
+                         :ARG1 (t / tsunami)
+                         :location (l / local))))
+  :medium (s2 / site
+            :poss g
+            :mod (w3 / web)))
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/ihycxl116p1wnbagnn4p1oa">Framenet (public-notes)</a></li>
+<li><a href="/wiki/notes/petpwaw939hkf88n8p3jueo">Semantic Hypergraphs (public-notes)</a></li>
+<li><a href="/wiki/notes/nl2zpcr9636zwg8zk263wei">Semantics Mans Search Computational Meaning Joshua Reuben (public-notes)</a></li>
+<li><a href="/wiki/notes/gjt0hr70613sly8499j6aoy">Frame (public-notes)</a></li>
+</ul>

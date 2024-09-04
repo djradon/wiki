@@ -1,0 +1,144 @@
+<h1 id="typedb">TypeDB<a aria-hidden="true" class="anchor-heading icon-link" href="#typedb"></a></h1>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Graph Database (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Hypergraph (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">alsoKnownAs (Private)</a> grakn</li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">ownedBy (Private)</a> <a href="/wiki/notes/liS1I2CpXCXQm7kme9w2x">Vaticle</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasRepository (Private)</a> <a href="https://github.com/vaticle/typedb">https://github.com/vaticle/typedb</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasRelatedSolution (Private)</a> <a href="/wiki/notes/gTBtsuEC83ivJuuSRnnbI">TypeQL</a> <a href="/wiki/notes/2cud02517i1hk4j9mntlzxq">Blitz Orm</a></li>
+<li>written-in: java</li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">builtOn (Private)</a> 
+<ul>
+<li><a href="/wiki/notes/A5pdqvUh7UZDHakBliNSb">RocksDB</a></li>
+<li><a href="/wiki/notes/j5knpdo4lzi35ewcdvtymar">Grpc</a>
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasSource (Private)</a> <a href="https://docs.vaticle.com/docs/client-api/new-client">https://docs.vaticle.com/docs/client-api/new-client</a></li>
+</ul>
+</li>
+<li><a href="/wiki/notes/2zdrahduhqljlcdlpqxmemt">JanusGraph</a> (<a href="https://graphsandnetworks.com/typedb-previously-grakn-ai/">https://graphsandnetworks.com/typedb-previously-grakn-ai/</a>)</li>
+<li><a href="/wiki/notes/9tg6cyz82edg7fd7grgle5w">SpeeDB</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="hasconcept-private"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasConcept (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#hasconcept-private"></a></h2>
+<ul>
+<li>"Concept Architecture"
+<ul>
+<li><img src="/wiki/assets/images/2022-03-14-14-26-10.png"></li>
+<li><img src="/wiki/assets/images/2023-09-21-22-03-51.png"></li>
+<li><img src="/wiki/assets/images/2023-09-21-22-19-16.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h3>
+<ul>
+<li>a little unusual for a thing to be a concept. My water bottle is not really a concept.
+<ul>
+<li><a href="https://hydeandrugg.wordpress.com/2016/01/24/things-concepts-and-words/">https://hydeandrugg.wordpress.com/2016/01/24/things-concepts-and-words/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="use-cases">Use Cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h2>
+<ul>
+<li><a href="/wiki/notes/OwMwGmIYMQ2HL5ylI14SY">Typedb Data Cyber Threat Intelligence</a></li>
+</ul>
+<h2 id="tips">Tips<a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a></h2>
+<ul>
+<li>When inserting instances of a relation, it is not necessary to define all of its role players. But this represents an incomplete information state, such as a marriage in which only one of the spouses is known.</li>
+<li></li>
+</ul>
+<h2 id="hasissue-private"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">hasIssue (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#hasissue-private"></a></h2>
+<ul>
+<li><a href="https://github.com/vaticle/typedb-studio/issues/118">Run TypeDB Studio in a web browser</a>
+<ul>
+<li>we have recently rewritten Workbase as Studio, and it is no longer an Electron app</li>
+</ul>
+</li>
+<li>how do you establish order?
+<ul>
+<li>use a property
+<ul>
+<li><a href="https://forum.vaticle.com/t/how-to-best-represent-the-order-of-nodes-on-an-edge/279">https://forum.vaticle.com/t/how-to-best-represent-the-order-of-nodes-on-an-edge/279</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="modelling">Modelling<a aria-hidden="true" class="anchor-heading icon-link" href="#modelling"></a></h2>
+<ul>
+<li>entity: 
+<ul>
+<li>anything physical</li>
+<li>anything that exists logically but doesn't require involvement of other things</li>
+<li>concrete</li>
+<li>/proper/common/abstract/collective</li>
+<li>relations should be "abstract nouns" or "transitive verbs that can accept 2 or more argument"</li>
+</ul>
+</li>
+<li>no equivalanet of blank node (no open world), but you could do "entity with no URI is unspecified"</li>
+<li>"GRAKN.AI uses “hypergraphs” instead of vanilla digraphs to model their knowledge, although under the hood, they map these hypergraphs to digraphs before persisting to whatever vendor DB using Apache TinkerPop."
+<ul>
+<li><a href="https://discuss.dgraph.io/t/hypergraphql-query-language/2123">https://discuss.dgraph.io/t/hypergraphql-query-language/2123</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="temporal-modelling">Temporal Modelling<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-modelling"></a></h3>
+<ul>
+<li><a href="/wiki/notes/x2tvx8dxd0gwfgkoweegl5t">Modelling Time within a Strongly Typed Database</a></li>
+<li>t.2024.01.15: "expressions don't have datetime computation functionality yet" </li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li>
+<p><a href="https://victormorgante.medium.com/query-generation-for-typedb-67c7b4a88ee2">https://victormorgante.medium.com/query-generation-for-typedb-67c7b4a88ee2</a></p>
+<ul>
+<li>"TypeDB approaches the database market conceptualised as both a database and a rules-based knowledge graph combined as one. Operating over a key/value store the database encompasses the same sort of architecture used by FactEngine to effectively turn any compatible database into a natural language/</li>
+</ul>
+</li>
+<li>
+<p><a href="https://graphsandnetworks.com/typedb-previously-grakn-ai/">https://graphsandnetworks.com/typedb-previously-grakn-ai/</a></p>
+</li>
+<li>
+<p><a href="/wiki/notes/rweqbzy1pu7czws48m1cujv">An Enterprise Data Stack Using Typedb</a></p>
+</li>
+<li>
+<p><a href="https://blog.vaticle.com/what-is-a-knowledge-graph-5234363bf7f5">https://blog.vaticle.com/what-is-a-knowledge-graph-5234363bf7f5</a></p>
+</li>
+<li>
+<p><a href="https://forum.typedb.com/t/rdf-uris-as-attributes-of-all-types/433">https://forum.typedb.com/t/rdf-uris-as-attributes-of-all-types/433</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/vaticle/modelling-data-with-hypergraphs-edff1e12edf0">https://medium.com/vaticle/modelling-data-with-hypergraphs-edff1e12edf0</a></p>
+<ul>
+<li>mentions <a href="https://medium.com/vaticle/knowledge-graph-representation-grakn-ai-or-owl-506065bd3f24">Knowledge Graph Representation: TypeDB or OWL?</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=LFgV7sCnOrE">Comparing Semantic Web Technologies to TypeDB</a></p>
+</li>
+<li>
+<p><a href="/wiki/notes/x2tvx8dxd0gwfgkoweegl5t">Modelling Time within a Strongly Typed Database</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=fQ1faqMFq9E">How do actors enable and elegant and scalable reasoning engine</a></p>
+</li>
+<li>
+<p><a href="https://typedb.com/blog/inference-in-typedb">https://typedb.com/blog/inference-in-typedb</a></p>
+</li>
+<li>
+<p><a href="https://typedb.com/blog/modeling-collections-in-databases-relational-sql-vs-typedb">https://typedb.com/blog/modeling-collections-in-databases-relational-sql-vs-typedb</a> </p>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/8rajl5vlvylqjny5hgr1t5l">Modelling Time within a Strongly Typed Database (public-notes)</a></li>
+<li><a href="/wiki/notes/f1NRb172HfsDVGSJiwQqZ">TerminusDB (public-notes)</a></li>
+<li><a href="/wiki/notes/6lr58av159di13skn7vk2nw">Auth.js (public-notes)</a></li>
+<li><a href="/wiki/notes/2cud02517i1hk4j9mntlzxq">Blitz Orm (public-notes)</a></li>
+<li><a href="/wiki/notes/pQesFFGN7b18eZ0KCONIi">FactEngine (public-notes)</a></li>
+<li><a href="/wiki/notes/uhagejfd79c8isushtaciux">LinkML (public-notes)</a></li>
+<li><a href="/wiki/notes/OwMwGmIYMQ2HL5ylI14SY">Typedb Data Cyber Threat Intelligence (public-notes)</a></li>
+<li><a href="/wiki/notes/yv6xjfh2powsn8gimdpbb7p">Type Theory as the Unifying Foundation for Modern Database (public-notes)</a></li>
+<li><a href="/wiki/notes/cqtllme7cw60cs9vh18yb2s">Hypergraph (public-notes)</a></li>
+<li><a href="/wiki/notes/jAekF2UQcWtYIpBAVdtzy">Semantic Hypergraph (public-notes)</a></li>
+</ul>

@@ -1,0 +1,45 @@
+<h1 id="cesiumjs">CesiumJS<a aria-hidden="true" class="anchor-heading icon-link" href="#cesiumjs"></a></h1>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>Time-dynamic visualization</li>
+<li>3D tiles and models</li>
+<li>vectors and geometry</li>
+<li>supports: <a href="/wiki/notes/izh965ltyaoy8ahsbssda0x">CZML</a></li>
+</ul>
+<h3 id="co-ordinates">Co-ordinates<a aria-hidden="true" class="anchor-heading icon-link" href="#co-ordinates"></a></h3>
+<ul>
+<li>Coordinates in CesiumJS are expressed in <a href="https://en.wikipedia.org/wiki/ECEF">ECEF</a> using the <a href="https://cesium.com/learn/cesiumjs/ref-doc/Cartesian3.html">Cartesian3</a> class. In this system, the origin (0, 0, 0) is the center of Earth.</li>
+</ul>
+<p>This is why we use <code>Cartesian3.fromDegrees</code> to convert from longitude, latitude, and height to X, Y, and Z in ECEF.</p>
+<p>The height in CesiumJS is in meters relative to the WGS84 ellipsoid. We’ve preprocessed the radar data to convert the heights from feet relative to mean sea level to meters relative to the ellipsoid.</p>
+<h2 id="learning-resource">Learning Resource<a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resource"></a></h2>
+<ul>
+<li><a href="https://cesium.com/learn/cesiumjs-learn/">https://cesium.com/learn/cesiumjs-learn/</a></li>
+<li><a href="https://cesium.com/learn/cesiumjs-learn/cesiumjs-flight-tracker/">https://cesium.com/learn/cesiumjs-learn/cesiumjs-flight-tracker/</a>
+<ul>
+<li>"you can later extend this code to parse the original data or even visualize live air traffic as samples are passed to your app from a server"</li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://community.cesium.com/t/vector-data-from-database-postgis/889">https://community.cesium.com/t/vector-data-from-database-postgis/889</a>
+<ul>
+<li>Q: "I try to pull my vector data(points and lines) from my PostGIS database and render it on the top of base map. Any API to connect the database and render new features on the top of map?"
+<ul>
+<li>A: "use GeoServer and display the data in Cesium using a WMS layer"</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://community.cesium.com/t/polygon-with-height-data-to-3d/4406">https://community.cesium.com/t/polygon-with-height-data-to-3d/4406</a>
+<ul>
+<li>"Cesium has support for geojson directly, so depending on the complexity, you may be able to simply load in the generated geojson file. Here is an example for how to add it to Cesium: <a href="http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=GeoJSON%20and%20TopoJSON.html&#x26;label=DataSources">http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=GeoJSON%20and%20TopoJSON.html&#x26;label=DataSources</a> "</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/abb9e98k7o1d5jh3lpn3jb2">Geopose (public-notes)</a></li>
+</ul>

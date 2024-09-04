@@ -1,0 +1,116 @@
+<h1 id="data-temporality">Data Temporality<a aria-hidden="true" class="anchor-heading icon-link" href="#data-temporality"></a></h1>
+<h2 id="assertive-time-and-effective-time">Assertive Time and Effective Time<a aria-hidden="true" class="anchor-heading icon-link" href="#assertive-time-and-effective-time"></a></h2>
+<ul class="contains-task-list">
+<li>suggested names for transaction time and valid time, where decision time is not used</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> why does transaction time need a period?
+<ul>
+<li>if you have a history of transactions, the "current" state has no tx-end. old states have a timestamp of when they were superseded. Seems like you could impute an old state's tx-end tho, but I bet for querying, having the tx-end stored is nice.</li>
+<li>t.2024.07.12.14 in open-world assumption, or in cases of gaps where a fact gets (soft-)deleted and then re-created</li>
+<li>for clarity, perhaps "record-commissioned-at" and "record-decomissioned-at"</li>
+</ul>
+</li>
+</ul>
+<h2 id="decision-time">Decision Time<a aria-hidden="true" class="anchor-heading icon-link" href="#decision-time"></a></h2>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Decision Time</span></div>
+<a href="/wiki/notes/QXEaahMfmhhuIehSOukZ6" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>for tri-temporal tables, the decision date will never be after the transaction date, while the valid date might still be arbitrary.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://dba.stackexchange.com/questions/116497/interpreting-decision-time-dt-in-temporal-databases">https://dba.stackexchange.com/questions/116497/interpreting-decision-time-dt-in-temporal-databases</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Temporal_database">https://en.wikipedia.org/wiki/Temporal_database</a></li>
+<li><a href="https://www.dolthub.com/blog/2023-08-07-temporal-database/">https://www.dolthub.com/blog/2023-08-07-temporal-database/</a> has a tri-temporal example</li>
+</ul>
+</div></div><p></p><p></p>
+<ul>
+<li>t.2024.07.12.14 probably just "an application time"</li>
+</ul>
+<h2 id="completion-time">Completion Time<a aria-hidden="true" class="anchor-heading icon-link" href="#completion-time"></a></h2>
+<ul>
+<li>just made this up, it's like due date but doesn't have the "external constraint" sense 
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">created (Private)</a> 2021-10-31</li>
+</ul>
+</li>
+<li>applies to intended activity (tasks), goals</li>
+<li>could sometimes be represented as "ending instant/period of valid time"</li>
+<li><a href="/wiki/notes/FffovjDEEO8tqJebfdVrN">Defining Done Is Hard</a></li>
+<li>t.2024.07.12.14 probably just another application time</li>
+</ul>
+<h2 id="probabilistic-time">Probabilistic Time<a aria-hidden="true" class="anchor-heading icon-link" href="#probabilistic-time"></a></h2>
+<ul>
+<li>Triangle Distribution
+<ul>
+<li>wrong: "The really nice thing about Triangle distributions is the Mean and the Mode are the same"</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="timeml"><a href="/wiki/notes/GSegYTyB5OPEApq1x9ZEc">TimeML</a><a aria-hidden="true" class="anchor-heading icon-link" href="#timeml"></a></h2>
+<ul>
+<li>functionInDocument ::= 'CREATION_TIME' | 'EXPIRATION_TIME' | 'MODIFICATION_TIME' | 'PUBLICATION_TIME' | 'RELEASE_TIME'| 'RECEPTION_TIME' | 'NONE' </li>
+</ul>
+<h2 id="allens-interval-algebra">Allen's Interval Algebra<a aria-hidden="true" class="anchor-heading icon-link" href="#allens-interval-algebra"></a></h2>
+<ul>
+<li>see <a href="/wiki/notes/m7f0x4lqhuqgf16412lu6gx">Allens Interval Algebra</a></li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li>'[of <a href="/wiki/notes/ksyiqeJyGREyTxzWg0FPs">MariaDB</a> and <a href="/wiki/notes/ekgKw1i4Ubu3lWvgUpbSh">Postgres</a>], MariaDB supports temporal tables in the core product and sticks to the SQL:2011 standard most closely. I would recommend MariaDB for those interested in temporal tables in existing SQL databases.' <a id="fnref-1" class="fnref" href="#fn-1">1</a></li>
+<li><a href="/wiki/notes/i388nbhc8kgy4chr0t1637t">SirixDB</a> and <a href="/wiki/notes/id8ts8faecp28rr4gl9ywm4">Xtdb</a></li>
+<li><a href="/wiki/notes/f1NRb172HfsDVGSJiwQqZ">TerminusDB</a> and <a href="/wiki/notes/7fXkqdJWZAjrmGRiEUI0Y">Dolt</a></li>
+<li><a href="/wiki/notes/vcdace2fupr484fad6ke0u3">Strabon</a> and <a href="/wiki/notes/490hjog9ut6bjlto7533c7y">Allegrograph</a></li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="/wiki/notes/dsxY5fKiUumTMYovyGaPu">Decision Time in Temporal Databases</a></li>
+<li><a href="/wiki/notes/BKNFXme7wt7HQbysYLRMw">Semantics of Temporal Models with Multiple Temporal Dimensions</a></li>
+<li><a href="https://aclanthology.org/2021.naacl-main.67.pdf">https://aclanthology.org/2021.naacl-main.67.pdf</a></li>
+<li><a href="https://www.informs-sim.org/wsc97papers/0373.PDF">DESIGN AND IMPLEMENTATION OF HLA TIME MANAGEMENT IN THE RTI VERSION F.0</a></li>
+<li><a href="https://robinpokorny.medium.com/why-developers-should-stop-using-iso-8601-for-date-time-e6ee5fc8ad87">https://robinpokorny.medium.com/why-developers-should-stop-using-iso-8601-for-date-time-e6ee5fc8ad87</a></li>
+<li><a href="https://medium.com/towards-nesy/temporal-logic-model-checking-cf05fc917688">https://medium.com/towards-nesy/temporal-logic-model-checking-cf05fc917688</a></li>
+<li><a href="https://herdingcats.typepad.com/my_weblog/2006/02/deterministic_v.html">https://herdingcats.typepad.com/my_weblog/2006/02/deterministic_v.html</a>
+<ul>
+<li>has a comment preferring PERT (Project Evaluation and Review Technique) distribution: (Min+4*Mode+Max)/6</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Allen%27s_interval_algebra">https://en.wikipedia.org/wiki/Allen%27s_interval_algebra</a></li>
+<li><a href="/wiki/notes/kf04rf4jt9dzqyjsx1n9wuz">Bitemporal Data Model: Making it happened in Postgres</a></li>
+<li></li>
+<li><a href="https://blog.podsnap.com/bitemp.html">https://blog.podsnap.com/bitemp.html</a></li>
+<li><a href="https://realfiction.net/posts/2d-or-bitemporal-historization-a-primer/">https://realfiction.net/posts/2d-or-bitemporal-historization-a-primer/</a></li>
+<li><a href="/wiki/notes/juprec2lxqk86arixbr1f8e">Bitemporal Data Theory and Practice</a></li>
+<li><a href="/wiki/notes/lkrtyir3nc1ujpqk3rf5uep">Enabling Retroactive Computing through Event Sourcing</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/QXEaahMfmhhuIehSOukZ6">Decision Time</a></li>
+<li><a href="/wiki/notes/6esa0yhcf460wpr8k03wf76">Glocal</a></li>
+<li><a href="/wiki/notes/gl2uiizlpuslmo1qfnesiun">Hybrid Time</a></li>
+<li><a href="/wiki/notes/haayfsdzkndnyv8kngkpzn6">PERT distribution</a></li>
+<li><a href="/wiki/notes/c5h700rdqbbxz0fptbc2dho">Retroactive Computing</a></li>
+<li><a href="/wiki/notes/GBSREzbRJ0CHXZhKz4NAl">Transaction Time</a></li>
+<li><a href="/wiki/notes/bixuIGkZN8zdd77TcMKDu">Valid Time</a></li>
+</ol>
+<h2 id="footnotes">Footnotes<a aria-hidden="true" class="anchor-heading icon-link" href="#footnotes"></a></h2>
+<ol>
+<li><span id="fn-1" style="width: 0; height: 0;"></span><p><a href="https://www.dolthub.com/blog/2023-08-07-temporal-database/">https://www.dolthub.com/blog/2023-08-07-temporal-database/</a><a class="fn" href="#fnref-1">˄</a></p></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/CooO00BfhfYUaXK7RVHZ2">hadGoal (predicates)</a></li>
+<li><a href="/wiki/notes/dsxY5fKiUumTMYovyGaPu">Decision Time in Temporal Databases (public-notes)</a></li>
+<li><a href="/wiki/notes/Xc1Bz9oFeoNhPDd9VoJOf">Time Travel (public-notes)</a></li>
+<li><a href="/wiki/notes/u5dudl85et8do2fs26fg62x">Temporality (public-notes)</a></li>
+<li><a href="/wiki/notes/3fh0o75ztyvi7sqq2xqkp2s">Fantastic Nine (public-notes)</a></li>
+</ul>
