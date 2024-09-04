@@ -1,15 +1,15 @@
 {
     "folders": [
         {
-        "path": "../dendron-workspace/public-notes",
+        "path": "public-notes",
         "name": "public-notes"
         },
         {
-        "path": "../dendron-workspace/predicates",
+        "path": "predicates",
         "name": "predicates"
         },
         {
-        "path": "../dendron-workspace/classes",
+        "path": "classes",
         "name": "classes"
         },
     ]

@@ -42,7 +42,6 @@ workspace:
             name: public-notes
     journal:
         dailyDomain: daily
-        dailyVault: private-notes
         name: journal
         dateFormat: y.MM.dd
         addBehavior: childOfDomain
@@ -128,4 +127,4 @@ publishing:
             - classes
             - predicates
     siteUrl: https://djradon.github.io
-    assetsprefix: wiki
+    assetsPrefix: wiki
