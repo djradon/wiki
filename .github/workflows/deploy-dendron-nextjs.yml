@@ -28,6 +28,7 @@ jobs:
         repository: djradon/wiki
         #token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
         path: 'wiki'
+        fetch-depth: 0
 
     - name: Clone Dendron (public-notes) repo
       uses: actions/checkout@v2
