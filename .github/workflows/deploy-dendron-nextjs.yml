@@ -29,6 +29,27 @@ jobs:
         #token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
         path: 'wiki'
 
+    - name: Clone Dendron (public-notes) repo
+      uses: actions/checkout@v2
+      with:
+        repository: djradon/public-notes
+        #token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        path: 'wiki/public-notes'
+
+    - name: Clone Dendron (classes) repo
+      uses: actions/checkout@v2
+      with:
+        repository: djradon/classes
+        #token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        path: 'wiki/classes'
+
+    - name: Clone Dendron (predicates) repo
+      uses: actions/checkout@v2
+      with:
+        repository: djradon/predicates
+        #token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        path: 'wiki/predicates'
+
     #- name: Clone Dendron (wiki) repo
     #  uses: actions/checkout@v2
     #  with:
