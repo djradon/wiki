@@ -126,7 +126,9 @@
     "enableKatex": true,
     "copyAssets": true,
     "siteHierarchies": [
-      "root"
+      "root",
+      "p",
+      "c"
     ],
     "writeStubs": false,
     "siteRootDir": "docs",
@@ -157,6 +159,9 @@
     },
     "siteUrl": "https://djradon.github.io",
     "assetsPrefix": "/wiki",
+    "ga": {
+      "tracking": "G-X7H6C4TMC7"
+    },
     "siteFaviconPath": "favicon.ico",
     "siteIndex": "root"
   }

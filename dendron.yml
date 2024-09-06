@@ -23,18 +23,6 @@ workspace:
     dendronVersion: 0.83.0
     vaults:
         -
-            fsPath: predicates
-            remote:
-                type: git
-                url: git@github.com:djradon/predicates.git
-            name: predicates
-        -
-            fsPath: classes
-            remote:
-                type: git
-                url: git@github.com:djradon/classes.git
-            name: classes
-        -
             fsPath: public-notes
             remote:
                 type: git
@@ -124,7 +112,7 @@ publishing:
         action: useVault
         payload:
             - public-notes
-            - classes
-            - predicates
     siteUrl: https://djradon.github.io
     assetsPrefix: /wiki
+    ga:
+        tracking: G-X7H6C4TMC7

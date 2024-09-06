@@ -4,13 +4,5 @@
         "path": "public-notes",
         "name": "public-notes"
         },
-        {
-        "path": "predicates",
-        "name": "predicates"
-        },
-        {
-        "path": "classes",
-        "name": "classes"
-        },
     ]
 }
