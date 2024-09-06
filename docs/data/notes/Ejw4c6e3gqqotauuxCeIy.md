@@ -1,5 +1,0 @@
-
-
-
-- [[c.sphere]] #shapow #activity
-

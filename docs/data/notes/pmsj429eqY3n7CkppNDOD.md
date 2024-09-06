@@ -1,4 +1,0 @@
-
-
-
-[[c.sphere]] #activity #discursive

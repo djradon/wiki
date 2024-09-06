@@ -1,3 +1,0 @@
-
-- [[p.hadDefinition]] 
-  - [[p.hadDescription]]

@@ -1,2 +1,0 @@
-
-[[p.equivalentPredicate]] [[p.hasDemonstration]]

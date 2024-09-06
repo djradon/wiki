@@ -1,4 +1,0 @@
-
-
-
-- inverseOf [[p.hasTheme]]
