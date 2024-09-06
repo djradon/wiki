@@ -28,6 +28,12 @@ workspace:
                 type: git
                 url: git@github.com:djradon/public-notes.git
             name: public-notes
+        -
+            fsPath: classes
+            remote:
+                type: git
+                url: git@github.com:djradon/classes.git
+            name: classes
     journal:
         dailyDomain: daily
         name: journal
@@ -112,6 +118,7 @@ publishing:
         action: useVault
         payload:
             - public-notes
+            - classes
     siteUrl: https://djradon.github.io
     assetsPrefix: /wiki
     ga:

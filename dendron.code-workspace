@@ -4,5 +4,9 @@
         "path": "public-notes",
         "name": "public-notes"
         },
+        {
+        "path": "classes",
+        "name": "classes"
+        },
     ]
 }
