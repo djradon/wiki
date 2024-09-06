@@ -31,22 +31,6 @@
     "dendronVersion": "0.83.0",
     "vaults": [
       {
-        "fsPath": "predicates",
-        "remote": {
-          "type": "git",
-          "url": "git@github.com:djradon/predicates.git"
-        },
-        "name": "predicates"
-      },
-      {
-        "fsPath": "classes",
-        "remote": {
-          "type": "git",
-          "url": "git@github.com:djradon/classes.git"
-        },
-        "name": "classes"
-      },
-      {
         "fsPath": "public-notes",
         "remote": {
           "type": "git",
@@ -126,9 +110,7 @@
     "enableKatex": true,
     "copyAssets": true,
     "siteHierarchies": [
-      "root",
-      "p",
-      "c"
+      "root"
     ],
     "writeStubs": false,
     "siteRootDir": "docs",
@@ -152,9 +134,7 @@
     "duplicateNoteBehavior": {
       "action": "useVault",
       "payload": [
-        "public-notes",
-        "classes",
-        "predicates"
+        "public-notes"
       ]
     },
     "siteUrl": "https://djradon.github.io",

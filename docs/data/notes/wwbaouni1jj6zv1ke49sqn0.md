@@ -1,6 +1,6 @@
 
 - url: https://arxiv.org/pdf/2112.03498.pdf
-- [[p.differentiated]]
+- different:
   - star ego-networks
   - radial ego-networks
   - contracted ego-networks

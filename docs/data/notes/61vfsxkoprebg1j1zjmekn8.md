@@ -1,6 +1,6 @@
 
 - repo: https://github.com/ozekik/markdown-ld
-- #eg https://ozekik.github.io/markdown-ld/
+- eg https://ozekik.github.io/markdown-ld/
 
 ## Specification
 

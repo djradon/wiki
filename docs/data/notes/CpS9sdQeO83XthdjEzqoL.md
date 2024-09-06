@@ -1,5 +1,5 @@
 
-Welcome! And beware! This is a cluttered cupboard of notes riddled with inaccuracies and mistakes.
+Welcome! And beware!  
 
 ## Purpose
 
@@ -33,6 +33,9 @@ In terms of the [[t.km.zettelkasten]] method, this wiki is a commingling of lite
 
 In terms of [[t.tm.getting-things-done]], it's references, someday-maybe, next actions, and public projects.
 
+## Beware!
+
+This is a cluttered cupboard of jumbled jottings riddled with inaccuracies, confusion, and mistakes.
 
 ## What This Is Not
 

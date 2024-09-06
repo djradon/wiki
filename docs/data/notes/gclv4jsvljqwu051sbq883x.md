@@ -1,13 +1,13 @@
 
-## #eg
+## eg
 
-- to be / [[p.was]]
+- to be / was
 - sense verbs
-  - [[p.looked]], but not [[p.lookedAt]] or [[p.lookedFor]]
-  - [[p.felt]] 
-  - [[p.smelled]]
-  - [[p.tasted]]
+  - looked, but not lookedAt or lookedFor
+  - felt 
+  - smelled
+  - tasted
 
-## [[p.hadDescription]]
+## Description
 
 - https://www.grammar-monster.com/glossary/linking_verbs.htm
