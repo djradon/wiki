@@ -3,6 +3,7 @@
 <li><a href="https://www.scitepress.org/PublishedPapers/2021/106842/106842.pdf">https://www.scitepress.org/PublishedPapers/2021/106842/106842.pdf</a></li>
 </ul>
 <h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<h3 id="introduction">Introduction<a aria-hidden="true" class="anchor-heading icon-link" href="#introduction"></a></h3>
 <ul>
 <li>in the Vertebrate Taxonomy Ontology (VTO) (Phenoscape, 2021) and the NCBI Taxonomy (NCBI, 2021), all biological species are modelled as classes</li>
 <li>In contrast, in the Wildlife Ontology (WO) (BBC, 2021) and in the Global Biodiversity Information Facility (GBIF, 2021), biological species are modelled as instances.
@@ -12,8 +13,40 @@
 </li>
 <li><strong>The contribution of this paper is a modelling approach which rigorously utilizes multi-facet (Atkinson and Kühne, 2001; Neumayr et al., 2009; Frank, 2014) behaviour, an aspect of multi-level modelling, allowing entities to be modelled as classes (class facet) and instances (instance facet) simultaneously</strong></li>
 </ul>
+<h3 id="related-work">Related Work<a aria-hidden="true" class="anchor-heading icon-link" href="#related-work"></a></h3>
+<ul>
+<li>classes are described as groups of resources and instances as their members. </li>
+<li><a href="/wiki/notes/xa8akdpuja2yttono4watlk">@dean-allemang</a> calls the reaction of defining everything as classes "rampant classism"
+<ul>
+<li>"We agree with them"</li>
+</ul>
+</li>
+<li>(Noy and McGuinness, 2021) <a href="/wiki/notes/5x4czy7ll20i5eg8kuynyft">Ontology Development 101 a Guide to Creating Your First Ontology</a>: A criterium they define for the decision to model something as a class or an instance is the lowest level of granularity in the representation.
+<ul>
+<li>i.e., individual instances are the most specific concepts represented in a knowledge base</li>
+</ul>
+</li>
+<li>various authors recommend modelling pairs of classes where a class is associated with a corresponding type class
+<ul>
+<li>modelling pattern is called materialization pattern</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^vt540o589i6g" href="#^vt540o589i6g"></a>the term powertype is used in (Odell, 1994) and (Guizzardi, et al., 2015). </li>
+</ul>
+</li>
+<li>With conventional modelling approaches it is not possible to mix the properties of base class and its powertype into one class, since it makes no sense to have a property Number_Plate for a Car_Model.</li>
+<li><strong>Our approach is simpler insofar as it does not require separate entities Car and Car Model while still explicitly distinguishing between the different facets.</strong></li>
+<li>Another approach to avoid separate entities Car and Car Model is described in (Neumayr et al. 2009), called Multi-Level Domain Modeling. Properties are annotated with meta attributes which define rules for inheritance and instantiation. E.g. for the base class Car the data property maxSpeed is annotated with :model to refer to a Car_Model while the data property Milage is annotated with :physical_entity to refer to an individual car. This allows merging the properties of Car and Car_Model into only one class Car while keeping the semantics of the properties clear.</li>
+<li>In a comparable approach (Frank, 2014), level numbers are assigned to properties. For Car the property Milage would be defined with level=0 which corresponds to the :physical_entity annotation in (Neumayr et al. 2009), while maxSpeed would be annotated with level=1 which corresponds to the :model annotation. Annotating properties with multiple levels or with different levels for different contexts is not possible, as is enabled in our approach.</li>
+<li>In (Brasileiro et al., 2016a), a fixed separation of entities into individuals, 1 st order type, 2 nd order type and 3 rd order type is proposed. Our approach is more flexible as it allows context-dependent viewpoints.</li>
+<li></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/lzqshxv3b9168yu6kdjqraa">Practical Ontologies for Information Professionals</a></li>
+</ul>
 <hr>
 <strong>Backlinks</strong>
 <ul>
+<li><a href="/wiki/notes/x4h93xhzc9ab85h4x3tlfko">Class Vs Individual (public-notes)</a></li>
+<li><a href="/wiki/notes/v340jb35577sz2hsthug71c">Metatype Vs Powertype (public-notes)</a></li>
 <li><a href="/wiki/notes/64ugzw02qgdm4umxjzj2mv1">Multi Level Theory (public-notes)</a></li>
 </ul>

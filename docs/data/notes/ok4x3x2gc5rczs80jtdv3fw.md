@@ -1,5 +1,5 @@
 
-## First email
+## GFO Presential/Persistent/Perpetuant
 
 m I understanding this right (rephrased into my own words)?
 
