@@ -42,3 +42,4 @@ We also have APIs to expose object history etc. and we hope to include these in 
 - https://forum.solidproject.org/t/terminusdb-a-delightful-database-for-linked-data/3140
   - mentioned: https://news.ycombinator.com/item?id=22867767
 - https://terminusdb.com/blog/graphql-query/
+- [[ar.terminusdb.the-semantic-web-is-dead]]

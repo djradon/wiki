@@ -4,7 +4,6 @@
 
 ## Use cases
 
-- remote live games [[sh.gameplay.asynchronous]]
+- remote live games
 - play by forum
 - around a table
-- 

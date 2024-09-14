@@ -1,13 +1,19 @@
 
 ## Definition
 
-### [[c.element]]
+### Elements
 
-- [[t.lit.character]]
-- [[t.lit.plot]]
-- [[t.lit.setting]]
-- [[t.lit.tension]]
-- [[t.lit.theme]]
+- [[t.story-telling.character]]
+- [[t.story-telling.plot]]
+- [[t.story-telling.setting]]
+- [[t.story-telling.tension]]
+- [[t.story-telling.theme]]
 
 
-- [[p.hasApplication]] [[t.cs.metaverse]] 
+### Trope modalities
+
+- [[t.lit]]
+- [[t.drama]]
+- [[t.music]]
+
+

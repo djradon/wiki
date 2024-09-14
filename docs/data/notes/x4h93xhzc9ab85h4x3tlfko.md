@@ -21,6 +21,7 @@
 
 - just like my Dendron notes, do we have separate classes for things, or can concepts just double as classes?
   - based on my experience, it's better to just have one class/concept/universal, but can be aliased from multiple places
+    - t.2024.09.09.09 thinking about this more in 
 
 ### Classes as Values
 

@@ -82,5 +82,6 @@ SELECT ?person WHERE {
 ## Resources
 
 - https://medium.com/wallscope/constructing-sparql-queries-ca63b8b9ac02
+- https://www.reddit.com/r/semanticweb/comments/1dqh8zw/code_injection_into_sqarql_is_this_done_somehow/
 
 ## References

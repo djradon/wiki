@@ -4,4 +4,6 @@
 
 ## Resources
 
-- https://jonathanbarbato.com/what-is-a-digital-garden
+- https://jonathanbarbato.com/what-is-a-digital-garden (offline, no archive.org cache!)
+- [[ar.maggieappleton.a-brief-history-and-ethos-of-the-digital-garden]]
+- [[ar.swyx.learn-in-public]]

@@ -60,6 +60,8 @@
 
 ## Issues
 
+- "RDF is a shitty data model. It doesn’t have native support for lists."
+
 ### n-ary relations
 
 - aka [[t.cs.semantic-web.relationship-to-entity-conversion]]
@@ -160,7 +162,9 @@ Intuitively speaking, changes in the universe of discourse can be reflected in t
   - RDF sources may change their state over time. That is, they may provide different RDF graphs at different times.
   - Some RDF sources may, however, be immutable snapshots of another RDF source, archiving its state at some point in time.
 
+## History
 
+- [[ar.the-rdf-net-challenge]]
 
 
 ## can be expressed as 

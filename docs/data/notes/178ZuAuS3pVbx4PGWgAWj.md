@@ -4,6 +4,17 @@
   - https://en.wikipedia.org/wiki/Semantic_publishing 
     - "Semantic publication provides a way for computers to understand the structure and even the meaning of the published information, making information search and data integration more efficient" 
   - [[prdct.linked-data-fragments]]
+  - [[idea.the-semantic-web-is-dead]]
+
+## Philosophy
+
+### Original Vision
+
+- @tim-berners-lee: "I have a dream for the Web [in which computers] become capable of analyzing all the data on the Web – the content, links, and transactions between people and computers. A "Semantic Web", which makes this possible, has yet to emerge, but when it does, the day-to-day mechanisms of trade, bureaucracy and our daily lives will be handled by machines talking to machines. The "intelligent agents" people have touted for ages will finally materialize."
+
+### Why do we need the semantic web?
+
+- @gavin-mendel-gleason: "Because distributed, interoperable, well-defined data is literally the most central problem for the current and near-future human economy. Knowledge is power, and distributable, actionable knowledge, creates opportunities and efficiencies impossible without it."
 
 ## Interesting
 
@@ -21,6 +32,8 @@
 - [[prdct.eye]]
 
 ## Issues
+
+
 
 ### n-ary relationships
 
@@ -53,3 +66,4 @@
 ## References
 
 - [[ar.a-review-of-the-semantic-web-field]]
+- 

@@ -43,8 +43,9 @@ We first need a "rolification" property for the :Purchase (that's just an existi
 
 And a class for the :bought relationship, which is additionally tied to a "rolified" property:
 
-    _:BoughtRelationship owl:equivalentClass [ owl:onProperty rdf:predicate ;
-                                               owl:hasValue :bought ] ;
+    _:BoughtRelationship owl:equivalentClass [  
+        owl:onProperty rdf:predicate ;
+        owl:hasValue :bought ] ;
         rdfs:subClassOf [ owl:onProperty _:RolifiedBoughtRelationship ; owl:hasSelf true ] .
 
 Then we can define subproperty chain axioms as needed:

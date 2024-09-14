@@ -1,4 +1,6 @@
 
+- similar: [[t.story-telling.narratology.jannidis-three-levels]]
+
 ## chatgpt.4o
 
 Seymour Chatman, a prominent narrative theorist, proposed a model of narrative communication that distinguishes between different levels of communication within a narrative. His model is influenced by structuralist theories and provides a framework for analyzing how stories are communicated from the author to the reader (or viewer) through various intermediaries.

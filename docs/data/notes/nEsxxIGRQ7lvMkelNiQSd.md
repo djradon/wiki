@@ -1,5 +1,12 @@
 
 
+## Resources
 
-- [[p.hasLearningResource]] https://blog.brockherion.dev/interacting-with-hashnodes-api-with-nextjs-and-apollo-client
-  - https://thirdweb.com/portal/guides/mint-nft-collection-using-typescript-sdk
+- [tag list](https://github.com/Hashnode/support/blob/main/misc/tags.json)
+
+
+## Learning Resources
+
+-  https://blog.brockherion.dev/interacting-with-hashnodes-api-with-nextjs-and-apollo-client
+
+

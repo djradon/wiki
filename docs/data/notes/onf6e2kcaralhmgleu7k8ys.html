@@ -27,8 +27,9 @@
 <pre><code>:Purchase rdfs:subClassOf [ owl:onProperty _:RolifiedPurchase ; owl:hasSelf true ] .
 </code></pre>
 <p>And a class for the :bought relationship, which is additionally tied to a "rolified" property:</p>
-<pre><code>_:BoughtRelationship owl:equivalentClass [ owl:onProperty rdf:predicate ;
-                                           owl:hasValue :bought ] ;
+<pre><code>_:BoughtRelationship owl:equivalentClass [  
+    owl:onProperty rdf:predicate ;
+    owl:hasValue :bought ] ;
     rdfs:subClassOf [ owl:onProperty _:RolifiedBoughtRelationship ; owl:hasSelf true ] .
 </code></pre>
 <p>Then we can define subproperty chain axioms as needed:</p>

@@ -10,7 +10,7 @@
 
 ## Similar
 
-# Similar books and articles
+### Similar books and articles
 
 [The Ontology of Fiction.](https://philpapers.org/rec/GETTOO)[Michael Edward Gettings](https://philpapers.org/s/Michael Edward%20Gettings "View other works by Michael Edward Gettings") - 1999 - Dissertation, University of California, Santa Barbara
 

@@ -1,2 +1,2 @@
 
-- [[c.software.rpg.virtual-tabletop]]
+- [[c.software.rpg.virtual-tabletop.utilities]]

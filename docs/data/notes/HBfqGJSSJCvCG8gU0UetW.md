@@ -22,7 +22,7 @@
 
 ## Use Cases
 
-- [[t.lit.fiction.writing]]
+- [[t.story-telling.fiction.writing]]
   - [[c.resource]] [Zettelkasten for fiction writing](https://zettelkasten.de/fiction)
 
 ## References
