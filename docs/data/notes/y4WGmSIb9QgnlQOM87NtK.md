@@ -1,0 +1,4 @@
+
+
+
+- [[p.similarTo]] [[c.resource]]

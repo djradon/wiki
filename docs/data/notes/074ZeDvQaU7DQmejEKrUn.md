@@ -1,0 +1,6 @@
+
+
+
+- [[p.equivalentPredicate]] skos.example
+
+

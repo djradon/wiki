@@ -1,6 +1,7 @@
 
 - https://nemo.inf.ufes.br/wp-content/papercite-data/pdf/multi_level_conceptual_modeling_theory_language_and_application_2021.pdf
 - authors: @claudenir-fonseca @joao-paulo-almeida @giancarlo-guizzardi @victorio-carvalho
+- topics: [[t.km.ontology.multi-level-theory]]
 
 ## Abstract
 

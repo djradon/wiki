@@ -8,3 +8,7 @@
 ## Features
 
 - allows for custom SPARQL queries to be embedded in the site templates.
+
+## Issues
+
+- seems to only support a single source file

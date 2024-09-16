@@ -1,11 +1,11 @@
 <h1 id="rule-engine">Rule Engine<a aria-hidden="true" class="anchor-heading icon-link" href="#rule-engine"></a></h1>
 <ul>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">p.differentFrom (Private)</a> <a href="/wiki/notes/zg536sp9c87sy4lgv1wqn8n">Workflow</a>
+<li><a href="/wiki/notes/ZTd8wD0Cz5MUORCpw6SI7">differentFrom</a> <a href="/wiki/notes/zg536sp9c87sy4lgv1wqn8n">Workflow</a>
 <ul>
 <li><a href="https://kissflow.com/workflow/workflow-engine-business-rule-engine-difference/">https://kissflow.com/workflow/workflow-engine-business-rule-engine-difference/</a></li>
 </ul>
 </li>
-<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#aka (Private)</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">DecisionEngine (Private)</a>; Business Rule Management System; </li>
+<li><a class="color-tag" style="--tag-color: #c8aca9;" href="/wiki/notes/d4orf84qh6sdxnblorr8sgc">#aka</a> <a href="/wiki/notes/ghkgb5gkpvhoxmjo7vqipen">DecisionEngine</a>; Business Rule Management System; </li>
 </ul>
 <h2 id="implementations">Implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#implementations"></a></h2>
 <h3 id="generic">generic<a aria-hidden="true" class="anchor-heading icon-link" href="#generic"></a></h3>
@@ -41,7 +41,7 @@
 <li>Persisting rule state - if you have long-running workflows, i.e. the type that is common with event-sourcing, you have one of two methods for executing domain events against a rules engine: 1. replay all events against the rules engine each time a new event is received or 2. persist the "completion state" of each rule each time an event is persisted, and recover that as a separate snapshot. The challenge with the second approach is how you handle updating a rules set - we were able to invalidate individual rules using a hash signature while preserving the output values of rules that were unchanged.</li>
 <li>Adding new rulesets on the fly - if you want the ability to dynamically create new campaigns, you have to decide how you want to handle historical data. In our case, since we were a high volume streaming operation, our choice was to not retroactively apply older events when new rules were added as this would create a "thundering herd" problem for us. We only applied new rules to entities that processed new events after the additional rule-based campaigns were defined.</li>
 </ol>
-<h2 id="pvs-private-workflow"><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">p.vs (Private)</a> <a href="/wiki/notes/zg536sp9c87sy4lgv1wqn8n">Workflow</a><a aria-hidden="true" class="anchor-heading icon-link" href="#pvs-private-workflow"></a></h2>
+<h2 id="vs-workflow"><a href="/wiki/notes/RXNF9JaL4rFi1JOG7wDKj">vs</a> <a href="/wiki/notes/zg536sp9c87sy4lgv1wqn8n">Workflow</a><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-workflow"></a></h2>
 <div class="table-responsive">
 
 

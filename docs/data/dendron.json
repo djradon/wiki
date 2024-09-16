@@ -37,14 +37,6 @@
           "url": "git@github.com:djradon/public-notes.git"
         },
         "name": "public-notes"
-      },
-      {
-        "fsPath": "classes",
-        "remote": {
-          "type": "git",
-          "url": "git@github.com:djradon/classes.git"
-        },
-        "name": "classes"
       }
     ],
     "journal": {
@@ -139,13 +131,6 @@
     "enableTaskNotes": true,
     "enablePrettyLinks": true,
     "searchMode": "lookup",
-    "duplicateNoteBehavior": {
-      "action": "useVault",
-      "payload": [
-        "public-notes",
-        "classes"
-      ]
-    },
     "siteUrl": "https://djradon.github.io",
     "assetsPrefix": "/wiki",
     "ga": {

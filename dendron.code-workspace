@@ -1,12 +1,8 @@
 {
     "folders": [
         {
-        "path": "public-notes",
-        "name": "public-notes"
-        },
-        {
-        "path": "classes",
-        "name": "classes"
-        },
+            "path": "public-notes",
+            "name": "public-notes"
+        }
     ]
 }
