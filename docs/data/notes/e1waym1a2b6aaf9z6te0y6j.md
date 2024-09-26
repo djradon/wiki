@@ -12,3 +12,8 @@
 ## Issues
 
 - seems to only support a single source file
+
+
+## References
+
+- [[ar.jekyll-rdf-template-based-linked-data-publication-with-minimized-effort-and-maximum-scalability]]

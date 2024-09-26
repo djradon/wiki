@@ -1,6 +1,7 @@
 
 - https://www.tbray.org/ongoing/When/200x/2003/05/21/RDFNet
 - topics: [[idea.view-source-kickstarted-the-web]]
+- 
 
 ## Highlights
 

@@ -1,6 +1,6 @@
 
 - https://rdfshape.weso.es/
-- [[c.software.semantic.visualization]]
+- [[c.software.visualization.semantic]]
 - similar: [[prdct.zazuko-rdf-sketch]] [[prdct.rdf2dot]]
 
 ## Features

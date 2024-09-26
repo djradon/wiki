@@ -1,6 +1,11 @@
 
 - created: 1979?
 - composed-for: [[video.the-muppet-movie]]
+- composed-by: @paul-williams
+
+## Description
+
+- "At the beginning of the movie, Bernie the Agent describes Hollywood as "the Dream Factory, the Magic Store". So this song is a callback to that line."
 
 ## Lyrics
 

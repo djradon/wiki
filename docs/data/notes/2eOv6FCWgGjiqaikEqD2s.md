@@ -1,3 +1,10 @@
 
+- different-from: [[t.role-playing.games]]
 
-- [[c.Resource.List]] https://libregamewiki.org/Role-playing_games
+## Thoughts
+
+- RPG has somehow become a cliche that involves very little role-playing
+
+## Resources
+
+- https://libregamewiki.org/Role-playing_games

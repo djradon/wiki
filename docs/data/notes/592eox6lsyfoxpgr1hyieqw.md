@@ -1,4 +1,4 @@
 
 - https://github.com/edmondchuc/ontogram
-- [[c.software.semantic.visualization]]
+- [[c.software.visualization.semantic]]
 - kinda dead

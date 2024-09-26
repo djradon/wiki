@@ -1,7 +1,7 @@
 
 - repo: https://github.com/jannahastings/emotion-ontology/
   - sumo version: http://sigmakee.cvs.sourceforge.net/viewvc/sigmakee/KBs/emotion.kif
-- foundry: [[org.obo-foundry]]
+- foundry: [[prdct.obo-foundry]]
 
 ## Selection
 

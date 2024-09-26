@@ -79,7 +79,7 @@ https://github.com/iddi/sofia/tree/master/eu.sofia.adk.common/ontologies/foundat
 [[ar.where-to-publish-and-find-ontologies-a-survey-of-ontology-libraries]]
   mentions: 
     [[prdct.cupboard]] (dead)
-    [[org.obo-foundry]]
+    [[prdct.obo-foundry]]
     [[prdct.ontology-lookup-service]]
     [[prdct.ontologydesignpatterns-org]]
       mentions: [[prdct.cognitive-characteristics-ontology]]

@@ -6,6 +6,11 @@
 ## Quotes
 
 - Goldsmith: "All the compassion that's left on this earth is in that cave."
+- Jason: "My god! My dear god... It's a machine."
+
+![](/assets/images/2024-09-25-13-25-08.png)
+
+![](/assets/images/2024-09-13-16-11-46.png)
 
 
 ## References

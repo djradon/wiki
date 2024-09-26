@@ -1,5 +1,5 @@
 
-- [[c.software.rpg.virtual-tabletop.fat-client]]
+- [[c.software.rpg.virtual-tabletop.fat-client]] [[c.software.rpg.virtual-tabletop]]
 - https://d20pro.com/
 
 ## References

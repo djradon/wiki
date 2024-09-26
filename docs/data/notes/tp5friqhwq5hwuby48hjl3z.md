@@ -2,7 +2,7 @@
 
 ## Solutions
 
-- [[org.obo-foundry]]
+- [[prdct.obo-foundry]]
 - [[prdct.gfo.bio]]
 
 
