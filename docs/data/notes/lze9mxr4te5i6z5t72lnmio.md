@@ -1,5 +1,5 @@
 
-- superwork: [[superwork.dungeons-and-dragons.storm-kings-thunder]]
+- superwork: [[t.rec.dungeons-and-dragons.forgotten-realms]]
 
 ## Expressions: 
 
@@ -8,7 +8,7 @@
 
 ## Reviews
 
-- https://thealexandrian.net/wordpress/47378/roleplaying-games/review-storm-kings-thunder
+- "needlessly frustrating and complicated campaign": https://thealexandrian.net/wordpress/47378/roleplaying-games/review-storm-kings-thunder
 
 ## References
 

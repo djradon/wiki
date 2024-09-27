@@ -1,4 +1,6 @@
 
+- [[c.Work.superwork]]
+
 ## Mood
 
 - "Greenwood has stated that his own version of the Forgotten Realms, as run in his personal campaign, is much darker than published versions."

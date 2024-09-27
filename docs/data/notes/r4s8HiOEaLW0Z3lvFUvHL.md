@@ -11,16 +11,16 @@ a logical theory accounting for the intended meaning of a formal vocabulary, i.e
 
 ### "Schools"
 
-  Philosophy School
-  Vocabulary and Taxonomy School
-      These taxonomies often model a domain as hierarchical structures without defining what a link in the hierarchy actually means. As a result, they often mix sub-component and sub-class hierarchies.
-  Relational School
-  Object-Oriented School
-  Standards School
-  Linked Data School
-  NLP/LLM School
-  Data-Centric School
-
+  - Philosophy School
+  - Vocabulary and Taxonomy School
+      - These taxonomies often model a domain as hierarchical structures without defining what a link in the hierarchy actually means. As a result, they often mix sub-component and sub-class hierarchies.
+  - Relational School
+  - Object-Oriented School
+  - Standards School
+  - Linked Data School
+  - NLP/LLM School
+  - Data-Centric School
+  
 ## Issues
 
 - 

@@ -1,7 +1,7 @@
 
 - [[c.software.rpg]]
 - url: https://www.herebetaverns.com
-- [[p.won]] [[t.role-playing.award.ennie]]
+- [[p.won]] [[t.roleplaying.award.ennie]]
 - #related [[prdct.sword-and-source]]
 
 ## [[c.model.licensing]]

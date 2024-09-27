@@ -1,9 +1,9 @@
 
-- different-from: [[t.role-playing.games]]
+- different-from: [[t.roleplaying.games]]
 
 ## Thoughts
 
-- RPG has somehow become a cliche that involves very little role-playing
+- RPG video games have somehow become a cliche that involves very little role-playing. If you can't express yourself, you can't play a role. There's a hazy difference between consuming a choice and expressing a preference or making something happen.
 
 ## Resources
 

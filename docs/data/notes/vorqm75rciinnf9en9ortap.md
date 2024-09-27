@@ -1,6 +1,6 @@
 
 - https://chris.farkouh.net/blog/interactive-drama
-- topics: #game-design [[t.drama.interactive]]  [[t.story-telling.fiction.interactive]] [[t.story-telling.interactive]]
+- topics: #game-design [[t.drama.interactive]]  [[t.storytelling.fiction.interactive]] [[t.storytelling.interactive]]
 - author: @chris-farkouh
 - mentions: [[game.facade]] [[t.drama.theater.immersive]]
 

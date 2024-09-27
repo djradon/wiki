@@ -1,5 +1,5 @@
 
-- similar: [[t.story-telling.narratology.jannidis-three-levels]]
+- similar: [[t.storytelling.narratology.jannidis-three-levels]]
 
 ## chatgpt.4o
 

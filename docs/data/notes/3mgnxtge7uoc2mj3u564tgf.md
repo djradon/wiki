@@ -1,9 +1,8 @@
 
-- related: [[music.the-magic-store]]
-- aka: The Dream Factory
+- related: [[music.the-magic-store]] [[t.drama.interactive]] [[t.storytelling.fiction.interactive]] [[t.storytelling.interactive]]
+- aka: The Digital Dream Factory, digital adventure production, roleplay experience curation
 
 
 ## References
 
 - https://scriptmag.com/history/meet-the-reader-the-dream-factory
-- https://forums.delphiforums.com/toughpigs/messages?msg=17392.972&gid=2121252205

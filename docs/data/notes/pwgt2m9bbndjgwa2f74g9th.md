@@ -1,6 +1,6 @@
 
 - https://www.playrole.com/
-- [[t.role-playing.virtual-tabletop]]
+- [[t.roleplaying.virtual-tabletop]]
 - integrates-with: [[prdct.owlbear-rodeo]]
 
 ## Features

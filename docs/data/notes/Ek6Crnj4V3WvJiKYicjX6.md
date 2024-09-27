@@ -1,4 +1,4 @@
 
 - [[c.software.rpg]]
 - [[p.hasURL]] https://dungeondraft.net/
-- [[p.hasApplication]] [[t.role-playing.map-making]]
+- [[p.hasApplication]] [[t.roleplaying.map-making]]

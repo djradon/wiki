@@ -1,4 +1,11 @@
 
+## Description
+
+- broadly construed, includes acting, role-playing gaming, and some kinds of therapy, training, and education
+- can be social, but doesn't have to be
+
+![[t.drama.interactive#role-playing-vs-interactive-drama]]
+
 ## Examples
 
 - @sigourney-weaver played the fictional role of Ripley in [[superwork.alien]]
@@ -11,6 +18,6 @@
     - not-serious: 
   - pretending axis:
 
-### RPGs
+### "RPGs"
 
-
+see [[t.cs.game.rpg]]

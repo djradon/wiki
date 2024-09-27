@@ -1,5 +1,5 @@
 
-- topics: [[t.rec.dungeons-and-dragons]] [[t.role-playing.scenario-structure]]
+- topics: [[t.rec.dungeons-and-dragons]] [[t.roleplaying.scenario-structure]]
 
 ## Issues
 
