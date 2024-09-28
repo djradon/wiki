@@ -7,8 +7,14 @@
 <h2 id="pros">Pros<a aria-hidden="true" class="anchor-heading icon-link" href="#pros"></a></h2>
 <ul>
 <li>built on the Web Fetch API instead of Node.js. This enables Remix to run in any Node.js server like Vercel, Netlify, Architect, etc. as well as non-Node.js environments like Cloudflare Workers and Deno Deploy.</li>
+<li>Remix’s “loaders” are particularly powerful, allowing the server to gather all necessary data for a route before it’s rendered. This differs from Next.js, where an application might load the JavaScript first, then realize it needs to fetch additional data via APIs, potentially slowing down initial load times. By using Remix’s loaders, OpenAI ensures that the initial page load is faster and smoother, as all required data is pre-fetched and delivered in a single step.</li>
 </ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<h3 id="what-about-server-side-rendering-and-seo">What About Server-Side Rendering and SEO?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-about-server-side-rendering-and-seo"></a></h3>
+<p>Given the popularity of server-side rendering for SEO and performance reasons, some might wonder why OpenAI chose to move away from Next.js’s SSR features. The answer is simple: ChatGPT doesn’t require the typical SEO benefits that come with SSR. Since the application is primarily a tool rather than a content-driven website, SEO is less of a concern. Instead, OpenAI focuses on fast, smooth client-side interactions, which Remix handles efficiently.</p>
 <h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
 <ul>
 <li><a href="https://github.com/remix-run/remix/discussions/2207">remix project template for deno</a></li>
 </ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://medium.com/@lbq999/why-openai-moved-from-next-js-to-remix-a-closer-look-114732b28eb9">https://medium.com/@lbq999/why-openai-moved-from-next-js-to-remix-a-closer-look-114732b28eb9</a></p>

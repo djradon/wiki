@@ -3,13 +3,13 @@
 
 ![](/assets/images/2024-09-13-16-11-46.png)
 
-> "Friends, Romans, Farm Animals! We are now going up to the cave and check your favorite recluse. We're gonna bring him out in the sunshine and get a good look at him. And then we're gonna decide if he's worthwhile keeping alive." 
+>“Friends, Romans, Farm Animals! We are now going up to the cave and check your favorite recluse. We're gonna bring him out in the sunshine and get a good look at him. And then we're gonna decide if he's worthwhile keeping alive.” 
 > 
 > -Major French, The Twilight Zone: [[video.twilight-zone.s05e07-the-old-man-in-the-cave]]
 
-## Greetings
+## Greetings!
 
-Welcome to my developer journal! I've been wanting to try [[learning in public|t.edu.learning-in-public]] and I hope this thing will boost my motivation, improve my writing, and put a finer point on some of my ideas. I'm also looking to make connections that could lead to collaboration. So here we are.
+Welcome to my developer journal. I've been wanting to try [[learning in public|t.edu.learning-in-public]] and I hope this thing will boost my motivation, improve my writing, and put a finer point on some of my ideas. I'm also looking to make connections that could lead to collaboration. So here we are.
 
 ## Spoiler Alert: It's a Machine
 
@@ -46,7 +46,7 @@ The threads of the Semantic Web are [[prdct.rdf]] statements composed of a subje
 
 Theoretically, you can say anything with an interlinked collection of subject-predicate-object triples. It's a graph-based universal data language. But of course, the devil is in the details.
 
-I want to heed [[Manu Sporny|user.manu-sporny]]'s 2014 [[call-to-arms|ar.json-ld-and-why-i-hate-the-semantic-web]]: "If you want to make the Semantic Web a reality, stop making the case for it and spend your time doing something more useful, like actually making machines smarter or helping people publish data in a way that’s useful to them." 
+I want to heed [[Manu Sporny|user.manu-sporny]]'s 2014 [[call-to-arms|ar.json-ld-and-why-i-hate-the-semantic-web]]:“If you want to make the Semantic Web a reality, stop making the case for it and spend your time doing something more useful, like actually making machines smarter or helping people publish data in a way that’s useful to them.” 
 
 Turns out that making machines smarter was the easy part!
 
@@ -54,7 +54,7 @@ With the current state of the art, publishing *any* semantic data, let alone use
 
 I've got some ideas for how to make data publishing free and easy for everyone. So that should help usability.
 
-To make the data useful, we'll need to address some long-simmering issues around RDF expressivity: [[temporality|t.cs.data.temporality]], [[provenance|t.km.meta-knowledge.provenance]], hypotheticals, [[probabilities|t.cs.data.probability-claims]], [[n-ary relationships|t.cs.semantic-web.n-ary-relationships]], and [[multi-level theory|t.km.ontology.multi-level-theory]].
+To make the data useful, we'll need to address some long-simmering issues around RDF: [[temporality|t.cs.data.temporality]], [[provenance|t.km.meta-knowledge.provenance]], hypotheticals, [[probabilities|t.cs.data.probability-claims]], [[n-ary relationships|t.cs.semantic-web.n-ary-relationships]], and [[multi-level theory|t.km.ontology.multi-level-theory]].
 
 Don't even get me started on the state of [[prdct.RDF-star]].
 
@@ -66,17 +66,17 @@ The time is right to forge a path forward. And I'd bet the old man in the cave c
 
 ## Other Likely Topics
 
-I'm interested in and wary of AI (better termed [[synthetic intelligence|t.cs.synthetic-intelligence]]) and how it can help people create [[interactive drama|t.drama.interactive]] and [[t.cs.virtual-worlds]]. Things like [[t.cs.ai.retrieval-augmented-generation.graphrag]] and [[agentic systems|t.cs.agents]] are highly relevant.
+I'm interested in and wary of AI (better termed [[synthetic intelligence|t.cs.synthetic-intelligence]]) and how it can help people create [[interactive drama|t.drama.interactive]] and [[virtual worlds|t.cs.virtual-worlds]]. Things like [[t.cs.ai.retrieval-augmented-generation.graphrag]] and [[agentic systems|t.cs.agents]] are highly relevant.
 
 At the moment, I'm especially interested in *data modeling* and how to represent things like characters, scenarios, play histories, and evolving worlds. 
 
 In the near term, I'm hoping to start developing some open upper-level and meta-conceptualizations, i.e., ontologies, and weave together some publishing infrastructure. After that, I aim to start making software that can use these ontologies to support [[alternate realities|t.storytelling.alternate-reality]].
 
-I enjoy [[astronaut architecture|idea.architecture-astronaut]] but want to actually build stuff too. So I intend to touch on relevant topics in [[data science|t.cs.data.science]] and [[software development|t.cs.sd]] including [[visualization|t.cs.data.visualization]], [[home-cooked software|t.cs.sd.home-cooked-software]], and [[geographics information systems|t.cs.gis]]. 
+I enjoy [[astronaut architecture|idea.architecture-astronaut]] but want to actually build stuff too. So I intend to touch on relevant topics in [[data science|t.cs.data.science]] and [[software development|t.cs.sd]] including [[visualization|t.cs.data.visualization]], [[home-cooked software|t.cs.sd.home-cooked-software]], and [[geographic information systems|t.cs.gis]]. 
 
 ## Next Steps
 
-If you might be interested in the less-technical aspects of my mission, or [[story-telling|t.storytelling]] and the [[digital humanities|t.humanities.digital]] in general, check out my other blog, [Carpe Noctem]().
+If you might be interested in the less-technical aspects of my mission, or [[story-telling|t.storytelling]] and the [[digital humanities|t.humanities.digital]] in general, check out my other blog, [Carpe Noctem](https://djradon.substack.com/p/introducing-carpe-noctem).
 
 As I mentioned, I'm looking to make connections that could lead to collaboration. If our interests overlap, please reach out!
 
