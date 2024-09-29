@@ -1,5 +1,6 @@
 
 - https://kotaku.com/dungeons-deceptions-the-first-d-d-players-push-back-1837516834
+- author: [[user.cecilia-danastasio]]
   
 ## Highlights
 
