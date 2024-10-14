@@ -1,0 +1,103 @@
+<h1 id="pat-hayes">Pat Hayes<a aria-hidden="true" class="anchor-heading icon-link" href="#pat-hayes"></a></h1>
+<h2 id="re-rdf-2-wishlist">Re: RDF 2 Wishlist<a aria-hidden="true" class="anchor-heading icon-link" href="#re-rdf-2-wishlist"></a></h2>
+<p>On Nov 1, 2009, at 11:51 AM, <a href="/wiki/notes/2f4WgPaybt4DvKee22Zll">Sandro Hawke</a> wrote:</p>
+<blockquote>
+<p>So, what should W3C standardize next in the area of RDF, if anything?
+OWL 2 added a bunch of stuff to OWL that users wanted and implementors
+were willing to tackle.  Are there things like that around RDF?</p>
+</blockquote>
+<p>Well, I just used the invited talk to give my speech on this topic,<br>
+but here's a more concrete list. I reserve the right to think of more<br>
+tomorrow.</p>
+<ol>
+<li>
+<p>Clean up and simplify RDF abstract syntax. Literals can be<br>
+subjects, properties can be blank nodes, etc. In fact, anything can be<br>
+anything in the triple space, in the conceptual graph model. The<br>
+existing semantics can handle this without change. The spec gets to be<br>
+shorter and easier.
+1a. All literals are typed, plain literals are understood in<br>
+retrospect to be an abbreviation for typing with rdf:text.
+1b. If XMLLiteral is necessary, make it into an ordinary datatype. Or<br>
+get rid of it altogether.</p>
+</li>
+<li>
+<p>A better syntax than RDF/XML. I also like turtle or N3 style, but<br>
+whatever, striped syntax is just too remote from the actual graph<br>
+model to be useful, and it imposes subtle and harmful influence over<br>
+the whole language (eg it was why we don't have literals as<br>
+subjects.)  FWIW, this is likely to be the hardest problem for<br>
+backward compatibility, I suspect. I wonder how hard it would be to<br>
+have a converter from RDF/XML into some other form, as a W3C service?</p>
+</li>
+<li>
+<p>Add a scope mechanism to the syntax, along the lines of the<br>
+'surfaces' idea in my talk. (Terminology and exact syntax for this can<br>
+be adjusted to suit, but parentheses work well :-) This is an<br>
+extension to the current model, existing RDF documents are understood<br>
+to be on a document-level surface that was always there. As well as<br>
+making bnodes respectable, this provides a clean foundation for a<br>
+whole lot of other things, including:
+3a. named surfaces (aka named graphs)
+3b. negation (see my ISWC talk) and hence full FOL as a natural and<br>
+well-understood extension (without any retro changes to existing RDF)<br>
+This is close to my heart, but not of immediate priority: Im more<br>
+concerned that nothing is done which would break this as a future<br>
+pathway.
+3c. NAF negation. I didn't go into this in the talk, but the big<br>
+problem with any kind of nonmon reasoning on the Web is that nonmon<br>
+(notably NAF) only works inside fixed boundaries, and so far we don't<br>
+have a way to draw the boundaries. Scoped surfaces give us this, and<br>
+so we could have for example 'closed' surfaces which support NAF<br>
+reasoning, and the whole logic can then be monotonic. Best of both<br>
+worlds, and IMO a better solution that the RIF idea of multiple<br>
+logical 'zones' with conflicting semantics. Though it would be<br>
+straightforward to link it to the RIF spec, I am pretty sure (the idea<br>
+would be, for RIF, that it takes its logic-zone cue from the 'color'<br>
+of the surface it finds the rules on. All written in RDF, of course :-)
+3d. Named surfaces provide better mechanism than reification for RDF-
+metadata-of-other-RDF (It is token level rather than abstract graph<br>
+level, which suddenly makes sense.)
+3e. Cleaner model for such things as unasserted annotations in OWL,<br>
+use of RDF collections to encode OWL syntax, etc.., where some of the<br>
+RDF isn't really being, like, asserted, exactly.</p>
+</li>
+<li>
+<p>Deprecate RDF reification, containers.</p>
+</li>
+<li>
+<p>(related to 4) Choose a recommended way to encode n-ary relations,<br>
+explain it fully, and deprecate all the others. Or, generalize RDF<br>
+triples to n-tuples syntax, with the previous as a backward<br>
+compatibility hack for old RDF.</p>
+</li>
+<li>
+<p>Build a clean version of SKOS into RDF, to replace RDFS. Current<br>
+RDFS is then OK but deprecated in favor of translation into newer<br>
+vocabulary, eg you should actually say that you want subclass/property<br>
+to be transitive, when you do. In the semantics, this is done by<br>
+changing various 'iff's to 'if's, making reasoning searches easier.</p>
+</li>
+<li>
+<p>Include a modern, nuanced version of owl:imports into RDF. Should<br>
+be possible to import only a part of a large ontology.</p>
+</li>
+<li>
+<p>Related to 6 &#x26; 7: provide some vocabulary and guidance for how to<br>
+link RDF data without falling into the owl:sameAs black hole. Note, we<br>
+won't completely solve this, but even a beginning would be a huge<br>
+improvement over the current situation, and this should be done at the<br>
+RDF level rather than a forest of conflicting conventions growing into<br>
+use.</p>
+</li>
+<li>
+<p>Provide some way (an RDF vocabulary?) to support versioning,<br>
+deprecation, etc., if only some best practice recommendations.</p>
+</li>
+</ol>
+<p>Pat</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/d4hlhqqjxpk6uix6lop3f7w">Imports</a></li>
+</ul>
