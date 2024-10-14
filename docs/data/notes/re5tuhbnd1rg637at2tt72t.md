@@ -2,6 +2,7 @@
 - https://www.sciencedirect.com/science/article/pii/S0167642314000896
 - authors: @giancarlo-guizzardi @veruska-zamborlini
 - publish-date: 2014
+- topics: [[prdct.ontouml]]
 
 ## Abstract
 

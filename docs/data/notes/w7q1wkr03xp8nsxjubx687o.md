@@ -1,6 +1,7 @@
 
+- dead
 - https://github.com/ontola/linked-delta
-- similar: [[prdct.rdf-delta]] [[prdct.json-patch]] [[prdct.json-ld-patch]]
+- similar: [[prdct.rdf-delta]] [[prdct.json-patch]] [[prdct.json-ld-patch]] [[prdct.json-patcher]]
 
 ## Description
 

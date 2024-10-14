@@ -3,6 +3,8 @@
 
 - host ontologies and linked data on github
   - decide on directory structure
+  - how do you create semantic data that conforms to an ontology
+- [[prdct.linked-data-fragments]]
 
 ## Semantic Web Reboot
 

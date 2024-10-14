@@ -1,6 +1,6 @@
 
 - author: @rob-kuntz
-- topics: [[t.rec.dungeons-and-dragons.classic]]
+- topics: [[game-system.dungeons-and-dragons.classic]]
 
 ## Highlights
 

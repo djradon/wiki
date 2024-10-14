@@ -39,3 +39,4 @@
 - https://sipkeschoorstra.medium.com/part-7-of-building-workflow-driven-net-applications-with-elsa-2-e369e7784555
 - https://sipkeschoorstra.medium.com/elsa-3-0-2b341e7cbfa7
 - https://medium.com/codenx/elsa-workflow-engine-in-net-core-applications-812b745b7385
+- https://sipkeschoorstra.medium.com/orchestrating-intelligent-agents-with-elsa-workflows-f3346b91dc17

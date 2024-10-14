@@ -1,5 +1,9 @@
 
 
+## Issues
+
+- removed Sponsor support
+
 ## Resources
 
 - [tag list](https://github.com/Hashnode/support/blob/main/misc/tags.json)

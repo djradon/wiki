@@ -1,6 +1,6 @@
 
 - http://www.inf.ufes.br/~gguizzardi/ER2018-Truthmaking.pdf
-- keywords: [[t.cs.sd.modeling.ontology-driven-conceptual-modeling]] [[prdct.ontouml]] [[prdct.dolce]] [[prdct.unified-foundational-ontology]]
+- keywords: [[t.cs.sd.modeling.conceptual-modeling.ontology-driven]] [[prdct.ontouml]] [[prdct.dolce]] [[prdct.unified-foundational-ontology]]
 
 ## Abstract
 

@@ -1,4 +1,30 @@
 <h1 id="rdf-delta">Rdf Delta<a aria-hidden="true" class="anchor-heading icon-link" href="#rdf-delta"></a></h1>
+<ul>
+<li><a href="https://afs.github.io/rdf-delta/">https://afs.github.io/rdf-delta/</a></li>
+<li>different-from: <a href="/wiki/notes/htyvx1ihqngmct2imfmxnxj">Delta an Ontology for the Distribution of Differences between Rdf Graphs</a></li>
+<li>supports: <a href="/wiki/notes/n4xbjtr9nua2a89s1755hrl">Rdf Thrift</a></li>
+</ul>
+<h2 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h2>
+<ul>
+<li>RDF patch is a format for recording changes to an RDF Dataset</li>
+<li>an evolution of the original RDF Patch described in <a href="https://afs.github.io/rdf-delta/rdf-patch.html">https://afs.github.io/rdf-delta/rdf-patch.html</a></li>
+<li>Abort, TA is provided so that changes can be streamed, not obliging the application to buffer change and wait to confirm the action is committed.</li>
+</ul>
+<h3 id="two-aspects">Two aspects<a aria-hidden="true" class="anchor-heading icon-link" href="#two-aspects"></a></h3>
+<p>Distributing changes to a dataset has two aspects: the format used to record changes and the mechanism used to propagate changes.</p>
+<p>RDF Delta provides these into two parts:</p>
+<pre><code>RDF Patch - a format to record changes that is easy to generate and consume.
+RDF Patch Logs - a protocol for distributing change files.
+</code></pre>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>There is only a single copy of the patch store and any file storage may be lost so it is better to highly reliable file system where possible.
+<ul>
+<li>The patch store can be backed up by backing up the PatchStore directory when the server is not in-use.</li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
 <hr>
 <strong>Backlinks</strong>
 <ul>

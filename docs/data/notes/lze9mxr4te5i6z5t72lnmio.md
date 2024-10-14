@@ -1,5 +1,5 @@
 
-- superwork: [[t.rec.dungeons-and-dragons.forgotten-realms]]
+- superwork: [[game-system.dungeons-and-dragons.forgotten-realms]]
 
 ## Expressions: 
 

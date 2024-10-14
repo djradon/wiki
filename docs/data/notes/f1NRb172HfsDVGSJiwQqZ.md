@@ -3,8 +3,8 @@
 - written_in: prolog
 - [[p.builtWith]] [[prdct.rdf]] but evolved into a document graph db
 - [[p.similarTo]]
-  - [[prdct.typedb]]
-  - [[prdct.fluree]]
+  - [[prdct.typedb]] but more triple/semantic-webby
+  - [[prdct.fluree]] 
 - related: [[prdct.dfrnt]]
 - supports: [[prdct.graphql]] [[prdct.woql]]
 - client_support: 

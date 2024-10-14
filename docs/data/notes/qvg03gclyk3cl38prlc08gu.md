@@ -2,6 +2,8 @@
 - https://www.researchgate.net/publication/220916829_F_-_A_model_of_events_based_on_the_foundational_ontology_DOLCEDnS_ultralite
 - subject: [[prdct.event-model-f]]
 
+![](/assets/images/2024-10-05-09-29-42.png)
+
 ## Abstract
 
 The lack of a formal model of events hinders interoper- ability in distributed event-based systems. In this pa- per, we present a formal model of events, called Event- Model-F. The model is based on the foundational ontol- ogy DOLCE+DnS Ultralite (DUL) and provides com- prehensive support to represent time and space, objects and persons, as well as mereological, causal, and cor- relative relationships between events. In addition, the Event-Model-F provides a ﬂexible means for event com- position, modeling event causality and event correla- tion, and representing diﬀerent interpretations of the same event. The Event-Model-F is developed following the pattern-oriented approach of DUL, is modularized in diﬀerent ontologies, and can be easily extended by domain speciﬁc ontologies

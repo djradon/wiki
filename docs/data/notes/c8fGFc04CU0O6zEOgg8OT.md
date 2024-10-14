@@ -64,6 +64,8 @@ There are four possibilities for a given URI:
 
 This gives a very similar pattern to the 303 redirect, as you can see from the diagram below; the only difference is that instead of following a 303 See Other redirection to get from one URI to the other, you can use URI parsing: you chop off the fragment part of the URI and perform a GET on the resulting URI to get a description.
 
+See [[vs.hash-vs-slash]]
+
 ### Property determines content vs sense
 
 - "The property itself determines whether it applies to the content located by the URI (the page) or a sense referred to by the URI (in this case, the thing the page describes)"

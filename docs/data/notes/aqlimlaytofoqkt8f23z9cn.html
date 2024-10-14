@@ -1,4 +1,27 @@
 <h1 id="relator">Relator<a aria-hidden="true" class="anchor-heading icon-link" href="#relator"></a></h1>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>allows all n-ary relationships
+<ul>
+<li>even so-called unary relationships like "Dave walked" can be expressed, e.g.</li>
+</ul>
+</li>
+</ul>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">dave-walking</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">walking-relationship</span></span><span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">walker</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">dave</span></span><span class="token punctuation">;</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">tense</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">past-tense</span></span>
+
+</code></pre>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>"If modelling relationships as classes is useful, then why not use this pattern for all non-trivial relationships in a model? The main reason is that it causes explosion in the number of terms in a vocabulary, e.g. each predicate is replaced with two predicates and a class. A vocabulary can quickly become unwieldy, so the value of the extra modelling structure needs to be justified with clear requirements for needing the extra complexity. As described here, the primary reason is to qualify the relation." </li>
+</ul>
+<h2 id="implementations">Implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#implementations"></a></h2>
+<ul>
+<li><a href="https://bioportal.bioontology.org/ontologies/GFO?p=classes&#x26;conceptid=gfo%3ARelator">https://bioportal.bioontology.org/ontologies/GFO?p=classes&#x26;conceptid=gfo%3ARelator</a></li>
+<li><a href="https://nemo-ufes.github.io/gufo/#Relator">https://nemo-ufes.github.io/gufo/#Relator</a></li>
+<li><a href="https://patterns.dataincubator.org/book/qualified-relation.html">https://patterns.dataincubator.org/book/qualified-relation.html</a></li>
+</ul>
 <h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
 <ul>
 <li><a href="https://ontouml.readthedocs.io/en/latest/classes/sortals/relator/index.html">https://ontouml.readthedocs.io/en/latest/classes/sortals/relator/index.html</a></li>

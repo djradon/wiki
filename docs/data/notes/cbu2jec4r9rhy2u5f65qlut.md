@@ -7,7 +7,10 @@
 
 ### vs Stream
 
+## Resources
 
+- https://ably.com/blog/ably-aws-web-components
+- https://quest.ably.dev/
 
 ## References
 

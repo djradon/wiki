@@ -92,7 +92,7 @@ I also intend to take little bites out of philosophy, psychology, literary theor
 
 Eight quick years ago I got in on the ground floor of a geographically-distributed Dungeons & Dragons game. Our crew is four players plus a heroic, multi-talented GM.
 
-Because we live far apart, we’ve almost always used a [[virtual tabletop|t.roleplaying.virtual-tabletop]] called [[prdct.roll20]] to facilitate the sessions. Our game (or “campaign” in D&D-speak) is set in a well-known alternate reality known as [[the Forgotten Realms|t.rec.dungeons-and-dragons.forgotten-realms]] and our GM kicked things off with a homebrew prelude set around a gypsy caravan campfire before launching us into a popular commercial adventure scenario called [[game.storm-kings-thunder]]. 
+Because we live far apart, we’ve almost always used a [[virtual tabletop|t.roleplaying.virtual-tabletop]] called [[prdct.roll20]] to facilitate the sessions. Our game (or “campaign” in D&D-speak) is set in a well-known alternate reality known as [[the Forgotten Realms|game-system.dungeons-and-dragons.forgotten-realms]] and our GM kicked things off with a homebrew prelude set around a gypsy caravan campfire before launching us into a popular commercial adventure scenario called [[game.storm-kings-thunder]]. 
 
 (For those who aren’t familiar, the Forgotten Realms is without doubt one of the richest fictional worlds ever brought forth, with its own detailed [geography](https://forgottenrealms.fandom.com/wiki/Portal:Geography), [hundred of settlements](https://forgottenrealms.fandom.com/wiki/Category:Settlements), [dozens of deities](https://screenrant.com/dungeons-dragons-deities-gods-forgotten-realms-fifth-edition/), and a truly [fantastical history](https://forgottenrealms.fandom.com/wiki/Portal:History). The fan base is huge, so in addition to over 300 official published novels, close to 100 different roleplaying adventure modules, and a pretty decent [[movie|video.dungeons-and-dragons-honor-among-thieves]], it’s inspired countless works of homebrew content and [fan fiction](https://www.fanfiction.net/book/Forgotten-Realms/).)
 
@@ -106,7 +106,7 @@ It was a great opportunity to flex my writing skills.
 
 It also allowed me to experiment with different narrative styles and forms. My summaries evolved from simple text into an interlinked wiki where I’ve been trying to capture the relationships between places, characters, etc. It was essentially a semantic web: a textual network of inter-linked concepts, entities, and happenings.
 
-And it helped me realize that role-play gaming and alternate realities in general could benefit from some good conceptual modeling.
+And it helped me realize that role-play gaming and alternate realities in general could benefit from some good [[conceptual modeling|t.cs.sd.modeling.conceptual-modeling]].
 
 ## Whither the Semantic Web?
 
@@ -168,9 +168,9 @@ There’s a very tricky [[tension|ar.screenrant.dnd-ai-controversy-dungeons-and-
 
 My intended audience here is a general one: people who might be interested in storytelling, roleplaying, game studies, alternate realities, or synthetic life. 
 
-If you’re be curious about the more technical side of my mission, check out my developer journal, [The Old Man in the Cave](https://the-old-man-in-the-cave.hashnode.dev/lets-reboot-the-semantic-web-with-alternate-realities). 
+If you're curious about the technical details of my mission, check out my developer journal: [The Old Man in the Cave](https://theoldmaninthecave.substack.com/p/lets-reboot-the-semantic-web-with-alternate-realities). 
 
-I’m looking to make connections that could lead to collaboration. If our interests overlap, please reach out!
+I’m looking to make connections that could lead to collaboration. If our interests overlap, I’d love to hear from you!
 
 <br><br><br>
 
@@ -189,9 +189,7 @@ But what about the night?
 
 Like most entertainment, roleplaying games are often fitted in after the sun goes down. Typical sessions last three to five hours and often stretch past midnight. All-nighters are glamorized legend-fodder. Pluck those zombies, harvest the magic items, and seize the stronghold before the sun comes up!
 
-Writing too has its nocturnal mystique. [[user.james-baldwin]] wrote in [[book.nothing-personal]] about how the grim realizations of 4am (a “devastating hour”), could in turn be a source of strength. [[Kafka|user.franz-kafka]] wrote ruefully of sleep: “Just think how many thoughts a blanket smothers while one lies alone in bed.” Proust, Plath, Fitzgerald, T.S. Eliot and George Sand are among the many writers famed to do their best work at night. 
+Writing also has its nocturnal mystique. [[user.james-baldwin]] wrote in [[book.nothing-personal]] about how the grim realizations of 4am (a “devastating hour”), could in turn be a source of strength. [[Kafka|user.franz-kafka]] wrote ruefully of sleep: “Just think how many thoughts a blanket smothers while one lies alone in bed.” Proust, Plath, Fitzgerald, T.S. Eliot and George Sand are among the many writers famed to do their best work at night. 
 
-Regardless of quality, as the father of a wakeful two year old, [[night time is often write time|idea.night-time-write-time]] for me.
-
-Thanks for joining and good night.
+Regardless of quality, as the father of a wakeful two year old, [[night time is often the write time|idea.night-time-write-time]] for me.
 

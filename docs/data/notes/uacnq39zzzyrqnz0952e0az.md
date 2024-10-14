@@ -1,7 +1,7 @@
 
 - description: end-to-end solution for quickly creating massive, rich, real-time [[t.cs.simulation]]. But also, a [[t.cs.web3]] [[t.km.knowledge-graph]] (see https://blockprotocol.org/spec/graph) 
 
-- [[p.hasURL]] https://hash.ai/
+- [[p.hasURL]] https://hash.ai/ 
 - [[p.hasScriptingLanguage]] 
   - #python
   - javascript

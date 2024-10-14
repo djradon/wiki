@@ -1,8 +1,8 @@
 
 - repo: https://github.com/linkeddata/dokieli
-- [[c.software.semantic.authoring]]
+- [[c.software.semantic.authoring]] [[c.software.semantic.activity-pub]]
 - url: https://dokie.li
-- built_on: [[prdct.solid]] 
+- built_on: [[prdct.solid]] [[prdct.activitypub]]
 - written_in: javascript (client-side)
 - supports: [[prdct.activitypub]] [[prdct.web-annotations]]
 

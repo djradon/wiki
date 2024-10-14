@@ -1,5 +1,5 @@
 
-- topics: [[t.cs.sd.modeling.ontology-driven-conceptual-modeling]] [[t.phil.conceptualization]]
+- topics: [[t.cs.sd.modeling.conceptual-modeling.ontology-driven]] [[t.phil.conceptualization]]
 
 ## Aims and Scope
 

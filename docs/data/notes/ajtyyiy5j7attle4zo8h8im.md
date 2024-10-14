@@ -9,6 +9,11 @@
 
 - "An RDF document is a document that encodes an RDF graph or RDF dataset in a concrete RDF syntax, such as Turtle"
 
+
+## Issues
+
+- [ ] Dataset iris are different? Are they closed? 
+
 ## Terms
 
 - **[dataset series](https://www.w3.org/TR/vocab-dcat-3/#dataset-series)**: data, somehow interrelated, that are published separately

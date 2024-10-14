@@ -70,7 +70,7 @@ I’m interested in and wary of AI (better termed [[synthetic intelligence|t.cs.
 
 At the moment, I’m especially interested in *data modeling* and how to represent things like characters, scenarios, play histories, and evolving worlds. 
 
-In the near term, I’m hoping to start developing some open upper-level and meta-conceptualizations, i.e., ontologies, and weave together some publishing infrastructure. After that, I aim to start making software that can use these ontologies to support [[alternate realities|t.storytelling.alternate-reality]].
+In the near term, I’m hoping to start developing some open upper-level and meta-conceptualizations, i.e., ontologies, and weave together some publishing infrastructure. After that, I aim to start making software that can use these ontologies to support roleplaying.
 
 I enjoy [[astronaut architecture|idea.architecture-astronaut]] but want to actually build stuff too. So I intend to touch on relevant topics in [[data science|t.cs.data.science]] and [[software development|t.cs.sd]] including [[visualization|t.cs.data.visualization]], [[home-cooked software|t.cs.sd.home-cooked-software]], and [[geographic information systems|t.cs.gis]]. 
 

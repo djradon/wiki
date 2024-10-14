@@ -1,6 +1,6 @@
 
 - [[p.workedFor]]
-  - [[org.vaticle]]
+  - [[org.vaticle]] VP of Engineering
   - [[org.granthika]]
 
 ## Resources

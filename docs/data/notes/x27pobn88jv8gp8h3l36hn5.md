@@ -44,7 +44,7 @@ The main differences are:
 
 ## Resources
 
-- http://www.interactivedramas.info/dramatist.htm
+- http://www.interactivedramas.info/dramatist.htm : critical pieces, definitions, and explanations of Interactive Drama, Freeform Role Play, Murder Mystery Whodunits, and Live Action Role Playing Games
 
 ## References
 

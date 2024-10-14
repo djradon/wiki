@@ -1,7 +1,8 @@
 
+- http://www.loa.istc.cnr.it/index.php/dolce/
 - [[c.ontology]] [[c.ontology.upper]]
 - repo: https://github.com/appliedontolab/DOLCE
-- similar: [[prdct.dolce-lite]] [[prdct.dolce.dns-ultralite]]  [[prdct.dolce.d0]]
+- similar: [[prdct.dolce.lite]] [[prdct.dolce.dns-ultralite]]  [[prdct.dolce.d0]]
 - related: [[prdct.colore]]
 - terms: https://github.com/gruninger/colore/blob/master/ontologies/dolce/DOLCE-Terms.docx
 

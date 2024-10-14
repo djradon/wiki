@@ -1,6 +1,6 @@
 
 - https://zazuko.com/products/trifid/
-- [[c.software.semantic.browser]] [[c.software.semantic.site-generator]]
+- [[c.software.semantic.browser]] [[c.software.semantic.publishing.site-generator]]
 - repo: https://github.com/zazuko/trifid
 - written_in: javascript
 - published-by: [[org.zazuko]]

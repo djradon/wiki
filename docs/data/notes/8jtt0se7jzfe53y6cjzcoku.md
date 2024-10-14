@@ -1,5 +1,6 @@
 
-- [[c.Work.superwork]]
+- [[c.Work.superwork]] 
+- see also: [[setting.forgotten-realms]]
 
 ## Mood
 

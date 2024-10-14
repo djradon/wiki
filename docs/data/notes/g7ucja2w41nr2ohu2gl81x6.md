@@ -1,5 +1,7 @@
 
+- dead
 - [[p.hasAuthor]] @boris-iordanov
+- [[c.software.database.graph.hypergraph]]
 
 ## Resources
 

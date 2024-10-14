@@ -4,7 +4,7 @@
 - creator: @george-svarovsky
 - implementation:
   - [[prdct.m-ld-js]]
-- related: [[prdct.json-rql]]
+- related: [[prdct.json-rql]] [[t.cs.distributed.crdt]]
 - supports: [[prdct.ably]] [[prdct.mqtt]] [[prdct.socket-io]] 
 
 ## Issues

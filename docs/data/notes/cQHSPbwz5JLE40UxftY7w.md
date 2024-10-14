@@ -4,6 +4,8 @@
 
 ## Features
 
+- "has the aesthetics of steampunk, of some technology for some futuristic Semantic Web1 in a toolset that feels about as lightweight and modern as iron dreadnought."
+
 ### Properties
 
 - Properties are used for specifying information about entities like :Polar_Bear or :Knut. 
@@ -210,3 +212,4 @@ Intuitively speaking, changes in the universe of discourse can be reflected in t
 
 - https://patterns.dataincubator.org/book/custom-datatype.html
 - https://www.w3.org/TR/swbp-n-aryRelations/
+- https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html

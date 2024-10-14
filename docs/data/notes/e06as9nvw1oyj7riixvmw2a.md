@@ -16,4 +16,9 @@
 
 - https://plato.stanford.edu/entries/fictional-entities/
 - https://plato.stanford.edu/entries/fiction/#SpeeActAcco
-[[ar.fictional-realism-and-commonsense-ontology]]
+- [[ar.fictional-realism-and-commonsense-ontology]]
+- [[ar.towards-a-semantics-for-the-artifactual-theory-of-fiction-and-beyond]]
+- [[ar.the-ontology-of-fiction-a-study-of-dependent-objects]]
+
+
+![[ar.the-ontology-of-fiction-a-study-of-dependent-objects#similar-books-and-articles]]

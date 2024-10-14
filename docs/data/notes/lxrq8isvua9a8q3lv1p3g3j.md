@@ -1,5 +1,6 @@
 
 - url: https://id.loc.gov/ontologies/premis-3-0-0.html
+- repo: https://github.com/lcnetdev/PREMIS/
 
 ## Class List
 

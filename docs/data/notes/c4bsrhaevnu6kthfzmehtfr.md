@@ -2,4 +2,4 @@
 ## References
 
 - [[game.dungeons-and-dragons]]
-- [[t.rec.dungeons-and-dragons]]
+- [[game-system.dungeons-and-dragons]]

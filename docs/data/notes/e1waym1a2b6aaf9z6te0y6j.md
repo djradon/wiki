@@ -1,5 +1,5 @@
 
-- [[c.software.semantic.site-generator]]
+- [[c.software.semantic.publishing.site-generator]]
 - http://aksw.org/Projects/JekyllRDF
 - repo: https://github.com/AKSW/jekyll-rdf
 - built_on: [[prdct.jekyll]]

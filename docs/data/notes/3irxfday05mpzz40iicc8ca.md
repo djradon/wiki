@@ -1,6 +1,7 @@
 
 - https://franz.com/agraph/tbc/
 - [[c.software.ontology-editor]]
+- download: https://archive.topquadrant.com/topbraid-composer-install/
 
 ![[prdct.protege#similar]]
 
