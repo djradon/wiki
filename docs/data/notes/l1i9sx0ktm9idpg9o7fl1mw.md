@@ -1,8 +1,8 @@
 
 
-- [[c.resource]] https://news.ycombinator.com/item?id=23667381
+- resources:  https://news.ycombinator.com/item?id=23667381
   - talks about dealing with lotsa files in a single top-level directory... but Dendron's vaults can help
-- [[c.resource]] https://subconscious.substack.com/p/tools-for-thought-in-your-ooda-loop
+- resources:  https://subconscious.substack.com/p/tools-for-thought-in-your-ooda-loop
   - "Tools for thought are tools for orientation. They’re the big circle in the OODA diagram. A tool for thought…
 
     Expands your awareness. The more you sense, the broader your ability to orient in your environment.

@@ -1,2 +1,2 @@
 
-[[p.equivalentPredicate]] [[c.resource]]
+[[p.equivalentPredicate]] resources: 

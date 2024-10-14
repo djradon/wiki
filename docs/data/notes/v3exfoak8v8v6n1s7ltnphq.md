@@ -1,5 +1,5 @@
 
-- [[c.resource]]
+- resources: 
   - https://www.ifwiki.org/Multiplayer_IF
     - An IF game where two or more players adopt the roles of multiple PCs simultaneously is referred to as strong multiplayer IF or true multiplayer IF.
     - [[p.hasHighlight]]

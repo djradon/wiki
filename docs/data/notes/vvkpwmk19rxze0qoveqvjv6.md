@@ -1,3 +1,3 @@
 
-- [[p.equivalentPredicate]] [[p.hasDocumentation]]
+- [[p.equivalentPredicate]] docs: 
 - [[p.references]] [[c.documentation]]

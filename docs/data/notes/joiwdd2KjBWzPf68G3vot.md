@@ -11,7 +11,7 @@ supports:
 - [[p.hasBlog]] https://flur.ee/blog/
 - [[p.hasFeature]] 
   - [[t.cs.data.time-travel]]
-    - [[c.resource]] https://flur.ee/2019/02/21/time-travel-with-fluree/ x
+    - resources:  https://flur.ee/2019/02/21/time-travel-with-fluree/ x
   - " optionally decentralized (e.g. using StorJ via Tardigrade)"
     - [[p.hasSource]] https://github.com/athensresearch/athens/issues/9#issuecomment-786844129
   - [[prdct.json-ld]] support

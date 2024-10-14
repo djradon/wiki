@@ -5,7 +5,7 @@
   - [[t.cs.ui.cli]] 
   - [[t.cs.application.webapp]] 
     - Use Rust to supercharge your JavaScript, one module at a time with [[prdct.webassembly]]. Publish to npm, bundle with webpack, and you’re off to the races.
-    - [[c.resource]] https://www.rust-lang.org/what/wasm
+    - resources:  https://www.rust-lang.org/what/wasm
     - [[p.hasLearningResource]] https://rustwasm.github.io/docs/book/
   - [[t.cs.application.service.network]] 
 

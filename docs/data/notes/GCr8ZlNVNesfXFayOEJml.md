@@ -1,5 +1,5 @@
 
 
-[[c.resource]] 
+resources:  
 
 - https://www.11ty.dev/docs/data-frontmatter/

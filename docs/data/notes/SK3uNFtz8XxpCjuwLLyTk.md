@@ -2,6 +2,6 @@
 
 
 - [[p.hasSite]] https://ogp.me/
-- [[c.resource]]
+- resources: 
   - https://jessie.codes/article/seo-blog-ogp-jsonld/
     - [[p.isRelated]] [[prdct.json-ld]]

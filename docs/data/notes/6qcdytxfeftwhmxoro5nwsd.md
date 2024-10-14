@@ -1,2 +1,2 @@
 
-- [[c.resource]] https://www.productplan.com/glossary/product-design/
+- resources:  https://www.productplan.com/glossary/product-design/

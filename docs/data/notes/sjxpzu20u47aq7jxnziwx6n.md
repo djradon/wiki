@@ -1,7 +1,7 @@
 
 - [[p.hostedBy]] @joshua-robinson @alyssa-osterback
 - [[p.hadPanelist]] @zach-saul @tyler-entingh 
-- [[c.resource]] https://boardgamegeek.com
+- resources:  https://boardgamegeek.com
 
 - Where is the overlap between product design and tabletop game design
   - user psychology: 

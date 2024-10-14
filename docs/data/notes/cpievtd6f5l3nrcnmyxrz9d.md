@@ -5,7 +5,7 @@
 - [[p.supports]] [[prdct.cloudevents]]
 
 
-## [[p.hasDocumentation]]
+## docs: 
 
 - https://cloud.google.com/eventarc/docs/event-driven-architectures
 - 

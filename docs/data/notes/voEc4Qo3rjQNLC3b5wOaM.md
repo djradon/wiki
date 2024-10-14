@@ -1,6 +1,6 @@
 
 
-- [[c.resource]] 
+- resources:  
   - [[p.hasAuthor]] @nat-eliason
 The Three Uses of Information
 

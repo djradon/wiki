@@ -7,7 +7,7 @@ repo: https://github.com/opencog/link-grammar
 
 - As of version 5.9.0, the system include an experimental system for generating sentences. 
 
-[[p.hasDocumentation]]
+docs: 
 
 ## [[c.mention]]
 

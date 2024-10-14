@@ -1,4 +1,4 @@
 
 
 
-- [[p.similarTo]] [[c.resource]]
+- [[p.similarTo]] resources: 

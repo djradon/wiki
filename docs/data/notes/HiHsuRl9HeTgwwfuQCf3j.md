@@ -7,7 +7,7 @@
 - "federated computational governance"
 
 
-- [[c.resource]]
+- resources: 
   - https://github.com/GavinMendelGleason/data_mesh
   - https://terminusdb.com/blog/knowledge-graph-data-mesh-metaverse-2/
   - 

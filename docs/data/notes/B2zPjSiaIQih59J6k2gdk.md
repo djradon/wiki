@@ -1,7 +1,7 @@
 
 
 
-- [[c.resource]] https://www.netlify.com/blog/2021/10/07/jamstack-conf-2021-instant-replay/
+- resources:  https://www.netlify.com/blog/2021/10/07/jamstack-conf-2021-instant-replay/
 
 ## mpa vs spa @rich-harris
 

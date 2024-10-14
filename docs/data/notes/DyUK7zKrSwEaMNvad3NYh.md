@@ -34,7 +34,7 @@
 
 - https://c4model.com/ 
 
-- [[c.resource]]
+- resources: 
   - https://alpha2phi.medium.com/code-based-diagramming-6b1bcc732aab
   - https://c4model.com/
     - [[p.mentioned]]

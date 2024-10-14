@@ -1,4 +1,4 @@
 
 
 
-- [[c.resource]] https://githooks.com/
+- resources:  https://githooks.com/

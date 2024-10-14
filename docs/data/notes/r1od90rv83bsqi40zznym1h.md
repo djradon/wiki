@@ -1,3 +1,3 @@
 
 
-- [[c.resource]] https://mathworld.wolfram.com/BipartiteGraph.html
+- resources:  https://mathworld.wolfram.com/BipartiteGraph.html

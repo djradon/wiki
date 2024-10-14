@@ -1,2 +1,2 @@
 
-- [[c.resource]] https://en.wikipedia.org/wiki/Common_Public_Attribution_License
+- resources:  https://en.wikipedia.org/wiki/Common_Public_Attribution_License

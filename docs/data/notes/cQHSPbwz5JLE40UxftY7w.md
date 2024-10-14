@@ -45,7 +45,7 @@
 
 - [-] [[p.summarized]] [RDF datasets](https://www.w3.org/TR/rdf11-datasets/)
   - the concept of the "unnamed default graph"/master-graph is interesting; 
-    - [[c.resource]] [The unnamed/default graph should have a standard name](https://github.com/w3c/sparql-12/issues/43)
+    - resources:  [The unnamed/default graph should have a standard name](https://github.com/w3c/sparql-12/issues/43)
 
 ## Typed Literals
 

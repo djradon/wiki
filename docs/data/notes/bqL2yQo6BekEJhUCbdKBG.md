@@ -1,6 +1,6 @@
 
 
-- [[c.resource]] https://docs.filecoin.io/build/
+- resources:  https://docs.filecoin.io/build/
 
 -   [Use Glif nodes](https://lotus.filecoin.io/docs/developers/hosted-lotus/)
 - Build with [[Lotus|prdct.lotus]] for users looking to interact with their own, local Lotus nodes.

@@ -1,6 +1,6 @@
 
 
-- [[c.resource]]
+- resources: 
   - https://decentralized-id.com/web-standards/object-capabilities/
 
 
