@@ -1,8 +1,10 @@
 
-
-
 - [[p.hasSite]] https://solidproject.org/
 - supports: [[prdct.nextcloud]] via [[prdct.solid-nextcloud]]
+
+## Vision
+
+-  data is decoupled from applications, meaning users are no longer locked into specific platforms simply because their data is held there
 
 ## Features
 

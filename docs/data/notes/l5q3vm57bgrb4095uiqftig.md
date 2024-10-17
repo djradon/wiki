@@ -13,5 +13,5 @@ Fission sees a world where:
 🖥  Edge computing is part of critical infrastructure.
 🎉  Open source is celebrated and well-funded.
 🛠  Protocols replace platforms as the foundation of software development.
-🏠  Local-first software is the norm.
+🏠  [[Local-first|t.cs.sd.local-first]] software is the norm.
 🔁  Exit from one application to another is seamless.

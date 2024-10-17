@@ -42,3 +42,13 @@ The ultimate goal of FAIR is to optimise the reuse of data. To achieve this, met
 [**R1.3**. (Meta)data meet domain-relevant community standards](https://www.go-fair.org/fair-principles/r1-3-metadata-meet-domain-relevant-community-standards/)
 
 The principles refer to three types of entities: data (or any digital object), metadata (information about that digital object), and infrastructure. For instance, principle F4 defines that both metadata and data are registered or indexed in a searchable resource (the infrastructure component).
+
+
+## FAIR Data vs Open Data 
+
+- [[t.cs.data.fair]] focuses on the complexity of data collected for research
+- [[t.cs.data.open]] primarily emphasises giving the public access to non-confidential data
+
+## References
+
+- [[ar.fair-versus-open-data-a-comparison-of-objectives]]

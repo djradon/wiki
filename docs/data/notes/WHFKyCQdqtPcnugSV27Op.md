@@ -1,6 +1,7 @@
 
-
-A markdown-based, local-first knowledge base platform, with electron applications for desktop and mobile, and Paid sync and publishing features. 
+- https://obsidian.md/
+- [[c.software.knowledge-base]]
+- description: A markdown-based, local-first knowledge base platform, with electron applications for desktop and mobile, and Paid sync and publishing features. 
 
 - [[p.hasApplication]] [[t.km]] 
 - [[c.release.initial]] 2020
@@ -14,3 +15,7 @@ A markdown-based, local-first knowledge base platform, with electron application
 ## Cons
 
 - frontmatter properties can't be nested
+
+## Resources
+
+- - [[ar.how-to-export-your-obsidian-vault-to-rdf]]

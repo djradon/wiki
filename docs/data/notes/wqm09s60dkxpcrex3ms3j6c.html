@@ -10,7 +10,7 @@
 <ul>
 <li>The JavaScript code and other static assets of the Web App (the <em>app</em>, in pink) are served from some origin via HTTP.</li>
 <li>The app establishes a working Graph Model, comprised of <em>semantic web</em> data [[RDF-NOT]] (non-specific serialisation).</li>
-<li>The Graph is stored locally, and so is available without a network round-trip (unless it has to be fetched to get started!). It is local-first [[LOFI]].</li>
+<li>The Graph is stored locally, and so is available without a network round-trip (unless it has to be fetched to get started!). It is <a href="/wiki/notes/aunwev4s6r7605a2fmaqhgr">local-first</a> [[LOFI]].</li>
 <li>If other replicas of the Graph exist elsewhere, they are synchronised, when the network is available, via a Message Delivery service.</li>
 <li>If desired for data safety, the Graph can also be replicated to a Backup service, having its own persistent storage.</li>
 <li>Such a Backup service may also expose the data in the Graph as Linked Data [[LINKED-DATA]] via its own API. This makes the data de-referencable, via HTTP, for more loosely-coupled consumers.</li>

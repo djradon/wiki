@@ -4,6 +4,8 @@
 
 ## Tips
 
+- don't end your dendron top-level domain with the same letter. i.e., `prdct.`, `t.` - it hampers search autocomplete ^ln5q1ooyf17z
+
 ## Publishing
 
 - `rm -rf .next && rm -rf docs`

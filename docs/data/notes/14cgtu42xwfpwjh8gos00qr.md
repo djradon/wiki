@@ -351,8 +351,6 @@ Modeling **valid-time** as a **facet** is a good fit for your **facet-oriented**
 
 ## doing modular ontologies seems confusing. If you import another ontology, won't you need to use different prefixes?
 
-## It's so annoying that applications and the semantic web community seem to refer to instance data as an ontology
-
 You're absolutely right, managing **prefixes** when importing multiple **modular ontologies** can indeed be confusing. Here are a few points to consider:
 
 ### Issues with Prefixes in Modular Ontologies
