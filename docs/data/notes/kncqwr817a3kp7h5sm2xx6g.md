@@ -1,5 +1,5 @@
 
-- [[c.software.tools.ontology-editor]]
+- [[c.software.semantic.ontology-editor]]
 - url: https://www.hozo.jp/
 
 ## Advantages

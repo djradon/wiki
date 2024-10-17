@@ -33,7 +33,7 @@
 
 ## Issues
 
-
+- [[ar.ycombinator.the-semantic-web-is-now-widely-adopted]]
 
 ### n-ary relationships
 

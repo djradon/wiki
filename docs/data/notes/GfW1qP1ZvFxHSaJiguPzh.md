@@ -13,3 +13,8 @@
   - t.2023.12.01.09 sounds like a [[t.library-science.work_expression_manifestation_item]] issue
 - [aligned with schema.org vocabulary](https://www.w3.org/TR/vocab-dcat/#dcat-sdo)
 - [[p.addressed]]
+
+
+## References
+
+- https://medium.com/@stephanef/unraveling-the-dcat-standard-and-the-benefits-of-a-dcat-us-profile-c2c5b6cfbd44

@@ -1,7 +1,7 @@
 
 - similar: [[prdct.hextuples]]
 - use_case: Use JSON-AD if you don't have to support existing RDF data, but do value JSON compatibility and type safety.
-- creator: @joep-meindertma
+- creator: @joep-meindertsma
 - complementary: [[prdct.astro]]
 
 ## Description

@@ -1,6 +1,6 @@
 
 
-- [[c.software.tools.ontology-editor]]
+- [[c.software.semantic.ontology-editor]] [[c.software.semantic.authoring]]
 - url: https://protege.stanford.edu/
 - written_in: java
 - aka: "Protege 2000"

@@ -30,4 +30,4 @@ category, but it is also a set of objects.
 
 - https://www.cerritos.edu/dwhitney/SitePages/CIS201/Lectures/IM-7ed-Chapter04.pdf
 - https://www.semanticarts.com/wp-content/uploads/2018/10/CategoriesandClassesDMc060515newtemplate.pdf
-  - 
+  - [[ar.ontologist.classes-categories-types-and-shapes]]

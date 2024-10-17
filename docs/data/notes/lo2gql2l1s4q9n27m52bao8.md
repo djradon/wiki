@@ -9,6 +9,10 @@
 - RDF Triple Compounds (RTC) allow named-graph-like functionality without using named graphs
 - uses [[prdct.RDF-star]] for annotations
 
+### IRI minting
+
+- 
+
 ### Versioning
 
 - the version-controlled data in Ontogen is kept in a triple store.

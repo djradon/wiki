@@ -3,7 +3,7 @@
 - most often used for classification reasoning
 - restriction to binary relations is typical
 - strong influence on [[t.cs.semantic-web]]
-- have [[vs.tbox-vs-abox]]
+- have [[vs.tbox-vs-abox-vs-mbox]]
 
 ## Referneces
 

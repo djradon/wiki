@@ -1,0 +1,30 @@
+<h1 id="classes-categories-types-and-shapes">Classes Categories Types and Shapes<a aria-hidden="true" class="anchor-heading icon-link" href="#classes-categories-types-and-shapes"></a></h1>
+<ul>
+<li><a href="https://ontologist.substack.com/p/classes-categories-types-and-shapes">https://ontologist.substack.com/p/classes-categories-types-and-shapes</a></li>
+</ul>
+<h2 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h2>
+<ul>
+<li>"an instance describes a given entity describing relevant characteristics (properties + values), while a class is an abstraction of that entity describing relevant properties alone."
+<ul>
+<li>t.2024.10.14.10 what?! posted a request for clarification.</li>
+</ul>
+</li>
+<li>bottom-up approach - the subordinate class or concept is the originator of the relationship (in the subject or first position), and the superordinate class or concept is in the right-hand position.</li>
+</ul>
+<h3 id="category-vs-class">category vs class<a aria-hidden="true" class="anchor-heading icon-link" href="#category-vs-class"></a></h3>
+<p>What differentiates a category from another class is that the instances of that class are themselves classes:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">Category<span class="token punctuation">:</span></span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">subClassOf</span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">.</span>
+<span class="token function"><span class="token prefix">Domestication<span class="token punctuation">:</span></span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">Category<span class="token punctuation">:</span></span></span> <span class="token punctuation">.</span>
+<span class="token function"><span class="token prefix">Domestication<span class="token punctuation">:</span></span><span class="token local-name">Wild</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">Domestication<span class="token punctuation">:</span></span></span> <span class="token punctuation">.</span>
+</code></pre>
+<p>This relationship is different than for entities:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">Entity<span class="token punctuation">:</span></span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">.</span>
+<span class="token function"><span class="token prefix">Animal<span class="token punctuation">:</span></span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">subClassOf</span></span> <span class="token function"><span class="token prefix">Entity<span class="token punctuation">:</span></span></span> <span class="token punctuation">.</span>
+<span class="token function"><span class="token prefix">Animal<span class="token punctuation">:</span></span><span class="token local-name">Fox</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">Entity<span class="token punctuation">:</span></span></span> <span class="token punctuation">.</span>
+</code></pre>
+<p>This distinction is subtle but important. Entity classes are specialized through subclass inheritance (an <code>Animal:</code> and a <code>Fox:</code> are both entities with a <code>Fox:</code> being a specialized kind of <code>Animal</code>:) and can be quite deep. Categories generally have a few broad specializations (such as units or enumerations), but are typically quite shallow.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/nfwxllOsJ5Xne268kb784">Class vs. Type vs. Category</a></li>
+</ul>

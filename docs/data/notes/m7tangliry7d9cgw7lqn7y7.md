@@ -1,6 +1,6 @@
 
 - repo: https://github.com/phillord/tawny-owl
-- [[c.software.tools.ontology-editor]] [[c.software.semantic.authoring]] 
+- [[c.software.semantic.ontology-editor]] [[c.software.semantic.authoring]] 
 - written-in: clojure
 - created-by: @phil-lord
 

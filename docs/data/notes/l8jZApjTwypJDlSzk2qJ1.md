@@ -34,7 +34,8 @@
 - https://spring.io/guides/gs/rest-hateoas
 
 ## References
-
+- [[ar.hatoeas-is-for-humans]]
 - https://softwareengineering.stackexchange.com/questions/388325/advantages-of-hateoas-based-restful-service
 
 [^1]: https://webofdata.wordpress.com/2009/12/15/hateos-revisited-rdfa/
+

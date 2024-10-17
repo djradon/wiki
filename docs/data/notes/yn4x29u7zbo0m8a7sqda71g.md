@@ -1,6 +1,6 @@
 
 - repo: https://github.com/TopQuadrant/shacl
-- publisher: [[org.topbraid]]
+- publisher: [[org.topquadrant]]
 
 ## description
 

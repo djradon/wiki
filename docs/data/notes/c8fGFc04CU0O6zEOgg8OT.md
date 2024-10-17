@@ -26,13 +26,13 @@ There are four possibilities for a given URI:
 - homegrown #1: 
   - use  anyIRI literals for referring to the information resource (so never in subject position)
     - so if you want to say something about a resource, you have to reify it first
-  - otherwise, URLs always are indicators/sense
+  - otherwise, IRIreferences always are indicators/sense
   - if you need to talk about something in the object position, refer to it indirectly
 - homegrown #2: 
   - always sense
-  - if you want to refer to a document or other ContentLocator, give it an indicator (e.g., using [[k.relation-types.LocatableContent]])
+  - if you want to refer to a document or other ContentLocator, give it an indicator (e.g., using [[ko.relation-types.LocatableContent]])
 - link tag
-  - see [[proj.tomitc.drafts.solving-httprange-14-with-the-link-tag]]
+  - see [[proj.tomitc.drafts.solving-httprange-14]]
 
 ## Thoughts
 

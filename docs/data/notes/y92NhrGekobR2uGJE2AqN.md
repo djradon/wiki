@@ -4,6 +4,10 @@
 - [[p.hasSite]] https://solidproject.org/
 - supports: [[prdct.nextcloud]] via [[prdct.solid-nextcloud]]
 
+## Features
+
+- use [[t.cs.semantic-web.n3-patch]]
+
 ## Implementations
 
 - [[prdct.node-solid-server]]

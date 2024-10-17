@@ -1,9 +1,14 @@
 
 - https://vocbench.uniroma2.it/
+- [[c.software.semantic.authoring]]
 - built-on: [[prdct.semantic-turkey]]
 - repo: https://bitbucket.org/art-uniroma2/vocbench3/src/master/
 
 ![[prdct.protege#similar]]
+
+## Issues
+
+![[pub.question-log.2024.10.16#limitations-of-vocbench]]
 
 ## Docs
 
