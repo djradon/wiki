@@ -18,6 +18,8 @@ supports:
 
 ## Features
 
+- FlureeQL is similar to SPARQL, 
+  - results from queries can be exported as JSON-LD
 - a query peer "runs as an in-memory database peer to the ledger it's subscribed to. But like you mention, it doesn't only need (or need at all) to do so because it's intended to answer Fluree queries from other clients. It could very usefully just subscribe to a ledger in order to monitor data events like newly committed blocks and then to evaluate if that data meets a certain criteria, and--if so--to then trigger some downstream function or additional side effect... the NodeJS peer subscribes to the ledger as a particular cryptographic identity, which means that the listener itself will only be privy to data updates that that identity SHOULD be able to access."
 - "can be embedded inside of your applications (Clojure, NodeJS for now)"
 - [Time and Immutability in Data Systems](https://www.youtube.com/watch?v=CLZm3ZjvQqM&t=1972s)... probably only for clock-time, natively.  
@@ -33,11 +35,9 @@ supports:
 ## Learning Resources
 
 - [ ] [Building a Front-End App on Fluree.](https://www.youtube.com/watch?v=USh0-b-f5fo)
-
-## [[c.Resource.Learning]]
-
 - [[ar.fluree.working-with-graph-data]]
 
 ## References
 
 - https://next.developers.flur.ee/docs/learn/guides/working-with-ontologies/
+- https://www.reddit.com/r/Clojure/comments/187qsck/fluree_a_datomiclike_database_that_embraces_the/

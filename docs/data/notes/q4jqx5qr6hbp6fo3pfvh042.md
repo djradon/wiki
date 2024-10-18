@@ -10,4 +10,4 @@
 
 ## Prior Art
 
-- [[prdct.Fluree]] is append-only, 
+- [[prdct.Fluree-db]] is append-only, 

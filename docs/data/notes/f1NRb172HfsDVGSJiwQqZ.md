@@ -4,7 +4,7 @@
 - [[p.builtWith]] [[prdct.rdf]] but evolved into a document graph db
 - [[p.similarTo]]
   - [[prdct.typedb]] but more triple/semantic-webby
-  - [[prdct.fluree]] 
+  - [[prdct.Fluree-db]] 
 - related: [[prdct.dfrnt]]
 - supports: [[prdct.graphql]] [[prdct.woql]]
 - client_support: 

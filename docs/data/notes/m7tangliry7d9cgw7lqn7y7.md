@@ -7,3 +7,4 @@
 ## Resources
 
 - https://vimeo.com/89782389
+  - @phil-lord: "Protege is the Excel of the ontology world" ^m1l0lh2seh0h

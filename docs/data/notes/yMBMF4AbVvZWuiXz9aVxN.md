@@ -25,7 +25,7 @@
 - Create something that matches your style and brand quickly. 
 - Own the content, domain, and traffic.
 
-## [[p.hasIssue]]
+## Issues
 
 - takes time
 - opportunity cost

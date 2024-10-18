@@ -15,7 +15,7 @@
     - subjects/objects (aka "things" or, in graph theory, [[gd.concepts.nodes]])
 - for time travel, maybe could be nice to have properties for valid datetimes
 
-## [[p.isRelated]]
+## Related
 
 - [1]: [[ar.forbes.when-graphs-collide-the-coming-merger-of-property-and-semantic-graphs]]
 - [ ] http://blog.liu.se/olafhartig/2019/01/10/position-statement-rdf-star-and-sparql-star/
@@ -29,5 +29,8 @@
   
 ## References
 
+- https://flur.ee/fluree-blog/rdf-versus-lpg/
+
 [^1]: https://docs.arcadedb.com/#Graph-Database
- [^2]: https://protegeproject.github.io/owl2lpg/
+[^2]: https://protegeproject.github.io/owl2lpg/
+

@@ -25,7 +25,7 @@
 - [[prdct.marten]]
 - [[prdct.eventide]]
 
-## [[p.hasIssue]]
+## Issues
 
 - "The external systems that your application communicates with are usually not prepared for event sourcing, so you should be careful when you replay your events... To solve this challenge, you should handle replays in your communication layers!"
   - [[p.hasSource]] [[Event Sourcing with Examples Node.js at Scale|ar.risingstack.event-sourcing-with-examples-node-js-at-scale]]

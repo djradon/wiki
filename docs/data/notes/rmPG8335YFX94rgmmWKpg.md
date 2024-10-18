@@ -11,6 +11,6 @@ a biased comparison of the two prevailing graph data models
 
 - relationships can be uniquely identified via
 ## [[p.hasSummaryPoints]]
-## [[p.hasIssue]]
+## Issues
 
 - `edges` are portrayed as relationships, but in an important sense, edges express part of a relationship.  

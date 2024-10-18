@@ -1,4 +1,6 @@
 
+- interlocutor: chatgpt4.o
+
 ##  limitations of Vocbench
 
 [[prdct.vocbench]] is a solid tool for RDF and ontology management, but it does come with some limitations:

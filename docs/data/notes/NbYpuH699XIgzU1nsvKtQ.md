@@ -18,7 +18,7 @@
 - perform organizational work opportunistically
 - project list should change every week
 
-## [[p.hasIssue]]
+## Issues
 
 - Where do specific products fit?
  - https://fortelabs.co/blog/para/ [[p.hasExample]] "Areas of responsibility"

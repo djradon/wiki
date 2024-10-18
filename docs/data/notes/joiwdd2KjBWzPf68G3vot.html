@@ -1,4 +1,4 @@
-<h1 id="fluree">Fluree<a aria-hidden="true" class="anchor-heading icon-link" href="#fluree"></a></h1>
+<h1 id="fluree-db">Fluree-db<a aria-hidden="true" class="anchor-heading icon-link" href="#fluree-db"></a></h1>
 <p>supports: </p>
 <ul>
 <li>
@@ -40,6 +40,11 @@ products: prdct.json-ld</p>
 </ul>
 <h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
 <ul>
+<li>FlureeQL is similar to SPARQL, 
+<ul>
+<li>results from queries can be exported as JSON-LD</li>
+</ul>
+</li>
 <li>a query peer "runs as an in-memory database peer to the ledger it's subscribed to. But like you mention, it doesn't only need (or need at all) to do so because it's intended to answer Fluree queries from other clients. It could very usefully just subscribe to a ledger in order to monitor data events like newly committed blocks and then to evaluate if that data meets a certain criteria, and--if so--to then trigger some downstream function or additional side effect... the NodeJS peer subscribes to the ledger as a particular cryptographic identity, which means that the listener itself will only be privy to data updates that that identity SHOULD be able to access."</li>
 <li>"can be embedded inside of your applications (Clojure, NodeJS for now)"</li>
 <li><a href="https://www.youtube.com/watch?v=CLZm3ZjvQqM&#x26;t=1972s">Time and Immutability in Data Systems</a>... probably only for clock-time, natively.  </li>
@@ -58,25 +63,18 @@ products: prdct.json-ld</p>
 <h2 id="learning-resources">Learning Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resources"></a></h2>
 <ul class="contains-task-list">
 <li class="task-list-item"><input type="checkbox" disabled> <a href="https://www.youtube.com/watch?v=USh0-b-f5fo">Building a Front-End App on Fluree.</a></li>
-</ul>
-<h2 id="learning-resources-1"><a href="/wiki/notes/h81gfjrsbq98r2zi7aq0qul">Learning Resources</a><a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resources-1"></a></h2>
-<ul>
 <li><a href="/wiki/notes/q3adibst9mxllnhhfd8exfv">Working with Graph Data</a></li>
 </ul>
 <h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
 <ul>
 <li><a href="https://next.developers.flur.ee/docs/learn/guides/working-with-ontologies/">https://next.developers.flur.ee/docs/learn/guides/working-with-ontologies/</a></li>
+<li><a href="https://www.reddit.com/r/Clojure/comments/187qsck/fluree_a_datomiclike_database_that_embraces_the/">https://www.reddit.com/r/Clojure/comments/187qsck/fluree_a_datomiclike_database_that_embraces_the/</a></li>
 </ul>
-<hr>
-<strong>Children</strong>
-<ol>
-<li><a href="/wiki/notes/gi70tkc04ypd9f0dqtwn98x">Flureeql</a></li>
-<li><a href="/wiki/notes/zm87fjevmc91s5ka0m3jo9j">Nexus</a></li>
-</ol>
 <hr>
 <strong>Backlinks</strong>
 <ul>
 <li><a href="/wiki/notes/f1NRb172HfsDVGSJiwQqZ">TerminusDB</a></li>
 <li><a href="/wiki/notes/s0drwuebztgg4pj3i1lsgi4">Logosphere</a></li>
+<li><a href="/wiki/notes/ebbj5ovrdqvao6v4mhxxb0o">What’s the Best Semantic Web Authoring Tool?</a></li>
 <li><a href="/wiki/notes/q4jqx5qr6hbp6fo3pfvh042">Immutability</a></li>
 </ul>

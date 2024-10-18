@@ -34,7 +34,7 @@
 - 
 
 
-## [[p.hasIssue]]
+## Issues
 
 - [Run TypeDB Studio in a web browser](https://github.com/vaticle/typedb-studio/issues/118)
   - we have recently rewritten Workbase as Studio, and it is no longer an Electron app
