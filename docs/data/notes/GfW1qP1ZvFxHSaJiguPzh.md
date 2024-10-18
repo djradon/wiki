@@ -1,10 +1,10 @@
 
 
 - has-implementation: 
-  - [[prdct.rdf.dcat-data-catalog-vocabulary.v3]]
+  - [[prdct.dcat-data-catalog.v3]]
 - [[p.hasSpecification]] https://www.w3.org/TR/vocab-dcat/
 - [[p.instanceOf]] [[t.cs.web.w3c.rdf.vocabulary]]
-- topic: [[prdct.rdf.dcat-data-catalog-vocabulary]]
+- topic: [[prdct.dcat-data-catalog]]
 
 ## [[p.hasSummaryPoints]]
 

@@ -1,5 +1,6 @@
 
 - url https://jena.apache.org
+- [[c.software.database.graph.rdf]]
 - similar-to: [[prdct.rdf4j]]
   - "Jena is similar to RDF4J (formerly OpenRDF Sesame); though, unlike RDF4J, Jena provides support for OWL (Web Ontology Language). "
 - related: [[prdct.jena-geo]] 

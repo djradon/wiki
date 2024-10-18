@@ -22,10 +22,12 @@ spatial resolution
 
 #### 	dcat:temporalResolution
 
-intended to provide a summary indication of the temporal resolution of the data distribution as a single value. More complex descriptions of various aspects of temporal precision, accuracy, resolution and other statistics can be provided using the Data Quality Vocabulary [VOCAB-DQV](https://www.w3.org/TR/vocab-dcat/#Property:dataset_distribution#bib-vocab-dqv) "Data on the Web Best Practices: Data Quality Vocabulary")\].
+intended to provide a summary indication of the temporal resolution of the data distribution as a single value. More complex descriptions of various aspects of temporal precision, accuracy, resolution and other statistics can be provided using the Data Quality Vocabulary [VOCAB-DQV](https://www.w3.org/TR/vocab-dcat/#Property:dataset_distribution#bib-vocab-dqv) "Data on the Web Best Practices: Data Quality Vocabulary".
 
 #### prov:wasGeneratedBy
 
 
 ## References
 
+- [[prdct.dcat-data-catalog.v2]]
+- [[prdct.dcat-data-catalog.v3]]

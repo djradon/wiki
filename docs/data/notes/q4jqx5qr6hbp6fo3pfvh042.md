@@ -6,3 +6,8 @@
   - or you could imagine relators that are all attached to an alias, and queries have to pick out the currently active one.
 - perhaps small collections of triples, aka [[ko.concepts.micro-graphs]] become the fundamental unit of data. 
 - to keep track of history, i.e., successor and predecssor micro-graphs, use the [[ko.concepts.meta-lattice]] 
+
+
+## Prior Art
+
+- [[prdct.Fluree]] is append-only, 

@@ -1,5 +1,7 @@
 
+- https://rdf4j.org/
 - similar: [[prdct.jena]]
+- [[c.software.database.graph.rdf]]
 
 ## Comparison
 
