@@ -1,2 +1,0 @@
-
-- published-by: [[org.jetbrains]]

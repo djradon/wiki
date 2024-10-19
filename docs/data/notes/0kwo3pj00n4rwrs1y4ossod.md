@@ -1,6 +1,6 @@
 
 - https://linkeddatafragments.org/
-- related: [[prdct.comunica]]
+- related: [[prdct.comunica]] [[prdct.triple-data-fragments]]
 
 ## Description
 

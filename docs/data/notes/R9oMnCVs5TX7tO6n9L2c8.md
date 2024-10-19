@@ -1,4 +1,2 @@
 
-
-
-- [[p.hasApplication]] [[t.cs.web.now]]
+- related: [[t.cs.web.now]]
