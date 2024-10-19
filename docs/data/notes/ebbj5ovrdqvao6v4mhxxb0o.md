@@ -51,6 +51,9 @@ There must be some good options, right?
 
 The only stand-alone alternative to Protégé and Composer that I could find was [[prdct.fluent-editor]]. It’s quirky, doesn’t have direct source editing that I could find, and hasn’t been updated since 2015. I love the idea of using Controlled English for knowledge modeling, but LLMs are poised to do that in any language, controlled or not. 
 
+![](/assets/images/2024-10-18-12-56-20.png)
+
+
 Fluent Editor was definitely ahead of its time, but I’d be suprised to hear of anyone using it in 2024.
 
 ## Reddit To the Rescue?
@@ -124,6 +127,8 @@ It could benefit from one though.
 
 ## Prognosis
 
+![](/assets/images/2024-10-18-16-07-22.png)
+
 The situation is discouraging to say the least.
 
 If we’re going to [[reboot the semantic web|blogs.the-old-man-in-the-cave.2024-09-27-lets-reboot-the-semantic-web-with-alternate-realities]], we’ll want a usable data editor that supports [[local-first|t.cs.sd.local-first]] authoring, guided workflows, and data guardrails.
@@ -131,3 +136,4 @@ If we’re going to [[reboot the semantic web|blogs.the-old-man-in-the-cave.2024
 For now, I guess I’ll be sticking with VSCode, but let me know if I’ve missed something. I’d love to be wrong here. 
 
 Also, let me know if you’re interested in buildinng or backing a [[modern RDF data editor|wanted.modern-rdf-data-editor]]! That’s a project I could sink my teeth into.
+
