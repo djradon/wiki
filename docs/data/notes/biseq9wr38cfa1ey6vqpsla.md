@@ -1,7 +1,6 @@
 
-- https://gakuen.org/posts/online-visual-novel/
+- https://gakuen.org/
 
-## 
 
 ## References
 
