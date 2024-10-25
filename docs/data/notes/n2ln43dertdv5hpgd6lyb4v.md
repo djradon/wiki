@@ -1,4 +1,7 @@
 
+- https://thenewstack.io/choosing-between-message-queues-and-event-streams/
+- topics: [[t.cs.sd.messaging.queues]] [[t.cs.sd.architecture.event-streaming]]
+
 ## Highlights
 
 - events constantly push data into our applications. These applications react, blending streams together, building views, changing state, and moving themselves forward. In the streaming model there is no shared database. The database is the event stream, and the application simply molds it into something new.

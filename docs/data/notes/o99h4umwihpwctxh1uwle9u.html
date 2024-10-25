@@ -22,10 +22,16 @@
 </li>
 </ul>
 <h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
-<h3 id="instantiating-identifying-conceptrelationship-iir">Instantiating-Identifying Concept/Relationship (IIR)<a aria-hidden="true" class="anchor-heading icon-link" href="#instantiating-identifying-conceptrelationship-iir"></a></h3>
+<ul>
+<li>proposals of temporal extensions to RDF reported in the
+literatures mostly use RDF reification explicitly or implicitly</li>
+</ul>
+<h3 id="implicit-reification-based-temporal-model">Implicit Reification Based Temporal Model<a aria-hidden="true" class="anchor-heading icon-link" href="#implicit-reification-based-temporal-model"></a></h3>
+<p>implicit reification based models use different types of abstraction for handling reification. They do not employ reification vocabularies of RDF specifications. Two subcategories follow.</p>
+<h4 id="instantiating-identifying-conceptrelationship-iir">Instantiating-Identifying Concept/Relationship (IIR)<a aria-hidden="true" class="anchor-heading icon-link" href="#instantiating-identifying-conceptrelationship-iir"></a></h4>
 <p>In IIR models, a concept or relationship is reified and further temporalized. Either such relationship is abstracted as a new object, or a concept is viewed as four dimensional and instantiated to have temporal extents. Singleton Property converts each relationship to be universally unique. 4D fluents use concepts that view each resource as a perdurant. Fluents represent properties that change over time</p>
 <h4 id="singleton-property">Singleton Property<a aria-hidden="true" class="anchor-heading icon-link" href="#singleton-property"></a></h4>
-<p>The formal semantics of the singleton property is derived from the standard RDF and RDFS semantics with the additional semantics extension for the vocabulary rdf:singletonPropertyOf. The singleton property gives rises to three cases of query patterns: data, metadata and mixed patterns which SPARQL supports. </p>
+<p>The formal semantics of the <a href="/wiki/notes/9dzybsjq6mg0k2p8tomc2jc">singleton property</a> is derived from the standard RDF and RDFS semantics with the additional semantics extension for the vocabulary rdf:singletonPropertyOf. The singleton property gives rises to three cases of query patterns: data, metadata and mixed patterns which SPARQL supports. </p>
 <h4 id="4d-fluents">4D Fluents<a aria-hidden="true" class="anchor-heading icon-link" href="#4d-fluents"></a></h4>
 <ul>
 <li>Perdurantism is a philosophical theory of persistence and identity [34], and it is closely related to four dimensionalism. In the four dimensional view, an object that persists through time has distinct temporal parts at every time instant through its existence in time. Furthermore, each persisting object can be considered a four dimensional spacetime worm that stretches across space-time. Slicing the worm at a specific time interval or instant of the time dimension yields a temporal part.
@@ -33,8 +39,8 @@
 <li>t.2024.03.21.08: and endurant </li>
 </ul>
 </li>
-<li>Fluent is a component of <a href="/wiki/notes/dhv1x4dufgdor1bmw74u3fk">Situational Calculus</a>
-<p></p><div class="portal-container">
+</ul>
+<p></p><p></p><div class="portal-container">
 <div class="portal-head">
 <div class="portal-backlink">
 <div class="portal-title">From <span class="portal-text-title">Situational Calculus</span></div>
@@ -44,21 +50,80 @@
 <div id="portal-parent-anchor" class="portal-parent" markdown="1">
 <div class="portal-parent-fader-top"></div>
 <div class="portal-parent-fader-bottom"></div><ul>
-<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^vmhpi7mrf12z" href="#^vmhpi7mrf12z"></a>"McCarthy first introduced Situational Calculus [46, 48]. It concerns situations, actions and fluents in a dynamic domain. Actions make the domain change from one situation to another. Fluents are situation-dependent functions for describing the effects of actions. In 4D Fluents model, fluents are properties that change over time [73]. These properties are special cases in that both the domain and range of them are temporal parts of the corresponding entities. " </li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^vmhpi7mrf12z" href="#^vmhpi7mrf12z"></a>"Fluent is a component of <a href="/wiki/notes/dhv1x4dufgdor1bmw74u3fk">Situational Calculus</a> which is a logical language for representing change. [46, 48]. It concerns situations, actions and fluents in a dynamic domain. Actions make the domain change from one situation to another. Fluents are situation-dependent functions for describing the effects of actions. In 4D Fluents model, fluents are properties that change over time [73]. These properties are special cases in that both the domain and range of them are temporal parts of the corresponding entities. " </li>
 </ul>
-</div></div><p></p>
+</div></div><p></p><p></p>
+<ul>
+<li>In 4D Fluents model, fluents are properties that change over time [73]. These properties are special cases in that both the domain and range of them are temporal parts of the corresponding entities. TemporalPart is the main class for converting regular entities to 4D spacetime worm ones. OWL-Time ontology of [37] is used as time domain in 4D Fluents model. Particularly, a class TimeInterval derived from the equivalent class of OWL-Time is used for all temporal terms.
 <img src="/wiki/assets/images/2024-04-01-11-15-48.png"></li>
+<li>In Figure 3.5, individuals :John and :SW are two 4D entities. Each entity has temporal parts,
+:John@i1 and :SW@i1 respectively. The property :enrolled is transformed to a fluent whose domain and range are both temporal parts. Each temporal part is associated with a specific temporal extent , i.e., time interval, that denotes its valid time. One fluent property requires two extra ob- jects, i.e., temporal parts, and two properties, in contrast to reification, that uses one extra object and four properties as illustrated in Figure 2.10. </li>
+</ul>
+<h5 id="advantages">Advantages<a aria-hidden="true" class="anchor-heading icon-link" href="#advantages"></a></h5>
+<ul>
 <li>"OWL inverse operator and cardinality constraints are available and standard OWL reasoners can be used for inferencing."</li>
+<li>The 4D Fluents model is within standard RDF and OWL-DL. </li>
+<li>The running example
+query can be written in SPARQL 4D Fluents model:</li>
+</ul>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">SELECT</span> <span class="token variable">?ti</span> <span class="token variable">?tf</span>
+<span class="token keyword">WHERE</span> <span class="token punctuation">{</span><span class="token variable">?ts1</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalPartOf</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John.</span></span>
+<span class="token variable">?ts2</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalPartOf</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">SW.</span></span>
+<span class="token variable">?ts1</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">enrolled</span></span> <span class="token variable">?ts2</span><span class="token punctuation">.</span>
+<span class="token variable">?ts1</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExt</span></span> <span class="token variable">?i</span><span class="token punctuation">.</span>
+<span class="token variable">?ts2</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExt</span></span> <span class="token variable">?i</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasBeginning</span></span> <span class="token variable">?ti</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasEnd</span></span> <span class="token variable">?tf</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Since the 4D Fluents model imports OWL-Time [37], :i1 in Figure 3.5 is an OWL-Time interval, while ?ti and ?tf in the above query are two OWL-Time instants.</li>
 </ul>
 <h4 id="extended-4d-fluents">Extended 4D Fluents<a aria-hidden="true" class="anchor-heading icon-link" href="#extended-4d-fluents"></a></h4>
 <ul>
-<li><a href="/wiki/notes/8mrt9wt1w26m2f4u823amk7">Batsakis</a> et al. extended 4D Fluents model to incorporate qualitative temporal relations that have unknown temporal information... Semantics of the extended 4D Fluents model is based on the original 4D Fluents model, with the additional temporal semantics needed for qualitative temporal relations.</li>
+<li><a href="/wiki/notes/8mrt9wt1w26m2f4u823amk7">Batsakis</a> et al. <a href="/wiki/notes/6zfu6tr0sb40gyi4wznjshy">extended 4D Fluents</a> model to incorporate qualitative temporal relations that have unknown temporal information... Semantics of the extended 4D Fluents model is based on the original 4D Fluents model, with the additional temporal semantics needed for qualitative temporal relations.</li>
 </ul>
 <p><img src="/wiki/assets/images/2024-04-01-11-24-36.png"></p>
-<h4 id="temporal-web-ontology-language">Temporal Web Ontology Language<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-web-ontology-language"></a></h4>
 <ul>
-<li><a href="/wiki/notes/nrkv4drjfk0hc0y7tmofrmw">tOWL</a></li>
+<li><a href="/wiki/notes/0cb47oy83g92jk5hwn4j20u">TOQL</a> [5] is the SQL-like query language for Extended 4D Fluents model. To accommodate querying qualitative temporal relations, additionally query constructs, such as ”AT” clause and Allen temporal operators [4], such as before, after, meets, etc., are included in TOQL.</li>
 </ul>
+<h4 id="temporal-web-ontology-language">Temporal Web Ontology Language<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-web-ontology-language"></a></h4>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">tOWL</span></div>
+<a href="/wiki/notes/nrkv4drjfk0hc0y7tmofrmw" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^927zza20f03z" href="#^927zza20f03z"></a>Fransincar et al. proposed an extension of the OWL-DL language, called tOWL [49], for representing time and changes in an ontology. tOWL uses a subset of OWL-DL whose foundation is the logic SHIN (D). This logic is sufficiently expressive and is decidable for a sound and complete reasoning algorithm [45]. The time domain of tOWL handles both instants and intervals that are modeled by rational numbers and a set of partial order relations over them. As a result, an actual time instant, an interval or Allen’s temporal relations [4] are all converted to rational number-based equivalent instants or relations.  </li>
+<li>For modeling changing values, tOWL employs the 4D Fluents model, i.e., perdurantist’s view [73]. tOWL is conceptualized as a layered approach. The foundation layer is OWL-DL and the extended concrete domain is the second layer. Time representation is at the third layer, which is defined by the concrete domain.</li>
+<li>Figure 3.7 gives the running example in tOWL. Note that tOWL requires separate intervals for :John and :SW. Therefore, a restriction on the equivalence of towl:interval1 and towl:interval2 is enforced by a relation towl:equal in Figure 3.7 which is one more triple used compared to 4D Fluents model in [73].
+<img src="/wiki/assets/images/2024-10-25-02-30-44.png"></li>
+<li>In tOWL, the time domain is based on rational numbers and relations over them. This approach makes tOWL more expressive in representing complex temporal relations. For instance, in Figure 3.7, a temporal constraint towl:interval1 equates towl:interval2 can be expressed with the equality of endpoints of the two intervals.</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^b8t2dt9958m2" href="#^b8t2dt9958m2"></a>OWL reduces the proliferation of objects by differentiating types of fluents as FluentObjectProperty and FluentDatatypeProperty. For a Fluent- DatatypeProperty, which relates a time slice to a typed value, three triples can be saved due to that the time slice is not needed for a typed value. </li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="relationship-to-entity-conversion-rec">Relationship to Entity Conversion (REC)<a aria-hidden="true" class="anchor-heading icon-link" href="#relationship-to-entity-conversion-rec"></a></h3>
+<p>In REC models, a relationship is transformed to a composite entity. The transformed entity comes in two forms: a new entity that implicitly reifies the original triple, or an abstract object that becomes a term for further use. As an example of REC models, N-ary relations provide a main modeling concept: a triple is objectified as a new entity and can further be associated to properties, such as time.</p>
+<h4 id="n-ary-relations">N-ary relations<a aria-hidden="true" class="anchor-heading icon-link" href="#n-ary-relations"></a></h4>
+<p>In principle, the N-ary relation is a generalization of reification. For each N-ary relation, a new class with an instance is introduced for it as if the relation is objectified. Further property assertions can be made with respect to the newly introduced instance. Figure 3.8 gives the running example in N-ary relations.</p>
+<p><img src="/wiki/assets/images/2024-10-21-03-01-13.png"></p>
+<p>The resource :enrolled1 in Figure 3.8 is introduced as a new instance encapsulating both the course name value, SW, and its valid time interval through two properties, :hasCourse and :hasVT. The relation (:John, :enrolled, :SW) is converted to an entity class :Enrollment. The property :enrolled is overloaded, so its range becomes the newly introduced class :Enrollment. Adding time to the original triple, i.e., (John, enrolled, SW), requires three more triples.</p>
+<p>N-ary relation approach does not require extension to RDF, RDFS or OWL vocabularies. It simply converts relationships to entities that encapsulate properties. The semantics for N-ary relation approach is based on RDF and RDFS semantics. In Figure 3.8, the new object :enrolled1 may also be represented by a blank node. A blank node does not have any meaning, but acts like a wrapper for grouping related objects.</p>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">SELECT</span> <span class="token variable">?ti</span> <span class="token variable">?tf</span>
+<span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">enrolled</span></span> <span class="token variable">?e</span><span class="token punctuation">.</span>
+<span class="token variable">?e</span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Enrollment.</span></span>
+<span class="token variable">?e</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasCourse</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">SW.</span></span>
+<span class="token variable">?e</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasVT</span></span> <span class="token variable">?i</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasBeginning</span></span> <span class="token variable">?ti</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasFinish</span></span> <span class="token variable">?tf</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>While N-ary relation approach can be applied to OWL, it would incur overheads. For instance, multiple inverse properties are needed for a N-ary relation. Moreover, the use of cardinality re- strictions becomes limiting on some roles that depend on the class of some other roles <a id="fnref-53" class="fnref" href="#fn-53">53</a>.</p>
 <h4 id="valid-time-temporal-model">Valid-Time Temporal Model<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-temporal-model"></a></h4>
 <ul>
 <li>O’Connor et al. propose a valid-time temporal model and a SWRL-based [40] query mechanism for manipulating temporal knowledge in OWL ontologies</li>
@@ -132,7 +197,7 @@ time of the relationship and two participating entities."
 <h3 id="notations-namespace-and-time-domain">Notations, Namespace, and Time Domain<a aria-hidden="true" class="anchor-heading icon-link" href="#notations-namespace-and-time-domain"></a></h3>
 <ul>
 <li>vtrdf: and vtrdfs: refer to the namespace of VTRDF vocabulary and VTRDF Schema vocabulary</li>
-<li>While the symbol # is used to denote an additional part of the primary resource in the standard RDF model, VTRDF requires a second fragment identifier to accommodate the valid time dimen- sion.
+<li>While the symbol # is used to denote an additional part of the primary resource in the standard RDF model, VTRDF requires a second fragment identifier to accommodate the valid time dimension.
 <ul>
 <li>t.2024.07.24.11 with slash IRIs, could work too</li>
 <li>The symbol • is used as a delimiter that separates the first fragment identifier from the valid</li>
@@ -255,15 +320,24 @@ in the standard RDF with a default maximal interval [0, ∞].
 <h3 id="vtrdf-vocabulary">VTRDF Vocabulary<a aria-hidden="true" class="anchor-heading icon-link" href="#vtrdf-vocabulary"></a></h3>
 <ul>
 <li>VTRDF Vocabulary is formulated as layers and RDF-compliant.</li>
-<li></li>
 </ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<hr>
+<h2 id="footnotes">Footnotes<a aria-hidden="true" class="anchor-heading icon-link" href="#footnotes"></a></h2>
+<ol>
+<li><span id="fn-53" style="width: 0; height: 0;"></span><p><a href="/wiki/notes/tq4knxb7t4ln11ktfuwiye3">Defining N-ary Relations on the Semantic Web</a><a class="fn" href="#fnref-53">˄</a></p></li>
+</ol>
 <hr>
 <strong>Backlinks</strong>
 <ul>
 <li><a href="/wiki/notes/jvh4ig9tyukw8u60mp6zpi9">SQWRL</a></li>
+<li><a href="/wiki/notes/xbpa7vv9hwari8435fttsw3">Relator</a></li>
+<li><a href="/wiki/notes/gevpci170z4xpynl0eyhkhf">Temporality</a></li>
 <li><a href="/wiki/notes/nrkv4drjfk0hc0y7tmofrmw">tOWL</a></li>
 <li><a href="/wiki/notes/g09smnhcw1nclhr5qfrvnyc">Perdurantism</a></li>
 <li><a href="/wiki/notes/cd43bm85eemff81n7gufn99">Relationship to Entity Conversion</a></li>
+<li><a href="/wiki/notes/aqlimlaytofoqkt8f23z9cn">Relator</a></li>
+<li><a href="/wiki/notes/9dzybsjq6mg0k2p8tomc2jc">Singleton Propert</a></li>
 <li><a href="/wiki/notes/95i87rdf941m1gys955bjfr">Temporal Semantic Web</a></li>
 <li><a href="/wiki/notes/dhv1x4dufgdor1bmw74u3fk">Situational Calculus</a></li>
 </ul>

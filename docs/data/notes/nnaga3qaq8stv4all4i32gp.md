@@ -16,3 +16,4 @@
 - https://www.w3.org/wiki/HashVsSlash
 - https://triplydb.com/how-to-model/-/stories/how-to-model-iris
 - [[ar.best-practices-for-implementing-fair-vocabularies-and-ontologies-on-the-web]]
+- [[ar.best-practice-recipes-for-publishing-rdf-vocabularies]]

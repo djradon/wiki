@@ -1,4 +1,6 @@
 
+- similar: [[t.cs.semantic-web.class.class-as-values]]
+
 ## Implementations
 
 - [[prdct.ml2]], [[prdct.melanie]], [[prdct.deeptelos]], [[prdct.ontouml]], [[ar.incorporating-types-of-types-in-ontology-driven-conceptual-modeling]]

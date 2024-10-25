@@ -1,4 +1,20 @@
 <h1 id="kosmion">Kosmion<a aria-hidden="true" class="anchor-heading icon-link" href="#kosmion"></a></h1>
+<h2 id="description">Description<a aria-hidden="true" class="anchor-heading icon-link" href="#description"></a></h2>
+<p>The Kosmion ontology is designed with a human-first orientation and a domain-first approach that allows data modelers to define their own top-level constructs and hierarchies rather than fitting them into a predefined universal structure. </p>
+<p>But if you're already using an upper ontology, it can work with that too.</p>
+<p>Kosmion is intended to be a utilitarian foundational ontology, advocating for “relator instances” as a reification-like alternative to traditional properties/relations. This approach allows:</p>
+<ul>
+<li>relevant facets instead of instantiating traditional classes.</li>
+<li>n-ary relations, including unary relations</li>
+<li>system-time (with kosm:relator-genesis, kosm:relator-tombstone, and kosm:relator-successor)</li>
+<li>immutability and attribution for lineage, auditing, and time-travel purposes</li>
+<li>“statements about relators”, and since any traditional RDF statement can be expressed with a relator (I think), it could be considered an alternative to RDF-star, which aims to support “statements about statements”</li>
+<li>contexts for specifying alternate realities and other less-truthy perspectives</li>
+<li><strong>Multi-perspective Modeling</strong>: By using relators for every connection, it becomes possible to represent different perspectives or interpretations of the same entities, allowing richer semantic descriptions and supporting use cases like storytelling, versioning, or conflicting viewpoints.</li>
+<li>maybe: relations that may involve either a datatype property or an object property as their object, or both </li>
+</ul>
+<p>Kosmion is intend to use “OWL2 Full” (i.e., the RDF-based semantics), which supposedly might mean it's undecideable and unreasonable. It's also unorthodox, so probably breaks a lot of tooling. Tough luck computers.</p>
+<p>Arguably, relators are also less readable and more complicated than classic RDF triples. Sorry about that, humans. At least the expressiveness is decent.</p>
 <hr>
 <strong>Children</strong>
 <ol>

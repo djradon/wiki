@@ -159,7 +159,7 @@ tripleTerm ::= triple</p>
  ]
  rdf12:reifies rdfs:range rdf:Statement .    # axiomatic triple
 </code></pre>
-<p>An instantiation via rdf12:instantiates OTOH does indeed assert the statement it annotates, in addition to providing an identifier to annotate that assertion. To make the connection between statement and annotation direct and solid, but not break the set semantics of RDF, the model and semantics mimick the singleton property approach. A mapping to RDF 1.1 clarifies that:</p>
+<p>An instantiation via rdf12:instantiates OTOH does indeed assert the statement it annotates, in addition to providing an identifier to annotate that assertion. To make the connection between statement and annotation direct and solid, but not break the set semantics of RDF, the model and semantics mimick the <a href="/wiki/notes/9dzybsjq6mg0k2p8tomc2jc">singleton property</a> approach. A mapping to RDF 1.1 clarifies that:</p>
 <pre><code>:i_1 rdf12:instantiates &#x3C;&#x3C;( :s :p :o )>> .
 </code></pre>
 <p>in RDF 1.1 would be expressed as</p>

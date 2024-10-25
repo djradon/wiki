@@ -1,7 +1,8 @@
 
 - https://cgi.csc.liv.ac.uk/~valli/OWLED2015/OWLED_2015_paper_5.pdf
-- related: [[prdct.cojack]]
+- related: [[prdct.cojack]] [[prdct.presto-ontology]]
 
+![](/assets/images/2024-10-24-13-17-35.png)
 
 ## Abstract
 

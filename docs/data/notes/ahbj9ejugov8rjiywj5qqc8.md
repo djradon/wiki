@@ -13,7 +13,7 @@
 
 ## Features
 
-- 
+- "SHACL uses CWA in its reasoning" ^6uscvziiubke
 
 - "SHACL uses RDFS subclassing mechanism. When you create SHACL models you define classes and more specific subclasses. Additionally, you can separate Node Shapes from classes to define application specific views.Take a look at [this blog](https://www.topquadrant.com/classes-and-node-shapes-when-to-separate/) to understand differences between classes and node shapes... With SHACL, you can deactivate constraints that you don’t need or can’t agree with. This is done declaratively, using the standard so it is unambiguously clear what aspects of the models you are using and what aspects you are not using."
 - "SHACL is a semantic constraint language, which is quite useful as a guard for updates to a triple store. Because SHACL is less concerned with meaning and more concerned with structure, many object-oriented ontologists prefer it to OWL for defining their classes."
@@ -25,7 +25,7 @@
 
 - https://archive.topquadrant.com/edg-ontologies-overview/
   - "If a group of properties is reusable across assets that are not subclasses of each other (e.g., enterprise, technical and data assets are not subclasses of each other), EDG ontologies define an aspect class to hold or comprise this group of properties."
-  - mentions [[t.cs.semantic-web.aspect-classes]]
+  - mentions [[t.cs.semantic-web.class.aspect]]
 
 ## Constraint Types
 
@@ -57,3 +57,4 @@
 - [[ar.topquadrant.why-i-use-shacl-for-defining-ontology-models]]
 - [[ar.hackernews.semantic-web-is-like-the-guy-that-tells-everyone-that-he-is-an-asshole]]
 - [[ar.a-formal-approach-for-customization-of-schema-org-based-on-shacl]]
+- [[ar.linkedin.the-open-world-assumption-in-modeling-what-does-it-mean-to-you]]

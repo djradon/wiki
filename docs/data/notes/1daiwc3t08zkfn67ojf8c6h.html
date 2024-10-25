@@ -1,0 +1,21 @@
+<h1 id="unique-identifiers">Unique Identifiers<a aria-hidden="true" class="anchor-heading icon-link" href="#unique-identifiers"></a></h1>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>IRIs are identifiers, </li>
+<li>[with k-sortable IDs,] You may be allowing your storage needs to escape abstraction layers. </li>
+<li>"If you ever make these values end-user visible, you are leaking info that you might not realize... why should Alice be allowed to know, to within a second, when Bob created their account? This could be misused, or dangerous, in some applications. "</li>
+</ul>
+<h2 id="possible-solutions">Possible Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#possible-solutions"></a></h2>
+<p><a href="/wiki/notes/7xj4mf61kskuvqmczidum2g">Ulid</a>: 128-bit UUID compatible, with 48 bits timestamp, 80 bits random.</p>
+<p><a href="/wiki/notes/fduihffkcncqv40thx8vasf">Snowflake</a>: 64-bit, with 41 bits timestamp, 10 bits machine ID, 12 bits per-machine sequence. This may be the oldest, but one of the most relevant as it was invented by Twitter, and both Discord and Instagram are using variations of it.</p>
+<p><a href="/wiki/notes/bkx5as3t57pbujgdo59waxa">V6</a>: 128-bit UUID, with 64 bits timestamp (minus 4 bits UUID version embedded in it), 2 bits UUID variant, 14 bits “clock sequence”, and 48 bits random. Has a non-expired IETF draft.</p>
+<p><a href="/wiki/notes/z67eyoy3gi0d5pj7vxjpaku">Ksuid</a> (K-Sortable Unique IDentifier): 160-bit, with 32 bits timestamp and 128 bits random. Created by Segment and probably mostly in use internally to them as well.</p>
+<p>Stripe IDs: Like ch_1Iyqf42eZvKYlo2C4MIyA80e, are a combination of timestamp and random bits and base62 (-ish) encoded, although I don’t remember the proportions and didn’t spend the time reverse engineering them.</p>
+<p>Flake: 128-bit, with 64 bits timestamp, 48 bits machine ID, and 16 bits sequence. Created by Boundary (which is under new management) in Erlang, and best considered deprecated.</p>
+<p><a href="/wiki/notes/quat8bwikkg6mzlo0fsjshn">Nanoid</a>  A <del>tiny</del> (124 bytes), secure, URL-friendly, unique string ID generator for JavaScript </p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://brandur.org/fragments/k-sorted-ids">https://brandur.org/fragments/k-sorted-ids</a></li>
+<li><a href="https://www.reddit.com/r/golang/comments/10bg0rn/which_uuid_package_do_you_use_and_why/">https://www.reddit.com/r/golang/comments/10bg0rn/which_uuid_package_do_you_use_and_why/</a></li>
+<li><a href="https://deepam-kapur.medium.com/ulid-and-snowflake-id-the-cool-coders-alternative-to-boring-uuids-1e772064f275">https://deepam-kapur.medium.com/ulid-and-snowflake-id-the-cool-coders-alternative-to-boring-uuids-1e772064f275</a></li>
+</ul>

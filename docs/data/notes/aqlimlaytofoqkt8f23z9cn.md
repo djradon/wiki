@@ -1,4 +1,6 @@
 
+- aka: [[Relationship to Entity Conversion|ar.valid-time-rdf#relationship-to-entity-conversion-rec]]
+
 ## Features
 
 - allows all n-ary relationships

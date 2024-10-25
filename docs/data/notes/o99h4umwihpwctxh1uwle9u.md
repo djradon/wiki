@@ -16,32 +16,89 @@
 
 ## Highlights
 
-### Instantiating-Identifying Concept/Relationship (IIR)
+- proposals of temporal extensions to RDF reported in the
+literatures mostly use RDF reification explicitly or implicitly
+
+### Implicit Reification Based Temporal Model
+
+implicit reification based models use different types of abstraction for handling reification. They do not employ reification vocabularies of RDF specifications. Two subcategories follow.
+
+#### Instantiating-Identifying Concept/Relationship (IIR)
 
 In IIR models, a concept or relationship is reified and further temporalized. Either such relationship is abstracted as a new object, or a concept is viewed as four dimensional and instantiated to have temporal extents. Singleton Property converts each relationship to be universally unique. 4D fluents use concepts that view each resource as a perdurant. Fluents represent properties that change over time
 
 #### Singleton Property
 
-The formal semantics of the singleton property is derived from the standard RDF and RDFS semantics with the additional semantics extension for the vocabulary rdf:singletonPropertyOf. The singleton property gives rises to three cases of query patterns: data, metadata and mixed patterns which SPARQL supports. 
+The formal semantics of the [[singleton property|t.cs.semantic-web.singleton-property]] is derived from the standard RDF and RDFS semantics with the additional semantics extension for the vocabulary rdf:singletonPropertyOf. The singleton property gives rises to three cases of query patterns: data, metadata and mixed patterns which SPARQL supports. 
 
 #### 4D Fluents
 
 - Perdurantism is a philosophical theory of persistence and identity [34], and it is closely related to four dimensionalism. In the four dimensional view, an object that persists through time has distinct temporal parts at every time instant through its existence in time. Furthermore, each persisting object can be considered a four dimensional spacetime worm that stretches across space-time. Slicing the worm at a specific time interval or instant of the time dimension yields a temporal part.
   - t.2024.03.21.08: and endurant 
-- Fluent is a component of [[t.phil.logic.situational-calculus]]
+  
 ![[t.phil.logic.situational-calculus#^vmhpi7mrf12z]]
+- In 4D Fluents model, fluents are properties that change over time [73]. These properties are special cases in that both the domain and range of them are temporal parts of the corresponding entities. TemporalPart is the main class for converting regular entities to 4D spacetime worm ones. OWL-Time ontology of [37] is used as time domain in 4D Fluents model. Particularly, a class TimeInterval derived from the equivalent class of OWL-Time is used for all temporal terms.
 ![](/assets/images/2024-04-01-11-15-48.png)
+- In Figure 3.5, individuals :John and :SW are two 4D entities. Each entity has temporal parts,
+:John@i1 and :SW@i1 respectively. The property :enrolled is transformed to a fluent whose domain and range are both temporal parts. Each temporal part is associated with a specific temporal extent , i.e., time interval, that denotes its valid time. One fluent property requires two extra ob- jects, i.e., temporal parts, and two properties, in contrast to reification, that uses one extra object and four properties as illustrated in Figure 2.10. 
+
+##### Advantages
+
 - "OWL inverse operator and cardinality constraints are available and standard OWL reasoners can be used for inferencing."
+- The 4D Fluents model is within standard RDF and OWL-DL. 
+- The running example
+query can be written in SPARQL 4D Fluents model:
+```sparql
+SELECT ?ti ?tf
+WHERE {?ts1 :temporalPartOf :John.
+?ts2 :temporalPartOf :SW.
+?ts1 :enrolled ?ts2.
+?ts1 :temporalExt ?i.
+?ts2 :temporalExt ?i.
+?i :hasBeginning ?ti.
+?i :hasEnd ?tf.
+}
+```
+- Since the 4D Fluents model imports OWL-Time [37], :i1 in Figure 3.5 is an OWL-Time interval, while ?ti and ?tf in the above query are two OWL-Time instants.
 
 #### Extended 4D Fluents 
 
-- [[Batsakis|user.sotiris-batsakis]] et al. extended 4D Fluents model to incorporate qualitative temporal relations that have unknown temporal information... Semantics of the extended 4D Fluents model is based on the original 4D Fluents model, with the additional temporal semantics needed for qualitative temporal relations.
+- [[Batsakis|user.sotiris-batsakis]] et al. [[extended 4D Fluents|ar.representing-temporal-knowledge-in-the-semantic-web-the-extended-4d-fluents-approach]] model to incorporate qualitative temporal relations that have unknown temporal information... Semantics of the extended 4D Fluents model is based on the original 4D Fluents model, with the additional temporal semantics needed for qualitative temporal relations.
 
 ![](/assets/images/2024-04-01-11-24-36.png)
 
+- [[TOQL|prdct.toql]] [5] is the SQL-like query language for Extended 4D Fluents model. To accommodate querying qualitative temporal relations, additionally query constructs, such as ”AT” clause and Allen temporal operators [4], such as before, after, meets, etc., are included in TOQL.
+
 #### Temporal Web Ontology Language
 
-- [[prdct.owl.towl]]
+![[prdct.owl.towl#^927zza20f03z:#^b8t2dt9958m2]]
+
+### Relationship to Entity Conversion (REC)
+
+In REC models, a relationship is transformed to a composite entity. The transformed entity comes in two forms: a new entity that implicitly reifies the original triple, or an abstract object that becomes a term for further use. As an example of REC models, N-ary relations provide a main modeling concept: a triple is objectified as a new entity and can further be associated to properties, such as time.
+
+#### N-ary relations
+
+In principle, the N-ary relation is a generalization of reification. For each N-ary relation, a new class with an instance is introduced for it as if the relation is objectified. Further property assertions can be made with respect to the newly introduced instance. Figure 3.8 gives the running example in N-ary relations.
+
+![](/assets/images/2024-10-21-03-01-13.png)
+
+The resource :enrolled1 in Figure 3.8 is introduced as a new instance encapsulating both the course name value, SW, and its valid time interval through two properties, :hasCourse and :hasVT. The relation (:John, :enrolled, :SW) is converted to an entity class :Enrollment. The property :enrolled is overloaded, so its range becomes the newly introduced class :Enrollment. Adding time to the original triple, i.e., (John, enrolled, SW), requires three more triples.
+
+N-ary relation approach does not require extension to RDF, RDFS or OWL vocabularies. It simply converts relationships to entities that encapsulate properties. The semantics for N-ary relation approach is based on RDF and RDFS semantics. In Figure 3.8, the new object :enrolled1 may also be represented by a blank node. A blank node does not have any meaning, but acts like a wrapper for grouping related objects.
+
+```sparql
+SELECT ?ti ?tf
+WHERE {
+:John :enrolled ?e.
+?e rdf:type :Enrollment.
+?e :hasCourse :SW.
+?e :hasVT ?i.
+?i :hasBeginning ?ti.
+?i :hasFinish ?tf.
+}
+```
+While N-ary relation approach can be applied to OWL, it would incur overheads. For instance, multiple inverse properties are needed for a N-ary relation. Moreover, the use of cardinality re- strictions becomes limiting on some roles that depend on the class of some other roles [^53].
 
 #### Valid-Time Temporal Model
 
@@ -97,7 +154,7 @@ time of the relationship and two participating entities."
 ### Notations, Namespace, and Time Domain
 
 - vtrdf: and vtrdfs: refer to the namespace of VTRDF vocabulary and VTRDF Schema vocabulary
-- While the symbol # is used to denote an additional part of the primary resource in the standard RDF model, VTRDF requires a second fragment identifier to accommodate the valid time dimen- sion.
+- While the symbol # is used to denote an additional part of the primary resource in the standard RDF model, VTRDF requires a second fragment identifier to accommodate the valid time dimension.
   - t.2024.07.24.11 with slash IRIs, could work too
   - The symbol • is used as a delimiter that separates the first fragment identifier from the valid
 - T is the set of time points with a linear order less-than (<). For simplicity, we use the standard U.S. calendar dates as the unit of time points in the format of month/day/year, such as 1/10/1995
@@ -200,4 +257,8 @@ A Valid Time RDF triple (st, pt, ot) satisfies the temporal constraint, called T
 ### VTRDF Vocabulary
 
 - VTRDF Vocabulary is formulated as layers and RDF-compliant.
-- 
+
+
+## References
+
+[^53]: [[ar.defining-n-ary-relations-on-the-semantic-web]]

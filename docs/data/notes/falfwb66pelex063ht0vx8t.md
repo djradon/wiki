@@ -1,5 +1,6 @@
 
 - https://krisnamughni24.medium.com/event-driven-programming-in-simulation-games-16cbd266680b
+- topics: [[t.cs.sd.architecture.event-driven]] [[c.game.simulation]]
 
 ## Thoughts
 

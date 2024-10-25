@@ -5,6 +5,12 @@
 <li>In DCAT 3 (Data Catalog Vocabulary version 3), versioning is managed using properties that allow you to describe different versions of datasets, distributions, and other cataloged resources. Specifically, DCAT 3 introduces the <code>dcterms:hasVersion</code>, <code>dcterms:isVersionOf</code>, and <code>adms:versionNotes</code> properties to indicate relationships between versions, and to describe changes across versions.</li>
 <li>This enables users to track the evolution of datasets and maintain a clear history of modifications, ensuring that consumers of the data are aware of its version history and any updates that have occurred.</li>
 </ul>
+<h3 id="dataset-series">Dataset Series<a aria-hidden="true" class="anchor-heading icon-link" href="#dataset-series"></a></h3>
+<ul>
+<li>DCAT makes dataset series first class citizens of data catalogs by minting a new class dcat:DatasetSeries, defined as a subclass of dcat:Dataset. The datasets are linked to the dataset series by using the property dcat:inSeries. Note that a dataset series can also be hierarchical, and a dataset series can be a member of another dataset series.</li>
+<li>see <a href="/wiki/notes/v1zghmhfcl42l1imfh6fft2">Dataset series</a> and <a href="/wiki/notes/6t2yh5kbnj05b89q4ehfqz7">Issue 1409: Using dcat:next and dcat:version in Dataseries</a></li>
+</ul>
+<h4 id=""><a aria-hidden="true" class="anchor-heading icon-link" href="#"></a></h4>
 <h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>
 <pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">catalog</span></span>
   <span class="token keyword">a</span> <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">Catalog</span></span> <span class="token punctuation">;</span>
@@ -54,5 +60,6 @@
 <strong>Backlinks</strong>
 <ul>
 <li><a href="/wiki/notes/pi9eqxk27aaedm6ae8tn180">DCAT Data Catalog</a></li>
+<li><a href="/wiki/notes/sgxfedlyabx9jl3jnfxbz1r">Successor</a></li>
 <li><a href="/wiki/notes/GfW1qP1ZvFxHSaJiguPzh">DCATv2</a></li>
 </ul>

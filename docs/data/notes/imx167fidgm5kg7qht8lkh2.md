@@ -81,4 +81,26 @@
 - it's going to be so great, you'll want to use quasi-immutable, facet-oriented RDF for your ontologies too.
 - make two versions avail, one with owl:includes, or rather kosm:includes means the same thing 
 - everything is a data catalog, or rather, every decent (kosmethodology-compliant entity) is
-- 
+
+
+## t.2024.10.24.06
+
+- maybe a "semantic repo" is the top-level concept, with:
+  - ns/entity
+  - ns/graph
+  - ns/dataset
+  - ns/catalog
+
+## t.2024.10.24.11
+
+- maybe a dataset defines a graph of exportable data... stuff that's not about the dataset (i.e., no metadata). This is the "metadata lives in the default graph" pattern
+- maybe differentiate between EssentialsCatalog and RelevantCatalog, or just have the catalogs specify 
+
+## t.2024.10.24.14
+
+- maybe need a ReverseList, 
+  - would it work with last and rest?
+
+## t.2024.10.25.13
+
+- a rdf triple (or relator-atom) is not necessarily an assertion, it is just a configuration of content units or at best a statement. 

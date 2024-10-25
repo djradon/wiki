@@ -7,6 +7,11 @@
 - built_on: [[prdct.node]]
 ![[prdct.pubby#^4ldbidz2j6c8]]
 
+## Requirements
+
+- SPARQL endpoint, or
+- triple in a local file (uses built-in in-memory store)
+
 ## Features
 
 -   Provides a Linked Data interface to SPARQL protocol servers

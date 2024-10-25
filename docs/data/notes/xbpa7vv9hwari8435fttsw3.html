@@ -1,10 +1,19 @@
 <h1 id="relator">Relator<a aria-hidden="true" class="anchor-heading icon-link" href="#relator"></a></h1>
 <ul>
-<li>the RDFS-style class might have to be sidelined
+<li>aka: <a href="/wiki/notes/o99h4umwihpwctxh1uwle9u#relationship-to-entity-conversion-rec">Relationship to Entity Conversion (REC)</a></li>
+<li>facets provide a mixin-style impressionistic</li>
+<li>the RDFS-style class is replaced by <a href="/wiki/notes/pb7w7xw9fvkevuiavgwokok">type facets</a>
 <ul>
-<li>t.2024.08.09.20 what? more like traditional "relationship directly expressed with predicate" gets replaced by "RelationshipClass has shapes, pieced together impressionistic style from meta-predicates"</li>
+<li>rdfs:Class is still used in meta ways, e.g., classifying relators</li>
 </ul>
 </li>
+</ul>
+<h2 id="benefits">Benefits<a aria-hidden="true" class="anchor-heading icon-link" href="#benefits"></a></h2>
+<ul>
+<li>relations can be temporalized and contextualized</li>
+<li>supports unary and n-ary relations</li>
+<li>multiple subjects can participate in relations</li>
+<li></li>
 </ul>
 <h2 id="what-would-it-look-like-to-have-a-domain-classes-as-individuals-data-model-where-relationships-are-primarily-expressed-by-relators">What would it look like to have a "domain-classes-as-individuals" data model where relationships are primarily expressed by relators?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-would-it-look-like-to-have-a-domain-classes-as-individuals-data-model-where-relationships-are-primarily-expressed-by-relators"></a></h2>
 <p>instead of </p>
@@ -16,35 +25,37 @@
 <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">SimpsonFamily</span></span>
 </code></pre>
 <p>we would have</p>
-<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening-hasName-Matt</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">NamingRelation</span></span> <span class="token punctuation">;</span>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening-hasName-Matt</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">NamingRelator</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">named-thing</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">name</span></span>  <span class="token string">"Matt"</span> <span class="token punctuation">.</span>
 
-<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening-named-Bart</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">NamingRelation</span></span> <span class="token punctuation">;</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening-named-Bart</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">NamingRelator</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">name-giver</span></span>  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">named-thing</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">name</span></span> <span class="token string">"Bart"</span> <span class="token punctuation">.</span>
 
-<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart-isa-Simpson</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">MembershipRelation</span></span> <span class="token punctuation">;</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart-isa-Simpson</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">MembershipRelator</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">context</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">simpsons-world</span></span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">member</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart</span></span> <span class="token punctuation">;</span>
-  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">group</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">simpsons-family</span></span> <span class="token punctuation">;</span>
-  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">groupClass</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">SimpsonsFamily</span></span><span class="token punctuation">,</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">Person.</span></span> //kinda redundant<span class="token punctuation">,</span> but that's OK
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">group</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">simpsons-family</span></span> 
+  <span class="token punctuation">.</span>
 
 
-<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart-isa-character-in-reality</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">KindRelation</span></span> <span class="token punctuation">;</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart-isa-character-in-reality</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">KindRelator</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">context</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">reality</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">individual</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart</span></span> <span class="token punctuation">;</span>
-  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">kind</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">fictional-character</span></span> <span class="token punctuation">.</span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">kind</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">fictional-character</span></span> <span class="token comment"># punning or OWL-Full</span>
+  <span class="token punctuation">.</span>
 
-<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart-isa-person-in-simpsons-world</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">KindRelation</span></span> <span class="token punctuation">;</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart-isa-person-in-simpsons-world</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">KindRelator</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">context</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">simpsons-world</span></span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">individual</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bart</span></span>
-  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">kind</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">person</span></span>
+  <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">kind</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Person</span></span> <span class="token comment"># punning or OWL-Full</span>
+  <span class="token punctuation">.</span>
 
 </code></pre>
 <p>and then you can go to town with relator enhancement (temporality, attribution) etc.:</p>
-<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening-hasName-Matt</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">NamingRelation</span></span> <span class="token punctuation">;</span>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening-hasName-Matt</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">NamingRelator</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">named-thing</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">matt-groening</span></span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">name</span></span>  <span class="token string">"Matt"</span> <span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">name-giver</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">margaret-groening</span></span> <span class="token punctuation">;</span>
@@ -57,7 +68,7 @@
 <li>is that just making relations into "assertions? Which are kinda events?</li>
 <li>sure, a profusion of predicates, but it's still legible. As long as we have tools for creation, a profusion of predicates is okay</li>
 </ul>
-<h2 id="benefits">Benefits<a aria-hidden="true" class="anchor-heading icon-link" href="#benefits"></a></h2>
+<h2 id="benefits-1">Benefits<a aria-hidden="true" class="anchor-heading icon-link" href="#benefits-1"></a></h2>
 <ul>
 <li>can clarify the type/is-a relationships between individuals and classes
 <ul>
@@ -96,16 +107,25 @@ No note with name ar.a-reusable-ontology-for-fluelnts-in-owl found in cache duri
 <li>I thought I saw somewhere that there would just be a profusions of inverse properties, but maybe it's actually impossible.</li>
 <li>it seems like inversion might not be appliable to relator-based RDF. and that's probably okay. Who cares about ceoOf vs hasCEO when you have a ceo role and a company role on the same footing
 <ul>
-<li>t.2024.10.07.09 for meaning, it obviates the need to distinguish between active and passive voices, although you might want to preserve that distinction for reasons of accuracy. I guess there might be small variations in meaning</li>
+<li>t.2024.10.07.09 for meaning, it obviates the need to distinguish between active and passive voices, although you might want to preserve that distinction for reasons of accuracy. I guess there might be small variations in meaning
+<ul>
+<li>t.2024.10.25.02 you could have an additional property like ":subject" (which I'd been, perhaps foolishly, using generically )</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="so-the-question-becomes-generality">so the question becomes, generality<a aria-hidden="true" class="anchor-heading icon-link" href="#so-the-question-becomes-generality"></a></h2>
-<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Sam-Palmisano-CEO-of-IBM</span></span> <span class="token keyword">a</span> OrganizationalRoleRelation<span class="token punctuation">;</span>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Sam-Palmisano-CEO-of-IBM</span></span> <span class="token keyword">a</span> OrganizationalRoleRelator<span class="token punctuation">;</span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">role</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">CEO</span></span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">role-holder</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Sam-Palmisano</span></span>
   <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">organization</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">IBM</span></span>
 </code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/gk7upmu6gim127kxiedb23h">Relator Log</a></li>
+</ol>
 <hr>
 <strong>Backlinks</strong>
 <ul>
