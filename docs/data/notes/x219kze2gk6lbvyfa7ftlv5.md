@@ -2,6 +2,7 @@
 - url: https://eprints.soton.ac.uk/261153/1/onto_workshop.pdf
 - related: [[prdct.cidoc-crm]] [[prdct.ontomedia]]
 - mentions: 
+- authors: @faith-lawrence @monica-schraefel
 
 ## Highlights
 

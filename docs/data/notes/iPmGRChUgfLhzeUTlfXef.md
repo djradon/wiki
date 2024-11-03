@@ -1,4 +1,7 @@
 
+## Issues
+
+- hyphens not allowed (but underscores are)
 
 
 ## Resources

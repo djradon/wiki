@@ -1,5 +1,32 @@
 <h1 id="requirements">Requirements<a aria-hidden="true" class="anchor-heading icon-link" href="#requirements"></a></h1>
 <h2 id="iri-minting">IRI minting<a aria-hidden="true" class="anchor-heading icon-link" href="#iri-minting"></a></h2>
 <ul>
-<li></li>
+<li>ideally there could be some kind of signature that affirms "the dataset published to this IRI was authorized by a person who has control of the namespace" but I guess its existance at that URL speaks for itself.</li>
+<li>see <a href="/wiki/notes/wqxt4yc5gst337rnnqwzuh3#authority">2024 10 25 Semantic Flow Overview</a> for approaches to trust</li>
+</ul>
+<h3 id="dereference-pages">Dereference Pages<a aria-hidden="true" class="anchor-heading icon-link" href="#dereference-pages"></a></h3>
+<ul>
+<li>for <a href="/wiki/notes/wvzsqsdcvkd1d2adyeqw996">dereference pages</a> you don't want all assertions, only some of the most useful ones, perhaps with links to where you can get more (ie., catalog links)</li>
+<li>mapping of templates to facets, namespaces, datasets, sparql queries</li>
+</ul>
+<h2 id="canonicalization">Canonicalization<a aria-hidden="true" class="anchor-heading icon-link" href="#canonicalization"></a></h2>
+<ul>
+<li>to make diffing easier, all datasets should be canonicalized before commit</li>
+</ul>
+<h2 id="system-time">System Time<a aria-hidden="true" class="anchor-heading icon-link" href="#system-time"></a></h2>
+<p>There are multiple levels of "this data was added, changed, or tombstoned":</p>
+<h3 id="relator-atoms">Relator Atoms<a aria-hidden="true" class="anchor-heading icon-link" href="#relator-atoms"></a></h3>
+<h3 id="named-individuals">Named Individuals<a aria-hidden="true" class="anchor-heading icon-link" href="#named-individuals"></a></h3>
+<ul>
+<li>the act of using/declaring an IRI itself is a data point. It generates something into existence, even if it doesn't play a role in a relator. And possibly we'll want to be able to issue statements with that IRI that don't use relators. </li>
+<li>optionally, you can use </li>
+</ul>
+<h3 id="version-on-commit">Version-On-Commit<a aria-hidden="true" class="anchor-heading icon-link" href="#version-on-commit"></a></h3>
+<ul>
+<li>see <a href="/wiki/notes/wqxt4yc5gst337rnnqwzuh3#i-think-that-releasing-a-new-version-of-any-component-of-a-namespace-requires-a-version-bump-all-the-way-up-the-chain">2024 10 25 Semantic Flow Overview</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/ggw3ek46ptgebsgxgihr1dh">Semantic Flow</a></li>
 </ul>

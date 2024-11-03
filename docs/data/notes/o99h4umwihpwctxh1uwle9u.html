@@ -107,7 +107,7 @@ query can be written in SPARQL 4D Fluents model:</li>
 </ul>
 </div></div><p></p><p></p>
 <h3 id="relationship-to-entity-conversion-rec">Relationship to Entity Conversion (REC)<a aria-hidden="true" class="anchor-heading icon-link" href="#relationship-to-entity-conversion-rec"></a></h3>
-<p>In REC models, a relationship is transformed to a composite entity. The transformed entity comes in two forms: a new entity that implicitly reifies the original triple, or an abstract object that becomes a term for further use. As an example of REC models, N-ary relations provide a main modeling concept: a triple is objectified as a new entity and can further be associated to properties, such as time.</p>
+<p>In <a href="/wiki/notes/cd43bm85eemff81n7gufn99">REC</a> models, a relationship is transformed to a composite entity. The transformed entity comes in two forms: a new entity that implicitly reifies the original triple, or an abstract object that becomes a term for further use. As an example of REC models, N-ary relations provide a main modeling concept: a triple is objectified as a new entity and can further be associated to properties, such as time.</p>
 <h4 id="n-ary-relations">N-ary relations<a aria-hidden="true" class="anchor-heading icon-link" href="#n-ary-relations"></a></h4>
 <p>In principle, the N-ary relation is a generalization of reification. For each N-ary relation, a new class with an instance is introduced for it as if the relation is objectified. Further property assertions can be made with respect to the newly introduced instance. Figure 3.8 gives the running example in N-ary relations.</p>
 <p><img src="/wiki/assets/images/2024-10-21-03-01-13.png"></p>
@@ -123,7 +123,7 @@ query can be written in SPARQL 4D Fluents model:</li>
 <span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasFinish</span></span> <span class="token variable">?tf</span><span class="token punctuation">.</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>While N-ary relation approach can be applied to OWL, it would incur overheads. For instance, multiple inverse properties are needed for a N-ary relation. Moreover, the use of cardinality re- strictions becomes limiting on some roles that depend on the class of some other roles <a id="fnref-53" class="fnref" href="#fn-53">53</a>.</p>
+<p><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^v79ztcpa0633" href="#^v79ztcpa0633"></a>While N-ary relation approach can be applied to OWL, it would incur overheads. For instance, multiple inverse properties are needed for a N-ary relation. Moreover, the use of cardinality restrictions becomes limiting on some roles that depend on the class of some other roles <a id="fnref-53" class="fnref" href="#fn-53">53</a>. </p>
 <h4 id="valid-time-temporal-model">Valid-Time Temporal Model<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-temporal-model"></a></h4>
 <ul>
 <li>O’Connor et al. propose a valid-time temporal model and a SWRL-based [40] query mechanism for manipulating temporal knowledge in OWL ontologies</li>

@@ -20,3 +20,4 @@ This was not retained eventually, because of the lack of experience, so there is
 ## References
 
 - https://www.w3.org/TR/rdf11-datasets/
+- https://patterns.dataincubator.org/book/named-graphs.html

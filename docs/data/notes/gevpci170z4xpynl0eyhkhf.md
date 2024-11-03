@@ -68,3 +68,7 @@
 ### 
 
 ![[ar.valid-time-rdf#instantiating-identifying-conceptrelationship-iir]]
+
+## References
+
+- [[ar.telicent.4d-ontology]]

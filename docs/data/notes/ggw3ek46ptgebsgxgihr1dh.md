@@ -1,15 +1,21 @@
 
+- requirements: [[sflow.requirements]]
+- issues: [[sflow.issues]]
+
+## Features
+
+- entity-level granularity
+- use github or gitlab to manage namespaces using [[sflow.concepts.sf-root-repo]] and mint IRIs
+- an [[sflow.concepts.sf-data-repo]] could have files/distributions for more than one namespace, so it should have each of those namespaces segregated by a top-level folder
+- scan IRI sources,  
 
 
-## Requirements
-
-- for [[dereference pages|sflow.concepts.dereference-pages]] you don't want all assertions, only some of the most useful ones, perhaps with links to where you can get more
-- mapping of templates to facets, namespaces, datasets, sparql queries
 
 
 ## Relationship with Kosmion
 
-- kosmion is a relator-based
+- [[ko]] is a unorthodox, relator-based foundational ontology developed side-by-side with Semantic Flow. 
+- hopefully Semantic Flow has no dependencies on Kosmion and can be used for any kind of RDF data
 
 
 ## References

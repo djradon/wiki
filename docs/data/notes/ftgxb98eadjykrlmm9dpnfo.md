@@ -1,5 +1,5 @@
 
-- scans dataset sources, which can be:
+- scans datasets and dataset distributions, which can be :
   - local folders
   - git repos
   - compliant URLs

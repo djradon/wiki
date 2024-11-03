@@ -1,6 +1,7 @@
 
 - author: @matthew-west
 - https://www.sciencedirect.com/science/article/abs/pii/B9780123751065000117
+- related: [[vs.three-dimensional-vs-four-dimensional-ontologies]]
 
 ## Summary
 

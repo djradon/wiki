@@ -1,0 +1,39 @@
+<h1 id="provencance-authoring-versioning-ontology-pav">Provencance, Authoring, Versioning Ontology (PAV)<a aria-hidden="true" class="anchor-heading icon-link" href="#provencance-authoring-versioning-ontology-pav"></a></h1>
+<ul>
+<li><a href="https://pav-ontology.github.io/pav/">https://pav-ontology.github.io/pav/</a></li>
+<li>docs: <a href="https://github.com/pav-ontology/pav/wiki/">https://github.com/pav-ontology/pav/wiki/</a></li>
+</ul>
+<p><img src="/wiki/assets/images/2024-10-26-14-13-31.png"></p>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<h3 id="createdby-vs-authoredby-vs-curatedby-vs-createdwith-vs-contributedby">createdBy vs authoredBy vs curatedBy vs createdWith vs contributedBy<a aria-hidden="true" class="anchor-heading icon-link" href="#createdby-vs-authoredby-vs-curatedby-vs-createdwith-vs-contributedby"></a></h3>
+<ul>
+<li>createdBy indicates the agent primary responsible for making the digital artifact or resource representation.</li>
+<li>authoredBy indicates who authored the knowledge expressed by this resource</li>
+<li>curatedBy indicates who curated the knowledge into its current form.</li>
+</ul>
+<h4 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h4>
+<ul>
+<li>the concepts are good, but the names are confusing.</li>
+</ul>
+<h4 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h4>
+<ul>
+<li>the author wrote 'this species has bigger wings than normal' in his log book. The curator, going through the log book and identifying important knowledge, formalizes this as 'locus perculus has wingspan > 0.5m'. The creator enters this knowledge as a digital resource in the knowledge system, thus creating the digital artifact (say as JSON, RDF, XML or HTML).</li>
+<li>a news article. pav:authoredBy indicates the journalist who wrote the article. pav:contributedBy can indicate the artist who added an illustration. pav:curatedBy can indicate the editor who made the article conform to the news paper's style. pav:createdBy can indicate who put the article on the web site.</li>
+</ul>
+<h3 id="importedfrom">importedFrom<a aria-hidden="true" class="anchor-heading icon-link" href="#importedfrom"></a></h3>
+<p>The original source of imported information.</p>
+<p>Import means that the content has been preserved, but transcribed somehow, for instance to fit a different representation model by converting formats. Examples of import are when the original was JSON and the current resource is RDF, or where the original was an document scan, and this resource is the plain text found through OCR.</p>
+<p>The imported resource does not have to be complete, but should be consistent with the knowledge conveyed by the original resource.</p>
+<p>If additional knowledge has been contributed, pav:derivedFrom would be more appropriate.</p>
+<p>If the resource has been copied verbatim from the original representation (e.g. downloaded), use pav:retrievedFrom.</p>
+<h3 id="hascurrentversion">hasCurrentVersion<a aria-hidden="true" class="anchor-heading icon-link" href="#hascurrentversion"></a></h3>
+<ul>
+<li></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/54xs03d1txghek4nv0fwqo2">DCATv3</a></li>
+<li><a href="/wiki/notes/wqxt4yc5gst337rnnqwzuh3">2024 10 25 Semantic Flow Overview</a></li>
+<li><a href="/wiki/notes/pary2i440cfycbfsp3p87sh">Versioning</a></li>
+</ul>

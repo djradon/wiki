@@ -9,8 +9,11 @@
 <ul>
 <li>DCAT makes dataset series first class citizens of data catalogs by minting a new class dcat:DatasetSeries, defined as a subclass of dcat:Dataset. The datasets are linked to the dataset series by using the property dcat:inSeries. Note that a dataset series can also be hierarchical, and a dataset series can be a member of another dataset series.</li>
 <li>see <a href="/wiki/notes/v1zghmhfcl42l1imfh6fft2">Dataset series</a> and <a href="/wiki/notes/6t2yh5kbnj05b89q4ehfqz7">Issue 1409: Using dcat:next and dcat:version in Dataseries</a></li>
+<li>dcat:inSeries </li>
 </ul>
-<h4 id=""><a aria-hidden="true" class="anchor-heading icon-link" href="#"></a></h4>
+<h3 id="7-use-of-inverse-properties">7. Use of inverse properties<a aria-hidden="true" class="anchor-heading icon-link" href="#7-use-of-inverse-properties"></a></h3>
+<p>The properties described in 6. Vocabulary specification do not include inverses intentionally, with the purpose of ensuring interoperability also in systems not making use of OWL reasoning.</p>
+<p>However, recognizing that inverses are needed for some use cases, DCAT supports them, but with the requirement that they MAY be used only in addition to those described in 6. Vocabulary specification, and that they MUST NOT be used to replace them.</p>
 <h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>
 <pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">catalog</span></span>
   <span class="token keyword">a</span> <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">Catalog</span></span> <span class="token punctuation">;</span>
@@ -56,6 +59,10 @@
   <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">byteSize</span></span> <span class="token string">"5120"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">nonNegativeInteger</span></span> <span class="token punctuation">;</span>
   <span class="token punctuation">.</span>
 </code></pre>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/ipi4rlc29200er1dhrxvog3">Provencance, Authoring, Versioning Ontology (PAV)</a></li>
+</ul>
 <hr>
 <strong>Backlinks</strong>
 <ul>

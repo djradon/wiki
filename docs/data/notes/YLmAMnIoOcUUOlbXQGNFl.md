@@ -14,6 +14,7 @@
   - https://docs.dendron.so/notes/PgwAXFfotfgpFVqHQRlBl/
 - customizing the header is also apparently an option
 - for "files to include", vaults have to be specified as, e.g. ./public-notes
+- `rm -rf .next && rm -rf docs; cd public-notes; git pull; cd ..; dendron publish export --target github --yes; git add *;`
   
 
 ## Resources

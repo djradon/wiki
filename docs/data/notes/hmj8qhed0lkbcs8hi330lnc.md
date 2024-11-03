@@ -5,3 +5,4 @@
 * directory structure; distributions
 * how do you create semantic data that conforms to an ontology
 * client-side features: pull raw RDF files into the resource HTML pages
+* adapting [metalsmith-ldschema](https://github.com/howarddierking/metalsmith-ldschema/) plugin

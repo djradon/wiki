@@ -7,6 +7,7 @@
 - mentions: 
   - [[prdct.information-exchange-standard-ontology]]
   - [[prdct.business-objects-reference-ontology]]
+- topics: [[vs.three-dimensional-vs-four-dimensional-ontologies]]
 
 ![](/assets/images/2024-07-08-13-53-16.png)
 

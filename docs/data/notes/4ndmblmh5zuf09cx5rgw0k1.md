@@ -43,7 +43,7 @@ Producing a role-playing campaign is analagous to making a TV series. After an i
 
 In preparing for a classic tabletop RPG campaign, the players might have to break out the Player's Handbook if they're not already up on the rules. The GM has to either create an alternate reality with maps, notes, and illustrations, or purchase a ready-made module and get familiar with it. The GM might want to distribute a "pre-read" to set the stage for the players. And the players have to create their characters, one of the most enjoyable parts of the whole experience. 
 
-Computers can help us create alternate realities, concot role-playing scenarios, manage characters, and teach the rules, and those are just a few examples.
+Computers can help us create alternate realities, concoct role-playing scenarios, manage characters, and teach the rules, and those are just a few examples.
 
 Then, before each session, the GM prepare handouts, sets up battles and maps, maybe practices some voice acting, and tries to imagine some of the places the players might try to go. Computers can help with all of that pre-production.
 

@@ -1,6 +1,7 @@
 <h1 id="ontogen">Ontogen<a aria-hidden="true" class="anchor-heading icon-link" href="#ontogen"></a></h1>
 <ul>
 <li><a href="https://ontogen.io/">https://ontogen.io/</a></li>
+<li>author: <a href="/wiki/notes/731hfzx8esogb3ncbesro7v">Marcel Otto</a></li>
 <li>tested-with: <a href="/wiki/notes/sxearsf749tnwbfp4nohb4d">Fuseki</a> and <a href="/wiki/notes/4qan8gd97h7bajr4zf4s8qt">Oxigraph</a></li>
 <li>related: <a href="/wiki/notes/jc8fv59is3vyq5uo1e42efi">RTC.ex</a></li>
 <li>docs: <a href="https://ontogen.io/docs/user-guide/">https://ontogen.io/docs/user-guide/</a></li>
@@ -10,6 +11,38 @@
 <li>RDF Triple Compounds (RTC) allow named-graph-like functionality without using named graphs</li>
 <li>uses <a href="/wiki/notes/lTim9plsY3OzVv6gn7TBR">RDF-star</a> for annotations</li>
 </ul>
+<h3 id="triple-compounds">Triple Compounds<a aria-hidden="true" class="anchor-heading icon-link" href="#triple-compounds"></a></h3>
+<ul>
+<li>a set of triples assigned to a common resource. </li>
+<li>The triples are assigned to a compound with an RDF-star statement using the rtc:elementOf property.</li>
+</ul>
+<h4 id="example-with-rtcelementof">Example with rtc:elementOf<a aria-hidden="true" class="anchor-heading icon-link" href="#example-with-rtcelementof"></a></h4>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">employee38</span></span> 
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">firstName</span></span> <span class="token string">"John"</span> <span class="token punctuation">{</span>| <span class="token function"><span class="token prefix">rtc<span class="token punctuation">:</span></span><span class="token local-name">elementOf</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">compound1</span></span> |<span class="token punctuation">}</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">familyName</span></span> <span class="token string">"Smith"</span> <span class="token punctuation">{</span>| <span class="token function"><span class="token prefix">rtc<span class="token punctuation">:</span></span><span class="token local-name">elementOf</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">compound1</span></span> |<span class="token punctuation">}</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">jobTitle</span></span> <span class="token string">"Assistant Designer"</span> <span class="token punctuation">{</span>| <span class="token function"><span class="token prefix">rtc<span class="token punctuation">:</span></span><span class="token local-name">elementOf</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">compound1</span></span> |<span class="token punctuation">}</span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">compound1</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rtc<span class="token punctuation">:</span></span><span class="token local-name">Compound</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">statedBy</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bob</span></span> <span class="token punctuation">;</span> 
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">statedAt</span></span> <span class="token string">"2022-02-16"</span> <span class="token punctuation">.</span>
+</code></pre>
+<h4 id="example-with-rtcelements">Example with rtc:elements<a aria-hidden="true" class="anchor-heading icon-link" href="#example-with-rtcelements"></a></h4>
+<pre class="language-turtle"><code class="language-turtle"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://www.example.org/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">rtc<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://w3id.org/rtc#<span class="token punctuation">></span></span>
+ 
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">employee38</span></span> 
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">firstName</span></span> <span class="token string">"John"</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">familyName</span></span> <span class="token string">"Smith"</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">jobTitle</span></span> <span class="token string">"Assistant Designer"</span> <span class="token punctuation">.</span>
+
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">compound1</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">rtc<span class="token punctuation">:</span></span><span class="token local-name">Compound</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">statedBy</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">bob</span></span> <span class="token punctuation">;</span> 
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">statedAt</span></span> <span class="token string">"2022-02-16"</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">rtc<span class="token punctuation">:</span></span><span class="token local-name">elements</span></span>        
+       &#x3C;&#x3C; <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">employee38</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">firstName</span></span> <span class="token string">"John"</span> >> <span class="token punctuation">,</span>
+       &#x3C;&#x3C; <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">employee38</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">familyName</span></span> <span class="token string">"Smith"</span> >> <span class="token punctuation">,</span>
+       &#x3C;&#x3C; <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">employee38</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">jobTitle</span></span> <span class="token string">"Assistant Designer"</span> >> <span class="token punctuation">.</span>
+</code></pre>
 <h3 id="iri-minting">IRI minting<a aria-hidden="true" class="anchor-heading icon-link" href="#iri-minting"></a></h3>
 <ul>
 <li></li>
@@ -45,6 +78,8 @@
 <li><a href="/wiki/notes/imx167fidgm5kg7qht8lkh2">Kosmion Log</a></li>
 <li><a href="/wiki/notes/ltiyv8l9yf3r2be95czfzxf">Bog</a></li>
 <li><a href="/wiki/notes/731hfzx8esogb3ncbesro7v">Marcel Otto</a></li>
+<li><a href="/wiki/notes/jxr79ok1wadf6ixm90qya3r">Relator Compound</a></li>
 <li><a href="/wiki/notes/idt5fhk67aeg9ksjxdtkxja">Ontoge</a></li>
+<li><a href="/wiki/notes/f2dy5UxpGfl13vAoGFxcR">Attribution</a></li>
 <li><a href="/wiki/notes/mc2m5j3px09rnkxt6z3alra">Data Control Managemen (DCM)</a></li>
 </ul>

@@ -11,3 +11,6 @@
 ## Resources
 
 - https://11ty.rocks/posts/going-beyond-static-with-eleventy/
+- [[ar.pieterheyvaert.11ty-cache]]
+- [[ar.pieterheyvaert.11ty-full-paths-locally]]
+- 

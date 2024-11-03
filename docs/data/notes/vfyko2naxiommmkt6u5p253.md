@@ -4,4 +4,4 @@
 * datasets, catalogs, named graphs, distributions
 * how to do multi-level
 * can facets/aspects replace classes
-
+* provenance, attribution, versioning

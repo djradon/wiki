@@ -2,6 +2,7 @@
 - https://www.semantic-web-journal.net/content/representing-narratives-digital-libraries-narrative-ontology-1
 - authors: @carlo-meghini @valentina-bartalesi @daniele-metilli
 - related: [[prdct.narrative-ontology-nont]] [[t.storytelling.narratology]]
+- topics: [[t.storytelling.narratology.narrative-engineering]]
 
 ## Abstract
 

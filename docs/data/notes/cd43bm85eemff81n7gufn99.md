@@ -8,7 +8,7 @@ There’s nothing particularly deep about reification. It’s using the standard
 
 ## Cons
 
-- While N-ary relation approach can be applied to OWL, it would incur overheads. For instance, multiple inverse properties are needed for a N-ary relation. Moreover, the use of cardinality re- strictions becomes limiting on some roles that depend on the class of some other roles [53]
+![[ar.valid-time-rdf#^v79ztcpa0633]]
 
 ## References
 
