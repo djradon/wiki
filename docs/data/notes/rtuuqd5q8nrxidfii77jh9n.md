@@ -19,6 +19,7 @@
 - no OWL or any other machine-readable represenation
   - but [[prdct.unified-foundational-ontology.gUFO]]
 - [[ar.github.nemo-ufes.gufo.are-all-relations-instances-of-either-material-relationship-type-or-comparative-relationship-type]]
+- 
 
 ## Features
 

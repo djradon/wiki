@@ -4,7 +4,7 @@
 ## #features
 
 - tab-based autosuggest with [[prdct.inquirer-prompt-suggest]]
-  - [-] but it's not dynamic
+  - but it's not dynamic
 
 ## [[p.hasLearningResource]]
 
