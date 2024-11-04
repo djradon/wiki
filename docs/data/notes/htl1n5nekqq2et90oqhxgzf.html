@@ -197,16 +197,205 @@
 </ul>
 <p>In summary, assigning <strong>"next" an IRI</strong> offers consistency and makes it easy to reference draft versions across applications and workflows. By marking it with a predicate like <code>sflo:isUnstable</code>, you provide clear, machine-readable indicators of the dataset's lifecycle stage, enhancing flexibility and clarity in your versioning system.</p>
 <h2 id="current-version-dave">current version (dave)<a aria-hidden="true" class="anchor-heading icon-link" href="#current-version-dave"></a></h2>
-<p>ultimately published datasets shouldn't refer to next IRIs other than "here's what the next IRI is", i.e., metadata. Next references should get resolved on publish? An argument to separate out metadata? </p>
-<p>I think you need separate alias IRIs, that uniquely identify "hah" a dataset series of references. Cause sometimes you want names that don't have unique references. Or they have multiple aspects/facets</p>
-<p>For semantic versioning, if you can assume that</p>
+<p>'m wondering if we should have a current IRI too. what are some use cases for wanting to choose the "current" values for something? Software could be forced to use the catalog to look up the current version and then use that? But humans don't want to have to pick a version. Only datasets have versions. Humans should never have to see versions unless they want to specifically reference potentially-stale data.</p>
+<h2 id="current-version-chatgpt">current version (chatgpt)<a aria-hidden="true" class="anchor-heading icon-link" href="#current-version-chatgpt"></a></h2>
+<p>Having a <strong><code>current</code> IRI</strong> could indeed streamline user experience by providing a straightforward link to the latest stable version without requiring a specific version selection. Here’s how it would benefit different use cases:</p>
+<h3 id="use-cases-for-a-current-iri">Use Cases for a <code>current</code> IRI<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases-for-a-current-iri"></a></h3>
+<ol>
+<li>
+<p><strong>Simplified Access for Humans</strong>:</p>
 <ul>
-<li>if {only literals?,}  you can do a patch version bump </li>
-<li>if nothing pre-existing has changed, you can do a minor version bump (add only)
+<li><strong>Direct Access to the Latest Data</strong>: Humans wouldn’t need to select a version explicitly; they can simply access the <code>current</code> IRI for the latest stable data.</li>
+<li><strong>Avoiding Stale Data</strong>: Since the <code>current</code> IRI always points to the latest version, users don’t accidentally access old data unless they specifically choose to reference an older version.</li>
+</ul>
+</li>
+<li>
+<p><strong>Streamlined Software Integration</strong>:</p>
+<ul>
+<li><strong>Automatic Lookup</strong>: Software can default to the <code>current</code> IRI for the latest dataset version without querying the catalog each time, reducing processing steps.</li>
+<li><strong>Caching and Syncing</strong>: Systems could cache the <code>current</code> IRI version temporarily and know that any refreshes will retrieve the latest stable data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Control and Reference Management</strong>:</p>
+<ul>
+<li><strong>Explicit Version References</strong>: If applications or users need to reference historical versions (e.g., for auditing or rollback purposes), they can still access explicit versions without disturbing <code>current</code>.</li>
+<li><strong>Clearer Data Lifecycle</strong>: Separating <code>next</code>, <code>current</code>, and versioned IRIs makes it easy to distinguish between draft, stable, and historical data.</li>
+</ul>
+</li>
+</ol>
+<h3 id="implementation-using-current-as-a-stable-iri">Implementation: Using <code>current</code> as a Stable IRI<a aria-hidden="true" class="anchor-heading icon-link" href="#implementation-using-current-as-a-stable-iri"></a></h3>
+<ul>
+<li><strong>Version Aliasing</strong>: <code>current</code> could alias the specific version it points to (e.g., <code>&#x3C;namespace/v3></code>), with the option to update it as new versions are released.</li>
+<li><strong>Catalog Entry for Historical Access</strong>: The catalog would still list all dataset versions, but users wouldn’t need to interact with this unless they’re seeking older data explicitly.</li>
+</ul>
+<p>By providing <code>current</code>, you avoid the need for users to sift through versions while preserving the option to access historical versions when necessary. This approach keeps things clean, intuitive, and consistent for both human users and automated systems.</p>
+<h2 id="generic-reference">generic reference<a aria-hidden="true" class="anchor-heading icon-link" href="#generic-reference"></a></h2>
+<ul>
+<li>
+<p>dave: one drawback of going direct to &#x3C;_default/v1> a sflo:DefaultDatasetSeries (instead of /series/_default/dataset/v1) is you lose a way to reference the non-versioned dataset. _default/v1/current is the best way to refer to the dataset in general, without a specific version.</p>
+</li>
+<li>
+<p>chatgpt: Using <code>&#x3C;_default/v1/current></code> as a general reference is a smart way to balance flexibility and specificity—it allows you to point to the dataset as a whole while still leaving room to access specific versions when needed. This approach retains a stable identifier for the dataset itself, simplifying access and ensuring users or systems can always retrieve the latest version without explicitly referencing it by version number.</p>
+</li>
+</ul>
+<h2 id="sorry-miscommunication-i-meant-to-say-unless-we-add-in-the-class-name-like-dataset-then-theres-no-easy-way-to-refer-to-the-genericunversionedabstract-dataset-and-you-have-to-settle-for-_defaultv1current--which-actually-means-something-more-specific">sorry, miscommunication. I meant to say unless we add in the "class name" like "dataset" then there's no easy way to refer to the generic/unversioned/abstract dataset and you have to settle for "_default/v1/current " which actually means something more specific.<a aria-hidden="true" class="anchor-heading icon-link" href="#sorry-miscommunication-i-meant-to-say-unless-we-add-in-the-class-name-like-dataset-then-theres-no-easy-way-to-refer-to-the-genericunversionedabstract-dataset-and-you-have-to-settle-for-_defaultv1current--which-actually-means-something-more-specific"></a></h2>
+<p>Got it—so by adding the <strong>class name</strong> (like "dataset") into the path, you’d create a clear distinction between the abstract concept of the dataset and its specific versions. </p>
+<p>For example:</p>
+<ul>
+<li><strong>Abstract Dataset</strong>: <code>/&#x3C;namespace>/series/_default/dataset</code> could represent the overarching dataset without reference to a version.</li>
+<li><strong>Specific Version</strong>: <code>/&#x3C;namespace>/series/_default/dataset/v1/current</code> would clearly refer to a particular, stable version.</li>
+</ul>
+<p>This way, you can cleanly separate the <strong>conceptual dataset</strong> from its individual versions, allowing references to stay clear and semantically precise. This would also make navigation simpler for applications and users, giving them the option to choose between the general dataset and specific versions without ambiguity.</p>
+<h2 id="confusion-about-adding-the-classtype-into-the-hierarchy">confusion about adding the class/type into the hierarchy<a aria-hidden="true" class="anchor-heading icon-link" href="#confusion-about-adding-the-classtype-into-the-hierarchy"></a></h2>
+<ul>
+<li>dave: Close. the specific version would be &#x3C;namespace/_series/_default/v1> and the current version would be &#x3C;namespace/_series/_default/current>. Maybe we could get away without the _series, but the next level down is dist, so to be consistent instead of &#x3C;namespace/_series/_default/v1/_dist/namespace-default-v1.ttl>. it's more verbose and I know you thought it was less humane, but "&#x3C;namespace/_series/_default/v1/_dist/> could refer to the collection of v1 distributions the same way &#x3C;namespace/_series/_default/dataset> refers to a collection of version. It's a bit of a stretch though. Maybe there's a better way to refer to a generic/abstract set of datasets. Dataset Series is close but it's something else. It's a different class, for one thing. </li>
+</ul>
+<h2 id="current-directory-structure-dave">current directory structure (dave)<a aria-hidden="true" class="anchor-heading icon-link" href="#current-directory-structure-dave"></a></h2>
+<p>my current folder hierarchy under the "d" namespace is this:
+└── d
+├── README.md
+├── _dss
+│   ├── _catalog
+│   │   └── _vset
+│   │       ├── next
+│   │       │   └── d-catalog.ttl
+│   │       └── v1
+│   └── _default
+│       └── _vset
+│           ├── next
+│           │   └── d-default.ttl
+│           └── v1
+├── index.html
+└── index.trig</p>
+<p>It represents information only about the namespace itself. Anything stand out to you?</p>
+<h2 id="current-directory-structure-chatgpt">current directory structure (chatgpt)<a aria-hidden="true" class="anchor-heading icon-link" href="#current-directory-structure-chatgpt"></a></h2>
+<p>Your structure is impressively organized, with a clear separation of catalog and default datasets under <code>_dss</code> and the use of <code>next</code> and <code>v1</code> folders within <code>_vset</code> for versioning. Here are a few observations and suggestions based on the structure:</p>
+<ol>
+<li>
+<p><strong>Logical Use of <code>_vset</code></strong>:</p>
+<ul>
+<li>The <code>_vset</code> naming convention works well here, distinguishing versioned data without adding excessive verbosity.</li>
+<li>The use of <code>next</code> and <code>v1</code> under <code>_vset</code> is clean and keeps the in-progress (<code>next</code>) and published versions (<code>v1</code>) separate, which should help in tracking stable vs. draft data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Namespace Clarity</strong>:</p>
+<ul>
+<li>Since this structure is solely for namespace-specific data, this hierarchy would scale well if replicated across other namespaces in your setup.</li>
+<li>If additional namespace-level details emerge, they could be slotted into this structure with minimal disruption, given the modular organization.</li>
+</ul>
+</li>
+<li>
+<p><strong>Future Consideration for Discoverability</strong>:</p>
+<ul>
+<li>If there’s potential for additional documentation or data specific to sub-elements of the namespace in the future, it might be worth noting where these could fit in without overcrowding <code>_dss</code>.</li>
+<li>Currently, <strong>index files</strong> like <code>index.html</code> and <code>index.trig</code> serve the purpose well for namespace-level information and discoverability.</li>
+</ul>
+</li>
+<li>
+<p><strong>Potential Redundancy with <code>_catalog</code> and <code>_default</code></strong>:</p>
+<ul>
+<li>If <code>_catalog</code> and <code>_default</code> represent distinct classes or functions within the namespace, this structure is well-suited. However, if these overlap in purpose, you may consider simplifying further to reduce potential redundancy.</li>
+<li>This arrangement, though, does keep catalog vs. default data clearly separated, which is advantageous if each serves a specific purpose.</li>
+</ul>
+</li>
+<li>
+<p><strong>Overall Setup</strong>:</p>
+<ul>
+<li>The structure provides a clear <strong>naming convention</strong> and path layout, making it intuitive and easy to navigate. This approach will make it easy to track updates, merges, and differences across versions and namespaces.</li>
+</ul>
+</li>
+</ol>
+<h3 id="final-thought">Final Thought<a aria-hidden="true" class="anchor-heading icon-link" href="#final-thought"></a></h3>
+<p>If <code>next</code> or other draft versions frequently change, consider if a <code>current</code> alias could further reduce update work by pointing to the latest draft version automatically. Otherwise, this setup is structured to scale well and should make version control and reference management straightforward.</p>
+<h2 id="_catalog-vs-_default-dave">_catalog vs _default (dave)<a aria-hidden="true" class="anchor-heading icon-link" href="#_catalog-vs-_default-dave"></a></h2>
+<p>_catalog is for sflow-related metadata about the subject resource, in this case the namespace. specifically it lists dss, datasets, the current vset for itself. _default is for information about the subject resource itself, e.g. its class, (which right now is also in the index.trig file).</p>
+<h2 id="_catalog-vs-_default-chatgpt">_catalog vs _default (chatgpt)<a aria-hidden="true" class="anchor-heading icon-link" href="#_catalog-vs-_default-chatgpt"></a></h2>
+<p>Thanks for the clarification! With <code>_catalog</code> handling metadata and <code>_default</code> covering subject-specific details, the structure effectively separates <strong>management metadata</strong> from <strong>resource-specific information</strong>. Keeping class information both in <code>_default</code> and <code>index.trig</code> gives flexibility in referencing and discoverability, allowing each component to serve its specific function without redundancy.</p>
+<p>This organization makes it clear where users and applications can access <strong>resource details</strong> versus <strong>versioning and dataset management metadata</strong>. It’s a well-considered separation that should make updates and maintenance straightforward while providing flexibility for any future expansions in metadata or subject-specific properties.</p>
+<h2 id="forgot-about-_dist-dave">forgot about _dist (dave)<a aria-hidden="true" class="anchor-heading icon-link" href="#forgot-about-_dist-dave"></a></h2>
+<p>OK, forgot about _dist. Check out the updates hierarchy, with another entity represented, me. </p>
+<p>└── d
+├── README.md
+├── _dss
+│   ├── _catalog
+│   │   └── _vset
+│   │       ├── _next
+│   │       │   └── _dist
+│   │       │       └── d-catalog.ttl
+│   │       └── v1
+│   └── _default
+│       └── _vset
+│           ├── _next
+│           │   └── _dist
+│           │       └── d-default.ttl
+│           └── v1
+├── dave-richardson
+│   └── _dss
+│       ├── _catalog
+│       │   └── _vset
+│       │       └── _next
+│       │           └── _dist
+│       │               └── dave-richardson-catalog.ttl
+│       └── _default
+│           └── _vset
+│               └── _next
+│                   └── _dist
+│                       └── dave-richardson-default.ttl
+├── index.html
+└── index.trig</p>
+<h2 id="forgot-about-_dist-dave-1">forgot about _dist (dave)<a aria-hidden="true" class="anchor-heading icon-link" href="#forgot-about-_dist-dave-1"></a></h2>
+<p>Your updated structure with the inclusion of another entity, "dave-richardson," is clear and consistent. Here are some observations that might help keep things organized as more entities are added:</p>
+<ol>
+<li>
+<p><strong>Hierarchical Consistency</strong>:</p>
+<ul>
+<li>The organization is consistent across both the <code>d</code> namespace and <code>dave-richardson</code> entity, with <code>_dss</code> folders holding <code>_catalog</code> and <code>_default</code> subdirectories.</li>
+<li>Each <code>_vset</code> directory includes the <code>next</code> and versioned folders (<code>v1</code>), along with <code>_dist</code> subfolders for distributions, maintaining a clear structure for future scalability.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>_dist</code> Folder</strong>:</p>
+<ul>
+<li><code>_dist</code> under each version or <code>next</code> in <code>_vset</code> holds the specific <code>.ttl</code> files, creating a logical separation between versions and distribution files. This ensures that, if additional formats or distributions are added, they can fit neatly within <code>_dist</code> without cluttering the version folders.</li>
+</ul>
+</li>
+<li>
+<p><strong>Flexibility for Additional Metadata</strong>:</p>
+<ul>
+<li><strong><code>_catalog</code></strong> for sflow-related metadata and <strong><code>_default</code></strong> for core resource information are clear and separated by function. This allows easy maintenance of <strong>versioning data</strong> and <strong>resource-specific properties</strong> independently, which should help avoid redundancy.</li>
+</ul>
+</li>
+<li>
+<p><strong>Index Files</strong>:</p>
+<ul>
+<li><strong><code>index.html</code></strong> and <strong><code>index.trig</code></strong> at the root provide easy access to summary information about the namespace, supporting discoverability without disrupting the detailed structure below.</li>
+</ul>
+</li>
+</ol>
+<h3 id="future-considerations">Future Considerations<a aria-hidden="true" class="anchor-heading icon-link" href="#future-considerations"></a></h3>
+<ul>
+<li><strong>Scalability with More Entities</strong>: As you add more entities, this structure should scale naturally. The clarity around <code>_dss</code> for each entity will make it easy to navigate through versions and distributions.</li>
+<li><strong>Alternative Metadata Use</strong>: If at any point <code>_catalog</code> or <code>_default</code> metadata needs to vary more significantly per entity, this setup will allow you to expand or customize each entity’s metadata without affecting others.</li>
+</ul>
+<p>This structure is very well thought out, keeping things organized and ensuring a logical flow of metadata and content across different entities. This should streamline both discoverability and maintenance!</p>
+<h2 id="different-dsss-dave">different dss's (dave)<a aria-hidden="true" class="anchor-heading icon-link" href="#different-dsss-dave"></a></h2>
+<p>To give a little more insight into _default... that's the subject-related datasetseries/distribution whose contents can be referenced/returned when a no more specific dss is specified. _catalog is the default catalog, same idea: when no specific catalog is mentioned, the default catalog datasetseries's current distribution can be returned. But next to _default and _catalog in the hierarchy, there's room for other dss that could have data, metadata, or both, related to (and sub-namespaced under) the referenced entity.</p>
+<h2 id="different-dsss-chatgpt">different dss's (chatgpt)<a aria-hidden="true" class="anchor-heading icon-link" href="#different-dsss-chatgpt"></a></h2>
+<p>This adds a nice layer of flexibility to the structure, where <code>_default</code> and <code>_catalog</code> act as the fallback references, while other <code>dss</code> folders can provide specialized content, metadata, or namespaces related to the entity. This modular approach will allow you to expand or refine data and metadata for each entity without interfering with the default or catalog setups—giving you clear defaults while keeping things scalable and customizable as more specific dataset series are needed.</p>
+<h2 id="drafts">drafts<a aria-hidden="true" class="anchor-heading icon-link" href="#drafts"></a></h2>
+<p>ultimately published datasets shouldn't refer to next IRIs other than "here's what the next IRI is", i.e., metadata. Next references should get resolved on publish? An argument to separate out metadata out? </p>
+<p>next distributions can/should get overwritten on the next sync after publish, and it'll be hard, but every next file has a previous version, and if the version has bumped since the draft was started, a merge gets triggered or user gets prompted.</p>
+<p>I think you need separate alias IRIs, that uniquely identify a dataset series of references. Cause sometimes you want names that don't have unique references. They're like collections. Or the things are solitary but have multiple aspects/facets. Class-based punning.</p>
+<p>For semantic versioning, if you can assume that catalog changes can be excluded from triggering a version bump,</p>
+<ul>
+<li>if {only literal properties have changed?, or maybe object properties too}  you can do a patch version bump </li>
+<li>if nothing pre-existing has changed (and optionally literals have changed), you can do a minor version bump (i.e., only add new data, so things should still be compatible/non-breaking)
 <ul>
 <li>might require catalog to be stored separately, so catalog changes don't count as version changes
 <ul>
-<li>that could be the true best use case for the catalog. Separate out the  pointer data from the evolving dataset, so additions can be differentiated from changes. </li>
+<li>that could be the true best use case for the catalog. Separate out the current pointer data  from the evolving dataset, so additions can be differentiated from changes. </li>
 </ul>
 </li>
 </ul>
@@ -214,3 +403,7 @@
 <li>major semver bump is existing entities deleted or entity references changed</li>
 <li>what are some use cases for wanting to choose the "current" values for something? You could be forced to use the catalog to look up the current version and then use that? But humans don't want to have to pick a version. Only datasets have versions. Humans should never have to see versions unless they want to specifically reference potentially-stale data.</li>
 </ul>
+<p>one drawback of going direct to &#x3C;_default/v1> for a sflo:DefaultDatasetSeries (instead of /_series/_default/_vset/v1) is you lose a way to reference the non-versioned dataset. Without a _vset path segment, _default/v1/current is the best way to refer to the dataset in abstract, without a specific version. But _vset reads wrong by itself.</p>
+<p>&#x3C;_catalog> a sflo:DefaultCatalogSeries ;
+sflo:has_DefaultCatalogSeriesDataset &#x3C;_catalog/_vset> ;
+.</p>
