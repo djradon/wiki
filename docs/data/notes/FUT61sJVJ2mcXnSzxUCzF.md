@@ -1,5 +1,5 @@
 
 
 
-- [[p.alsoKnownAs]] gatsbyjs
+- aka: gatsbyjs
 - [[p.hasSite]] https://www.gatsbyjs.com/

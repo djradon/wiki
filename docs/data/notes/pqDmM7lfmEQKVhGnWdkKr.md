@@ -1,3 +1,3 @@
 
 
-- [[p.alsoKnownAs]] Office365
+- aka: Office365

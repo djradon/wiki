@@ -1,7 +1,7 @@
 
 - url: https://rmarkdown.rstudio.com/
 - repo: https://github.com/rstudio/rmarkdown
-- [[p.supportedBy]]: [[prdct.rstudio]] 
+- supported-by:: [[prdct.rstudio]] 
   related: [[prdct.blogdown]]
 
 ## Features

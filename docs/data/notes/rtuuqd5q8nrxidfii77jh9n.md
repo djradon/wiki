@@ -11,6 +11,8 @@
 - repo: https://github.com/unibz-core/ufo-formalization
 - docs: [[ar.a-first-order-logic-formalization-of-the-unified-foundational-ontology]]
 
+![](/assets/images/2024-11-07-16-02-01.png)
+
 ![](/assets/images/2024-04-18-11-24-08.png)
 
  

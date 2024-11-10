@@ -1,3 +1,3 @@
 
 
-- [[p.alsoKnownAs]] GSuite
+- aka: GSuite

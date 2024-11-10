@@ -74,3 +74,4 @@
 - [[ar.foundational-ontologies-in-action]]
 - https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/An_Introduction_to_Ontology_Engineering_(Keet)/07%3A_Top-Down_Ontology_Development/7.02%3A_Foundational_Ontologies
 - https://raw.githubusercontent.com/BFO-ontology/BFO/master/docs/bfo2-reference/BFO2-Reference.pdf
+- [[community.google-groups.bfo-discuss.entity-to-particular]]

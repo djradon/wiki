@@ -1,8 +1,9 @@
 
 - https://natanael.arndt.xyz/bib/arndt-n-2018--jws
+- authors: @natanael-arndt @normal-radtke @michael-martin @patrick-naumann @edgard-marx
 - keywords: [[prdct.rdf]] [[t.cs.semantic-web]] [[t.km]] [[prdct.quit]]
 - similar: [[ar.distributed-collaboration-on-rdf-datasets-using-git]]
-- mentions: [[quit]]
+- mentions: [[prdct.quit]]
 
 ## Abstract
 

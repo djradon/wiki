@@ -1,5 +1,5 @@
 
 
 
-- [[p.alsoKnownAs]] ADHD
+- aka: ADHD
   - ADHD includes the symptom of physical hyperactivity while ADD does not

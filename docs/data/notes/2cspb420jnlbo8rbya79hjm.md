@@ -1,2 +1,2 @@
 
-- [[p.alsoKnownAs]] [[p.hasHighlight]]
+- aka: [[p.hasHighlight]]

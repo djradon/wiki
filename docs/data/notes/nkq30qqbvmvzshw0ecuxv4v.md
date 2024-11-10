@@ -4,7 +4,7 @@
 - repo: https://github.com/mozilla/hubs
 - #docs https://hubs.mozilla.com/docs/welcome.html
 - [[p.publishedBy]] [[org.mozilla]]
-- [[p.supportedBy]] [[prdct.spoke]]
+- supported-by: [[prdct.spoke]]
 
 - written-in: javascript typescript
 - [[p.builtOn]] [[prdct.a-frame]] [[prdct.janus]] [[prdct.reticulum]]

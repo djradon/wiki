@@ -4,5 +4,5 @@
 
 what's life without lots of fine tuning?
 
-- [[p.alsoKnownAs]] re-configured
+- aka: re-configured
 - [[c.sphere]] #activity

@@ -4,11 +4,14 @@
 
 ## Features
 
-- entity-level granularity
+- RDF dataset-series oriented for semantic versioning and provenance
+  - every named entity gets a default series, which can be used for
+    - summary data, or as much detail as desired
+  - every named entity can have a catalog series, which describes facilitates discovery by describing entity-related resources (including the default dataset series)
 - use github or gitlab to manage namespaces using [[sflow.concepts.sf-root-repo]] and mint IRIs
 - an [[sflow.concepts.sf-data-repo]] could have files/distributions for more than one namespace, so it should have each of those namespaces segregated by a top-level folder
 - scan IRI sources,  
-
+- maybe generate [[sflow.concepts.reference-pages]] dynamicall like [[prdct.docsify]]
 
 
 

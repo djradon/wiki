@@ -60,3 +60,5 @@
 - https://realfiction.net/posts/2d-or-bitemporal-historization-a-primer/
 - [[book.bitemporal-data-theory-and-practice]]
 - [[ar.enabling-retroactive-computing-through-event-sourcing]]
+- [ ] [[ar.fuzzy-spatiotemporal-data-modeling-and-operations-in-rdf]]
+- [ ] [[ar.towards-semantic-identification-of-temporal-data-in-rdf]]

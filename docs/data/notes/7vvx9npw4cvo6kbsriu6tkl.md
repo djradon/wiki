@@ -1,6 +1,7 @@
 
 - https://philpapers.org/archive/KASPEW-2.pdf
 - keywords: [[c.ontology.events]] 
+- author: @gilles-cassel
 
 ## Abstract
 

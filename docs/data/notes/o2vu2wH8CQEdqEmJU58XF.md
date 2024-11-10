@@ -21,7 +21,7 @@
   - use when the func wouldn't be used anywhere else
   - presumably programmers occasionally convert anonymous functions into named functions
 - [[t.cs.programming.functions.arrow]]
-  - [[p.alsoKnownAs]] fat arrow functions
+  - aka: fat arrow functions
   - replace the word `function`
   - Compared with ordinary functions (declared with the function keyword): [[p.hasSource]] https://javascript.plainenglish.io/3-scenarios-where-you-shouldnt-use-arrow-functions-862388acd05d
     - An arrow function doesn’t have its own this value

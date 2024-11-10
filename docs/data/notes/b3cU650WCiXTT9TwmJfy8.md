@@ -1,4 +1,4 @@
 
 
 
-- [[p.alsoKnownAs]] spec, standard, guideline
+- aka: spec, standard, guideline

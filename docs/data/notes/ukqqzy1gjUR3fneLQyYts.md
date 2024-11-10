@@ -1,5 +1,5 @@
 
 
 
-- [[p.alsoKnownAs]] business
+- aka: business
 - [[p.subClassOf]] [[c.organization]]

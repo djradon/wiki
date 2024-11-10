@@ -23,3 +23,4 @@ javascript-cli-framework
 
 - https://tlakomy.com/notes-egghead-cli-tooling-oclif-ts
 - https://www.joshcanhelp.com/oclif/
+- [[vs.gluegun-vs-oclif]]

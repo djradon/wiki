@@ -1,5 +1,5 @@
 
-- [[p.supportedBy]] [[prdct.tinkerpop]]
+- supported-by: [[prdct.tinkerpop]]
 
 ## Features
 

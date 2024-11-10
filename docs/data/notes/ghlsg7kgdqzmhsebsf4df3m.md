@@ -1,5 +1,5 @@
 
-- author: @stefano-borgo
+- authors: @stefano-borgo
 - url:
   - https://drive.google.com/open?id=1-M83WYA8yDFSL8I4ZmzSgBRmkZ6O5qOI&usp=drive_fs
   - https://www.academia.edu/80990810/Foundational_ontologies_in_action

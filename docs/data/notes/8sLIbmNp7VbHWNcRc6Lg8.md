@@ -1,5 +1,5 @@
 
-- [[p.alsoKnownAs]] kevins8
+- aka: kevins8
 - [[hasRole]] 
   - [[hasPosition]] CEO
   - [[worksAt]] [[org.dendron]]

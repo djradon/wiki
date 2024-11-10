@@ -1,7 +1,7 @@
 
 
 
-- [[p.alsoKnownAs]] employed by
+- aka: employed by
 - [[p.hasRange]] [[c.agent]]
 - [[p.hasDomain]] [[c.agent]]
 - [[p.equivalentPredicate]] [schema:worksFor](http://schema.org/worksFor)

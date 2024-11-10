@@ -1,3 +1,3 @@
 
-- [[p.alsoKnownAs]]  non-games; software toys
+- aka:  non-games; software toys
 

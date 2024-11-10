@@ -1,5 +1,6 @@
 
 - https://www.researchgate.net/publication/225119791_Understanding_the_Semantic_Web_through_Descriptions_and_Situations/
+- topics: [[prdct.dolce]] [[prdct.dolce.dns-ultralite]]
 
 ## Highlights
 

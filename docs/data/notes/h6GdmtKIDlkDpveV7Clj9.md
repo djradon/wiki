@@ -1,6 +1,6 @@
 
 
 
-- [[p.alsoKnownAs]] helpedWith
+- aka: helpedWith
 - [[c.sphere]] #activity
 

@@ -1,5 +1,6 @@
 
 https://content.iospress.com/articles/applied-ontology/ao210244
+- topics: [[prdct.gfo]] 
 
 ## Abstract
 

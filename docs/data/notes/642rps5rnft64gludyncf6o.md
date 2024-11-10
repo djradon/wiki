@@ -1,5 +1,5 @@
 
-## [[p.supportedBy]]
+## supported-by:
 
 - [[prdct.arbital]]
 - [[prdct.RDF-star]]

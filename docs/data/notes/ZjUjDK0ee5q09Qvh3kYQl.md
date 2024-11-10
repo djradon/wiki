@@ -1,8 +1,8 @@
 ttrpg engine with retro 2D graphics and the promise of a marketplace
 
-- [[p.alsoKnownAs]] Multiverse
+- aka: Multiverse
 - [[p.hasURL]] https://www.playmultiverse.com/
-- [[p.alsoKnownAs]] One More Multiverse
+- aka: One More Multiverse
 
 ## 2021-10-22
 

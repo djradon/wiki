@@ -2,7 +2,7 @@
 - [[c.software.agent-framework]]
 - #dead
 - repo: https://github.com/TuCSoN-Coord/TuCSoN
-- [[p.supportedBy]] [[prdct.tucson.respect]]
+- supported-by: [[prdct.tucson.respect]]
 
 ## [[c.resource.list]]
 

@@ -2,4 +2,4 @@
 
 
 - [[p.hasSite]] https://mirror.xyz/
-- [[p.supportedBy]] [[prdct.arweave]]
+- supported-by: [[prdct.arweave]]

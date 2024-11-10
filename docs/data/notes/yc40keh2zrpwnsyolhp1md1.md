@@ -20,7 +20,9 @@
 
 ## Issues
 
-- prov:generatedAtTime and prov:invalidatedAtTime seem to point to valid time, but feel like system time in the examples 
+- prov:generatedAtTime and prov:invalidatedAtTime seem to point to valid time, but feel like system time in the examples
+  - t.2024.11.05.05 They talk about things in the real world?
+  - also, "no longer available for use" probably excludes historical purposes. 
 
 
 ## References

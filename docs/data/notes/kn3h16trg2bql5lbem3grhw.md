@@ -1,5 +1,6 @@
 
 [[p.hasSite]] https://www.npmjs.com/package/inquirer
+- similar: [[prdct.enquirer]]
 
 ## #features
 

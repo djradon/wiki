@@ -1,7 +1,7 @@
 
 
 
-- [[p.alsoKnownAs]] distributed practice
+- aka: distributed practice
 - [[p.hasApplication]] [[t.km]] 
 - [[p.hasLearningResource]] 
   - https://ncase.me/remember/

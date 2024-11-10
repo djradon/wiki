@@ -5,6 +5,11 @@
 
 - [[prdct.ml2]], [[prdct.melanie]], [[prdct.deeptelos]], [[prdct.ontouml]], [[ar.incorporating-types-of-types-in-ontology-driven-conceptual-modeling]]
 
+## UFO
+
+![](/assets/images/2024-11-07-16-02-01.png)
+
+
 ## chatgpt4.o
 
 (with a few prompts to fix things up)
@@ -60,3 +65,5 @@ This structured approach allows for the modeling of complex systems where entiti
 - [[ar.deep-telos-and-dmla-a-contribution-to-the-multi-2022-collaborative-comparison-challenge]]
 - [[ar.an-extensible-approach-to-multi-level-ontology-modelling]]
 - [[ar.multi-level-ontology-based-conceptual-modeling]]
+- [[ar.extending-the-foundations-of-ontology-based-conceptual-modeling-with-a-multi-level-theory]]
+- [[ar.foundations-for-multi-level-ontology-based-conceptual-modeling]]

@@ -11,3 +11,5 @@
 - [[ar.reification-and-truthmaking-patterns]]
 - [[ar.towards-ontological-foundations-for-the-conceptual-modeling-of-events]] 
 - [ ] [[ar.towards-an-ontological-foundation-of-agent-based-simulation]]
+- [[book.ontology-makes-sense.processes-endure-whereas-events-occur]]
+- 

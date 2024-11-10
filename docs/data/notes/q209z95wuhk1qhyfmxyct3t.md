@@ -2,7 +2,7 @@
 - url: https://d2lang.com/
 - [[c.software.tools.diagramming]]
   
-## [[p.supportedBy]]
+## supported-by:
 
 - [[prdct.structurizr]]
 

@@ -1,4 +1,4 @@
 
 
 
-- [[p.alsoKnownAs]] wasm
+- aka: wasm

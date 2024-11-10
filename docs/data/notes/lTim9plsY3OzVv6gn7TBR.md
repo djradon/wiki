@@ -3,7 +3,7 @@
 
 - [[p.hasURL]] https://w3c.github.io/rdf-star/
 - [[p.hasRepository]] https://github.com/w3c/rdf-star/
-- [[p.alsoKnownAs]] RDF-*
+- aka: RDF-*
 - [[c.usecase]] https://w3c.github.io/rdf-star/UCR/rdf-star-ucr.html#submitted-use-cases
 
 ## Features

@@ -1,2 +1,2 @@
 
-- #aka [[p.alsoKnownAs]]
+- #aka aka:

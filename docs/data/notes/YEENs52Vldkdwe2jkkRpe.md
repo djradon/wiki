@@ -1,6 +1,6 @@
 
 - [[c.software.game-engine]]
-- [[p.alsoKnownAs]] Xenko
+- aka: Xenko
 - url: https://www.stride3d.net/
 - repo: https://github.com/stride3d/stride
 - [[c.comparable]] [[prdct.unity]] [[prdct.monogame]]

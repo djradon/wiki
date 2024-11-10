@@ -7,7 +7,7 @@
 
 - where is the data? 
 
-## [[p.supportedBy]]
+## supported-by:
 
 - c# (since C# 8.0, by means of default methods of interfaces), but no data?
 - scala Scala has a rich type system and Traits are a part of it which helps implement mixin behaviour.

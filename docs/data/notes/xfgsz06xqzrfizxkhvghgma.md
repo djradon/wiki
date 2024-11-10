@@ -1,6 +1,6 @@
 
 - repo: https://github.com/edmcouncil/rdf-toolkit
-- [[c.software.semantic]]
+- [[c.software.semantic.canonization]] [[c.software.semantic]] 
 - written-in: java
 
 

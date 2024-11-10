@@ -1,2 +1,2 @@
 
-- [[c.software.ai.development-assistant]]
+- [[c.software.ai.assistant.code]]

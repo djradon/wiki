@@ -1,3 +1,3 @@
 
-- [[p.alsoKnownAs]] 
+- aka: 
   - [[c.publisher]]

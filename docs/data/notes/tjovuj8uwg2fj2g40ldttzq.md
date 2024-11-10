@@ -1,6 +1,6 @@
 
 - [[p.publishedBy]] [[org.khronos-group]]
-- [[p.supportedBy]]
+- supported-by:
   - [[prdct.godot]]
     - https://github.com/GodotVR/godot_openxr
   - [[prdct.unity]] 

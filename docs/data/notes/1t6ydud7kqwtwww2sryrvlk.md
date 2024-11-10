@@ -1,6 +1,6 @@
 
 - [[p.instanceOf]] [[c.software.game-framework.interactivefiction]]
-- [[p.alsoKnownAs]] Quest6
+- aka: Quest6
 - [[p.hasLearningResource]]
   - https://github.com/ThePix/QuestJS/wiki
 - [[p.hasExample]] 

@@ -1,4 +1,6 @@
 
+- related: [[t.km.ontology.multi-level-theory]]
+
 ## t.2024.03.16.17
 
 - is the solution to all my worrying about [[idea.instances-are-sometimes-classes]] literally just everything non-specific is a class? like topics are classes? things that are just instances:

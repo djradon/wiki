@@ -1,5 +1,5 @@
 
 
 
-- [[p.alsoKnownAs]] GDBMS
+- aka: GDBMS
 - 

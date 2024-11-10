@@ -1,6 +1,6 @@
 
 - [[c.software.database.graph]] [[c.Software.Database.graph.hypergraph]]
-- [[p.alsoKnownAs]] grakn
+- aka: grakn
 - [[p.ownedBy]] [[org.vaticle]]
 - [[p.hasRepository]] https://github.com/vaticle/typedb
 - [[p.hasRelatedSolution]] [[prdct.typeql]] [[prdct.blitz-orm]]

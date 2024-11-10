@@ -1,5 +1,5 @@
 
-- [[p.alsoKnownAs]] is associated with URL; webpage; URL;
+- aka: is associated with URL; webpage; URL;
 - [[p.equivalentPredicate]] [vcard:hasURL](http://www.w3.org/2006/vcard/ns#hasURL)
 
 ## use of "URL"

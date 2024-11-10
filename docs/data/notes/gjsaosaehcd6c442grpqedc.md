@@ -21,3 +21,8 @@
 👩✈️ _semver_ - working with semantic versioning  
 🎻 _strings_ - manipulating strings & template data  
 📦 _packageManager_ - installing NPM packages with Yarn or NPM
+
+
+## References
+
+- [[vs.gluegun-vs-oclif]]

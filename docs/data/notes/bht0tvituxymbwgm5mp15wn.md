@@ -1,5 +1,6 @@
 
 - https://github.com/digitalbazaar/rdf-canonize
+- [[c.software.semantic.canonization]]
 - written-in: javascript
 
 ## Features

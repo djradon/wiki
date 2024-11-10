@@ -1,7 +1,6 @@
 
 
 - written-in: python
-- docs: [[public-notes\prdct.rdf-canonize.md]]
 
 ## Features
 

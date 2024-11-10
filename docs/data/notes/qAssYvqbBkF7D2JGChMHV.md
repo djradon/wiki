@@ -25,5 +25,5 @@
   - t.2024.01.11 according to https://www.w3schools.io/file/markdown-comments/ it should be `<!---` and `--->`
 - https://www.smashingmagazine.com/2022/02/thoughts-on-markdown/
   - experience for editors is not ideal
-    - [[p.supportedBy]] "Do you really want your editors to bump against merge conflicts or how to rebase branches?"
+    - supported-by: "Do you really want your editors to bump against merge conflicts or how to rebase branches?"
   - [[p.references]] [[prdct.mdx]]

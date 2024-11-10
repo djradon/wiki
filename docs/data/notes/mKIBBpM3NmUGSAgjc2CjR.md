@@ -1,5 +1,5 @@
 
-- [[p.alsoKnownAs]] video games;
+- aka: video games;
 - [[p.hasSubClass]] [[c.game.sandbox]]
 
 

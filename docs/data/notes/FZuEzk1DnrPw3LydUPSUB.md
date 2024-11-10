@@ -1,6 +1,6 @@
 
 
 
-- [[p.alsoKnownAs]] has pros, has advanatages, has benefits
+- aka: has pros, has advanatages, has benefits
 - [[p.similarReferentTo]] [[p.hasFeature]]
 - [[p.hasContext]]  

@@ -1,5 +1,5 @@
 
 
 
-- [[p.alsoKnownAs]] assessed
+- aka: assessed
 - [[c.sphere]] #activity

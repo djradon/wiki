@@ -1,3 +1,3 @@
 
 
-- [[p.alsoKnownAs]] Grakn Labs
+- aka: Grakn Labs

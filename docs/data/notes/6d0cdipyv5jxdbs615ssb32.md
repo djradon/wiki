@@ -11,7 +11,7 @@ I’ll admit though... I’m curious to hear its feedback. Maybe I’ll post it 
 
 
 [![The Midnight Sun](/assets/images/2024-11-03-07-51-56.png)](https://djradon.github.io/wiki/notes/74xz2kw8sjpc5ifkske9z3c/)
-
+<small>Norma pouring some precious water, from *[[video.twilight-zone.s03e10-the-midnight-sun]]*</small>
 
 ---
 

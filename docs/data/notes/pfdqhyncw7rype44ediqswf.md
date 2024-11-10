@@ -1,4 +1,5 @@
 
+- https://onto-med.github.io/GFO/release/latest/index-en.html
 - url: 
   - https://raw.githubusercontent.com/Onto-Med/GFO/main/gfo-basic.owl
   - https://www.onto-med.de/sites/www.onto-med.de/files/files/uploads/Ontologies/gfo.owl

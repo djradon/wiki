@@ -3,6 +3,7 @@
 - authors: @claudenir-fonseca @giancarlo-guizzardi @joao-paulo-almeida @tiago-prince-sales @daniele-porello
 - topics: [[t.cs.sd.modeling.conceptual-modeling.ontology-driven]] [[t.km.ontology.multi-level-theory]] [[prdct.ontouml]]
 - published: t.2022-10
+- mentioned-on: [[community.nemo-ufes.gufo.issues.37-multi-level]]
 
 ## Abstract
 

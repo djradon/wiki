@@ -1,7 +1,7 @@
 
 url: https://cloudevents.io/
 
-- [[p.supportedBy]] [[prdct.openfaas]] [[prdct.triggermesh]] [[prdct.kafka]] [[prdct.quarkus]]
+- supported-by: [[prdct.openfaas]] [[prdct.triggermesh]] [[prdct.kafka]] [[prdct.quarkus]]
 - [[p.supports]] 
   - [XML](https://github.com/cloudevents/spec/blob/main/cloudevents/working-drafts/xml-format.md)
   - [JSON](https://github.com/cloudevents/spec/blob/main/cloudevents/formats/json-format.md)

@@ -2,7 +2,7 @@
 
 
 
-- [[p.alsoKnownAs]] GTD
+- aka: GTD
 - comparable: [[t.tm.intend-philosophy]]
 
 a personal productivity paradigm originated by @David-Allen

@@ -1,4 +1,6 @@
 
+- dead, archived 2024-06-26
+- [[c.software.semantic.ontology-editor]]
 - https://zazuko.com/products/ontology-manager/
 - repo: https://github.com/zazuko/ontology-manager
 - published-by: [[org.zazuko]]

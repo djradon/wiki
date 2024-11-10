@@ -1,4 +1,4 @@
 
 
 
-- [[p.alsoKnownAs]] BuJo
+- aka: BuJo

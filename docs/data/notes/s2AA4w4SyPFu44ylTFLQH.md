@@ -1,7 +1,7 @@
 
 #ontology
 
-- [[p.alsoKnownAs]] isA, is a, is an instance of the class
+- aka: isA, is a, is an instance of the class
 - [[p.hasDomain]] resources: 
 - [[p.hasRange]] [[c.class]]
 - [[p.equivalentPredicate]] [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type)

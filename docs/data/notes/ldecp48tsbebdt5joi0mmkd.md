@@ -1,7 +1,7 @@
 
 repo: https://github.com/fastify/fastify
 
-- [[p.supportedBy]] [[prdct.nestjs]]
+- supported-by: [[prdct.nestjs]]
 
 ## [[p.hasFeature]]
 

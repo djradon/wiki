@@ -2,6 +2,6 @@
 
 
 
-- [[p.alsoKnownAs]] administered
+- aka: administered
 - [[c.sphere]] #activity
 
