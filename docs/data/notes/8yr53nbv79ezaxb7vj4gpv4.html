@@ -1,0 +1,54 @@
+<h1 id="log">Log<a aria-hidden="true" class="anchor-heading icon-link" href="#log"></a></h1>
+<h2 id="t2024111510">t.2024.11.15.10<a aria-hidden="true" class="anchor-heading icon-link" href="#t2024111510"></a></h2>
+<ul>
+<li>static
+<ul>
+<li>removed .well-known with its atproto-did</li>
+<li>replaced
+<ul>
+<li>avatar.jpg (and updated _data.yaml "image")</li>
+<li>logo.png</li>
+<li>favicon.svg</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>updated README.md</li>
+<li>deleted CONTRIBUTING.md</li>
+<li>_data.yaml
+<ul>
+<li>changed image, icon,  </li>
+</ul>
+</li>
+</ul>
+<h2 id="t2024111511">t.2024.11.15.11<a aria-hidden="true" class="anchor-heading icon-link" href="#t2024111511"></a></h2>
+<ul>
+<li>removed "// For testing purpose of CSP middleware" code in main.js</li>
+</ul>
+<h2 id="t2024111512">t.2024.11.15.12<a aria-hidden="true" class="anchor-heading icon-link" href="#t2024111512"></a></h2>
+<ul>
+<li>moved everything into a "src/site" folder</li>
+<li>renamed docs to pages (so as not to confuse with the github pages-mandates top-level docs)</li>
+<li>moved README.md, netlify.toml back out to top-level</li>
+</ul>
+<h2 id="t2024111701">t.2024.11.17.01<a aria-hidden="true" class="anchor-heading icon-link" href="#t2024111701"></a></h2>
+<ul>
+<li>played with google fonts, for some reason have to delete all the alternates from from variables.css</li>
+</ul>
+<h2 id="t2024111714">t.2024.11.17.14<a aria-hidden="true" class="anchor-heading icon-link" href="#t2024111714"></a></h2>
+<ul>
+<li>removed from _confit.ts, shouldn't be needed but it's a great feature</li>
+</ul>
+<p>site.data("scheme", async (mod: string) => {
+try {
+const url = <code>https://deno.land/x/lume@v2.4.2/${mod}</code>;
+const { defaults } = await import(url);
+const { Options } = await analyze(url, { maxDepth: 2, private: false });</p>
+<pre><code>mergeDefaults(Options, defaults);
+return Options.children;
+</code></pre>
+<p>  } catch (error) {
+console.log(<code>Error generating the documentation for ${mod}</code>);
+console.log(error);
+return [];
+}</p>

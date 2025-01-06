@@ -20,6 +20,11 @@
 - [[ko]] is a unorthodox, relator-based foundational ontology developed side-by-side with Semantic Flow. 
 - hopefully Semantic Flow has no dependencies on Kosmion and can be used for any kind of RDF data
 
+## Related Prodcuts / Possible Solutions
+
+- [[prdct.ldkit]] for typescript ORM
+- [[prdct.comunica.query-sparql-file]]
+
 
 ## References
 

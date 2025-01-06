@@ -203,6 +203,7 @@ Intuitively speaking, changes in the universe of discourse can be reflected in t
 
 - https://www.w3.org/TR/rdf11-primer/
 - https://open.hpi.de/
+- [[book.validating-rdf-data]]
 
 ### [[p.hasWishList]]
 

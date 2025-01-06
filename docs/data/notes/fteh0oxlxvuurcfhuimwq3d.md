@@ -16,3 +16,8 @@ Primarily Three-dimensional (3D) with allowances for perdurants:
     DOLCE
     UFO / gUFO 
     BFO (strictly 3D for endurants)
+
+
+## References
+
+- [[ar.wonder-web-deliverable-d18]] pg. 10

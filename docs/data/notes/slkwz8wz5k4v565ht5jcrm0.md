@@ -10,6 +10,8 @@
 
 ## #license
 
+- [[t.leg.licensing.sustainable-use-license]]
+
 Portions of this software are licensed as follows:
 
 -   Content of branches other than the main branch (i.e. "master") are not licensed.

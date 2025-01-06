@@ -58,3 +58,4 @@
 - [[ar.hackernews.semantic-web-is-like-the-guy-that-tells-everyone-that-he-is-an-asshole]]
 - [[ar.a-formal-approach-for-customization-of-schema-org-based-on-shacl]]
 - [[ar.linkedin.the-open-world-assumption-in-modeling-what-does-it-mean-to-you]]
+- [[book.validating-rdf-data]]

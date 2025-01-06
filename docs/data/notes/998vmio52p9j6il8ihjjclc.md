@@ -3,7 +3,7 @@
 - https://www.trellisldp.org
 - [[c.software.semantic.linked-data-platform]]
 - repo: https://github.com/trellis-ldp/trellis/
-- related: [[t.cs.semantic-web.linked-data-platform]]
+- related: [[t.cs.semantic-web.linked-data-platform]] [[prdct.memento]]
 - uses: [[prdct.webac]] [[prdct.quarkus]]
 
 ## Standards

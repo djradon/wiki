@@ -8,6 +8,10 @@
 
 - SWRL shares OWL’s open world assumption so certain types of rules that assume a closed world may be difficult or impossible to write in SWRL
 
+## Solutions
+
+- [[prdct.protege-swrlapi]]
+
 ## Resources
 
 - http://dior.ics.muni.cz/~makub/owl/

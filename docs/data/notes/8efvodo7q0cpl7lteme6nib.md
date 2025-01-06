@@ -13,7 +13,7 @@
 
 ## References
 
-- https://en.wikipedia.org/wiki/OntoClean
+- https://en.wikipedia.org/wiki/OntoClean has an excellent overview!!
 - [[ar.an-overview-of-onto-clean]]
 - https://keet.wordpress.com/tag/ontoclean/
 - [[ar.dynamic-is-a-hierarchy-generation-for-user-centric-semantic-web]]

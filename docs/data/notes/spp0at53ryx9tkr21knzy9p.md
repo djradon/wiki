@@ -6,6 +6,7 @@
 - [[prdct.eagle]]
 - [[prdct.prov-o]]
 - [[prdct.dcat-data-catalog.v2]] has frequency (of publishing),
+- [[prdct.starvers]]
 
 ## References
 

@@ -20,4 +20,4 @@
 ## References
 
 - https://www.reddit.com/r/vuejs/comments/st2zkt/jsdoc_or_typescript/
-- 
+- https://javascript.plainenglish.io/why-some-major-projects-are-ditching-typescript-219582449e17

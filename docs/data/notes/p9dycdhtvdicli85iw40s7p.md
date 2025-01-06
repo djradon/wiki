@@ -6,6 +6,7 @@
 
 ## Features
 
+- The power of 10+ products in one unified multi-model database
 - live query
 - graph support via "edge tables" [[t.cs.graph]]
   - https://surrealdb.com/docs/surrealql/statements/relate

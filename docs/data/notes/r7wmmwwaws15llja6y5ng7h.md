@@ -1,6 +1,8 @@
 
 - [[c.ontology.upper]] [[c.ontology.mid]]
-- url: https://raw.githubusercontent.com/abrahaj/SUMO.owl/master/SUMO.owl
+- url: 
+  - https://raw.githubusercontent.com/abrahaj/SUMO.owl/master/SUMO.owl
+  - https://github.com/ontologyportal/sumo?tab=readme-ov-file
 - similar: [[prdct.milo]]
 - related: [[prdct.sigmakee]] 
 
@@ -54,3 +56,7 @@
 - [[book.ontology-a-practical-guide]]
 - [[ar.semantic-modeling-with-sumo]]
 - https://www.ontologyportal.org/FAQ.html
+
+## References
+
+- [[ar.foundational-ontologies-what-for-motivations-for-sumo-and-dolce]]
