@@ -1,5 +1,6 @@
 
 - interlocutor: chatgpt4.o
+- topics: [[prdct.commander]] [[prdct.yargs]] [[prdct.inquirer]] [[prdct.oclif]]
 
 ## If I went with Node, what are the best CLI libraries analagous to Cliffy
 

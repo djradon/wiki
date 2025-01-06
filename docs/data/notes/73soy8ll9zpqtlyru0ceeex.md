@@ -23,4 +23,4 @@ I'm excited to share some updates about the Semantic Flow CLI I've been working 
 - I plan to expand support for **SFRootRepo management**, allowing users to easily configure new root repositories for their Semantic Flow sites.
 - I'm looking at ways to **better handle cross-repo references** so that multiple repositories can contribute individuals and datasets in a unified namespace without chaos.
 
-If you’re interested in following along or contributing, I’d love to hear your feedback. I’m aiming to get a beta version out soon, and your thoughts could really help shape how it develops.
+If you’re interested in following along or contributing, I’d love to hear your feedback. I’m aiming to get a beta version out soon, and your thoughts could really help shape how it develops.  
