@@ -1,2 +1,0 @@
-
-- aka: Sir Walter Scott

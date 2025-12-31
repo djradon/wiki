@@ -1,6 +1,0 @@
-
-## Senses
-
-### Linking Verb
-
-### Activity

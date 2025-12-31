@@ -1,4 +1,0 @@
-
-
-
-- [[p.variantOf]] [[prdct.markdown]]

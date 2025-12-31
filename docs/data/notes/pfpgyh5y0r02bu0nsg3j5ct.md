@@ -1,2 +1,0 @@
-
-- supports: python and typescript

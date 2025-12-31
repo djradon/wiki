@@ -1,2 +1,0 @@
-
-- [[c.software.cellular-automoton]]

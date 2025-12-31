@@ -1,2 +1,0 @@
-
-- url: https://telmomenezes.net/

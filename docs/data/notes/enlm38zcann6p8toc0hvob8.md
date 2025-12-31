@@ -1,2 +1,0 @@
-
-- https://rya.apache.org/

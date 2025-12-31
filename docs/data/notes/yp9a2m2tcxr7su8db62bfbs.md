@@ -1,2 +1,0 @@
-
-- https://every.to/@nirzicherman

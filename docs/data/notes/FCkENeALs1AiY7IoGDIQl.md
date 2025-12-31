@@ -1,4 +1,0 @@
-
-
-
-- [[p.hasAuthor]] @joan-didion

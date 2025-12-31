@@ -1,2 +1,0 @@
-
-- [[p.similarTo]] [[p.hasRelatedTopic]]

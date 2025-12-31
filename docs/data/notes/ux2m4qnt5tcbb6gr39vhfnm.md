@@ -1,2 +1,0 @@
-
-- worked-at: [[org.telicent]]

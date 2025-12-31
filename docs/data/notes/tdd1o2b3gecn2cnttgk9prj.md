@@ -1,2 +1,0 @@
-
-- [[c.methodology.ontology-engineering]]

@@ -1,3 +1,0 @@
-
-
-- abstract or concrete

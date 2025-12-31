@@ -1,3 +1,0 @@
-
-
-- [[p.hasPresentTenseForm]] make

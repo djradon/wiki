@@ -1,2 +1,0 @@
-
-- author: [[user.arthur-griffth]]

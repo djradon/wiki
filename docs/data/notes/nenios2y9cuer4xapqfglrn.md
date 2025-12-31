@@ -1,2 +1,0 @@
-
-- author: @philip-k-dick

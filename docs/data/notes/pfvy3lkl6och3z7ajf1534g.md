@@ -1,2 +1,0 @@
-
-- https://tei-c.org/

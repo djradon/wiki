@@ -1,2 +1,0 @@
-
-- https://www.synopsys.com/

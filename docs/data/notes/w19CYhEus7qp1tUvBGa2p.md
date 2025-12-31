@@ -1,4 +1,0 @@
-
-
-
-- [[p.instanceOf]] [[c.activitypredicate]]

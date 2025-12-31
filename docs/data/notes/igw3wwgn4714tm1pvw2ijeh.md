@@ -1,2 +1,0 @@
-
-[[p.subClassOf]] [[c.concept]]

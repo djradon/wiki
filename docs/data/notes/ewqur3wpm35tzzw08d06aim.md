@@ -1,3 +1,0 @@
-
-- https://www.researchgate.net/publication/227248566_Using_the_Unified_Foundational_Ontology_UFO_as_a_Foundation_for_General_Conceptual_Modeling_Languages
-- 

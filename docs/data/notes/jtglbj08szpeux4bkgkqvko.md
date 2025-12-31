@@ -1,3 +1,0 @@
-
-- [[c.Software.Reasoner]]
-- 

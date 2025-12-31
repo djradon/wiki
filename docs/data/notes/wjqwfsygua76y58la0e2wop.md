@@ -1,2 +1,0 @@
-
-- creators: @genesereth @fikes

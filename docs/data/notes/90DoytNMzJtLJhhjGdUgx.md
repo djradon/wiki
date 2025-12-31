@@ -1,4 +1,0 @@
-
-
-
-Azure Cognitive Services

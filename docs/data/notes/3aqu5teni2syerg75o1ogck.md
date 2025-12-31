@@ -1,2 +1,0 @@
-
-- "Show me a man who drives his truck with integrity and skill and care and you’ve shown me a bigger man than anyone with their name on the door, or that shows up on the first Google search."  ^cwge8fz04hc4

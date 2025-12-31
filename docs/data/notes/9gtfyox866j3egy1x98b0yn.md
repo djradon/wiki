@@ -1,3 +1,0 @@
-
-
-- [[p.provided]] [[prdct.granthika]]

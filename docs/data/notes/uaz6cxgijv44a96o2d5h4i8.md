@@ -1,3 +1,0 @@
-
-- [[p.wrote]] [[video.andor]]
-- 

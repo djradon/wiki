@@ -1,4 +1,0 @@
-
-
-
-- [[p.created]] [[prdct.javelin]]

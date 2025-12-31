@@ -1,5 +1,0 @@
-
-
-## References
-
-- [[ar.futureverse-whitepaper]]

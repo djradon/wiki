@@ -1,2 +1,0 @@
-
-- [[c.publisher]] [[org.sap]]

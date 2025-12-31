@@ -1,2 +1,0 @@
-
-- wrote: [[book.knowledge-graphs]]

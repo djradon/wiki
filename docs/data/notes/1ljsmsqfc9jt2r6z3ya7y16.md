@@ -1,2 +1,0 @@
-
-- sequence of local transactions

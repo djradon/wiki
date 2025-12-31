@@ -1,2 +1,0 @@
-
-- [[c.sphere]] #activity #epistemology

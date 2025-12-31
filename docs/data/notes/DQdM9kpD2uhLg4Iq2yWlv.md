@@ -1,5 +1,0 @@
-
-
-
-- [[c.sphere]] #activity
-

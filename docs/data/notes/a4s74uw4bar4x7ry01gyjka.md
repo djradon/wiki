@@ -1,3 +1,0 @@
-
-- url: https://getsession.org/
-- 

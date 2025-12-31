@@ -1,3 +1,0 @@
-
-- url: 
-- #publisher [[org.modeliosoft]]

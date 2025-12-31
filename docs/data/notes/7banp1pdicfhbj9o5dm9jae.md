@@ -1,2 +1,0 @@
-
-- url: https://earthly.dev/

@@ -1,4 +1,0 @@
-
-
-
-- [[p.organizedBy]] @todd-davies

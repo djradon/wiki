@@ -1,3 +1,0 @@
-
-- url: vanta.com
-- 

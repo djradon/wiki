@@ -1,4 +1,0 @@
-
-
-
-discontinued? "smart-pen"

@@ -1,4 +1,0 @@
-
- 
-- [[p.recommendedBy]] Amazon CTO
- 

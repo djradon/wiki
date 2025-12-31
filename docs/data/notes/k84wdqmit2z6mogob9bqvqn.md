@@ -1,5 +1,0 @@
-
-
-## Solutions
-
-- [[prdct.moose]]

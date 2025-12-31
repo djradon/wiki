@@ -1,3 +1,0 @@
-
-#aka faction, guild, community
-- 

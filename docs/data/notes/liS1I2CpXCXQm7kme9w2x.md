@@ -1,3 +1,0 @@
-
-
-- aka: Grakn Labs

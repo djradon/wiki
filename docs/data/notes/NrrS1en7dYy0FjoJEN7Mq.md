@@ -1,4 +1,0 @@
-
-
-
-- [[p.subClassOf]] [[c.class]]

@@ -1,2 +1,0 @@
-
-- [[p.hadPresenter]] @jeff-wheat

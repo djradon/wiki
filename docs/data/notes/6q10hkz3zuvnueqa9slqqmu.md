@@ -1,2 +1,0 @@
-
-- [[p.wasNamespaceFor]] `c.product`

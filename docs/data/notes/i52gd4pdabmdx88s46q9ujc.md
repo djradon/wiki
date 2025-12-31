@@ -1,3 +1,0 @@
-- [[c.implementation]]
-  - [[prdct.block-protocol]]
-  - [[prdct.github.blocks]]

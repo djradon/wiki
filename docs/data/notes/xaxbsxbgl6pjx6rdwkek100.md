@@ -1,4 +1,0 @@
-
-## Implementations
-
-- [[prdct.ergoai]]

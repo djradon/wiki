@@ -1,2 +1,0 @@
-
-- [[p.cofounded]] [[org.virtasant]]

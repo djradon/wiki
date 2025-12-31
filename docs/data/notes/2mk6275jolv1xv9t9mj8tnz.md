@@ -1,4 +1,0 @@
-
-## [[p.equivalentPredicate]] 
-
-- [[p.hasLog]]

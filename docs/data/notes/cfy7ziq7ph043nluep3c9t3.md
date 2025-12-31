@@ -1,3 +1,0 @@
-
-- https://deco.cx/
-- commercial

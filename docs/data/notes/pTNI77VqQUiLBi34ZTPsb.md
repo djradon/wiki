@@ -1,2 +1,0 @@
-
-- [[p.instanceOf]] [[c.company]]

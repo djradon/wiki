@@ -1,3 +1,0 @@
-
-
-- [[p.hasAuthor]] @terry-halpin

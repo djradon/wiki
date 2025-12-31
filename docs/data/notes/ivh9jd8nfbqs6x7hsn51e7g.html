@@ -1,9 +1,0 @@
-<h1 id="operator">Operator<a aria-hidden="true" class="anchor-heading icon-link" href="#operator"></a></h1>
-<h2 id="nullish-coalescing-operator-">Nullish Coalescing Operator (??)<a aria-hidden="true" class="anchor-heading icon-link" href="#nullish-coalescing-operator-"></a></h2>
-<p>This operator is used to provide a default value if the left-hand side is null or undefined. It is similar to the logical OR (||) operator, but with a narrower definition of falsy; it doesn't consider values like 0, false, or "" as needing to default.</p>
-<h2 id="logical-and--operator">Logical AND (&#x26;&#x26;) Operator:<a aria-hidden="true" class="anchor-heading icon-link" href="#logical-and--operator"></a></h2>
-<p>This expression leverages the fact that the &#x26;&#x26; operator returns the first falsy value encountered or the last operand if all are truthy.</p>
-<p>&#x26;&#x26; is more commonly used in inline conditional logic when you do not need an alternative else case, as it is shorter for simply returning or doing something if the condition is truthy.</p>
-<p>Evaluation of <code>${name &#x26;&#x26; ${name}: || ""}${url}</code>:
-If name is falsy (such as null, undefined, false, 0, "", or NaN), the whole expression evaluates to this falsy value
-If name is truthy, the expression proceeds to evaluate and return ${name}: </p>

@@ -1,3 +1,0 @@
-
-
-- [[p.cofounded]] [[prdct.opensense]]

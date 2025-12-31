@@ -1,5 +1,0 @@
-
-```yaml
-supports:
-  - [[prdct.denoflare]]
-```
