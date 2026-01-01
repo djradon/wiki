@@ -1,0 +1,97 @@
+<h1 id="nats">NATS<a aria-hidden="true" class="anchor-heading icon-link" href="#nats"></a></h1>
+<ul>
+<li><a href="/wiki/notes/wctxpmzzsa7eki2rwuxm5k5">message bus software</a> </li>
+<li>url: <a href="https://nats.io/">https://nats.io/</a></li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^69m6e1oxkdup" href="#^69m6e1oxkdup"></a>similar: <a href="/wiki/notes/iypvlwhcbuwo79fm2uayixf">NATS</a> <a href="/wiki/notes/m3ejxost9j8l5gmsxuriws0">Memphis</a> <a href="/wiki/notes/2ejtyqvsautes0flkx7kpgs">NSQ</a> </li>
+<li>written-in: <a class="color-tag" style="--tag-color: #a8a495;" href="/wiki/notes/7a7eoq5rguwn7l3efzxk3yl">#go</a></li>
+<li>cloud-service: <a href="https://www.synadia.com/cloud">https://www.synadia.com/cloud</a></li>
+<li>related: <a href="/wiki/notes/qyxe64r9vpsfaycnzol4jdv">Walnats</a> <a href="/wiki/notes/qq2wcazkwkp9t68ypjyo4pt">Benthos</a></li>
+</ul>
+<h2 id="terms">Terms<a aria-hidden="true" class="anchor-heading icon-link" href="#terms"></a></h2>
+<ul>
+<li>A <strong>Leaf Node</strong> extends an existing NATS system of any size, optionally bridging both operator and security domains.
+<ul>
+<li>Traffic between the leaf node and the cluster assumes the restrictions of the user configuration used to create the leaf connection.
+<ul>
+<li>Subjects that the user is allowed to publish are exported to the cluster.</li>
+<li>Subjects the user is allowed to subscribe to, are imported into the leaf node.</li>
+</ul>
+</li>
+<li>Leaf nodes appear to the cluster as a single account connection. Leaf nodes can provide continuous NATS service for their clients, even while being temporarily disconnected from the cluster(s). You can even enable JetStream on the leaf nodes in order to create local streams that are mirrored (mirroring is store and forward and therefore can recover from connectivity outages) to global streams in the upstream cluster(s).</li>
+</ul>
+</li>
+</ul>
+<h2 id="hosting">Hosting<a aria-hidden="true" class="anchor-heading icon-link" href="#hosting"></a></h2>
+<ul>
+<li>Synadia cloud</li>
+<li><a href="/wiki/notes/zk1rm6njpan5ppdtl4vdzo6">Fly.io</a> <a class="color-tag" style="--tag-color: #ca6b02;" href="/wiki/notes/n8l1n464e4cgr3t6gcaw6s8">#free-tier</a>
+<ul>
+<li>"While the cluster is only accessible from inside the Fly network, you can use Fly's Wireguard support to create a VPN into your Fly organisation and private network."</li>
+</ul>
+</li>
+</ul>
+<h2 id="hasfeature"><a href="/wiki/notes/UFT1qBuTAB4kJS1AZXKVC">hasFeature</a><a aria-hidden="true" class="anchor-heading icon-link" href="#hasfeature"></a></h2>
+<ul>
+<li>three basic communication patterns
+<ul>
+<li>Publish Subscribe</li>
+<li>Request/Reply (uses a special "reply subject")</li>
+<li>Distributed Load Balanced Queue</li>
+</ul>
+</li>
+<li><a href="/wiki/notes/iwqqxuhyu3ncjlsiceqze0y">Jetstream</a> for persistence</li>
+<li><a href="/wiki/notes/sXdbycnnhKoXF4wCWYlLo">supports</a> <a href="/wiki/notes/8cs1j4m6abso08lz9kxbef3">Cloudevents</a>
+<ul>
+<li><a href="https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/nats-protocol-binding.md">https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/nats-protocol-binding.md</a></li>
+</ul>
+</li>
+<li>Synadia cloud has an HTTP gateway
+<ul>
+<li>leverages server-send events (SSE)</li>
+</ul>
+</li>
+<li>embeddable</li>
+</ul>
+<h2 id="comparison">Comparison<a aria-hidden="true" class="anchor-heading icon-link" href="#comparison"></a></h2>
+<h3 id="kafka-vs-nats">Kafka vs NATS<a aria-hidden="true" class="anchor-heading icon-link" href="#kafka-vs-nats"></a></h3>
+<ul>
+<li>partitions and topics "makes Kafka highly suited to applications where order matters; for example, state machine replication, event sourcing, log shipping, log aggregation, SEDA (staged event- driven architecture) and CEP (complex event processing)."</li>
+<li>Speaking of topics, the equivalent NATS subject is a lightweight construct that is created automatically based on demand (subscriptions) and is pruned automatically when the demand ceases. NATS subjects are cheap to create, which makes them great for hierarchically organised data, allowing for a fine-grained subscription model.</li>
+<li>(Note: NATS Streaming addresses this, but as stated earlier, it is a different product in its own right.)</li>
+<li>Kafka will never assign a partition to multiple consumers in the same group. So, although Kafka’s load balancing scheme is more coarse-grained than NATS’; it manages to preserve the order of records at the consumer nodes.</li>
+<li>kafka is lightweight</li>
+</ul>
+<h4 id="dendrite-use-case">Dendrite use case<a aria-hidden="true" class="anchor-heading icon-link" href="#dendrite-use-case"></a></h4>
+<ul>
+<li>"switching to JetStream was transformational. Performance is excellent overall. We make heavy use of the interest-based retention policies to ensure that work is cleaned up when it is complete. We take advantage of being able to manually acknowledge items to ensure they were processed successfully before cleaning up. We’ve been able to successfully manage pools of workers from NATS streams and considerably reduce the amount of complexity in our codebase in a number of places which no longer need their own persistent storage. We’ve even had it successfully running in application-embedded scenarios on iOS and Android as a part of our peer-to-peer demos."</li>
+</ul>
+<h2 id="haslearningresource"><a href="/wiki/notes/ihYkZJnxW5ifH480tXYSD">hasLearningResource</a><a aria-hidden="true" class="anchor-heading icon-link" href="#haslearningresource"></a></h2>
+<ul>
+<li><a href="https://natsbyexample.com/">https://natsbyexample.com/</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.quora.com/What-is-the-difference-between-Apache-Kafka-and-NATS">https://www.quora.com/What-is-the-difference-between-Apache-Kafka-and-NATS</a></li>
+<li><a href="https://nats.io/blog/matrix-dendrite-kafka-to-nats/">https://nats.io/blog/matrix-dendrite-kafka-to-nats/</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/iwqqxuhyu3ncjlsiceqze0y">Jetstream</a></li>
+<li><a href="/wiki/notes/teqtff2sw22sj3kuci5v5k4">Ngs</a></li>
+<li><a href="/wiki/notes/8jb1no642qap15mfcny0wcd">nats.ws</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/5izi3fbls7d833qc45ozeaq">AsyncAPI</a></li>
+<li><a href="/wiki/notes/ti05vfr5qz57af1aqwxky97">Centrifugo</a></li>
+<li><a href="/wiki/notes/cn3qnii692wtwcs7asupw7o">Deepstream</a></li>
+<li><a href="/wiki/notes/d8vu2zian3x1bjfibmy2pbd">Faststream</a></li>
+<li><a href="/wiki/notes/xamtfy8jv5x3uz59ybdffhe">iWF</a></li>
+<li><a href="/wiki/notes/vc2zh595cbr9z70mlf45qyh">Kafka</a></li>
+<li><a href="/wiki/notes/iypvlwhcbuwo79fm2uayixf">NATS</a></li>
+<li><a href="/wiki/notes/2ejtyqvsautes0flkx7kpgs">NSQ</a></li>
+<li><a href="/wiki/notes/1h3748pf9fc1ty35vsuxpc6">Triggermesh</a></li>
+<li><a href="/wiki/notes/drcC3R6v1XDGcPyIj3MBo">PubSub</a></li>
+</ul>

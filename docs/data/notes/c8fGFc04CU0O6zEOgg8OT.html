@@ -1,0 +1,216 @@
+<h1 id="resources-that-refer-vs-resources-that-are">Resources That Refer Vs Resources That Are<a aria-hidden="true" class="anchor-heading icon-link" href="#resources-that-refer-vs-resources-that-are"></a></h1>
+<ul>
+<li>aka: 
+<ul>
+<li>indicator vs resource</li>
+<li>sense vs content</li>
+<li>httpRange-14</li>
+</ul>
+</li>
+</ul>
+<h2 id="possibilities">Possibilities<a aria-hidden="true" class="anchor-heading icon-link" href="#possibilities"></a></h2>
+<p>There are four possibilities for a given URI:</p>
+<ul>
+<li>the URI is being used to locate some content</li>
+<li>the URI is being used to refer to a sense</li>
+<li>the URI is being used to identify either content or sense but it’s not specified which</li>
+<li>the URI is being used to both locate content and refer to a sense (ie a property applies equally to both)</li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>one subtle issue: do content IRIs always have a sense, i.e., the abstract work that corresponds to the document</li>
+<li>t.2024.09.21.13 or better to say that URIs that refer to a sense should also be able to return a document/thing that is
+<ul>
+<li>would lead to the conclusion that by default, IRIs should be considered to refer to senses</li>
+</ul>
+</li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li><code>#this</code> <a href="https://stackoverflow.com/questions/76470569/the-puzzling-semantics-of-rdftype">https://stackoverflow.com/questions/76470569/the-puzzling-semantics-of-rdftype</a></li>
+<li>303 </li>
+<li>homegrown #1: 
+<ul>
+<li>use  anyIRI literals for referring to the information resource (so never in subject position)
+<ul>
+<li>so if you want to say something about a resource, you have to reify it first</li>
+</ul>
+</li>
+<li>otherwise, IRIreferences always are indicators/sense</li>
+<li>if you need to talk about something in the object position, refer to it indirectly</li>
+</ul>
+</li>
+<li>homegrown #2: 
+<ul>
+<li>always sense</li>
+<li>if you want to refer to a document or other ContentLocator, give it an indicator (e.g., using <a href="/wiki/notes/elbd9vzvnlg6yc0waeh78o5">LocatableContent</a>)</li>
+</ul>
+</li>
+<li>link tag
+<ul>
+<li>see <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">proj.tomitc.drafts.solving-httprange-14 (Private)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>you could make sure "sense" URIs are just never resources/documents/content,
+<ul>
+<li>maybe a LOD site has an indicator subdomain and a resource domain, indicator.stagecraft.io and content.stagecraft.io; or probably better, stagecraft.io/i/... and stagecraft.io/content</li>
+<li>t.2024.07.10.12 booooo! </li>
+</ul>
+</li>
+</ul>
+<h2 id="discussion">Discussion<a aria-hidden="true" class="anchor-heading icon-link" href="#discussion"></a></h2>
+<ul>
+<li>"surely the distinction between a network-retrievable information resource and "everything else" is of fundamental importance to the whole architecture of the Web"</li>
+<li>"<strong>Distinguishing between Representations and Descriptions</strong> using URIs, it is possible to identify both a thing (which may exist outside of the Web) and a Web document describing the thing... According to W3C guidelines ([AWWW], section 2.2.), we have a Web document (there called information resource) if all its essential characteristics can be conveyed in a message. Examples are a Web page, an image or a product catalog... The first solution is to use “hash URIs” for non-document resources... a URI that includes a hash cannot be retrieved directly, and therefore does not necessarily identify a Web document... The second solution is to use a special HTTP status code, 303 See Other, to give an indication that the requested resource is not a regular Web document."
+<ul>
+<li><a href="/wiki/notes/yh2klbhlafo49gizvkn35ai">Cool Uris</a> "<a href="https://www.w3.org/TR/cooluris/%22">https://www.w3.org/TR/cooluris/"</a></li>
+</ul>
+</li>
+<li>"the problem surfaces when IRIs are used to identify both a representation, i.e., the bytes on the wire, and an abstract resource such as a person." 
+<ul>
+<li>"commonly known as the httpRange-14 issue [81], the identifier assigned by the W3C’s Technical Architecture Group (TAG) in its issue tracker. The resolution of that issue was an advice to the community [82] to either use fragment identifiers or HTTP 303 See Other redirects to signal that an IRI identifies an abstract resource (formally known as a non-information resource), such as a person, instead of the returned representation, i.e., the document describing the person."</li>
+<li>"The most promising proposals at the time of this writing involve “punning” to use the same IRI to mean different things. They use the context in which an IRI is used to determine whether the representation or the abstract concept is meant."</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="possible-solutions">Possible Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#possible-solutions"></a></h2>
+<ul>
+<li>the syntactic structure of the URI itself can indicate whether the URI is a subject address or a subject identifier; or else the syntactic context in which the URI is used can determine its role</li>
+</ul>
+<h3 id="303-redirects">303 redirects<a aria-hidden="true" class="anchor-heading icon-link" href="#303-redirects"></a></h3>
+<ul>
+<li>"use a 303 See Other redirection to a URI whose content (which is the only sense of the URI in this design, remember) describes the original URI"</li>
+</ul>
+<h3 id="hash-uri">Hash URI<a aria-hidden="true" class="anchor-heading icon-link" href="#hash-uri"></a></h3>
+<p>This gives a very similar pattern to the 303 redirect, as you can see from the diagram below; the only difference is that instead of following a 303 See Other redirection to get from one URI to the other, you can use URI parsing: you chop off the fragment part of the URI and perform a GET on the resulting URI to get a description.</p>
+<p>See <a href="/wiki/notes/nnaga3qaq8stv4all4i32gp">Hash Vs Slash</a></p>
+<h3 id="property-determines-content-vs-sense">Property determines content vs sense<a aria-hidden="true" class="anchor-heading icon-link" href="#property-determines-content-vs-sense"></a></h3>
+<ul>
+<li>"The property itself determines whether it applies to the content located by the URI (the page) or a sense referred to by the URI (in this case, the thing the page describes)"
+<ul>
+<li>"Some properties have a defined domain or range that precludes the property from being used to annotate content." but others don't, e.g. cc:license has a domain of cc:work</li>
+</ul>
+</li>
+<li>"To support “punning”, therefore, RDF vocabulary designers would need to have additional properties that could be applied to RDF Properties to indicate how their subject (and object where applicable) should be interpreted."</li>
+</ul>
+<h4 id="ideas-from-topic-maps">Ideas from Topic Maps<a aria-hidden="true" class="anchor-heading icon-link" href="#ideas-from-topic-maps"></a></h4>
+<ul>
+<li>[subject indicators] divided into:
+<ul>
+<li>
+<ol>
+<li>resourceRef (subject address)</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>subjectIndicatorRef (subject indicator)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="for-semantic_md-private">For <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">semantic_md (Private)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#for-semantic_md-private"></a></h3>
+<h2 id="thoughts-1">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts-1"></a></h2>
+<ul>
+<li>is it the same as "<a href="https://w3c.github.io/rdf-star/UCR/rdf-star-ucr.html#distinguish-interpretation-from-representation">interpretation vs representation</a>"</li>
+<li>
+<blockquote>
+<p>RDF has not been clear about whether a URI like "<a href="http://www.w3.org/Consortium%22">http://www.w3.org/Consortium"</a> identifies the W3C or a web page about the W3C </p>
+</blockquote>
+</li>
+<li>notes/URIs/RRIs that refer to things (people, books, articles) 
+<ul>
+<li>could be called:
+<ul>
+<li>reference notes</li>
+<li>pointer notes</li>
+</ul>
+</li>
+<li>could further differentiate notes that refer to topics / abstract things</li>
+</ul>
+</li>
+<li>notes/URIs/RRIs that are actual things (daily notes, task items, statements, (unpublished) articles, blogs)
+<ul>
+<li>could be called
+<ul>
+<li>resource notes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-things-that-refer-have-in-common-with-things-that-are">what things that refer have in common with things that are<a aria-hidden="true" class="anchor-heading icon-link" href="#what-things-that-refer-have-in-common-with-things-that-are"></a></h2>
+<ul>
+<li>can have sense of 
+<ul>
+<li>"Bibliography": other resources related to the thing this note/resource refers to</li>
+<li>"Footnote": the things that appear in this note can be attributedTo an external resource</li>
+</ul>
+</li>
+<li>need different predicates for both senses</li>
+</ul>
+<h2 id="notes-in-the-dendron-sense">Notes (in the Dendron sense)<a aria-hidden="true" class="anchor-heading icon-link" href="#notes-in-the-dendron-sense"></a></h2>
+<ul>
+<li>differentiate between notes that represent something (e.g. topics, solutions) and notes that are something (vs, journal)
+<ul>
+<li>comes down to "is about" something vs "is (a literary) something"?
+<ul>
+<li>could come down to resources being terms (instead of topics) <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">vs.terms-vs-topics (Private)</a>
+<ul>
+<li>and contextual terms at that</li>
+</ul>
+</li>
+<li>literary because the only things that refer to something and also are the something they refer to (self-referentiality) are
+<ul>
+<li>literature</li>
+<li>symbols</li>
+<li>computer programs (and some pointers?)</li>
+<li>maybe logical statement</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>using <code>type</code> for both seems wrong </li>
+<li>article is interesting b/c it can be both</li>
+<li>this is different that the class-individual confusion</li>
+<li>how much does it really matter?</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^AQ6h3rFksAfc" href="#^AQ6h3rFksAfc"></a>I guess resources that are something are just a special case (subset)  of the resources that represent something  </li>
+</ul>
+</li>
+</ul>
+<h2 id="uris--urls">URIs / URLS<a aria-hidden="true" class="anchor-heading icon-link" href="#uris--urls"></a></h2>
+<ul>
+<li>easier to judge from context: is the domain/range of the predicate a IRI? If not, it's about the thing the subject/object IRI refers to</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul class="contains-task-list">
+<li>"maybe need to specify whether the note a subject unto itself or an identifier for another subject"</li>
+<li class="task-list-item"><input type="checkbox" disabled> <a href="/wiki/notes/RWDNe8G4Fx7ivJwCOYxjA">summarized</a> <a href="https://www.w3.org/2002/12/rdf-identifiers/">Disambiguating RDF Identifiers</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">#to-read (Private)</a></li>
+<li class="task-list-item"><input type="checkbox" disabled> <a href="/wiki/notes/RWDNe8G4Fx7ivJwCOYxjA">summarized</a> <a href="https://w3c.github.io/rdf-star/UCR/rdf-star-ucr.html#distinguish-interpretation-from-representation">https://w3c.github.io/rdf-star/UCR/rdf-star-ucr.html#distinguish-interpretation-from-representation</a></li>
+<li>[1]: <a href="/wiki/notes/NxcGlr2HnrhnwCkHaGUUS">Curing the Web's Identity Crisis</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/9uw9k0p43dvgxy8sg4iki00">Third Generation Web Apis Bridging the Gap between Rest and Linked Data</a></li>
+<li><a href="http://www.jenitennison.com/2012/05/11/using-punning-to-answer-httprange-14.html">http://www.jenitennison.com/2012/05/11/using-punning-to-answer-httprange-14.html</a></li>
+<li><a href="https://stackoverflow.com/questions/22916998/rdf-303-redirect-clarification">https://stackoverflow.com/questions/22916998/rdf-303-redirect-clarification</a></li>
+<li><a href="https://stackoverflow.com/questions/76470569/the-puzzling-semantics-of-rdftype">https://stackoverflow.com/questions/76470569/the-puzzling-semantics-of-rdftype</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/jhyu2uvqp5jxd0gs4t61ctk">Log</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/a42wc66z30xxlppln5hfm3p">Understanding the Semantic Web through Descriptions and Situations</a></li>
+<li><a href="/wiki/notes/Y9rhS0gEpLdk939972Vhw">Resource</a></li>
+<li><a href="/wiki/notes/cQHSPbwz5JLE40UxftY7w">RDF</a></li>
+<li><a href="/wiki/notes/gpjt0tgwkb6khor1tcvlgmb">Work, Expression, Manifestation, Item</a></li>
+</ul>

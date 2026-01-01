@@ -1,0 +1,34 @@
+
+- https://www.w3.org/TR/prov-o/
+- [[c.ontology.creative-work]] [[c.ontology.domain]]
+- rdfs:isDefinedBy http://www.w3.org/ns/prov# 
+- implicit accessURL of https://www.w3.org/ns/prov-o
+- versionIRI http://www.w3.org/ns/prov-o-20130430
+
+
+## Terms
+
+### Bundle
+
+- a named set of provenance descriptions, and is itself an Entity, so allowing provenance of provenance to be expressed
+
+
+## Thoughts
+
+- ontology IRI is http://www.w3.org/ns/prov although that houses other things too, seems like it should be https://www.w3.org/TR/prov-o/
+- can't re-use :category because it's an annotation property
+
+## Issues
+
+- prov:generatedAtTime and prov:invalidatedAtTime seem to point to valid time, but feel like system time in the examples
+  - t.2024.11.05.05 They talk about things in the real world?
+  - also, "no longer available for use" probably excludes historical purposes. 
+
+## Resources
+
+- https://dcevents.dublincore.org/IntConf/dc-2013/paper/viewPDFInterstitial/197/120.html
+
+## References
+
+- https://www.w3.org/TR/prov-o/#description-starting-point-terms
+- https://s11.no/2013/prov/resources-that-change-state/

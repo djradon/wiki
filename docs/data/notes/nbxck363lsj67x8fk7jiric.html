@@ -1,0 +1,84 @@
+<h1 id="hydra">Hydra<a aria-hidden="true" class="anchor-heading icon-link" href="#hydra"></a></h1>
+<ul>
+<li><a href="https://www.hydra-cg.com/">https://www.hydra-cg.com/</a></li>
+<li><a href="/wiki/notes/g4f5dfvdjzcc2c0i92oz6ib">API Description Specification</a></li>
+</ul>
+<h2 id="similar">Similar<a aria-hidden="true" class="anchor-heading icon-link" href="#similar"></a></h2>
+<ul>
+<li><a href="/wiki/notes/nbxck363lsj67x8fk7jiric">Hydra</a> <a href="/wiki/notes/VlDxhYjHLu59std3Wygbb">JSON-HAL</a> <a href="/wiki/notes/tgh7j75z4db4fxrf6tyfibq">Siren</a> <a href="/wiki/notes/nu3azi864fsenxktknnqldj">Hyper Schema</a></li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li><a href="/wiki/notes/21j52g2qkrfbqy2img45gzm">Creta</a></li>
+</ul>
+<h2 id="vision">Vision<a aria-hidden="true" class="anchor-heading icon-link" href="#vision"></a></h2>
+<p>Current APIs heavily rely on out-of-band information such as human-readable documentation and API-specific SDKs. However, this only allows for very simple and brittle clients that are hardcoded against specific APIs. Hydra, in contrast, is a set of technologies that allow to design APIs in a different manner, in a way that enables smarter clients.</p>
+<h2 id="details">Details<a aria-hidden="true" class="anchor-heading icon-link" href="#details"></a></h2>
+<ul>
+<li>"Hydra consists of two key parts. There’s the all-important vocabulary mentioned above — known as the Hydra Core Vocabulary — but there’s also a format for referencing linked data (usually JSON-LD), also known as an RDF serialization format."
+<ul>
+<li>"as long as the consumer is familiar with the vocabulary being used, they can independently determine the meaning of a key-value pair without the need for external documentation."</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-problem">The Problem<a aria-hidden="true" class="anchor-heading icon-link" href="#the-problem"></a></h2>
+<p>The meaning of json attributes in api responses, their possible values etc. is usually not obvious without referring to some information coming from outside the resource itself. That is due to the nature of json. Two solutions immediately come to mind. Both are ways of vendor-specific documentation, some are machine-readable, some aren’t.</p>
+<p>Describe the type in some sort of json-schema, wadl, raml, swagger or similar and publish it together with the resource. People could even generate classes from this information, if they wish to. My api users coming from a wsdl background scream for something like that.</p>
+<p>Or put up documentation pages to describe your ex:doodad extension relation types and make the documentation available by dereferencing <a href="http://example.com/api/rels#doodad">http://example.com/api/rels#doodad</a>.</p>
+<p>But one of the rules for a ReSTful API is:</p>
+<blockquote>
+<p>A REST API should never have “typed” resources that are significant to the client. Specification authors may use resource types for describing server implementation behind the interface, but those types must be irrelevant and invisible to the client. The only types that are significant to a client are the current representation’s media type and standardized relation names. [Failure here implies that clients are assuming a resource structure due to out-of band information, such as a domain-specific standard, which is the data-oriented equivalent to RPC’s functional coupling].</p>
+</blockquote>
+<p>— Roy Fielding</p>
+<p>My interpretation of this famous <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">rant by Roy Fielding</a>:</p>
+<p>A publicly available media-type should give clients all necessary means to interpret a server response, and relation names for hyperlinks in the response must be recognizable based on public conventions, so that the client can act upon the responses it receives without knowing the details of a vendor-specific api.</p>
+<p>In other words: If a client is told to make a reservation for a concert ticket, it should be able to recognize what one-fancy-api requires to achieve that without processing a vendor-specific documentation. How can we do that, purely based on a media type and relation names? Do we need hundreds of iana registered media types for all kinds of purposes?</p>
+<h2 id="solution-evolving">Solution (evolving)<a aria-hidden="true" class="anchor-heading icon-link" href="#solution-evolving"></a></h2>
+<p>I see <a href="http://www.w3.org/TR/json-ld/">json-ld</a> (media type application/ld+json) as a possible way to solve this problem without forcing people to ask me about my vendor-specific documentation, thus decoupling the clients from my server types.</p>
+<p>Clients should be able to understand a response based on widely available, standardized, public information.</p>
+<p>The json-ld mediatype allows to bring descriptions of things in the real world from public vocabularies into your json files. With json-ld there <strong>is</strong> a way to say that a json response describes a <a href="http://schema.org/MusicEvent">MusicEvent</a> which <a href="http://schema.org/offers">offers</a> a <a href="http://schema.org/Ticket">Ticket</a> without any vendor-specific documentation, and it can also link to other resources.</p>
+<p>A popular vocabulary which describes things on the internet is <a href="http://schema.org">http://schema.org</a>. It is used by all major search engines for search engine optimization and sufficient for basic needs. It also integrates with other vocabularies, e.g. by using <a href="http://schema.org/additionalType">additionalType</a> to point to <a href="http://purl.org/goodrelations/">GoodRelations</a> classes or by using external enumerated values as shown by <a href="http://schema.org/DeliveryMethod">DeliveryMethod</a>.</p>
+<p>(For those of you about to say that the Semantic Web never took off, please note that json-ld is <a href="http://manu.sporny.org/2014/json-ld-origins-2/">not about the Semantic Web at all</a>).</p>
+<p><a href="http://www.hydra-cg.com/">Hydra</a> adds interaction to the mix. It describes exactly how to post a ticket reservation.</p>
+<p>So I want to add json-ld information to json objects serialized from my Java beans.</p>
+<p>Java beans have no knowledge about the meaning of their bean properties and they do not know what they represent in the real world.</p>
+<p>In the simplest possible case I want to design my json objects so that they can be understood by others based on schema.org. By simply calling my json transfer class <code>Person</code> and letting it have an attribute <code>name</code>, I want to get a publicly understandable json object</p>
+<h2 id="demonstration">Demonstration<a aria-hidden="true" class="anchor-heading icon-link" href="#demonstration"></a></h2>
+<ul>
+<li><a href="https://www.markus-lanthaler.com/hydra/console/?url=http://www.markus-lanthaler.com/hydra/api-demo/">https://www.markus-lanthaler.com/hydra/console/?url=http://www.markus-lanthaler.com/hydra/api-demo/</a>
+<ul>
+<li>t.2024.04.15.16 api-demo is broken and the console always returns 403s</li>
+</ul>
+</li>
+</ul>
+<h2 id="solutions-1">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions-1"></a></h2>
+<ul>
+<li><a href="/wiki/notes/wo0j6b7c6awk2gj48r22tcl">hydra-java</a></li>
+</ul>
+<h2 id="resource">Resource<a aria-hidden="true" class="anchor-heading icon-link" href="#resource"></a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=F3Z6qye3LrE&#x26;feature=youtu.be">Bringing Hypermedia to the Masses</a></li>
+<li><a href="https://www.w3.org/community/hydra/wiki/Restbucks_with_Hydra">https://www.w3.org/community/hydra/wiki/Restbucks_with_Hydra</a> <a class="color-tag" style="--tag-color: #fe46a5;" href="/wiki/notes/rjbd7nxwy15orxshwv54a2c">#cool</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://nordicapis.com/hydra-for-hypermedia-apis-benefits-components-and-examples/">https://nordicapis.com/hydra-for-hypermedia-apis-benefits-components-and-examples/</a></li>
+<li><a href="https://sookocheff.com/post/api/on-choosing-a-hypermedia-format/">https://sookocheff.com/post/api/on-choosing-a-hypermedia-format/</a></li>
+<li><a href="/wiki/notes/9uw9k0p43dvgxy8sg4iki00">Third Generation Web Apis Bridging the Gap between Rest and Linked Data</a></li>
+<li><a href="https://www.markus-lanthaler.com/hydra/">https://www.markus-lanthaler.com/hydra/</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/rgof5gwgwgrz3vp3394kfmq">JSON-LD</a></li>
+<li><a href="/wiki/notes/ps7m8l5a6xa52tbssq7f8pp">API Platform</a></li>
+<li><a href="/wiki/notes/fwv2c5ii6iemlrdv2gsd0kl">FNO</a></li>
+<li><a href="/wiki/notes/nbxck363lsj67x8fk7jiric">Hydra</a></li>
+<li><a href="/wiki/notes/phsbszud1bo2t8fr3jyrvdk">Hypertext Application Language</a></li>
+<li><a href="/wiki/notes/yz43dulv158u5i9xsuwa7sl">Jsonary</a></li>
+<li><a href="/wiki/notes/jv1jkgfl67i4ddm8qsvs448">Kopflos</a></li>
+<li><a href="/wiki/notes/cQHSPbwz5JLE40UxftY7w">RDF</a></li>
+<li><a href="/wiki/notes/tgh7j75z4db4fxrf6tyfibq">Siren</a></li>
+<li><a href="/wiki/notes/nu3azi864fsenxktknnqldj">Hyper Schema</a></li>
+<li><a href="/wiki/notes/bc2ya18buka4rr2qycn4l5m">Hypermedia APIs</a></li>
+</ul>

@@ -1,0 +1,181 @@
+<h1 id="ecs">ECS<a aria-hidden="true" class="anchor-heading icon-link" href="#ecs"></a></h1>
+<h2 id="definition">Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#definition"></a></h2>
+<h3 id="sander-mertens"><a href="/wiki/notes/ok7dz892ugeefhma3brx881">@sander-mertens</a><a aria-hidden="true" class="anchor-heading icon-link" href="#sander-mertens"></a></h3>
+<h4 id="entities--components">Entities &#x26; Components<a aria-hidden="true" class="anchor-heading icon-link" href="#entities--components"></a></h4>
+<ul>
+<li>An entity is a unique identifier</li>
+<li>A component can optionally be associated with a plain old datatype</li>
+<li>A component identifier is an entity</li>
+<li>An entity can have 0 .. N components</li>
+<li>A component can be annotated with a role</li>
+<li>An &#x3C;entity, component> tuple can have 0 .. N components</li>
+</ul>
+<h4 id="systems">Systems<a aria-hidden="true" class="anchor-heading icon-link" href="#systems"></a></h4>
+<ul>
+<li>A system is logic matched with entities based on their components</li>
+<li>A system is invoked as result of an event</li>
+<li>A component mutation is an event</li>
+<li>Computing a simulation frame is an event</li>
+<li>A frame is divided into N phases</li>
+<li>Each system is assigned to a phase</li>
+</ul>
+<h3 id="httpsforumscoregamescomtadvanced-code-architecture-for-core-part-2-entity-component-system3194"><a href="https://forums.coregames.com/t/advanced-code-architecture-for-core-part-2-entity-component-system/3194">https://forums.coregames.com/t/advanced-code-architecture-for-core-part-2-entity-component-system/3194</a><a aria-hidden="true" class="anchor-heading icon-link" href="#httpsforumscoregamescomtadvanced-code-architecture-for-core-part-2-entity-component-system3194"></a></h3>
+<ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^h56imtf2ip3n" href="#^h56imtf2ip3n"></a>ECS game object is a DDD Entity; an ECS Entity is a DDD Identity; an ECS Component is a DDD Domain Model; and an ECS System is a DDD Service or Aggregate Root. 
+<ul>
+<li><a href="/wiki/notes/npjmjpsg0y876th6pcteorp">Thoughts</a> i.e., an "ECS game object" is the entity (which is just an ID + list of components) + the functionality and data given by components?</li>
+</ul>
+</li>
+</ul>
+<h2 id="implementations">Implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#implementations"></a></h2>
+<ul>
+<li><a href="/wiki/notes/N5L02WMR1umDBKH6ZwjYT">Unity</a>
+<ul>
+<li>docs:  <a href="https://docs.unity3d.com/Packages/com.unity.entities@0.1/manual/index.html">https://docs.unity3d.com/Packages/com.unity.entities@0.1/manual/index.html</a></li>
+</ul>
+</li>
+<li><a href="/wiki/notes/cg73kyz46jl5mkp6ulq5raw">Arch</a> (C#)</li>
+<li><a href="/wiki/notes/qvf6or8j3nxcjz8sci4qwcu">BitECS</a> (Javacript)
+<ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^34ftr5hv1m8u" href="#^34ftr5hv1m8u"></a>"Strings are expensive and usually unnecessary to have the ECS handle. Instead, create a mapping of integers to strings, and store the integers in the component data as a reference to a string. This makes string serialization minimal and fast." </li>
+</ul>
+</li>
+<li><a href="/wiki/notes/57enkzcwsbgb26g1lc8ghiw">Data Oriented Pyglet</a></li>
+<li><a href="/wiki/notes/nyx8cmpoqpu78bfm0xgh4xz">Bevy</a></li>
+</ul>
+<h3 id="other-implementations">other implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#other-implementations"></a></h3>
+<ul>
+<li><a href="/wiki/notes/n1ew222gxe96e4gxey1xfua">Tick Knock</a></li>
+<li><a href="/wiki/notes/uwaxv9k4vz3wnsbnwx8pqqk">A-Frame</a>
+<ul>
+<li>docs:  <a href="https://aframe.io/docs/1.3.0/introduction/entity-component-system.html">https://aframe.io/docs/1.3.0/introduction/entity-component-system.html</a></li>
+<li><a href="https://stackoverflow.com/questions/43944365/how-to-do-multiuser-in-a-frame">https://stackoverflow.com/questions/43944365/how-to-do-multiuser-in-a-frame</a></li>
+<li><a href="/wiki/notes/sXdbycnnhKoXF4wCWYlLo">supports</a> <a href="/wiki/notes/8iq0gcem45bkv810ah16we3">Networked Aframe</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="wish-list">Wish List<a aria-hidden="true" class="anchor-heading icon-link" href="#wish-list"></a></h2>
+<h3 id="entity-relations">Entity Relations<a aria-hidden="true" class="anchor-heading icon-link" href="#entity-relations"></a></h3>
+<ul>
+<li><a href="/wiki/notes/7gdppz90ynqtxqlw29ln9jj">Flecs</a> has 'em</li>
+<li><a href="/wiki/notes/nyx8cmpoqpu78bfm0xgh4xz">Bevy</a> doesn't seem to
+<ul>
+<li>see <a href="https://github.com/bevyengine/bevy/issues/3742">https://github.com/bevyengine/bevy/issues/3742</a></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li><a href="https://medium.com/@rdolivo/ecs-for-gamedev-with-typescript-5a1204f594bc">https://medium.com/@rdolivo/ecs-for-gamedev-with-typescript-5a1204f594bc</a>
+<ul>
+<li>Systems are highly dependent on the order in which they are added because their logic works out consistently. Adding new systems between existing ones can be a difficult task.
+<ul>
+<li><a href="/wiki/notes/gwSiXybbvnEuUD188vtls">provokedThoughts</a>
+<ul>
+<li>what if you required every system to be executable in any order. something like <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">idempotence (Private)</a>, but for ordering</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changing the content of components can potentially break down many systems.</li>
+</ul>
+</li>
+<li>"Anything that needs a dynamic ordering of execution is not very intuitive in ECS" 
+<ul>
+<li><a href="https://forum.unity.com/threads/why-vanilla-ecs-is-not-enough">https://forum.unity.com/threads/why-vanilla-ecs-is-not-enough</a>
+<ul>
+<li>"Why not put the 'timer' in each component ? Yes you'll need to have one system to update the timer of each type of component having a time... it would be better to have a timmer logic that store the next tick time instead of storing aremaining time that you update every frame. It would allow to make use of the DidChange filtering. Also you could probably define a ITimer interface that your ComponentData would implement and taht should allow you to stream line the timer update systems a bit through generics."</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>"One of the biggest "obstacles" (questions) I see is that there will always inevitably be the need to interface with long-running "continuous" processes (maybe because of networking with a much different frequency than the one ECS pipeline of systems is being executed with, maybe because devs will want to use an already written external library spawing own threads without any poll-like API, maybe because there will be a separate event loop system which will not easily integrate with the ECS event loop, etc.)."
+<ul>
+<li><a href="https://github.com/traffaillac/traffaillac.github.io/issues/1">https://github.com/traffaillac/traffaillac.github.io/issues/1</a></li>
+</ul>
+</li>
+<li>Spatial Storage
+<ul>
+<li>"How to store spatial data in ECS?</li>
+</ul>
+</li>
+</ul>
+<p>Spatial data structures like quadtrees and octrees are usually not directly stored in an ECS, as their layout does not match well with the typical ECS layout.</p>
+<p>One approach that works well for narrow-phase spatial queries in combination with an ECS is to create a query that iterates relevant entities and stores them in a spatial structure at the beginning (or end) of each frame.</p>
+<p>For broad-phase spatial queries an application could leverage runtime tags (if the ECS supports it) where a tag corresponds with a cell in a spatial grid. Combined with queries that match the tag, an application can quickly discard large groups of entities that are not in a certain area."</p>
+<h3 id="scripting">Scripting<a aria-hidden="true" class="anchor-heading icon-link" href="#scripting"></a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/gameenginedevs/comments/13dd4k9/scripts_in_ecs/">https://www.reddit.com/r/gameenginedevs/comments/13dd4k9/scripts_in_ecs/</a> has two suggestions, moved toward #2: 
+<ul>
+<li>"create a special script component and then a system to process these script components."</li>
+<li>"store a reference to the script (function pointer in the example, but could be a function name or id if the script is something like Lua) in components and then have that components system call the script."
+<ul>
+<li>scripts get queued and my scripting engine is decoupled from the ECS.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://github.com/SanderMertens/ecs-faq">https://github.com/SanderMertens/ecs-faq</a> <a class="color-tag" style="--tag-color: #fe46a5;" href="/wiki/notes/rjbd7nxwy15orxshwv54a2c">#cool</a></li>
+<li><a href="https://maxwellforbes.com/posts/typescript-ecs-why/">https://maxwellforbes.com/posts/typescript-ecs-why/</a>
+<ul>
+<li><a href="/wiki/notes/oHRXT4k2pnjwiuzWvMwGj">hasHighlight</a>
+<ul>
+<li>"the idea isn’t that there’s a fixed target called a “game engine” that you go out and build, and then you build the game on top of it. For my case at least, the engine is the broader codebase that evolves around the game as you build it."</li>
+<li>"People like building shit. It’s fun. It’s really fun."</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/wiki/notes/nwtfch085p3p1xbkziw7qvk">Gamedev Patterns TS</a></li>
+<li><a href="/wiki/notes/xwul2x3mfu4tbt48ngnb8sj">Why Vanilla Ecs Is Not Enough</a> 
+<ul>
+<li>"Consider creating a “Timer” component that removes a component after N seconds, for example to remove a buff from an entity. An entity can have multiple buffs at the same time, yet I can only add the Timer component once. Solutions to this problem get unwieldy (storing a map in the component value or creating a Timer component for each buff component). This is a serious limitation when applications want to implement generic systems."</li>
+<li>"Any design language that does not allow me to specify the preconditions for something to work correctly is in my humble opinion flawed."</li>
+</ul>
+</li>
+<li><a href="https://conferences.oreilly.com/software-architecture/sa-ny/public/schedule/detail/79975.html">https://conferences.oreilly.com/software-architecture/sa-ny/public/schedule/detail/79975.html</a></li>
+<li><a href="https://gamedev.stackexchange.com/questions/56937/how-to-avoid-blob-systems-in-an-entity-component-system">https://gamedev.stackexchange.com/questions/56937/how-to-avoid-blob-systems-in-an-entity-component-system</a>
+<ul>
+<li>"There's no reason to have fine-grained components like 'movement'. There is no generic movement in your game. You have paddles, whose movement is tightly tied to input or AI (and don't really use velocity, acceleration, restitution, etc.), and you have the ball, which has a well-defined movement algorithm. Just have a PaddleController component and a BouncingBall component or something along those lines. If/when you get a more complicated game then you can worry about having a more generic PhysicsBody component (which in 'real' engines is basically just a link between the game object and whatever internal API object is used by Havok/PhysX/Bullet/Box2D/etc.) that handles a wider variety of situations."</li>
+</ul>
+</li>
+<li><a href="/wiki/notes/icwryuri8s0srtwffi1ixmg">Why It Is Time to Start Thinking of Games as Databases</a>
+<ul>
+<li>mentions: </li>
+<li>also <a href="https://ajmmertens.medium.com/a-roadmap-to-entity-relationships-5b1d11ebb4eb">https://ajmmertens.medium.com/a-roadmap-to-entity-relationships-5b1d11ebb4eb</a></li>
+</ul>
+</li>
+<li><a href="https://www.reddit.com/r/gamedev/comments/nb093f/netcode_ecs_data_organization/">https://www.reddit.com/r/gamedev/comments/nb093f/netcode_ecs_data_organization/</a>
+sh</li>
+<li><a href="https://moonside.games/posts/archetypal-ecs-considered-harmful/">https://moonside.games/posts/archetypal-ecs-considered-harmful/</a> </li>
+<li><a href="https://www.reddit.com/r/gameenginedevs/comments/1abdisc/practices_for_managing_systems_order_in_ecs/">https://www.reddit.com/r/gameenginedevs/comments/1abdisc/practices_for_managing_systems_order_in_ecs/</a> has some interesting suggested for ordering systems runs</li>
+<li><a href="https://www.reddit.com/r/gamedev/comments/yctgea/ecs_rules_dos_and_donts_and_best_practices_for/">https://www.reddit.com/r/gamedev/comments/yctgea/ecs_rules_dos_and_donts_and_best_practices_for/</a></li>
+</ul>
+<h3 id="list"><a href="/wiki/notes/r18l7nqeo4mxzs36n0my3kd">List</a><a aria-hidden="true" class="anchor-heading icon-link" href="#list"></a></h3>
+<ul>
+<li><a href="https://github.com/Chillu1/CSharpECSComparison">https://github.com/Chillu1/CSharpECSComparison</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/wE7inwEaZAd4ocOXl4Sfp">Javelin</a></li>
+<li><a href="/wiki/notes/mmtnuc9z89pdxapnk898cfm">Ambient</a></li>
+<li><a href="/wiki/notes/cg73kyz46jl5mkp6ulq5raw">Arch</a></li>
+<li><a href="/wiki/notes/qvf6or8j3nxcjz8sci4qwcu">BitECS</a></li>
+<li><a href="/wiki/notes/57enkzcwsbgb26g1lc8ghiw">Data Oriented Pyglet</a></li>
+<li><a href="/wiki/notes/jg0y0pir4bxpemn6xlzam82">Excaliber</a></li>
+<li><a href="/wiki/notes/ulbe9tce6kozx581ir4eqqi">Geotic</a></li>
+<li><a href="/wiki/notes/pgv2nuhe90p5cs0k4zb1hk5">Overseer</a></li>
+<li><a href="/wiki/notes/YEENs52Vldkdwe2jkkRpe">Stride3d</a></li>
+<li><a href="/wiki/notes/n1ew222gxe96e4gxey1xfua">Tick Knock</a></li>
+<li><a class="color-tag" style="--tag-color: #fe0002;" href="/wiki/notes/09vbvrg10jexe640zhg660p">entity component system</a></li>
+<li><a href="/wiki/notes/aemqciYmNUpBXJRYRVINg">ECS in JS Storage Mechanisms</a></li>
+<li><a href="/wiki/notes/16o50hqhvp6czw8zsbo1k92">5 Reasons Knowledge Graph Will Never Bloom</a></li>
+<li><a href="/wiki/notes/scVAIgZKFC5ImxSciQcrc">The Quest for Maintainable Code and the Path to Ecs</a></li>
+<li><a href="/wiki/notes/ct60sbicnkyy0m1nshsrw0f">Quantum</a></li>
+<li><a href="/wiki/notes/0446pg8cq2w5q4nibe9xp11">Mixin</a></li>
+</ul>

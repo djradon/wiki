@@ -1,0 +1,57 @@
+<h1 id="saying-things-about-literals">Saying Things about Literals<a aria-hidden="true" class="anchor-heading icon-link" href="#saying-things-about-literals"></a></h1>
+<h2 id="ok-what-do-you-call-a-nodeentity-whats-its-class-name-that-just-represents-a-datatype-eg-a-string-so-that-you-can-make-statements-about-strings-datatype-reifier-seems-less-than-ideal-because-reification-is-overloaded-already-and-not-obvious-anyhow">OK, what do you call a node/entity (what's it's Class name) that just represents a datatype, e.g. a string, so that you can make statements about strings. "datatype reifier" seems less than ideal because reification is overloaded already and not obvious anyhow.<a aria-hidden="true" class="anchor-heading icon-link" href="#ok-what-do-you-call-a-nodeentity-whats-its-class-name-that-just-represents-a-datatype-eg-a-string-so-that-you-can-make-statements-about-strings-datatype-reifier-seems-less-than-ideal-because-reification-is-overloaded-already-and-not-obvious-anyhow"></a></h2>
+<p>A node or entity in RDF that represents a datatype (e.g., a string) and allows you to make statements about that datatype is typically referred to as a <strong>"value resource"</strong> or <strong>"literal proxy"</strong>. This kind of node serves as an intermediary resource that stands in for the literal so that additional properties can be attached to it. Since "reifier" is indeed a loaded term in RDF, these alternatives focus more on the role of representing a value as a resource in its own right.</p>
+<p>Here are some naming options you might consider:</p>
+<h3 id="1-literal-proxy">1. <strong>Literal Proxy</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#1-literal-proxy"></a></h3>
+<ul>
+<li><strong>Description</strong>: A class that represents a proxy for a literal value, allowing the literal to be treated as a resource to which you can attach properties.</li>
+<li><strong>Why?</strong>: This term emphasizes the idea that the literal is being "proxied" by a resource, making it clear that the value is being represented indirectly.</li>
+<li><strong>Example</strong>: You could define a <code>LiteralProxy</code> class that wraps strings, numbers, or other literals, allowing you to make statements about them.</li>
+</ul>
+<h3 id="2-value-resource">2. <strong>Value Resource</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#2-value-resource"></a></h3>
+<ul>
+<li><strong>Description</strong>: A resource that stands in place of a literal value and allows statements to be made about the value.</li>
+<li><strong>Why?</strong>: "Value resource" suggests that the node is a resource representing a specific value (literal), which is a natural extension of how RDF resources work.</li>
+<li><strong>Example</strong>: You could create instances of <code>ValueResource</code> to represent strings, numbers, or other literals that you want to describe in greater detail.</li>
+</ul>
+<h3 id="3-data-entity">3. <strong>Data Entity</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#3-data-entity"></a></h3>
+<ul>
+<li><strong>Description</strong>: A class that represents a structured data entity, which allows literals to be treated as first-class citizens in the RDF graph.</li>
+<li><strong>Why?</strong>: "Data entity" focuses on the idea that the literal is treated as a full-fledged entity in the graph, making it clear that it's not a raw literal but a representational object.</li>
+<li><strong>Example</strong>: <code>DataEntity</code> could be used for strings or numbers where additional metadata or properties are needed.</li>
+</ul>
+<h3 id="4-value-node">4. <strong>Value Node</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#4-value-node"></a></h3>
+<ul>
+<li><strong>Description</strong>: A node in the RDF graph that represents a literal value.</li>
+<li><strong>Why?</strong>: This term captures the idea that the node is standing in for a literal, emphasizing its role as a point in the graph that connects the literal to other statements.</li>
+<li><strong>Example</strong>: A <code>ValueNode</code> class could allow you to make additional statements about specific string literals, such as their language or context.</li>
+</ul>
+<h3 id="5-literal-resource">5. <strong>Literal Resource</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#5-literal-resource"></a></h3>
+<ul>
+<li><strong>Description</strong>: A class that represents a literal value as a resource, enabling further properties to be attached to it.</li>
+<li><strong>Why?</strong>: This term directly conveys that the literal is being represented as a resource, emphasizing its RDF role as something that can be linked to other entities.</li>
+<li><strong>Example</strong>: <code>LiteralResource</code> could allow a string or number to be the subject of additional properties like source or format.</li>
+</ul>
+<h3 id="6-valuewrapper">6. <strong>ValueWrapper</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#6-valuewrapper"></a></h3>
+<ul>
+<li><strong>Description</strong>: A wrapper class for values (literals), enabling them to be treated as full resources.</li>
+<li><strong>Why?</strong>: "Wrapper" emphasizes that the node is encapsulating a literal, making it suitable for further description.</li>
+<li><strong>Example</strong>: <code>ValueWrapper</code> instances could be used for numbers or strings when you need to describe their properties.</li>
+</ul>
+<h3 id="example-use-case">Example Use Case:<a aria-hidden="true" class="anchor-heading icon-link" href="#example-use-case"></a></h3>
+<p>If you wanted to describe a specific string (e.g., "Hello, world!") and add properties to it, you might define a class <code>LiteralProxy</code> like this:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">_<span class="token punctuation">:</span></span><span class="token local-name">string1</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">LiteralProxy</span></span> <span class="token punctuation">;</span>
+          <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasValue</span></span> <span class="token string">"Hello, world!"</span> <span class="token punctuation">;</span>
+          <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">language</span></span> <span class="token string">"en"</span> <span class="token punctuation">;</span>
+          <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">source</span></span> <span class="token string">"Generated by User"</span> <span class="token punctuation">.</span>
+</code></pre>
+<p>In this case, <code>_:string1</code> is an instance of <code>LiteralProxy</code> (or whichever term you prefer), and the actual string "Hello, world!" is attached as a property (<code>:hasValue</code>), along with other descriptive properties.</p>
+<h3 id="conclusion">Conclusion:<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h3>
+<p>While "datatype reifier" might seem technically correct, it's not ideal due to the baggage around "reification" in RDF. Terms like <strong>Literal Proxy</strong>, <strong>Value Resource</strong>, or <strong>Literal Resource</strong> are cleaner, more intuitive alternatives that clearly communicate the idea of representing literals as resources for further description.</p>
+<h2 id="which-do-you-like-best-literal-proxy-might-be-my-favorite">which do you like best? Literal Proxy might be my favorite<a aria-hidden="true" class="anchor-heading icon-link" href="#which-do-you-like-best-literal-proxy-might-be-my-favorite"></a></h2>
+<p>I think <strong><a href="/wiki/notes/fk0kye90ryf7alrnzej50ko">Literal Proxy</a></strong> is a great choice! It's clear, intuitive, and communicates exactly what the node is doing—standing in for a literal in a way that allows you to make statements about it. It avoids the complexities and connotations of "reification" while emphasizing the role of the proxy as an intermediary resource. It strikes a balance between technical accuracy and ease of understanding. Let me know if you need any further refinements!</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/fk0kye90ryf7alrnzej50ko">Literal Proxy</a></li>
+</ul>

@@ -1,0 +1,119 @@
+<h1 id="temporality">Temporality<a aria-hidden="true" class="anchor-heading icon-link" href="#temporality"></a></h1>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>maybe the triple format is not naturally up to the task of meta-modelled time</li>
+<li></li>
+</ul>
+<h3 id="temporal-context">temporal-context<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-context"></a></h3>
+<ul>
+<li>calendar system</li>
+<li>time-slice granularity</li>
+<li>fluency approach?</li>
+</ul>
+<h3 id="genesis-timestamp">genesis-timestamp<a aria-hidden="true" class="anchor-heading icon-link" href="#genesis-timestamp"></a></h3>
+<ul>
+<li>has an associated store</li>
+<li>naturally precise, but could be fuzzed </li>
+<li>universal (even if not recorded)
+<ul>
+<li>e.g. every keystroke has one, with a text editor (in-memory store)</li>
+</ul>
+</li>
+<li>context is real-world, digital, </li>
+<li>can be preserved or not across different stores
+<ul>
+<li>could be used for lineage
+<ul>
+<li>e.g. on every copy, the data adds a tx-ts+store-identifier</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>in RDF, a triple isn't enough (and using the graph in a quad wasteful) for expressing a transaction timestamp
+<ul>
+<li>so need to add a transaction-timestamp statement</li>
+<li>but then you might go down an infinitely recursive rabbit hole of tx-timestamping the tx-timestamp statement 
+<ul>
+<li>maybe tx-ts triples are special, having a tx-ts equal to the tx-ts they encode</li>
+</ul>
+</li>
+<li>if you use <a href="/wiki/notes/xbpa7vv9hwari8435fttsw3">Relator</a> exclusively, you are golden</li>
+</ul>
+</li>
+<li>should be automated</li>
+</ul>
+<h3 id="tombstone-timestamp">tombstone-timestamp<a aria-hidden="true" class="anchor-heading icon-link" href="#tombstone-timestamp"></a></h3>
+<ul>
+<li>formery "invalidation-timestamp", but needed a new name, because it treads on valid-time</li>
+</ul>
+<h4 id="issues">issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h4>
+<ul>
+<li>should be stored outside the relator/data because who's to say when a piece of data is dead?</li>
+</ul>
+<h4 id="uses">uses<a aria-hidden="true" class="anchor-heading icon-link" href="#uses"></a></h4>
+<ul>
+<li>for immutable contexts, expresses "not current"
+<ul>
+<li>can be complementary or an alternative to "<a href="/wiki/notes/sgxfedlyabx9jl3jnfxbz1r">Successor</a>"?</li>
+<li>corrections, like data-entry errors or buggy pipeline</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h4 id="validity">validity<a aria-hidden="true" class="anchor-heading icon-link" href="#validity"></a></h4>
+<ul>
+<li>
+<p>validity-start, valid-at, invalidity-start, invalid-at</p>
+<ul>
+<li>only apply to relations</li>
+</ul>
+</li>
+<li>
+<p>abstractions shouldn't lose validity</p>
+</li>
+<li>
+<p>different kinds of validity</p>
+<ul>
+<li>"in-world"/"in-application"</li>
+<li>real-time</li>
+<li>decision-time/assertion-time replaces transaction time because, for the most part, who cares when it was recorded in a store. 
+<ul>
+<li>mostly, assertion-time would be equal to transaction time, at least in a "live" system</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="immutability">immutability<a aria-hidden="true" class="anchor-heading icon-link" href="#immutability"></a></h4>
+<ul>
+<li>might be helpful to differentiate between corrections and updates, but that line is very thin and unstable, 
+<ul>
+<li>e.g. in a role-playing experience platform where in-world facts get bent/corrected and truth is more of a "what we decided worked best in the narrative"</li>
+<li>i wanted to say abstractions are always true, but what about the case of corrections</li>
+</ul>
+</li>
+</ul>
+<h2 id="prior-art">Prior Art<a aria-hidden="true" class="anchor-heading icon-link" href="#prior-art"></a></h2>
+<h3 id=""><a aria-hidden="true" class="anchor-heading icon-link" href="#"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Valid Time RDF</span></div>
+<a href="/wiki/notes/o99h4umwihpwctxh1uwle9u" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h4 id="instantiating-identifying-conceptrelationship-iir">Instantiating-Identifying Concept/Relationship (IIR)<a aria-hidden="true" class="anchor-heading icon-link" href="#instantiating-identifying-conceptrelationship-iir"></a></h4>
+<p>In IIR models, a concept or relationship is reified and further temporalized. Either such relationship is abstracted as a new object, or a concept is viewed as four dimensional and instantiated to have temporal extents. Singleton Property converts each relationship to be universally unique. 4D fluents use concepts that view each resource as a perdurant. Fluents represent properties that change over time</p>
+</div></div><p></p><p></p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/r7a2v2n97x72orahsjloesf">4d Ontology</a></li>
+<li><a href="/wiki/notes/hbn7zufm2z9eyswr3tlqpp2">Temporal Representation and Reasoning in Owl 2</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/8mvq6xq81fjm7ewir8h2s34">Temporality Log</a></li>
+</ol>

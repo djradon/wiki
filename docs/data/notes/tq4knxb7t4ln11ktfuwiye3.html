@@ -1,0 +1,20 @@
+<h1 id="defining-n-ary-relations-on-the-semantic-web">Defining N-ary Relations on the Semantic Web<a aria-hidden="true" class="anchor-heading icon-link" href="#defining-n-ary-relations-on-the-semantic-web"></a></h1>
+<ul>
+<li><a href="https://www.w3.org/TR/swbp-n-aryRelations/">https://www.w3.org/TR/swbp-n-aryRelations/</a></li>
+<li>authors: <a href="/wiki/notes/dof0qd9rt6k5cpx8yzvfjgv">@natasha-noy</a> <a href="/wiki/notes/036st1nicdraizeqv92a3eu">@alan-rector</a> <a href="/wiki/notes/bbdvg6xsnb5utkj9xrea2dg">@pat-hayes</a> <a href="/wiki/notes/nd9jv0vxttzc1gadynsa7ks">@christopher-welty</a></li>
+<li>published-by: <a href="/wiki/notes/bkc07lln2omvq7wa13cdk12">Semantic Web Best Practices Working Group Swbp</a></li>
+<li>related: <a href="/wiki/notes/7gdjffs2qd4lj0b7v7ei4vf">Representing Classes as Property Values on the Semantic Web</a></li>
+</ul>
+<h2 id="abstract">Abstract<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract"></a></h2>
+<p>In Semantic Web languages, such as RDF and OWL, a property is a binary relation: it is used to link two individuals or an individual and a value. However, in some cases, the natural and convenient way to represent certain concepts is to use relations to link an individual to more than just one individual or value. These relations are called n-ary relations. For example, we may want to represent properties of a relation, such as our certainty about it, severity or strength of a relation, relevance of a relation, and so on. Another example is representing relations among multiple individuals, such as a buyer, a seller, and an object that was bought when describing a purchase of a book. This document presents ontology patterns for representing n-ary relations in RDF and OWL and discusses what users must consider when choosing these patterns.</p>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<p>Issue 1: If property instances can link only two individuals, how do we deal with cases where we need to describe the instances of relations, such as its certainty, strength, etc?</p>
+<p>Issue 2: If instances of properties can link only two individuals, how do we represent relations among more than two individuals? ("n-ary relations")</p>
+<p>Issue 3: If instances of properties can link only two individuals, how do we represent relations in which one of the participants is an ordered list of individuals rather than a single individual?</p>
+<h3 id="pattern-1-introducing-a-new-class-for-a-relation">Pattern 1: Introducing a new class for a relation<a aria-hidden="true" class="anchor-heading icon-link" href="#pattern-1-introducing-a-new-class-for-a-relation"></a></h3>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/o99h4umwihpwctxh1uwle9u">Valid Time RDF</a></li>
+<li><a href="/wiki/notes/958prd17uz4tl31043g4ai1">N Ary Relationships</a></li>
+</ul>

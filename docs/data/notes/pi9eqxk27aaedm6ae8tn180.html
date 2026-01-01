@@ -1,0 +1,53 @@
+<h1 id="dcat-data-catalog">DCAT Data Catalog<a aria-hidden="true" class="anchor-heading icon-link" href="#dcat-data-catalog"></a></h1>
+<ul>
+<li><a href="https://www.w3.org/TR/vocab-dcat/">https://www.w3.org/TR/vocab-dcat/</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>DCAT does not make any assumptions about [the various] serialization formats of the datasets but it does distinguish between the abstract dataset and its different manifestations or distributions</li>
+<li>defines a relatively comprehensive set of reusable terms from established vocabularies (Dublin Core, SKOS, FOAF, PROV) and extends these with some integrating classes and missing properties.</li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<h3 id="dataset-ordering-claude">Dataset Ordering (claude)<a aria-hidden="true" class="anchor-heading icon-link" href="#dataset-ordering-claude"></a></h3>
+<p>DCAT itself doesn't have a direct property for specifying the order of datasets within a catalog. This comes up when you want to present datasets in a specific sequence in a user interface or documentation, but there isn't a standard DCAT property for it.
+Some possible workarounds people use:</p>
+<ul>
+<li>Use Dublin Core's terms:sequence</li>
+<li>Create a custom property for ordering</li>
+<li>Use RDF List structures (though this is more complex)</li>
+</ul>
+<h2 id="terms">Terms<a aria-hidden="true" class="anchor-heading icon-link" href="#terms"></a></h2>
+<ul>
+<li><strong>dcat:Catalog</strong>: a dataset in which each individual item is a metadata record describing datasets and data services</li>
+<li><strong>dcat:Resource</strong>: not intended to be used directly, but is the parent class of dcat:Dataset, dcat:DataService and dcat:Catalog</li>
+<li><strong>dcat:DatasetSeries</strong>: </li>
+</ul>
+<h3 id="spatiotemporal-terms">Spatiotemporal terms<a aria-hidden="true" class="anchor-heading icon-link" href="#spatiotemporal-terms"></a></h3>
+<p>distribution
+frequency
+spatial/geographic coverage
+spatial resolution</p>
+<h4 id="dcttemporal-temporal-coverage">dct:temporal (temporal coverage)<a aria-hidden="true" class="anchor-heading icon-link" href="#dcttemporal-temporal-coverage"></a></h4>
+<h4 id="dcattemporalresolution">dcat:temporalResolution<a aria-hidden="true" class="anchor-heading icon-link" href="#dcattemporalresolution"></a></h4>
+<p>intended to provide a summary indication of the temporal resolution of the data distribution as a single value. More complex descriptions of various aspects of temporal precision, accuracy, resolution and other statistics can be provided using the Data Quality Vocabulary <a href="https://www.w3.org/TR/vocab-dcat/#Property:dataset_distribution#bib-vocab-dqv">VOCAB-DQV</a> "Data on the Web Best Practices: Data Quality Vocabulary".</p>
+<h4 id="provwasgeneratedby">prov:wasGeneratedBy<a aria-hidden="true" class="anchor-heading icon-link" href="#provwasgeneratedby"></a></h4>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/GfW1qP1ZvFxHSaJiguPzh">DCATv2</a></li>
+<li><a href="/wiki/notes/54xs03d1txghek4nv0fwqo2">DCATv3</a></li>
+<li><a href="/wiki/notes/rtp71g1lex6dmdmfel8tb40">296 Clarification on Dataset Series as an Ordered or Unordered Collection</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/nnvguib6wzlvx8k3frx1wn6">Application Profile</a></li>
+<li><a href="/wiki/notes/GfW1qP1ZvFxHSaJiguPzh">DCATv2</a></li>
+<li><a href="/wiki/notes/54xs03d1txghek4nv0fwqo2">DCATv3</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/lkkkisrk9liyko1av5yoos2">Introducing Ontogen</a></li>
+<li><a href="/wiki/notes/pffjx545yi3rpv85hx18wqk">2024-10-19: Progress Report for Subscriber</a></li>
+<li><a href="/wiki/notes/GfW1qP1ZvFxHSaJiguPzh">DCATv2</a></li>
+</ul>

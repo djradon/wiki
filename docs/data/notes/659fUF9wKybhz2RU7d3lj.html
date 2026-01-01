@@ -1,0 +1,33 @@
+<h1 id="php-markdown-extra">Php Markdown Extra<a aria-hidden="true" class="anchor-heading icon-link" href="#php-markdown-extra"></a></h1>
+<ul class="contains-task-list">
+<li><a href="/wiki/notes/ERRZMI5pDHLsYFVhW0r85">hasSpecification</a> <a href="https://michelf.ca/projects/php-markdown/extra/">https://michelf.ca/projects/php-markdown/extra/</a></li>
+<li class="task-list-item"><input type="checkbox" disabled> PHP Markdown Extra has ideas for <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">gd (Private)</a> and fixes for <a href="/wiki/notes/YLmAMnIoOcUUOlbXQGNFl">Dendron</a></li>
+</ul>
+<h2 id="special-attributes">Special Attributes<a aria-hidden="true" class="anchor-heading icon-link" href="#special-attributes"></a></h2>
+<p>With Markdown Extra, you can set the id and class attribute on certain elements using an attribute block. For instance, put the desired id prefixed by a hash inside curly brackets after the header at the end of the line, like this:</p>
+<h1 id="header-1------------header1">Header 1            {#header1}<a aria-hidden="true" class="anchor-heading icon-link" href="#header-1------------header1"></a></h1>
+<h2 id="header-2-------header2">Header 2 ##      {#header2}<a aria-hidden="true" class="anchor-heading icon-link" href="#header-2-------header2"></a></h2>
+<p>Then you can create links to different parts of the same document like this:</p>
+<p><a href="#header1">Link back to header 1</a></p>
+<p>To add a class name, which can be used as a hook for a style sheet, use a dot like this:</p>
+<h2 id="the-site-----main">The Site ##    {.main}<a aria-hidden="true" class="anchor-heading icon-link" href="#the-site-----main"></a></h2>
+<p>You can also add custom attributes having simple values by specifying the attribute name, followed by an equal sign, followed by the value (which cannot contain spaces at this time):</p>
+<h2 id="le-site-----langfr">Le Site ##    {lang=fr}<a aria-hidden="true" class="anchor-heading icon-link" href="#le-site-----langfr"></a></h2>
+<p>The id, multiple class names, and other custom attributes can be combined by putting them all into the same special attribute block:</p>
+<h2 id="le-site-----main-shine-the-site-langfr">Le Site ##    {.main .shine #the-site lang=fr}<a aria-hidden="true" class="anchor-heading icon-link" href="#le-site-----main-shine-the-site-langfr"></a></h2>
+<p>At this time, special attribute blocks can be used with</p>
+<pre><code>headers,
+fenced code blocks,
+links, and
+images.
+</code></pre>
+<p>For image and links, put the special attribute block immediately after the parenthesis containing the address:</p>
+<p><a href="/wiki/url">link</a>{#id .class}<br>
+<img src="/wiki/url" alt="img">{#id .class}</p>
+<p>...</p>
+<p>You can specify a class name that will apply to a code block. This is useful if you want to style differently code blocks depending on the language. Or you could also use it to tell a syntax highlighter what syntax to use.</p>
+<pre class="language-.html"><code class="language-.html">&#x3C;p>paragraph &#x3C;b>emphasis&#x3C;/b>
+</code></pre>
+<p>The class name is placed at the end of the first fence. It can be preceded by a dot, but this is not a requirement. You can also use a special attribute block:</p>
+<pre class="language-{.html"><code class="language-{.html">&#x3C;p>paragraph &#x3C;b>emphasis&#x3C;/b>
+</code></pre>

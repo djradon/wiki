@@ -1,0 +1,74 @@
+<h1 id="2025-06-18_claude_desktop_with_filesystem_mcp">2025 06 18_claude_desktop_with_filesystem_mcp<a aria-hidden="true" class="anchor-heading icon-link" href="#2025-06-18_claude_desktop_with_filesystem_mcp"></a></h1>
+<ul>
+<li>interlocutor: <a href="/wiki/notes/5523plhi77neau2e43qfzbp">Sonnet 4</a></li>
+</ul>
+<h2 id="summarize">Summarize<a aria-hidden="true" class="anchor-heading icon-link" href="#summarize"></a></h2>
+<p>I'll read through your ko, weave, and sflow files to understand the current state. Let me examine them systematically:Now let me read these files to understand the current state. I'll start with the key files:Now let me examine some key concepts and conversation files:Let me also check the work/expression file reference and some more key files:## Summary</p>
+<p>Based on my examination of your ko., weave, and sflow files, here's what I've found (.8):</p>
+<h3 id="kosmion-ko"><strong>Kosmion (ko.*)</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#kosmion-ko"></a></h3>
+<p>A foundational ontology with a radical "relator-compound" approach (.9):</p>
+<ul>
+<li><strong>Core Innovation</strong>: Everything is a relationship using "relator compounds" instead of traditional RDF triples (.8)</li>
+<li><strong>Key Features</strong>: N-ary relations, system-time tracking, multi-perspective modeling, rich provenance at the relationship level (.8)</li>
+<li><strong>Philosophy</strong>: Human-first, domain-first approach that avoids forcing users into predefined hierarchies (.7)</li>
+<li><strong>Status</strong>: Conceptually developed but unorthodox - likely breaks existing tooling (.6)</li>
+</ul>
+<h3 id="semantic-flow-sflow"><strong>Semantic Flow (sflow.*)</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#semantic-flow-sflow"></a></h3>
+<p>An IRI minting + versioning system (.9):</p>
+<ul>
+<li><strong>Purpose</strong>: Provides "friendly pages" for IRIs plus immutable versioning for data that changes over time (.9)</li>
+<li><strong>Features</strong>: Dataset-series orientation, GitHub/GitLab namespace management, reference page generation (.8)</li>
+<li><strong>Relationship</strong>: Works alongside Kosmion but designed to be ontology-agnostic (.7)</li>
+</ul>
+<h3 id="weave-projweave"><strong>Weave (proj.weave.*)</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#weave-projweave"></a></h3>
+<p>A CLI tool for combining resources (.7):</p>
+<ul>
+<li><strong>Purpose</strong>: General-purpose syncing/merging across repositories (.8)</li>
+<li><strong>Status</strong>: Seems less developed, possibly merging conceptually with sflow (.6)</li>
+</ul>
+<h2 id="big-issues-to-clarify">Big Issues to Clarify<a aria-hidden="true" class="anchor-heading icon-link" href="#big-issues-to-clarify"></a></h2>
+<h3 id="1-workexpressionmanifestationitem-wemi-problem-8">1. <strong>Work/Expression/Manifestation/Item (WEMI) Problem</strong> (.8)<a aria-hidden="true" class="anchor-heading icon-link" href="#1-workexpressionmanifestationitem-wemi-problem-8"></a></h3>
+<p>This is fundamentally about <strong>versioning and identity</strong>. Your notes show the classic FRBR confusion: when someone refers to "Hamlet," do they mean:</p>
+<ul>
+<li>The abstract work (Platonic form)</li>
+<li>A specific text/translation (expression)  </li>
+<li>A particular publication (manifestation)</li>
+<li>A physical copy (item)</li>
+</ul>
+<p><strong>For your systems</strong>: This maps directly to your "two classes of IRIs" challenge (.7).</p>
+<h3 id="2-resources-that-refer-vs-resources-that-are-8">2. <strong>Resources That Refer vs Resources That Are</strong> (.8)<a aria-hidden="true" class="anchor-heading icon-link" href="#2-resources-that-refer-vs-resources-that-are-8"></a></h3>
+<p>The httpRange-14 problem: when you have <code>https://example.com/hamlet</code>, does that IRI identify:</p>
+<ul>
+<li>The information resource (the web page/document)</li>
+<li>The thing being described (Hamlet the character/play)</li>
+</ul>
+<h3 id="3-two-classes-of-iris-9">3. <strong>Two Classes of IRIs</strong> (.9)<a aria-hidden="true" class="anchor-heading icon-link" href="#3-two-classes-of-iris-9"></a></h3>
+<p>From your breakthrough conversation: you need both:</p>
+<ul>
+<li><strong>Mutable pointers</strong> (<code>:latestVersion</code> style) for practical navigation</li>
+<li><strong>Immutable identifiers</strong> for specific versions/states</li>
+</ul>
+<p>But mutable pointers break your immutability principle (.7).</p>
+<h3 id="4-dcat-and-named-graphs-6">4. <strong>DCAT and Named Graphs</strong> (.6)<a aria-hidden="true" class="anchor-heading icon-link" href="#4-dcat-and-named-graphs-6"></a></h3>
+<p>You're exploring using DCAT for dataset series and named graphs for versioning, but there are complex interactions with your relator-compound approach (.5).</p>
+<h2 id="clarifying-questions">Clarifying Questions<a aria-hidden="true" class="anchor-heading icon-link" href="#clarifying-questions"></a></h2>
+<ol>
+<li>
+<p><strong>Product Boundaries</strong> (.8): Should Kosmion remain a pure foundational ontology while sflow handles the practical IRI/versioning concerns? Or do they need deeper integration?</p>
+</li>
+<li>
+<p><strong>WEMI Mapping</strong> (.7): In your system, how do you want to handle someone referencing "Hamlet" without a version? Do you:</p>
+<ul>
+<li>Redirect to latest version</li>
+<li>Show a disambiguation page with all versions</li>
+<li>Use dataset series as the "work" level</li>
+</ul>
+</li>
+<li>
+<p><strong>Immutability vs Practicality</strong> (.8): Are you comfortable having "two classes of IRIs" where some are mutable pointers for navigation, breaking pure immutability?</p>
+</li>
+<li>
+<p><strong>Relator-Compound Adoption</strong> (.6): Given that relator compounds will break existing tooling, what's your migration/adoption strategy?</p>
+</li>
+</ol>
+<p>These seem to be the core tensions you're working through (.7). What aspect would you like to dive deeper into?</p>

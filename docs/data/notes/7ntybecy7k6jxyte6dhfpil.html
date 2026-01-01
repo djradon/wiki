@@ -1,0 +1,23 @@
+<h1 id="bitrdf">BiTRDF<a aria-hidden="true" class="anchor-heading icon-link" href="#bitrdf"></a></h1>
+<h2 id="implementation">Implementation<a aria-hidden="true" class="anchor-heading icon-link" href="#implementation"></a></h2>
+<ul>
+<li>uses <a href="/wiki/notes/ekgKw1i4Ubu3lWvgUpbSh">Postgres</a>, keeps triples in one big table.</li>
+</ul>
+<p>Complex Data Type
+PostgreSQL provides a list of primitive data types, such as numeric, monetary, character, binary, date and time, boolean, etc. PostgreSQL also provides a way to define new data types by the CREATE TYPE statement. To implement BiTRDF, we first create a complex data type, named BiTemporalResource. The statement [115] for creating BiTemporalResource is as follows: </p>
+<p>CREATE TYPE BiTemporalResource AS (
+Name VARCHAR ,
+VtBegin TIMESTAMP WITH TIME ZONE ,
+VtEnd TIMESTAMP WITH TIME ZONE ,
+TtBegin TIMESTAMP WITH TIME ZONE ,
+TtEnd TIMESTAMP WITH TIME ZONE ,
+);</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://academicworks.cuny.edu/cgi/viewcontent.cgi?article=6041&#x26;context=gc_etds">BiTRDF: Extending RDF for BiTemporal Data</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/cQHSPbwz5JLE40UxftY7w">RDF</a></li>
+</ul>

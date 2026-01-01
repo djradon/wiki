@@ -1,0 +1,18 @@
+<h1 id="sapphire-generating-java-runtime-artefacts-from-owl-ontologies">Sapphire Generating Java Runtime Artefacts from Owl Ontologies<a aria-hidden="true" class="anchor-heading icon-link" href="#sapphire-generating-java-runtime-artefacts-from-owl-ontologies"></a></h1>
+<ul>
+<li><a href="https://simondobson.org/softcopy/sapphire-odise11.pdf">https://simondobson.org/softcopy/sapphire-odise11.pdf</a></li>
+<li>topics: <a href="/wiki/notes/1c425wcbnwh1esyiwydx1pw">Owl</a> <a href="/wiki/notes/r4s8HiOEaLW0Z3lvFUvHL">Ontology</a> <a href="/wiki/notes/ntwmwuq1313cbt2uytho6rp">Sapphire</a></li>
+<li>authors: <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@graeme-stevenson (Private)</a> <a href="/wiki/notes/tmiwrbtf6rl3lxfjtz0nznu">@simon-dobson</a> </li>
+</ul>
+<h2 id="abstract">Abstract<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract"></a></h2>
+<p>The OWL ontology language is proving increasingly popular as a means of crafting formal, semantically-rich, models of information systems. One application of such models is the direct translation of a conceptual model to a set of executable artefacts. Current tool support for such translations lacks maturity and exhibits several limitations including a lack of support for reification, the open-world assumption, and dynamic classification of individuals as supported by OWL semantics. Building upon the state-of-the-art we present a mapping from OWL to Java that addresses these limitations, and its realisation in the form of a tool, Sapphire. We describe Sapphire’s design and present a preliminary evalua- tion that illustrates how Sapphire supports the developer in writing concise, type safe code compared to standard approaches while maintaining competitive run- time performance with standard APIs.</p>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>Mapping OWL Classes to Java interfaces is an established technique for approxi- mating OWL’s multiple inheritance [4, 5]. However, in generating implementation classes, schemes described in the literature provide no support for dynamic classifi- cation of OWL individuals.</li>
+<li>Puleston et al. [25] present a case study supporting an approach that conflates both domain-specific and ontology-agnostic aspects within a single API. Applications con- structed using this technique are assumed to be structured around a static core that is accessed in a domain-specific manner, with highly dynamic concepts at its edges that are accessed via a generic API.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/1c425wcbnwh1esyiwydx1pw">Owl</a></li>
+</ul>

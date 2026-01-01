@@ -1,0 +1,48 @@
+<h1 id="hypermedia-apis">Hypermedia APIs<a aria-hidden="true" class="anchor-heading icon-link" href="#hypermedia-apis"></a></h1>
+<h2 id="related">Related<a aria-hidden="true" class="anchor-heading icon-link" href="#related"></a></h2>
+<ul>
+<li><a href="/wiki/notes/l8jZApjTwypJDlSzk2qJ1">HATEOAS</a></li>
+</ul>
+<h2 id="everything-as-a-resource">Everything as a Resource<a aria-hidden="true" class="anchor-heading icon-link" href="#everything-as-a-resource"></a></h2>
+<ul>
+<li><strong>Data model as a resource</strong>: Describing the data model as a resource could help build forms for entering data or interactive user interfaces. One vocabulary to assist here is the SHACL Shapes Constraint Language for describing graph data structures.</li>
+<li><strong>Hypermedia as a resource</strong>: The API itself can be described as a resource too. One way to do this is using <a href="https://nordicapis.com/hydra-for-hypermedia-apis-benefits-components-and-examples/">Hydra</a>, a vocabulary for describing APIs with RDF. This sort of self-documentation is similar to OpenAPI but could make the API discoverable at runtime.</li>
+<li><strong>Access control as a resource</strong>: The <a href="https://lov.linkeddata.es/dataset/lov/vocabs/acl">Basic Access Control ontology</a> is another shared vocabulary for describing access control that was <a href="https://dig.csail.mit.edu/2009/Papers/ISWC/rdf-access-control/paper.pdf">proposed by none other than Tim Berners-Lee</a>.</li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li><a href="/wiki/notes/nbxck363lsj67x8fk7jiric">Hydra</a></li>
+<li><a href="/wiki/notes/nu3azi864fsenxktknnqldj">Hyper Schema</a></li>
+<li><a href="/wiki/notes/tgh7j75z4db4fxrf6tyfibq">Siren</a></li>
+<li><a href="/wiki/notes/VlDxhYjHLu59std3Wygbb">JSON-HAL</a></li>
+</ul>
+<h2 id="comparisons">Comparisons<a aria-hidden="true" class="anchor-heading icon-link" href="#comparisons"></a></h2>
+<h3 id="hypermedia-apis-vs-data-apis">Hypermedia APIs vs. Data APIs<a aria-hidden="true" class="anchor-heading icon-link" href="#hypermedia-apis-vs-data-apis"></a></h3>
+<p>Hypermedia APIs:</p>
+<ul>
+<li>Will be trivially <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST-ful</a>, since they are simply what <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Roy Fielding was describing</a>.</li>
+<li>Should be driven by the needs of the underlying hypermedia application</li>
+<li>May change dramatically <em>without</em> versioning information, because hypermedia utilizes <a href="https://en.wikipedia.org/wiki/Representational_state_transfer#Uniform_interface">self describing messages</a></li>
+<li>Should be passed directly to humans, to maximize the flexibility of the system</li>
+</ul>
+<p>Data APIs, on the other hand:</p>
+<ul>
+<li>Will not benefit dramatically from REST-fulness, beyond perhaps <a href="https://en.wikipedia.org/wiki/Richardson_Maturity_Model">Level 2 of the Richardson Maturity Model</a></li>
+<li>Should strive for both regularity and expressiveness due to the arbitrary data needs of consumers</li>
+<li>Should be versioned and should be very stable within a particular version of the API</li>
+<li>Should be consumed by code, processed and then potentially presented to a human</li>
+</ul>
+<p>Can you have both? Of course! See <a href="https://hypermedia.systems/json-data-apis/">https://hypermedia.systems/json-data-apis/</a></p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://nordicapis.com/exploring-the-hidden-powers-of-hypermedia/">https://nordicapis.com/exploring-the-hidden-powers-of-hypermedia/</a></li>
+<li><a href="https://htmx.org/essays/hypermedia-apis-vs-data-apis/">https://htmx.org/essays/hypermedia-apis-vs-data-apis/</a></li>
+<li><a href="https://sookocheff.com/post/api/on-choosing-a-hypermedia-format/">https://sookocheff.com/post/api/on-choosing-a-hypermedia-format/</a></li>
+<li><a href="https://medium.com/@cheron.antoine/which-technologies-should-you-use-to-build-hypermedia-apis-5047f2964cc4">https://medium.com/@cheron.antoine/which-technologies-should-you-use-to-build-hypermedia-apis-5047f2964cc4</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/xa1sqwopiyjysp3ukgbt3zm">Engineering World Wide Multi Agent Systems with Hypermedia</a></li>
+<li><a href="/wiki/notes/ew0at1k0xq1kqzjkzagqfhh">Linked Data Templates</a></li>
+</ul>

@@ -1,0 +1,93 @@
+<h1 id="nakama">Nakama<a aria-hidden="true" class="anchor-heading icon-link" href="#nakama"></a></h1>
+<ul>
+<li><a href="/wiki/notes/v1yafptxty398ghbouhu193">Game-Platform</a> <a href="/wiki/notes/5g7p4he9af6nqjay835iuo0">Game Framework</a></li>
+<li>repo: <a href="https://github.com/heroiclabs/nakama">https://github.com/heroiclabs/nakama</a></li>
+<li>written-in: <a class="color-tag" style="--tag-color: #a8a495;" href="/wiki/notes/7a7eoq5rguwn7l3efzxk3yl">#go</a></li>
+<li><a href="/wiki/notes/xOWC0q0KKhXZfXNw5mPa9">hasScriptingLanguage</a> typescript <a href="/wiki/notes/mz1ui9fbuxwdmk7k1b23ly2">Lua</a></li>
+<li><a href="/wiki/notes/hjldtKlI3hIedtYSymYy0">hasClientSupport</a> <a href="/wiki/notes/N5L02WMR1umDBKH6ZwjYT">Unity</a> <a href="/wiki/notes/ckatbzjhhdqwhj7qj4i5u2n">Unreal</a> <a href="/wiki/notes/BJZRQTTff77MsBb32oNf5">Godot</a> <a href="/wiki/notes/23gw6h1twkmu2dp1dy6pc4v">Defold</a> <a href="/wiki/notes/tkds0n7l78pp6cn7pdan3f1">Cocos2d</a> javascript java <a class="color-tag" style="--tag-color: #b9484e;" href="/wiki/notes/ywirdcgwtn1yboz6sq7qlfq">#c</a> <a class="color-tag" style="--tag-color: #4e5481;" href="/wiki/notes/9x5mxctvzz8hf8h29ca3dxr">#c++</a> <a href="/wiki/notes/3zDGIYrkImMIcEIf9DuT0">Flutter</a></li>
+<li><a href="/wiki/notes/xc3qbpzau0m7qq83ms0jrac">hadPricing</a> <a href="https://heroiclabs.com/pricing/">https://heroiclabs.com/pricing/</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">p.hadEtymology (Private)</a>  In Japanese, the word nakama 仲間 means "someone who's in the same group as you," or can refer to the group itself.</li>
+<li>written-in: 
+<ul>
+<li>Go 86.5%</li>
+<li>Lua 5.1%</li>
+<li>TypeScript 4.4%</li>
+</ul>
+</li>
+<li><a href="/wiki/notes/0f402imd7s2tywrofyvv292">wasBuiltBy</a> <a href="/wiki/notes/fs66nzk9cp6ytipx8t5hiby">Heroic Labs</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>Low-level control of real-time <a href="https://heroiclabs.com/docs/nakama/server-framework/streams/">routing and delivery</a></li>
+<li>Intercept and override functionality with <a href="https://heroiclabs.com/docs/nakama/server-framework/introduction/#hooks">hooks</a></li>
+<li>Define and call <a href="https://heroiclabs.com/docs/nakama/server-framework/introduction/#rpc-functions">RPC functions</a></li>
+<li>Run background server cron <a href="https://heroiclabs.com/docs/nakama/guides/server-framework/background-jobs/">jobs</a></li>
+<li><a href="https://heroiclabs.com/docs/nakama/concepts/storage/permissions/">Access controls</a> and <a href="https://heroiclabs.com/docs/nakama/guides/server-framework/guarding-apis/">API guarding</a></li>
+</ul>
+<h2 id="limitation"><a href="/wiki/notes/ggzlewurb1zw4ybtzclgl6g">Limitation</a><a aria-hidden="true" class="anchor-heading icon-link" href="#limitation"></a></h2>
+<ul>
+<li>
+<p>The JavaScript runtime code is fully sandboxed and cannot access the filesystem, input/output devices, or spawn OS threads or processes.</p>
+</li>
+<li>
+<p>The JavaScript runtime is powered by the goja VM which currently supports the JavaScript ES5 spec. The JavaScript runtime has access to the standard library functions included in the ES5 spec.</p>
+</li>
+<li>
+<p>There is no support for libraries that require Node, web/browser APIs, or native support (e.g. via Node).</p>
+</li>
+<li>
+<p>You cannot call TypeScript functions from the Go runtime, or Go functions from the TypeScript runtime.</p>
+</li>
+</ul>
+<p>The JavaScript runtime code is executed in instanced contexts (VM pool). You cannot use global variables as a way to store state in memory or communicate with other JS processes or function calls.</p>
+<h2 id="provokedthoughts"><a href="/wiki/notes/gwSiXybbvnEuUD188vtls">provokedThoughts</a><a aria-hidden="true" class="anchor-heading icon-link" href="#provokedthoughts"></a></h2>
+<ul>
+<li>[Storage Engine] seems key-value/JSON-based (<a href="https://heroiclabs.com/docs/nakama/concepts/storage/collections/">https://heroiclabs.com/docs/nakama/concepts/storage/collections/</a>)</li>
+</ul>
+<h2 id="hasfeature"><a href="/wiki/notes/UFT1qBuTAB4kJS1AZXKVC">hasFeature</a><a aria-hidden="true" class="anchor-heading icon-link" href="#hasfeature"></a></h2>
+<ul>
+<li><strong>Users</strong> - Register/login new users via social networks, email, or device ID.</li>
+<li><strong>Storage</strong> - Store user records, settings, and other objects in collections.</li>
+<li><strong>Social</strong> - Users can connect with friends, and join groups. Builtin social graph to see how users can be connected.</li>
+<li><strong>Chat</strong> - 1-on-1, group, and global chat between users. Persist messages for chat history.</li>
+<li><strong>Multiplayer</strong> - Realtime, or turn-based active and passive multiplayer.</li>
+<li><strong>Leaderboards</strong> - Dynamic, seasonal, get top members, or members around a user. Have as many as you need.</li>
+<li><strong>Tournaments</strong> - Invite players to compete together over prizes. Link many together to create leagues.</li>
+<li><strong>Parties</strong> - Add team play to a game. Users can form a party and communicate with party members.</li>
+<li><strong>Runtime code</strong> - Extend the server with custom logic written in Lua, TypeScript/JavaScript, or native Go code.
+<ul>
+<li><a href="/wiki/notes/6z7o503u9cfi730iv7v06ny">**NOTE**</a>
+<ul>
+<li>There is no support for libraries that require Node, web/browser APIs, or native support (e.g. via Node).</li>
+<li>The use of multi-threaded processing is not supported in the JavaScript runtime.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Matchmaker</strong>, <strong>dashboard</strong>, <strong>metrics</strong>, and <a href="https://heroiclabs.com/docs">more</a>.  </li>
+</ul>
+<h2 id="architecture"><a href="/wiki/notes/S4f5S0VDSYldAutlv7iZT">Architecture</a><a aria-hidden="true" class="anchor-heading icon-link" href="#architecture"></a></h2>
+<ul>
+<li>
+<p><a href="https://heroiclabs.com/docs/nakama/getting-started/architecture/">https://heroiclabs.com/docs/nakama/getting-started/architecture/</a></p>
+<ul>
+<li>"If data needs to be distributed to clients live, streams are the way it gets there. Individual player sessions join and leave streams, like subscribing and unsubscribing to a continuous flow of messages."</li>
+</ul>
+</li>
+<li>
+<p><a href="/wiki/notes/v1yafptxty398ghbouhu193">Game-Platform</a> <a href="/wiki/notes/5g7p4he9af6nqjay835iuo0">Game Framework</a></p>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/yfpl8tdokbc6t90vl7z3wxy">Flutter client for Nakama</a></li>
+<li><a href="/wiki/notes/9fljtubnxu9igca7ebsrqkk">Server Framework</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/uaqcznh5wjwzr9zfqpr9yx0">Gamelift</a></li>
+<li><a href="/wiki/notes/lxb7v41tnfyj5qwdciqgd92">Goja</a></li>
+<li><a href="/wiki/notes/d0bh1391ygxtb3i35p05sal">World Engine</a></li>
+</ul>

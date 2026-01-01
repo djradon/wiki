@@ -1,0 +1,151 @@
+<h1 id="gufo">gUFO<a aria-hidden="true" class="anchor-heading icon-link" href="#gufo"></a></h1>
+<ul>
+<li>url: <a href="https://nemo-ufes.github.io/gufo/">https://nemo-ufes.github.io/gufo/</a></li>
+<li>repo: <a href="https://github.com/nemo-ufes/gufo/">https://github.com/nemo-ufes/gufo/</a></li>
+<li>related: <a href="/wiki/notes/2l5wtx7tsgsisxe11osuguj">Ufo Protege Plugin</a> <a href="/wiki/notes/a592cinu8w0owhkwh5m199x">Ontouml Visual Paradigm Plugin</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>"A key feature of UFO (and hence, gUFO) is that it includes two taxonomies: one with classes whose instances are individuals (classes in this taxonomy include gufo:Object, gufo:Event) and another with classes whose instances are types (classes in this taxonomy include gufo:Kind, gufo:Phase, gufo:Category)."</li>
+<li>UFO distinguishes Endurant Types into Substantial Types and Moment
+Types.</li>
+</ul>
+<h2 id="classes">Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#classes"></a></h2>
+<ul>
+<li>Individual
+<ul>
+<li>AbstractIndividual: evil, chaos
+<ul>
+<li>Instant</li>
+<li>QualityValue 
+<ul>
+<li>Use this class only for quality values (qualia) that are to be reified in the A-box and associated with a gufo:ConcreteIndividual through the object property gufo:hasReifiedQualityValue. Otherwise, use the gufo:hasQualityValue data property and a literal to determine the quality value.
+<ul>
+<li>i.e., it's a type for quality values that are part</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ConcreteIndividual
+<ul>
+<li>Endurant
+<ul>
+<li>Aspect
+<ul>
+<li>ExtrinsicAspect
+<ul>
+<li>ExtrinsicMode</li>
+<li>Relator</li>
+</ul>
+</li>
+<li>IntrinsicAspect
+<ul>
+<li>IntrinsicMode</li>
+<li>Quality</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Object: e.g. Gunaar, Shadow Keep
+<ul>
+<li>Collection: 
+<ul>
+<li>FixedCollection: Gunaar and Tserro together</li>
+<li>VariableCollection: The Shadows. "If various roles for the parts of a fleet were envisioned (such as "cargo airplane", "passenger airplane"), then a fleet would be best understood as a gufo:FunctionalComplex."</li>
+</ul>
+</li>
+<li>FunctionalComplex: complicated to differentiate from VariableCollection</li>
+<li>Quantity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Event
+<ul>
+<li>Participation "John's participation in the meeting encompasses all events that are part of the meeting and that depend solely on him"</li>
+</ul>
+</li>
+<li>Situation
+<ul>
+<li>QualityValueAttributionSituation</li>
+<li>TemporaryConstitutionSituation</li>
+<li>TemporaryInstantiationSituation</li>
+<li>TemporaryParthoodSituation</li>
+<li>TemporaryRelationshipSituation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Type
+<ul>
+<li>AbstractIndividualType</li>
+<li>ConcreteIndividualType
+<ul>
+<li>EndurantType
+<ul>
+<li>NonRigidType
+<ul>
+<li>Phase</li>
+<li>PhaseMixin</li>
+<li>Role</li>
+<li>RoleMixin</li>
+</ul>
+</li>
+<li>SemiRigidType
+<ul>
+<li>Mixin</li>
+</ul>
+</li>
+<li>NonSortal
+<ul>
+<li>Category "Non-sortals do not provide a uniform principle of identity for their instances; instead, they just classify things that share common properties but which obey different principles of identity."</li>
+<li>Mixin "A gufo:EndurantType that is both non-sortal and semi-rigid. As a semi-rigid type, it applies necessarily to some of its instances and contingently to some others. As a non-sortal, it captures properties shared by instances of different kinds. For example, the type "FemaleAnimal" may be considered a gufo:Mixin as it applies necessarily to animals of certain species, e.g., lions and sharks, while it applies contingently to animals of other species such as clownfish and mushroom corals (which may change sex given certain conditions)."</li>
+<li>PhaseMixin</li>
+<li>RoleMixin</li>
+</ul>
+</li>
+<li>RigidType
+<ul>
+<li>Category</li>
+<li>Kind</li>
+<li>Subkind</li>
+</ul>
+</li>
+<li>Sortal
+<ul>
+<li>Kind</li>
+<li>Phase</li>
+<li>Role</li>
+<li>SubKind</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EventType</li>
+<li>SituationType</li>
+</ul>
+</li>
+<li>RelationType
+<ul>
+<li>ComparativeRelationshipType</li>
+<li>MaterialRelationshipType</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://github.com/nemo-ufes/gufo/blob/master/docs/overview.md">https://github.com/nemo-ufes/gufo/blob/master/docs/overview.md</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/rtuuqd5q8nrxidfii77jh9n">Unified Foundational Ontology</a></li>
+<li><a href="/wiki/notes/3oygg06p6jjbt68la0azf1f">eUFO</a></li>
+<li><a href="/wiki/notes/cwc36jlo6mwgp6cd24ulon1">Issue 34: TemporaryParthoodSituation-vs-relator</a></li>
+</ul>

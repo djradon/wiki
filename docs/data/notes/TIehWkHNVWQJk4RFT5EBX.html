@@ -1,0 +1,54 @@
+<h1 id="property-graph">Property Graph<a aria-hidden="true" class="anchor-heading icon-link" href="#property-graph"></a></h1>
+<ul>
+<li><a href="/wiki/notes/ERRZMI5pDHLsYFVhW0r85">hasSpecification</a> <a href="/wiki/notes/7B0NK8dQqZO8KoB5JtqHp">NGSI-LD</a></li>
+<li><a href="/wiki/notes/CAozjFD2vVstohVdegK7H">hasVariant</a> <a href="/wiki/notes/JxDLfPHdGwWEUfJFdgOkR">Labelled Property Graph</a></li>
+</ul>
+<h2 id="tips">Tips<a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a></h2>
+<ul>
+<li>"What should be a Property... Any data element that isn’t frequently used to access the graph directly, has no internal object complexity/multiplicity, and/or needs to always return with the rest of the data in the node is a good candidate for a Property."</li>
+</ul>
+<h2 id="vs-rdf">vs <a href="/wiki/notes/cQHSPbwz5JLE40UxftY7w">RDF</a><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-rdf"></a></h2>
+<ul>
+<li><a href="http://www.snee.com/bobdc.blog/2018/04/reification-is-a-red-herring.html">http://www.snee.com/bobdc.blog/2018/04/reification-is-a-red-herring.html</a>
+<ul>
+<li>In RDF, "if you want to keep track of separate instances of a particular relationship, declare a class for that relationship and then create instances of it."</li>
+</ul>
+</li>
+</ul>
+<h2 id="vs-rdf-star">vs <a href="/wiki/notes/lTim9plsY3OzVv6gn7TBR">RDF-star</a><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-rdf-star"></a></h2>
+<ul>
+<li><a href="https://opencredo.com/blogs/making-sense-of-data-with-rdf-vs-lpg/">https://opencredo.com/blogs/making-sense-of-data-with-rdf-vs-lpg/</a>
+<ul>
+<li>"In property graphs, attribute values are just strings not linked to any other nodes in the graph. They can only represent literal values, rather than relationships and things. In contrast, values of RDF* properties can be both literal values (RDF literals) or nodes connected to other nodes in the graph."</li>
+<li><strong>Capacity to represent edge attributes as nodes</strong>. As we mentioned above, unlike attributes in LPGs, RDF* edge attributes can be represented as nodes in the graph, allowing them to be treated as individual entities.</li>
+<li><strong>Better expressivity</strong>. RDF* allows every LPG to be efficiently converted into an RDF model. On the other hand, LPGs cannot fully represent RDF* because of the rich expressivity of the latter. </li>
+<li><strong>Arbitrarily complex edge descriptions</strong>. With RDF*, graph developers can attach complex descriptions to edges that represent connections to other nodes, literal values (strings), and inter-attribute relationships. In contrast, with LPG, edge properties can only be represented as literal key-value pairs.</li>
+</ul>
+</li>
+<li><a href="https://stackoverflow.com/questions/38034049/is-optionality-mandatory-optional-and-participation-total-partial-are-same/38035173#38035173">https://stackoverflow.com/questions/38034049/is-optionality-mandatory-optional-and-participation-total-partial-are-same/38035173#38035173</a>
+<ul>
+<li>"Application with Cross-Domain Knowledge: RDF*"</li>
+<li>"Applications that Require Fast Search: LPG"</li>
+<li>"Data Provenance: RDF<em>"Representing Temporal Dimension: RDF</em></li>
+<li>"Data Analytics: RDF*"<a href="/wiki/notes/5izi3fbls7d833qc45ozeaq">AsyncAPI</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<h3 id="learning-resources">Learning Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resources"></a></h3>
+<ul>
+<li><a href="https://www.asyncapi.com/blog/designing_your_apis_with_asyncapi_part_1">https://www.asyncapi.com/blog/designing_your_apis_with_asyncapi_part_1</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/z4eyx1bblv40g0r8hn64ap3">Postgresql Oracle Graph Query Language Standards Adoption Green</a></li>
+<li><a href="https://www.linkedin.com/pulse/graph-relational-enemies-alastair-green/?trackingId=5xrQz85vQRaoTnQv%2BO3bPA%3D%3D">Graph databases don't provide a significant advantage over well-architected relational DBs for most use cases</a></li>
+<li><a href="https://www.researchgate.net/publication/342956606_Linked_Data_for_Smart_Homes_Comparing_RDF_and_Labeled_Property_Graphs">https://www.researchgate.net/publication/342956606_Linked_Data_for_Smart_Homes_Comparing_RDF_and_Labeled_Property_Graphs</a></li>
+<li><a href="https://bigbear.ai/blog/property-graphs-is-it-a-node-a-relationship-or-a-property/">https://bigbear.ai/blog/property-graphs-is-it-a-node-a-relationship-or-a-property/</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/ZHoWejqsahUxF64lbKCL1">Knowledge Graph Toolkit</a></li>
+<li><a href="/wiki/notes/ZvBXkgWq3edRQ7TAYBG7a">Property Graphs Vs Semantic Graphs</a></li>
+</ul>

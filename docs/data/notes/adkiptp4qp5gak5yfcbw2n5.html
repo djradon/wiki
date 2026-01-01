@@ -1,0 +1,20 @@
+<h1 id="describing-linked-datasets-with-the-void-vocabulary">Describing Linked Datasets with the VoID Vocabulary<a aria-hidden="true" class="anchor-heading icon-link" href="#describing-linked-datasets-with-the-void-vocabulary"></a></h1>
+<ul>
+<li><a href="https://www.w3.org/TR/void/">https://www.w3.org/TR/void/</a></li>
+<li>related: <a href="/wiki/notes/4c9zzrqiu7zdop7dvar1iyz">Voidext</a></li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<h3 id="metadata">Metadata<a aria-hidden="true" class="anchor-heading icon-link" href="#metadata"></a></h3>
+<h4 id="root-resources">Root Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#root-resources"></a></h4>
+<p>Many datasets are structured in a tree-like fashion, with one or a few natural “top concepts” or “entry points”, and all other entities reachable from these root resources in a small number of steps.</p>
+<p>One or more such root resources can be named using the void:rootResource property. Naming a resource as a root resource implies:</p>
+<pre><code>that it is a central entity of particular importance in the dataset; and
+that the entire dataset can be crawled by resolving the root resource(s) and recursively following links to other URIs in the retrieved RDF responses.
+</code></pre>
+<p>Root resources make good entry points for crawling an RDF dataset.</p>
+<p>This property is similar to void:exampleResource. While void:exampleResource names particularly representative or typical resources in the dataset, void:rootResource names particularly important or central resources that make good entry points for navigating the dataset.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/j6xe4ny38s8isjsx5aogv6y">Void Vocabulary of Interlinked Datasets</a></li>
+</ul>

@@ -1,0 +1,45 @@
+<h1 id="log">Log<a aria-hidden="true" class="anchor-heading icon-link" href="#log"></a></h1>
+<h2 id="t2023121005">t.2023.12.10.05<a aria-hidden="true" class="anchor-heading icon-link" href="#t2023121005"></a></h2>
+<p>removed:</p>
+<pre><code>- when regular links (raw URL, URL in angle brackets, or URL in parentheses after single-square link text, aka markdown-style links) for subjects, predicates, and objects, they are always resourceRefs
+- wikilinks to notes in the local workspace (LRIs?) or URIs [[https://www.markdownguide.org/basic-syntax/]] are always used as subjectIndicatorRef
+  - so you can't say anything about notes themselves?
+    - maybe you put it in the frontmatter
+    - maybe you create a second, special "ar" note.
+    - maybe a special syntax to treat local
+      - maybe &#x3C;http:///vs.rdfs-vs-owl.md>
+- if you want to say something about something that's not addressable
+  - create a note for it
+  - but I wanna use  an "indicator note" that someone else has made? Or I made and published on the web somewhere, and it's not in my local workspace
+    - make a new local note, point it at the indicator note. 
+- `prdct.toml` is kinda an identifier; unlike a corresponding note in the topic hierarchy, it won't change
+- differentiate resources that are addressable with `hasURL` - but not sure if that helps
+</code></pre>
+<h2 id="t2024011906">t.2024.01.19.06<a aria-hidden="true" class="anchor-heading icon-link" href="#t2024011906"></a></h2>
+<ul>
+<li>I'm almost ashamed that this contrast has remained so murky for so long. There are two separate issues:
+<ol>
+<li>for identifiers, are we identifying a web document or something that exists separately</li>
+<li>for web documents, are they about something else or are they their own thing</li>
+</ol>
+</li>
+</ul>
+<h3 id="1">#1<a aria-hidden="true" class="anchor-heading icon-link" href="#1"></a></h3>
+<ul>
+<li>URL-like identifiers might return a document.
+<ul>
+<li>Is there an issue of "how would you refer to that document", in case you wanted to?</li>
+<li>How does that document unambiguously convey that "the URL you requested is (primarily?) an identifier"</li>
+</ul>
+</li>
+</ul>
+<h3 id="2">#2<a aria-hidden="true" class="anchor-heading icon-link" href="#2"></a></h3>
+<ul>
+<li>is it just as easy as "everything is its own thing, but some web documents (like wiki pages) have essentially a single subject (likely specified as the title, but that could be specified in metadata by using an identifier), as well as one or more topics; and some things dont"</li>
+<li>Maybe the issue is "is a note a definition/model" of something, i.e. an "expression" in WEMI parlance. </li>
+</ul>
+<h3 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h3>
+<ul>
+<li>Does a daily journal note have a subject? Is its subject "Dave's January 19th"? Or is it "Some things Dave thought and did (or wrote) on January 19th"?</li>
+<li></li>
+</ul>

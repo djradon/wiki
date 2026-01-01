@@ -1,0 +1,2 @@
+
+- #related [[game.fortnite]]

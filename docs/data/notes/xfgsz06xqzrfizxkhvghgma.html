@@ -1,0 +1,18 @@
+<h1 id="rdf-toolkit">Rdf Toolkit<a aria-hidden="true" class="anchor-heading icon-link" href="#rdf-toolkit"></a></h1>
+<ul>
+<li>repo: <a href="https://github.com/edmcouncil/rdf-toolkit">https://github.com/edmcouncil/rdf-toolkit</a></li>
+<li><a href="/wiki/notes/sii5dfphdk9iozp581o9kmm">Canonization</a> <a href="/wiki/notes/nbga86xdfys6dqjmuw4v7tc">Semantic</a> </li>
+<li>written-in: java</li>
+</ul>
+<h2 id="rationale">Rationale<a aria-hidden="true" class="anchor-heading icon-link" href="#rationale"></a></h2>
+<h3 id="minimize-the-ontology-review-effort">Minimize the ontology review effort<a aria-hidden="true" class="anchor-heading icon-link" href="#minimize-the-ontology-review-effort"></a></h3>
+<p>For the purposes of git-based version control of ontology files, we want to have as few differences between commits as possible. Most ontology editors can encode RDF graphs, including OWL ontologies, in several formats, including the W3C normative RDF exchange formats (syntaxes): RDF/XML and Turtle. However, even these normative formats are not canonical. Therefore, an editor tool may change many aspects of how ontology entities are serialized every time the ontology is saved (such as adding/changing comments or changing the order and organization of statements) leading to difficulties in analyzing actual changes in the underlying semantics.</p>
+<h3 id="handle-intelligent-iris">Handle intelligent IRIs<a aria-hidden="true" class="anchor-heading icon-link" href="#handle-intelligent-iris"></a></h3>
+<p>We want to be able to include actionable information as part of IRIs, e.g., git tags, and then deference them from ontology tools like Protege.</p>
+<h3 id="recommended-output-format">Recommended output format<a aria-hidden="true" class="anchor-heading icon-link" href="#recommended-output-format"></a></h3>
+<p>The recommended output format at this time is RDF/XML because that is the format that the OMG requires for submissions. The EDM Council develops the FIBO Ontologies and submits them as RDF/XML, serialized by the RDF Toolkit to the OMG. So that is why we also use RDF/XML in Github itself.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/gby3krfg7470pqbrtd1hqev">Ontology Publisher</a></li>
+</ul>

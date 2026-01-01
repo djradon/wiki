@@ -1,0 +1,199 @@
+<h1 id="shacl">SHACL<a aria-hidden="true" class="anchor-heading icon-link" href="#shacl"></a></h1>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Shex</span></div>
+<a href="/wiki/notes/i2asajtvfgt7jfjqggjockm" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^1vgrpmk2ihl1" href="#^1vgrpmk2ihl1"></a>similar: <a href="/wiki/notes/i2asajtvfgt7jfjqggjockm">Shex</a> <a href="/wiki/notes/ahbj9ejugov8rjiywj5qqc8">SHACL</a> <a href="/wiki/notes/tqj6kdyaahl2jwfa2o0rlos">Spin</a>  </li>
+</ul>
+</div></div><p></p><p></p>
+<h2 id="implementations">Implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#implementations"></a></h2>
+<ul>
+<li><a href="/wiki/notes/yn4x29u7zbo0m8a7sqda71g">Shacl API</a></li>
+<li><a href="/wiki/notes/x0u7ifn5sauzhvku4ifw51d">Shacl Engine</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>
+<p><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^6uscvziiubke" href="#^6uscvziiubke"></a>"SHACL uses CWA in its reasoning" </p>
+</li>
+<li>
+<p>"SHACL uses RDFS subclassing mechanism. When you create SHACL models you define classes and more specific subclasses. Additionally, you can separate Node Shapes from classes to define application specific views.Take a look at <a href="https://www.topquadrant.com/classes-and-node-shapes-when-to-separate/">this blog</a> to understand differences between classes and node shapes... With SHACL, you can deactivate constraints that you don’t need or can’t agree with. This is done declaratively, using the standard so it is unambiguously clear what aspects of the models you are using and what aspects you are not using."</p>
+</li>
+<li>
+<p>"SHACL is a semantic constraint language, which is quite useful as a guard for updates to a triple store. Because SHACL is less concerned with meaning and more concerned with structure, many object-oriented ontologists prefer it to OWL for defining their classes."</p>
+</li>
+<li>
+<p>SHACL was strongly influenced by <a href="/wiki/notes/tqj6kdyaahl2jwfa2o0rlos">Spin</a> and can be regarded as its legitimate successor</p>
+</li>
+<li>
+<p>"Shacl popped up because people wanted to have something that operstes over their A-Boxes without slowly dragging their entire modeling and data storage into the T-Box. That's why they don't want the "description logic perspective", as it automatically leads down that "no instances, just theories" rabbit hole."</p>
+</li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<h3 id="closed-world">Closed-world<a aria-hidden="true" class="anchor-heading icon-link" href="#closed-world"></a></h3>
+<p><strong>SHACL struggles with missing or unspecified data because it's fundamentally closed-world</strong> (.8). Your example perfectly illustrates why the open world assumption is beautiful for modeling reality.</p>
+<p><strong>The problem with SHACL's approach:</strong></p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token comment"># What you want to express (OWL style)</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Animal</span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">subClassOf</span></span> <span class="token punctuation">[</span>
+    <span class="token keyword">a</span> <span class="token function"><span class="token prefix">owl<span class="token punctuation">:</span></span><span class="token local-name">Restriction</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">owl<span class="token punctuation">:</span></span><span class="token local-name">onProperty</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">hasBiologicalParent</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">owl<span class="token punctuation">:</span></span><span class="token local-name">minCardinality</span></span> <span class="token number">2</span>
+<span class="token punctuation">]</span> <span class="token punctuation">.</span>
+
+<span class="token comment"># This says "every animal has biological parents" </span>
+<span class="token comment"># without requiring you to state who they are</span>
+</code></pre>
+<p><strong>SHACL's closed-world limitation:</strong></p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token comment"># SHACL approach</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">AnimalShape</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">NodeShape</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">targetClass</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Animal</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">property</span></span> <span class="token punctuation">[</span>
+        <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">path</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">hasBiologicalParent</span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">minCount</span></span> <span class="token number">2</span>  <span class="token comment"># FAILS if parents aren't explicitly stated</span>
+    <span class="token punctuation">]</span> <span class="token punctuation">.</span>
+</code></pre>
+<p><strong>SHACL workarounds (all imperfect):</strong></p>
+<p><strong>1. Conditional validation:</strong></p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">property</span></span> <span class="token punctuation">[</span>
+    <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">path</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">hasBiologicalParent</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">minCount</span></span> <span class="token number">2</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">severity</span></span> <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">Info</span></span>  <span class="token comment"># Downgrade to warning, not error</span>
+<span class="token punctuation">]</span> <span class="token punctuation">.</span>
+</code></pre>
+<p><strong>2. Context-specific shapes:</strong></p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token comment"># Only validate when you're in "complete data" context</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">CompleteAnimalDataShape</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">NodeShape</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">targetNode</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">SpecificAnimal123</span></span> <span class="token punctuation">;</span>  <span class="token comment"># Target known-complete individuals</span>
+    <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">property</span></span> <span class="token punctuation">[</span>
+        <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">path</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">hasBiologicalParent</span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">sh<span class="token punctuation">:</span></span><span class="token local-name">minCount</span></span> <span class="token number">2</span>
+    <span class="token punctuation">]</span> <span class="token punctuation">.</span>
+</code></pre>
+<p><strong>3. Unknown value markers:</strong></p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token comment"># Explicitly state "unknown but exists"</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Animal123</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">hasBiologicalParent</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">UnknownParent1</span></span><span class="token punctuation">,</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">UnknownParent2</span></span> <span class="token punctuation">.</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">UnknownParent1</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">UnknownEntity</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<p><strong>The fundamental tension</strong> (.9):</p>
+<ul>
+<li><strong>OWL reasoning</strong>: "Absence of evidence is not evidence of absence"</li>
+<li><strong>SHACL validation</strong>: "If it's not stated, it's missing"</li>
+</ul>
+<p><strong>For your flow ontology</strong>, you might want:</p>
+<ul>
+<li><strong>Use OWL restrictions</strong> for logical constraints like "animals have biological parents"</li>
+<li><strong>Use SHACL</strong> for data quality constraints like "in our employee database, every person must have a stated email"</li>
+</ul>
+<p>This is one area where OWL's open-world semantics genuinely provides something that SHACL cannot replicate. The question is whether you need that expressivity for your mesh modeling use case.</p>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<ul>
+<li><a href="https://archive.topquadrant.com/edg-ontologies-overview/">https://archive.topquadrant.com/edg-ontologies-overview/</a>
+<ul>
+<li>"If a group of properties is reusable across assets that are not subclasses of each other (e.g., enterprise, technical and data assets are not subclasses of each other), EDG ontologies define an aspect class to hold or comprise this group of properties."</li>
+<li>mentions <a href="/wiki/notes/zb0xkpayej27q9l0n7vp5m6">Aspect Classes</a></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><a href="https://semantify.it/list/wS4r3c9hQ">https://semantify.it/list/wS4r3c9hQ</a> <a href="/wiki/notes/axx2c7xih7aircax3f17iar">Semantify</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="constraint-types">Constraint Types<a aria-hidden="true" class="anchor-heading icon-link" href="#constraint-types"></a></h2>
+<ul>
+<li><strong>Structural Constraints</strong>: Ensuring that data adheres to a specific schema or model, such as required properties, permissible property values, or specific class hierarchies.</li>
+<li><strong>Value Constraints</strong>: Limiting the values that can be taken by properties, including data types, value ranges, and pattern matching.</li>
+<li><strong>Cardinality Constraints</strong>: Defining the minimum and maximum occurrences of properties.</li>
+<li><strong>Logical Constraints</strong>: Applying logical conditions to properties and values, such as equality or inequality, and combinations thereof through logical operators.</li>
+</ul>
+<h2 id="comparisons">Comparisons<a aria-hidden="true" class="anchor-heading icon-link" href="#comparisons"></a></h2>
+<ul>
+<li>
+<ul>
+<li><a href="https://claude.ai/public/artifacts/84fd1145-775e-4013-9dff-010980aba27a">https://claude.ai/public/artifacts/84fd1145-775e-4013-9dff-010980aba27a</a></li>
+</ul>
+</li>
+</ul>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Shex</span></div>
+<a href="/wiki/notes/i2asajtvfgt7jfjqggjockm" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h3 id="shex-vs-shacl">ShEx vs SHACL<a aria-hidden="true" class="anchor-heading icon-link" href="#shex-vs-shacl"></a></h3>
+<ul>
+<li>ShEx has the operators | to represent “oneOf” while SHACL has xone to represent exactly one.</li>
+<li>ShEx has been implemented in a variety of programming languages and RDF libraries: Apache Jena, Ruby, Javascript, Haskell, and Python (see section 4.3). In the case of SHACL, most implementations are based on Apache Jena and there is an implementation based on Javascript (see section 5.2) although there are some implementations appearing in other systems like rdf4j. Most ShEx implementations are non-commercial and have been developed mainly by individual projects. SHACL has a mature commercial implementation, bundled with the TopBraid suite of products, which offers a rich user interface for editing SHACL-based data models. Although TopBraid is a commercial product, SHACL’s implementation is based on a separate open source library maintained by TopQuadrant. SHACL is also integrated in the free edition of TopBraid Composer.</li>
+</ul>
+<h4 id="schema-vs-constraints">Schema vs Constraints<a aria-hidden="true" class="anchor-heading icon-link" href="#schema-vs-constraints"></a></h4>
+<ul>
+<li>The designers of ShEx intended the language to be like a grammar or schema for RDF graphs. This design was inspired by languages such as Yacc, RelaxNG, and XML Schema. The main goal was to describe RDF graph structures so they could be validated against those descriptions.</li>
+</ul>
+<p>In contrast, the designers of SHACL aimed at providing a constraint language for RDF. The main goal of SHACL is to verify that a given RDF graph satisfies a collection of constraints. In this sense, SHACL follows the Schematron approach, applied to RDF: it declares constraints that RDF graphs must fulfill. Just as Schematron relies strongly on XPath, SHACL relies strongly on SPARQL</p>
+</div></div><p></p><p></p>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Spin</span></div>
+<a href="/wiki/notes/tqj6kdyaahl2jwfa2o0rlos" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h3 id="spin-vs-shacl">SPIN vs SHACL<a aria-hidden="true" class="anchor-heading icon-link" href="#spin-vs-shacl"></a></h3>
+<ul>
+<li>SHACL offers much greater flexibility w.r.t. the application target of constraints (and rules). While SPIN is limited to classes, SHACL shapes can be applied to either classes or sets of nodes derived by other means. See the various <a href="https://www.w3.org/TR/shacl/#targets">target mechanisms</a> in SHACL, including the <a href="https://www.w3.org/TR/shacl-af/#targets">custom targets</a> from the Advanced Features document.</li>
+<li>"SHACL should be regarded as the next generation of SPIN. Learn how they compare."</li>
+</ul>
+</div></div><p></p><p></p>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://archive.topquadrant.com/shacl-blog/">https://archive.topquadrant.com/shacl-blog/</a>
+<ul>
+<li>"There are many ontologies in OWL which are really glossaries or taxonomies of terms. They do not define classes in terms of properties of their members. In other words, they do not contain schema or data definitions. They simply describe classes as vocabulary terms. You can easily identify such “ontologies” because you will see no OWL restrictions or domain/range statements. Instead, you will see synonyms and other annotation properties. In this case, recognize them for what they are and translate them to <a href="/wiki/notes/vu2fg1cagr0lewf1yjof656">SKOS</a> and/or develop a small ontology of your own to express this information. There is no value in keeping these terminologies in OWL nor in having them in SHACL."</li>
+</ul>
+</li>
+<li><a href="https://archive.topquadrant.com/technology/shacl/">https://archive.topquadrant.com/technology/shacl/</a></li>
+<li><a href="https://www.mathstat.dal.ca/wollic2023/slides/ortiz.pdf">https://www.mathstat.dal.ca/wollic2023/slides/ortiz.pdf</a></li>
+<li><a href="https://veronahe.wordpress.com/shacl-for-the-practitioner/">https://veronahe.wordpress.com/shacl-for-the-practitioner/</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://tdan.com/the-data-centric-revolution-best-practices-and-schools-of-ontology-design/31412">https://tdan.com/the-data-centric-revolution-best-practices-and-schools-of-ontology-design/31412</a></li>
+<li><a href="https://news.ycombinator.com/item?id=31890041">https://news.ycombinator.com/item?id=31890041</a></li>
+<li><a href="/wiki/notes/n3nb7chx9s16p158u9d6eoh">Why I Dont Use Owl Anymore</a></li>
+<li><a href="https://www.ontotext.com/knowledgehub/fundamentals/what-is-shacl/">https://www.ontotext.com/knowledgehub/fundamentals/what-is-shacl/</a></li>
+<li><a href="https://medium.com/fluree/what-is-shacl-with-examples-2697f659d465">https://medium.com/fluree/what-is-shacl-with-examples-2697f659d465</a></li>
+<li><a href="https://connect-lokesh.medium.com/demystifying-shacl-guide-to-semantic-validation-part-1-016aa65d2070">https://connect-lokesh.medium.com/demystifying-shacl-guide-to-semantic-validation-part-1-016aa65d2070</a></li>
+<li><a href="/wiki/notes/fkw5wantovnjm6twrvrpsx0">Why I Use Shacl for Defining Ontology Models</a></li>
+<li><a href="/wiki/notes/f8f54m5mjf95uagckhyb6j1">Semantic Web Is like the Guy That Tells Everyone That He Is an Asshole</a></li>
+<li><a href="/wiki/notes/f7663ygbq8lf0sv3t18chbc">A Formal Approach for Customization of Schema Org Based on Shacl</a></li>
+<li><a href="/wiki/notes/wom9w6bynzc7onkpp2i6yyj">The Open World Assumption in Modeling. What does it mean to you?</a></li>
+<li><a href="/wiki/notes/llspiw5gvjohtchjfdu31bj">Validating Rdf Data</a></li>
+<li><a href="/wiki/notes/518aca9c0c83ulyhdrgs3os">The Future of Knowledge Graphs</a></li>
+<li><a href="https://claude.ai/public/artifacts/84fd1145-775e-4013-9dff-010980aba27a">https://claude.ai/public/artifacts/84fd1145-775e-4013-9dff-010980aba27a</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/t7q534y033uby4hmbvq3lm8">m-ld</a></li>
+<li><a href="/wiki/notes/1c425wcbnwh1esyiwydx1pw">Owl</a></li>
+<li><a href="/wiki/notes/axx2c7xih7aircax3f17iar">Semantify</a></li>
+<li><a href="/wiki/notes/tqj6kdyaahl2jwfa2o0rlos">Spin</a></li>
+<li><a href="/wiki/notes/wom9w6bynzc7onkpp2i6yyj">The Open World Assumption in Modeling. What does it mean to you?</a></li>
+<li><a href="/wiki/notes/fy2fymtavc1xsbkdbaof9as">High Order Logic Languages for Unifying Owl and Shacl</a></li>
+<li><a href="/wiki/notes/bkg45fmtxwqtjdxr6vhuvm2">Semic’s Semantic Modelling and Tool Recommendations</a></li>
+<li><a href="/wiki/notes/5zyylmcf3pq14viy68mzbde">The Semantic Web Is Dead</a></li>
+<li><a href="/wiki/notes/i2asajtvfgt7jfjqggjockm">Shex</a></li>
+<li><a href="/wiki/notes/178ZuAuS3pVbx4PGWgAWj">Semantic Web</a></li>
+<li><a href="/wiki/notes/518aca9c0c83ulyhdrgs3os">The Future of Knowledge Graphs</a></li>
+</ul>

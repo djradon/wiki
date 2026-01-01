@@ -1,0 +1,197 @@
+<h1 id="fantastic-nine">Fantastic Nine<a aria-hidden="true" class="anchor-heading icon-link" href="#fantastic-nine"></a></h1>
+<ul>
+<li>url: <a href="https://www.messagehandler.net/patterns/">https://www.messagehandler.net/patterns/</a></li>
+<li><a class="color-tag" style="--tag-color: #0504aa;" href="/wiki/notes/83p7th2zmda0k5oapt0mfpz">#creator</a> <a href="/wiki/notes/y07my9et9zy8e976uy17dm3">@yves-goeleven</a></li>
+</ul>
+<p><img src="/wiki/assets/images/2023-10-06-13-10-52.png"></p>
+<h2 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h2>
+<ul>
+<li>Complexity is our enemy</li>
+<li>Messaging: passing information across time <a href="/wiki/notes/gksoywxa18kxwc9g8r7b2v8">Data Temporality</a>
+<ul>
+<li>Past: event, fact</li>
+<li>Present: state, properties</li>
+<li>Future: command, intent</li>
+</ul>
+</li>
+<li>system types:
+<ul>
+<li>line of business</li>
+<li>IoT</li>
+<li><a href="/wiki/notes/8jxt0xhb2a6nt8wiie8rk3c">Business Intelligence</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="aggregate-root-decider"><a href="/wiki/notes/i2uw5wbsfwtbywmihzeh20n">Aggregate Root Decider</a><a aria-hidden="true" class="anchor-heading icon-link" href="#aggregate-root-decider"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Aggregate Root Decider</span></div>
+<a href="/wiki/notes/i2uw5wbsfwtbywmihzeh20n" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>"protect the system when taking a meaningful decision"</li>
+<li>weird name choice</li>
+<li><a href="/wiki/notes/y07my9et9zy8e976uy17dm3">@yves-goeleven</a> doesn't have internal state in his agg roots</li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="task-processing"><a href="/wiki/notes/y0vfp8pdiw949s4td6ja6f5">Task Processing</a><a aria-hidden="true" class="anchor-heading icon-link" href="#task-processing"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Task Processing</span></div>
+<a href="/wiki/notes/y0vfp8pdiw949s4td6ja6f5" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>used when a command needs to be invoked after a certain condition has become true, but usually only when conditions are not known</li>
+<li>in many cases, let user invoke the command at the right time</li>
+<li>in Line of Business applications, this is the only thing the UI is used for</li>
+<li>when conditions are known / only postponed in time, it can be automated</li>
+<li>when conditions are comples, background service monitors state until conditions are met</li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="projection"><a href="/wiki/notes/roq4ssqnlyb0v4mbnc71pqq">Projection</a><a aria-hidden="true" class="anchor-heading icon-link" href="#projection"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Projection</span></div>
+<a href="/wiki/notes/roq4ssqnlyb0v4mbnc71pqq" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>turn event history into human-readable state</li>
+<li>same person? on demand.</li>
+<li>another person? eventual consistency... choose the destination database depending on querying needs</li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="reaction"><a href="/wiki/notes/hh1akk89h3zpmscylg923ya">Reaction</a><a aria-hidden="true" class="anchor-heading icon-link" href="#reaction"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Reaction</span></div>
+<a href="/wiki/notes/hh1akk89h3zpmscylg923ya" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>invoke an action in response to an event</li>
+<li>transient: notify a person who may or may not be paying attention</li>
+<li>guaranteed reaction: obligation to "perform a command", use delivery guarantees</li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="delegation"><a href="/wiki/notes/0qcfynx9sd8nu083rtjec7n">Delegation</a><a aria-hidden="true" class="anchor-heading icon-link" href="#delegation"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Delegation</span></div>
+<a href="/wiki/notes/0qcfynx9sd8nu083rtjec7n" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>an extension to a LoB system</li>
+<li>delegate to the pros</li>
+<li><a href="/wiki/notes/1ljsmsqfc9jt2r6z3ya7y16">Saga</a> is a series of delegations</li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="event-generator"><a href="/wiki/notes/18wsjjr5gh3ii1yvvlodotr">Event Generator</a><a aria-hidden="true" class="anchor-heading icon-link" href="#event-generator"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Event Generator</span></div>
+<a href="/wiki/notes/18wsjjr5gh3ii1yvvlodotr" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>typical use is to capture state changes, i.e., sensors</li>
+<li>virtual event generators can be used to detect changes in databases</li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="stream-processing"><a href="/wiki/notes/65qq3iyuz2e4pirrvqq31tx">Stream Processing</a><a aria-hidden="true" class="anchor-heading icon-link" href="#stream-processing"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Stream Processing</span></div>
+<a href="/wiki/notes/65qq3iyuz2e4pirrvqq31tx" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>use to filter, count, group, join, or window event streams</li>
+<li>into a new derived (more meaningful) event</li>
+<li>needs a standing query engine... i.e., <a href="/wiki/notes/wpw26z2ctg6v63eqbczldda">Databricks</a> or <a href="/wiki/notes/9xzj3rcritdf1u81ozm6u7b">Reactivex</a></li>
+<li>typically followed by a <a href="/wiki/notes/hh1akk89h3zpmscylg923ya">Reaction</a></li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="downstream-activity"><a href="/wiki/notes/6b6uaqem4e7aoqzzhm06q5a">Downstream Activity</a><a aria-hidden="true" class="anchor-heading icon-link" href="#downstream-activity"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Downstream Activity</span></div>
+<a href="/wiki/notes/6b6uaqem4e7aoqzzhm06q5a" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>command needs a result</li>
+<li>low-level, immediate</li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="state-transformation"><a href="/wiki/notes/q48y5a32x8em5o0gbdwq0b5">State Transformation</a><a aria-hidden="true" class="anchor-heading icon-link" href="#state-transformation"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">State Transformation</span></div>
+<a href="/wiki/notes/q48y5a32x8em5o0gbdwq0b5" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>transforms state into report (which is also state, just more high-level) or a different structure (e.g. visual)</li>
+<li>common method is <a href="/wiki/notes/seisk3mfiyla3rup1k8ei3g">ETL</a></li>
+<li></li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="bonus-integration-styles">Bonus integration styles<a aria-hidden="true" class="anchor-heading icon-link" href="#bonus-integration-styles"></a></h3>
+<ul>
+<li><a href="/wiki/notes/08k9bzf078nrt71hp1rxaao">Orchestration</a></li>
+<li><a href="/wiki/notes/3tczusavbqsr54n2gp88jl1">Choreography</a></li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>focus on information flow over time, not data structure</li>
+<li>3 types of information: command, event, state</li>
+<li>9 transition patterns</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.architecture-weekly.com/p/webinar-13-yves-goeleven-the-fantastic">https://www.architecture-weekly.com/p/webinar-13-yves-goeleven-the-fantastic</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/i2uw5wbsfwtbywmihzeh20n">Aggregate Root Decider</a></li>
+<li><a href="/wiki/notes/0qcfynx9sd8nu083rtjec7n">Delegation</a></li>
+<li><a href="/wiki/notes/6b6uaqem4e7aoqzzhm06q5a">Downstream Activity</a></li>
+<li><a href="/wiki/notes/18wsjjr5gh3ii1yvvlodotr">Event Generator</a></li>
+<li><a href="/wiki/notes/roq4ssqnlyb0v4mbnc71pqq">Projection</a></li>
+<li><a href="/wiki/notes/hh1akk89h3zpmscylg923ya">Reaction</a></li>
+<li><a href="/wiki/notes/q48y5a32x8em5o0gbdwq0b5">State Transformation</a></li>
+<li><a href="/wiki/notes/65qq3iyuz2e4pirrvqq31tx">Stream Processing</a></li>
+<li><a href="/wiki/notes/y0vfp8pdiw949s4td6ja6f5">Task Processing</a></li>
+</ol>

@@ -1,0 +1,20 @@
+<h1 id="linked-data-fragments-server">Linked Data Fragments Server<a aria-hidden="true" class="anchor-heading icon-link" href="#linked-data-fragments-server"></a></h1>
+<ul>
+<li>repo: <a href="https://github.com/LinkedDataFragments/Server.js">https://github.com/LinkedDataFragments/Server.js</a></li>
+<li>written_in: javascript (node)</li>
+</ul>
+<h2 id="motivation">Motivation<a aria-hidden="true" class="anchor-heading icon-link" href="#motivation"></a></h2>
+<p>On today's Web, Linked Data is published in different ways, which include <a href="http://downloads.dbpedia.org/3.9/en/">data dumps</a>, <a href="http://dbpedia.org/page/Linked_data">subject pages</a>, and <a href="http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&#x26;query=CONSTRUCT+%7B+%3Fp+a+dbpedia-owl%3AArtist+%7D%0D%0AWHERE+%7B+%3Fp+a+dbpedia-owl%3AArtist+%7D&#x26;format=text%2Fturtle">results of SPARQL queries</a>. We call each such part a <a href="http://linkeddatafragments.org/"><strong>Linked Data Fragment</strong></a>.</p>
+<p>The issue with the current Linked Data Fragments is that they are either so powerful that their servers suffer from low availability rates (<a href="http://sw.deri.org/~aidanh/docs/epmonitorISWC.pdf">as is the case with SPARQL</a>), or either don't allow efficient querying.</p>
+<p>Instead, this server offers <a href="https://linkeddatafragments.org/specification/quad-pattern-fragments/">Quad Pattern Fragments</a> (a.k.a. <strong><a href="https://linkeddatafragments.org/specification/triple-pattern-fragments/">Triple Pattern Fragments</a></strong>). Each Quad Pattern Fragment offers:</p>
+<ul>
+<li><strong>data</strong> that corresponds to a <em>quad/triple pattern</em> <em>(<a href="http://data.linkeddatafragments.org/dbpedia?subject=&#x26;predicate=rdf%3Atype&#x26;object=dbpedia-owl%3ARestaurant">example</a>)</em>.</li>
+<li><strong>metadata</strong> that consists of the (approximate) total triple count <em>(<a href="http://data.linkeddatafragments.org/dbpedia?subject=&#x26;predicate=rdf%3Atype&#x26;object=">example</a>)</em>.</li>
+<li><strong>controls</strong> that lead to all other fragments of the same dataset <em>(<a href="http://data.linkeddatafragments.org/dbpedia?subject=&#x26;predicate=&#x26;object=%22John%22%40en">example</a>)</em>.</li>
+</ul>
+<p>An example server is available at <a href="http://data.linkeddatafragments.org/">data.linkeddatafragments.org</a>.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/bep5v9hupnpvcu6ew2pb8oj">Ruben Wambacq</a></li>
+</ul>

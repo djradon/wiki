@@ -1,0 +1,2 @@
+
+- "Commonwealth Edison" is a legacy name dating back to the early 20th century, when the term "commonwealth" was commonly used in corporate and government naming to evoke public service or collective benefit.

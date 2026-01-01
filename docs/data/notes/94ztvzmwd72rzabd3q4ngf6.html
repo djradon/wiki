@@ -1,0 +1,14 @@
+<h1 id="landscape-lab">Landscape Lab<a aria-hidden="true" class="anchor-heading icon-link" href="#landscape-lab"></a></h1>
+<ul>
+<li><a href="/wiki/notes/koc1ubhlcup9jeqe8otj2c7">Virtual-Reality</a>
+url: <a href="https://landscapelab.boku.ac.at/">https://landscapelab.boku.ac.at/</a></li>
+</ul>
+<h2 id="component"><a href="/wiki/notes/4us09i7q8upi80q3i71abrd">Component</a><a aria-hidden="true" class="anchor-heading icon-link" href="#component"></a></h2>
+<ul>
+<li>The geodata for the game board are pre-processed with <a href="https://www.qgis.org/de/site/">QGIS</a>. QGIS is also used to send the map as a video stream for the projection.</li>
+<li>The object recognition of the game tokens is realised with <a href="https://opencv.org/">OpenCV</a> and Python.</li>
+<li>The 3D environment is displayed with the free game engine <a href="https://godotengine.org/">Godot</a>.</li>
+<li>The geo data is stored in a <a href="https://postgis.net/">PostGIS database</a> or a geopackage. Single files like shapefiles or GeoTIFFs can be loaded additionally.</li>
+<li><a href="https://gdal.org/">GDAL</a> is used for data import, projections and conversions.</li>
+<li>A separate C++ plugin provides an interface between GDAL and Godot.</li>
+</ul>

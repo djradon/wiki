@@ -1,0 +1,23 @@
+<h1 id="deadline-propagation">Deadline Propagation<a aria-hidden="true" class="anchor-heading icon-link" href="#deadline-propagation"></a></h1>
+<h2 id="claude">Claude<a aria-hidden="true" class="anchor-heading icon-link" href="#claude"></a></h2>
+<p> "deadline propagation" means passing timeout constraints down through the call chain so that:</p>
+<p>Parent operations set deadlines for their sub-operations
+Each tool/service respects the remaining time budget
+Operations fail fast when they can't complete within the allocated time</p>
+<p>Without deadline propagation:</p>
+<p>Agent calls Tool A with no timeout
+Tool A gets stuck/runs slowly
+Entire agent pipeline blocks indefinitely
+Cascade failure as other components wait</p>
+<p>With deadline propagation:</p>
+<p>Agent sets 30s deadline for the overall task
+Tool A gets 10s budget, fails fast if it can't complete
+Agent can retry with Tool B or adjust strategy
+System remains responsive</p>
+<p>This is similar to how gRPC deadlines work, or circuit breakers in microservices, but applied specifically to AI agent toolchains where you have multiple LLM calls, tool executions, and potentially long-running operations that need coordinated timeouts.
+Makes sense in the AI agent context where you're orchestrating multiple potentially-slow operations and need to prevent any single component from hanging the entire workflow.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/7qkdsmo2osj9mbr53tdh6bk">Why Mcps Disregard for 40 Years of Rpc Best Practices Will Burn Enterprises</a></li>
+</ul>

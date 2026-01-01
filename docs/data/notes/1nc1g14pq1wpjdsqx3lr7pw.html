@@ -1,0 +1,57 @@
+<h1 id="json-ld-framing">JSON-LD Framing<a aria-hidden="true" class="anchor-heading icon-link" href="#json-ld-framing"></a></h1>
+<ul>
+<li><a href="https://www.w3.org/TR/json-ld-framing/">https://www.w3.org/TR/json-ld-framing/</a></li>
+</ul>
+<h2 id="description">Description<a aria-hidden="true" class="anchor-heading icon-link" href="#description"></a></h2>
+<ul>
+<li>A Frame can be used by a developer on a JSON-LD document to specify a deterministic layout for a graph... such that statements about a particular subject are bundled together, delimited via { and }, and such that the subjects they relate to "nest" into a particular tree structure that matches what their application expects.</li>
+</ul>
+<h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>
+<p>When using a flattened set of objects that match the frame components:
+Example 3: Flattened library objects</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@vocab"</span><span class="token operator">:</span> <span class="token string">"http://example.org/"</span><span class="token punctuation">,</span>
+    <span class="token property">"contains"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"@id"</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"@graph"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library"</span><span class="token punctuation">,</span>
+    <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Library"</span><span class="token punctuation">,</span>
+    <span class="token property">"location"</span><span class="token operator">:</span> <span class="token string">"Athens"</span><span class="token punctuation">,</span>
+    <span class="token property">"contains"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library/the-republic"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library/the-republic"</span><span class="token punctuation">,</span>
+    <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Book"</span><span class="token punctuation">,</span>
+    <span class="token property">"creator"</span><span class="token operator">:</span> <span class="token string">"Plato"</span><span class="token punctuation">,</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"The Republic"</span><span class="token punctuation">,</span>
+    <span class="token property">"contains"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library/the-republic#introduction"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library/the-republic#introduction"</span><span class="token punctuation">,</span>
+    <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Chapter"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"An introductory chapter on The Republic."</span><span class="token punctuation">,</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"The Introduction"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The Frame Algorithm can create a new document which follows the structure of the frame:
+Example 4: Framed library objects
+Open in playground</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"@vocab"</span><span class="token operator">:</span> <span class="token string">"http://example.org/"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library"</span><span class="token punctuation">,</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Library"</span><span class="token punctuation">,</span>
+  <span class="token property">"location"</span><span class="token operator">:</span> <span class="token string">"Athens"</span><span class="token punctuation">,</span>
+  <span class="token property">"contains"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library/the-republic"</span><span class="token punctuation">,</span>
+    <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Book"</span><span class="token punctuation">,</span>
+    <span class="token property">"creator"</span><span class="token operator">:</span> <span class="token string">"Plato"</span><span class="token punctuation">,</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"The Republic"</span><span class="token punctuation">,</span>
+    <span class="token property">"contains"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://example.org/library/the-republic#introduction"</span><span class="token punctuation">,</span>
+      <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Chapter"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"An introductory chapter on The Republic."</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"The Introduction"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>

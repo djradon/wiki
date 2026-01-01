@@ -1,0 +1,99 @@
+<h1 id="c4-model">C4 Model<a aria-hidden="true" class="anchor-heading icon-link" href="#c4-model"></a></h1>
+<ul>
+<li><a href="/wiki/notes/BzaAaifsfEv5mTiEOFBPA">hasURL</a> <a href="https://c4model.com/">https://c4model.com/</a></li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<ul>
+<li>
+<p><a href="/wiki/notes/Z5JrJztY72EenAzI6jpkH">Structurizr</a></p>
+</li>
+<li>
+<p><a href="/wiki/notes/gpjO8z5hV70J4PqmwnHH2">C4-PlantUML</a></p>
+</li>
+<li>
+<p><a href="/wiki/notes/vtq6sg56vkmi8457sar7ktc">IcePanel</a></p>
+</li>
+<li>
+<p><a href="/wiki/notes/kus582z0btoindtwqtj96r4">Carbide</a></p>
+</li>
+<li></li>
+<li>
+<p><a href="/wiki/notes/oHRXT4k2pnjwiuzWvMwGj">hasHighlight</a></p>
+<ul>
+<li>To document a library, framework or SDK, you might be better off using something like UML</li>
+<li>Sometimes diagrams work better showing dependency relationships (e.g. uses, reads from, etc), and sometimes data flow (e.g. customer update events) works better.
+<ul>
+<li>most relationships can be expressed either way, and the more explicit you can be, the better. For example, describing a relationship as "sends customer update events to" can be more descriptive than simply "customer update events". </li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="comparison">Comparison<a aria-hidden="true" class="anchor-heading icon-link" href="#comparison"></a></h2>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Ilograph</span></div>
+<a href="/wiki/notes/s4v6k6dqca78g8fx19syxrt" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="concrete-vs-abstract-models">Concrete vs Abstract models<a aria-hidden="true" class="anchor-heading icon-link" href="#concrete-vs-abstract-models"></a></h2>
+<ul>
+<li>Concrete diagramming models are bottom-up, fact-based models that prioritize hard information over generalizations.</li>
+<li>Abstract resources are intangible and purely conceptual. Their very existence has an eye-of-the-beholder quality to it. From computing, abstract resources include things like services and domains. 
+<ul>
+<li>e.g. Order Service and User Service (rendered in green) are the abstract resources. These services exist only conceptually; they are nothing more than a convenient way of grouping APIs, Lambdas and database tables. Like concrete resources in the previous section, they can be used to demonstrate higher-level relations and interactions</li>
+</ul>
+</li>
+</ul>
+<h3 id="concrete-modeling-vs-c4">Concrete modeling vs C4<a aria-hidden="true" class="anchor-heading icon-link" href="#concrete-modeling-vs-c4"></a></h3>
+</div></div><p></p><p></p>
+<h2 id="questions">Questions<a aria-hidden="true" class="anchor-heading icon-link" href="#questions"></a></h2>
+<h3 id="is-x-a-container-or-a-component">"is X a container or a component?".<a aria-hidden="true" class="anchor-heading icon-link" href="#is-x-a-container-or-a-component"></a></h3>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<h3 id="overly-prescriptive-abstractions">Overly-prescriptive abstractions<a aria-hidden="true" class="anchor-heading icon-link" href="#overly-prescriptive-abstractions"></a></h3>
+<ul>
+<li>using domain-specific abstractions makes more sense than using arbitrary ones. Diagram authors benefit from thinking about each system on its own terms (and in its own terms). Diagram viewers do, too.</li>
+<li>The top-down, abstraction-first approach of C4 risks focusing too much on a system’s abstractions at the expense of its concrete resources.</li>
+</ul>
+<h3 id="product-selector">Product Selector<a aria-hidden="true" class="anchor-heading icon-link" href="#product-selector"></a></h3>
+<ul>
+<li>
+<p><a href="https://c4model.com/">https://c4model.com/</a> </p>
+</li>
+<li>
+<p>resources: </p>
+<ul>
+<li><a href="https://alpha2phi.medium.com/code-based-diagramming-6b1bcc732aab">https://alpha2phi.medium.com/code-based-diagramming-6b1bcc732aab</a></li>
+<li><a href="https://c4model.com/">https://c4model.com/</a>
+<ul>
+<li><a href="/wiki/notes/qpcmd35zro7tmnvci7xi90u">mentioned</a>
+<ul>
+<li><a href="/wiki/notes/udn01oc6pzn4p6id6okph63">Model</a></li>
+<li><a href="/wiki/notes/0h5iqqky382i4tx7cfkoj6t">Pumla</a></li>
+<li><a href="/wiki/notes/ubbi0p05q2fisihnqea0fsl">Rdb Model</a></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.ilograph.com/blog/posts/concrete-diagramming-models/">https://www.ilograph.com/blog/posts/concrete-diagramming-models/</a></li>
+<li><a href="https://www.reddit.com/r/softwarearchitecture/comments/16upcj2/dynamic_nested_diagram_for_software_architecture/">https://www.reddit.com/r/softwarearchitecture/comments/16upcj2/dynamic_nested_diagram_for_software_architecture/</a></li>
+<li><a href="https://medium.com/nick-tune-tech-strategy-blog/domain-driven-architecture-diagrams-139a75acb578">https://medium.com/nick-tune-tech-strategy-blog/domain-driven-architecture-diagrams-139a75acb578</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/gpjO8z5hV70J4PqmwnHH2">C4-PlantUML</a></li>
+<li><a href="/wiki/notes/vtq6sg56vkmi8457sar7ktc">IcePanel</a></li>
+<li><a href="/wiki/notes/lzc6hm57p2c9p3ldnxbbbap">LikeC4</a></li>
+<li><a href="/wiki/notes/gmgbp8i7sdolv6u8s6ijrat">Diagrams (Mingrammer)</a></li>
+</ul>

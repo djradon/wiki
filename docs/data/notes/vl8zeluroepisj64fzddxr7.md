@@ -1,0 +1,2 @@
+
+- [[p.hasExpertise]] [[prdct.node]]

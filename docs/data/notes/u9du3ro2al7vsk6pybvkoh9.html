@@ -1,0 +1,43 @@
+<h1 id="noosphere">Noosphere<a aria-hidden="true" class="anchor-heading icon-link" href="#noosphere"></a></h1>
+<ul>
+<li><a href="https://subconscious.network/">https://subconscious.network/</a></li>
+<li>created_by: <a href="/wiki/notes/j7dyi43asjcv12ht264p13a">Subconscious</a></li>
+<li>repo: <a href="https://github.com/subconsciousnetwork/noosphere">https://github.com/subconsciousnetwork/noosphere</a></li>
+<li>related: 
+<ul>
+<li><a href="/wiki/notes/7j4g7bp0ffb8mzmw377kezs">Decentralized Identifiers</a></li>
+<li><a href="/wiki/notes/aj1qox45znol5rmjs5524x0">Cid</a></li>
+<li><a href="/wiki/notes/bwq98sgb2zipdcq829axy97">Distributed Hash Table</a></li>
+</ul>
+</li>
+<li>built-on: <a href="/wiki/notes/aKhgknoABR0az8Mm1zHT2">libp2p</a></li>
+</ul>
+<h2 id="description">Description<a aria-hidden="true" class="anchor-heading icon-link" href="#description"></a></h2>
+<h3 id="public-key-infrastructure">Public key infrastructure<a aria-hidden="true" class="anchor-heading icon-link" href="#public-key-infrastructure"></a></h3>
+<p>When Alice and Bob exchanged contact details in the story above, the exchanged data included public keys (encoded as <a href="/wiki/notes/7j4g7bp0ffb8mzmw377kezs">DIDs</a> that represent their respective notebooks. Bob's public key was then recorded against a pet name in Alice's notebook</p>
+<h3 id="content-addressing">Content Addressing<a aria-hidden="true" class="anchor-heading icon-link" href="#content-addressing"></a></h3>
+<p>As Alice updated her notebook to include Bob's name, a snapshot of her entire notebook at its latest state was recorded and condensed down to a short, unique ID: a content ID, or <a href="/wiki/notes/aj1qox45znol5rmjs5524x0">Cid</a>. Such a snapshot and corresponding CID is recorded for every update to every user's notebook (including Bob's).</p>
+<p>Similarly, when Bob updated their animal-notes to include a link to cat-thoughts, a new snapshot of the note was recorded and a CID was computed for it. When Alice viewed the index of links in Bob's notebook, what she actually viewed was a mapping of note slugs to their CIDs.</p>
+<h3 id="immutable-data">Immutable data<a aria-hidden="true" class="anchor-heading icon-link" href="#immutable-data"></a></h3>
+<p>Noosphere data is formatted in terms of <a href="/wiki/notes/x3wgq779gw0i1jh6iuwdccd">Ipld</a> and encoded in a low-overhead binary format called DAG-CBOR. Even though a full snapshot is recorded with every revision, new storage space is only allocated for the delta between any two revisions. This strategy is similar to how Git efficiently stores the delta between any two sequential commits.</p>
+<p>A data structure that we call a Memo is used to pair open-ended header fields with a retained historical record of revisions to notebooks and their contents:</p>
+<h3 id="p2p-routing-and-discovery">P2P routing and discovery<a aria-hidden="true" class="anchor-heading icon-link" href="#p2p-routing-and-discovery"></a></h3>
+<p>Every user who publishes to the network does so via a gateway server. The gateway represents the boundary edge of user sovereignty, and also gives the user a reliably available foothold in the Noosphere network. The owner of a notebook is also the owner of the gateway, and third-parties neither have or need direct access to it (even in managed hosting scenarios).</p>
+<p>The owner of a notebook enables the gateway to publish the notebook to the network using a <a href="/wiki/notes/8h6vqvqt1mb629yktcb1eoq">UCAN</a>-based authorization scheme. UCANs establish a cryptographic chain of proof that allows anyone to verify in place that the gateway was authorized to perform actions such as signing content on the user's behalf (and without asking the user to share cryptographic keys with the gateway).</p>
+<p>When the user updates their notebook, they replicate the revision deltas to the gateway over HTTP (as network availability allows), and also tell the gateway which CID represents the latest version of the notebook. The revision deltas are syndicated to the public network via IPFS. Then, the gateway publishes the latest revision CID to a <a href="/wiki/notes/bwq98sgb2zipdcq829axy97">Distributed Hash Table</a> (see: Noosphere Name System) mapping it to the notebook's public key and pairing it with the UCAN proof chain.</p>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>could use an intermediate state, like local changes to a git repo, before "changes" get recorded. </li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/2f80irygyfi94c83m1jjd5z">The Minimal Definition of User Agency</a></li>
+<li><a href="https://github.com/subconsciousnetwork/noosphere/blob/main/design/explainer.md">https://github.com/subconsciousnetwork/noosphere/blob/main/design/explainer.md</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/k13y6rrotb17n2s1ob1ndna">Subconscious</a></li>
+<li><a href="/wiki/notes/8h6vqvqt1mb629yktcb1eoq">UCAN</a></li>
+<li><a href="/wiki/notes/5efwjmjvaaasfsv4sg6sr67">Decentralization</a></li>
+</ul>

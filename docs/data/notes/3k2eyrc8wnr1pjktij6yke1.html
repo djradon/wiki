@@ -1,0 +1,37 @@
+<h1 id="video-game-ontology">Video Game Ontology<a aria-hidden="true" class="anchor-heading icon-link" href="#video-game-ontology"></a></h1>
+<ul>
+<li>dead since 2015</li>
+<li>url: <a href="http://vocab.linkeddata.es/vgo/">http://vocab.linkeddata.es/vgo/</a></li>
+<li><a href="/wiki/notes/5t1rd98zp1xb8l4qyjqip12">Fictional Ontologies</a></li>
+<li>repo: <a href="https://github.com/dgarijo/VideoGameOntology">https://github.com/dgarijo/VideoGameOntology</a></li>
+<li>uses: <a href="/wiki/notes/w9unuoqka8jtbjfxe77zlmm">LODE</a></li>
+</ul>
+<p><img src="/wiki/assets/images/2024-04-04-11-41-00.png"></p>
+<h2 id="overview">Overview<a aria-hidden="true" class="anchor-heading icon-link" href="#overview"></a></h2>
+<p>Classes</p>
+<pre><code>Achievement Character Collection Completion Curiosity Fandom Feature Gain event Game Game event Game Product Genre Hard mode In-app purchase event Instantaneous event Item Leaderboard Lose event Loyalty Luck Menu event Minigame Multiplayer Paragon Player Player event Playing area Session Special play style Tutorial Veteran Virtuosity 
+</code></pre>
+<p>Properties</p>
+<pre><code>creator has feature has game genre has leaderboard has playing area is achieved in session is achievement in game is character in game is character in session is event associated to player is event in game is event in session is event related to item is event triggered by character is friend with player is item in game is player in session is session in game lives in owns achievement owns character owns item plays game purchases game offering unlocks achievement 
+</code></pre>
+<p>Data Properties</p>
+<pre><code>end Time event Time event Name release Date start Time username 
+</code></pre>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li><a href="http://purl.org/net/VideoGameOntology#Item">http://purl.org/net/VideoGameOntology#Item</a> does differentiate between abstract items from one that is actually encountered
+<ul>
+<li>the example of "Potion" is more like ItemType</li>
+</ul>
+</li>
+<li><a href="http://purl.org/net/VideoGameOntology#LoseEvent">http://purl.org/net/VideoGameOntology#LoseEvent</a> doesn't differentiate between an agent losing something and a character losing something. 
+<ul>
+<li>superclasse GameEvent says "GameEvent describes an event that takes place in a game without straight player interaction" but a LoseEvent example is "a player can lose a character due to trade with another player"</li>
+</ul>
+</li>
+<li><a href="http://vocab.linkeddata.es/vgo/#purchasesGameOffering">http://vocab.linkeddata.es/vgo/#purchasesGameOffering</a> and GameProduct: "Basically a Game Product can be anything, a character, an item or an achievement." but has no domain specified... </li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="/wiki/notes/u1yx76nfnn6pa7zejvnjd4p">An Ontology for Videogame Interoperability</a></li>
+</ul>

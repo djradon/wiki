@@ -1,0 +1,17 @@
+<h1 id="workflow">Workflow<a aria-hidden="true" class="anchor-heading icon-link" href="#workflow"></a></h1>
+<p>The durable, resilient Dapr Workflow capability:</p>
+<ul>
+<li>Offers a built-in workflow runtime for driving Dapr Workflow execution.</li>
+<li>Provides SDKs for authoring workflows in code, using any language.</li>
+<li>Provides HTTP and gRPC APIs for managing workflows (start, query, pause/resume, raise event, terminate, purge).</li>
+<li>Integrates with any other workflow runtime via workflow components. (!)</li>
+</ul>
+<h2 id="details">Details<a aria-hidden="true" class="anchor-heading icon-link" href="#details"></a></h2>
+<ul>
+<li>Because the workflow engine will replay the workflow several times, the workflow code must be deterministic. This means that each time the workflow replays, the code must behave in the same way as the initial execution, and any arguments used as activity inputs should stay the same.</li>
+<li>Any non-deterministic code should go into activities. This includes, calling other (Dapr) services, state stores, pub/sub systems, and external endpoints. The workflow should only be responsible for the business logic that defines the sequence of the activities.</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.diagrid.io/blog/authoring-dapr-workflows-in-dotnet">https://www.diagrid.io/blog/authoring-dapr-workflows-in-dotnet</a></li>
+</ul>

@@ -1,0 +1,47 @@
+<h1 id="hla-time-management-services">HLA Time Management Services<a aria-hidden="true" class="anchor-heading icon-link" href="#hla-time-management-services"></a></h1>
+<h2 id="referredfrom-httpsenwikipediaorgwikihigh_level_architecturetime_management_services"><a href="/wiki/notes/3l7j0k3HM1rYpIczkEHeS">referredFrom</a> <a href="https://en.wikipedia.org/wiki/High_Level_Architecture#Time_Management_Services">https://en.wikipedia.org/wiki/High_Level_Architecture#Time_Management_Services</a><a aria-hidden="true" class="anchor-heading icon-link" href="#referredfrom-httpsenwikipediaorgwikihigh_level_architecturetime_management_services"></a></h2>
+<p>Some important concepts in HLA Time Management are:</p>
+<p><strong>Logical time</strong>: A time axis in HLA, starting at zero. Logical time is used for Time Management timestamps and operations. The logical time axis can be mapped to the scenario time of the federation. An example of such a mapping is to let zero represent the scenario time 8:00 of the 1-Jan-<a href="https://en.wikipedia.org/wiki/1066">1066</a> and let an increment by one represent one second of the scenario.</p>
+<p><strong>Lookahead</strong>: A time interval specifying the lowest time in the future for which a federate will produce messages. For a federate with a fixed time step, this is usually the length of the time step.</p>
+<p><strong>Granted</strong>: A federate is granted (allowed to advance) to a particular logical time by the RTI, when all time-stamped messages up to that time have been delivered. The federate can then safely start calculating messages with a timestamp in the future. This timestamp may not be earlier than the granted time plus the federates lookahead.</p>
+<p><strong>Advancing</strong>: When a federate has finished producing data for the granted time plus the lookahead, it may request to be advanced to a later time, which also means that it promises not to produce any more messages with a time stamp less than the requested time plus the lookahead. The federate is now in the advancing state.</p>
+<p><strong>Time Regulating</strong>: A federate that sends time stamped events is considered Time Regulating since the time advance by other federates may be regulated by this.</p>
+<p><strong>Time Constrained</strong>: A federate that receives time managed events is considered Time Constrained since the reception of time stamped messages, constrains its time advance.</p>
+<p>The main principles of HLA Time Management are that:</p>
+<ul>
+<li>Each time-regulating federate assigns a time stamp to messages (updates and interactions) when they are sent, indicating the scenario time at which the message is valid.</li>
+<li>The RTI manages delivery of messages to time-constrained federates, with messages from time-regulating federates delivered at the appropriate time using a Time Stamp Order queue.</li>
+<li>Time-constrained federates request permission from the RTI to advance their time.</li>
+<li>The RTI grants a time advance to a time-constrained federates when it is sure that the federate cannot receive a message with a time stamp in its past.</li>
+</ul>
+<p>Example of Lookahead, granted and advancing:</p>
+<ol>
+<li>A federate uses a fixed time step of 10 and has a Lookahead of 10.</li>
+<li>The federate is granted to logical time 50 by the RTI. The RTI thus guarantees that all messages with time step less or equal to 50 have been delivered to the federate.</li>
+<li>The federate now has all the necessary data to correctly calculate and send messages for the granted time plus Lookahead, i.e. 60.</li>
+<li>When the federate has sent all messages with timestamp 60, it requests to be advanced to time 60. It thereby promises not to send any messages with a timestamp less than 70.</li>
+<li>The RTI delivers all messages with timestamp less or equal to 60 to the federate. It then grants the federate to time 60.</li>
+<li>Etc.</li>
+</ol>
+<p>If at least one federate in the federation performs pacing, i.e. correlates their time advance requests with a real time clock, the federation may run in real time or scaled real time. Without pacing, the federation will run as fast as possible (e.g., federations that do not require human interaction at runtime nor interfaces with systems that depend upon a real-time clock can run as fast as computing resources will allow).</p>
+<p>Key services include:</p>
+<ul>
+<li>EnableTimeConstrained and EnableTimeRegulating that enables theses modes for a federate</li>
+<li>TimeAdvanceRequest whereby a federate requests to be advanced to a specified logical time</li>
+<li>TimeAdvancedGrant whereby the RTI informs a federate that it is granted to a specified logical time.</li>
+<li>EnableAsynchronousDelivery that enables delivery of Receive Order messages both when a federate is in the granted and advancing state.</li>
+</ul>
+<p>For event driven simulation it is also possible for a federate to request to be advanced to the next event using the following service:</p>
+<ul>
+<li>NextMessageRequest whereby a federate requests to be advanced to the timestamp of the next message due for delivery to the federate, or a specified logical time, whichever has a lower timestamp.</li>
+</ul>
+<p>Another important concept is <strong>Greatest Available Logical Time</strong> (GALT). The greatest time that each federate can be granted to, depends on the time that other federates have been granted to as well as their lookahead. The GALT for a federate specifies how far a federate can be granted, without having to wait for other federates to be granted. This is particularly interesting for a federate that joins late into a time managed federation.</p>
+<p>Key services for GALT are:</p>
+<ul>
+<li>QueryGALT that returns the GALT for the calling federate.</li>
+</ul>
+<p>More advanced services include:</p>
+<ul>
+<li>FlushQueueRequest whereby a federate can request delivery of all queued, timestamped messages, no matter how far in the future their timestamp is.</li>
+<li>Retract whereby a federate can request that an already sent message is retracted. This is useful in optimistic simulation.</li>
+</ul>

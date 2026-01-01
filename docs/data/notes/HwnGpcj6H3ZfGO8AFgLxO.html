@@ -1,0 +1,25 @@
+<h1 id="composition-alone-cant-replace-inheritance">Composition Alone Cant Replace Inheritance<a aria-hidden="true" class="anchor-heading icon-link" href="#composition-alone-cant-replace-inheritance"></a></h1>
+<ul>
+<li><a href="/wiki/notes/BzaAaifsfEv5mTiEOFBPA">hasURL</a> <a href="https://javascript.plainenglish.io/composition-alone-cant-replace-inheritance-606760f03d60">https://javascript.plainenglish.io/composition-alone-cant-replace-inheritance-606760f03d60</a></li>
+<li><a href="/wiki/notes/fLRYIQbFRfaAleFFXUF3m">hasTopic</a> javascript <a href="/wiki/notes/GGnPg6mDqj12LuPLAwMMe">Code Reuse</a></li>
+<li><a href="/wiki/notes/iM2CWnAxkkYbPEG2D6O37">hasSummaryPoints</a>
+<ul>
+<li>Sometimes, you simply want to have all of your shared methods exist flat on the same object as you would get with inheritance.
+<ul>
+<li>But with P.A.I.L restrictions: 
+<ul>
+<li>private
+<ul>
+<li>You are using inheritance purely for code reuse, not for public hierarchies.</li>
+</ul>
+</li>
+<li>base classes abstract</li>
+<li>Isolate your base and child classes. Your base and child classes should be completely oblivious of the properties the other class provides. A child class should never override a base class’s methods or even access a property inherited from the base class, and a base class should never expect a child class to provide a missing method implementation</li>
+<li>last resort. Only use restricted inheritance when no other options are good enough. Inheritance should be a dusty tool in the far corner of your tool shed</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>

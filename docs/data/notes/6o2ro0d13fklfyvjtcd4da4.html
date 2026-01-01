@@ -1,0 +1,286 @@
+<h1 id="kosmion-breakthroughs">Kosmion Breakthroughs<a aria-hidden="true" class="anchor-heading icon-link" href="#kosmion-breakthroughs"></a></h1>
+<h2 id="properties-that-specify-restrictive-domain-and-range-whats-the-point-it-forces-people-to-buy-into-your-class-hierarchy-re-usable-properties-should-have-minimal-domain-restrictions-datatype-properties-can-understandably-have-range-restrictions-but-object-properties-should-have-minimal-range-restrictions-too-show-me-counter-examples">Properties that specify restrictive domain and range... what's the point? It forces people to buy into your class hierarchy. Re-usable properties should have minimal domain restrictions. Datatype properties can understandably have range restrictions, but object properties should have minimal range restrictions too. Show me counter-examples.<a aria-hidden="true" class="anchor-heading icon-link" href="#properties-that-specify-restrictive-domain-and-range-whats-the-point-it-forces-people-to-buy-into-your-class-hierarchy-re-usable-properties-should-have-minimal-domain-restrictions-datatype-properties-can-understandably-have-range-restrictions-but-object-properties-should-have-minimal-range-restrictions-too-show-me-counter-examples"></a></h2>
+<p>You raise a very good point. <strong>Properties with restrictive domain and range</strong> can limit the <strong>reusability</strong> of those properties across different class hierarchies. Reusable properties should ideally have <strong>minimal or no domain and range restrictions</strong>, particularly if the intent is to encourage broader usage and adoption across ontologies.</p>
+<h3 id="when-restrictive-domain-and-range-are-problematic">When Restrictive Domain and Range Are Problematic:<a aria-hidden="true" class="anchor-heading icon-link" href="#when-restrictive-domain-and-range-are-problematic"></a></h3>
+<ol>
+<li><strong>Forced Class Hierarchy Adoption</strong>:
+<ul>
+<li>Properties with restrictive domains and ranges force users to adopt your specific <strong>class structure</strong>. If you want to apply those properties in different contexts that don't match the domain or range exactly, you either have to subclass from the defined hierarchy or avoid using the property, both of which can be cumbersome.</li>
+</ul>
+</li>
+<li><strong>Limits to Reusability</strong>:
+<ul>
+<li><strong>Domain restrictions</strong> require that any subject of a property belongs to a specific class, making it less reusable across different entities.</li>
+<li><strong>Range restrictions</strong> require that any object of the property must belong to a specific class, limiting the types of relationships that can be expressed.</li>
+</ul>
+</li>
+</ol>
+<h3 id="examples-where-restrictive-domain-and-range-are-reasonable">Examples Where Restrictive Domain and Range Are Reasonable:<a aria-hidden="true" class="anchor-heading icon-link" href="#examples-where-restrictive-domain-and-range-are-reasonable"></a></h3>
+<ul>
+<li><strong>Datatype Properties with Range Restrictions</strong>:
+<ul>
+<li>For datatype properties, setting a <strong>range</strong> restriction like <code>xsd:string</code> or <code>xsd:dateTime</code> can be useful to enforce data <strong>consistency</strong>.</li>
+<li>Example: A property like <code>foaf:age</code> has a range of <code>xsd:integer</code> to ensure age values are always represented consistently.</li>
+</ul>
+</li>
+</ul>
+<h3 id="examples-where-domainrange-restrictions-are-problematic">Examples Where Domain/Range Restrictions Are Problematic:<a aria-hidden="true" class="anchor-heading icon-link" href="#examples-where-domainrange-restrictions-are-problematic"></a></h3>
+<ol>
+<li><strong>FOAF Example</strong>:
+<ul>
+<li><strong><code>foaf:knows</code></strong>: This property has a domain of <strong><code>foaf:Person</code></strong> and a range of <strong><code>foaf:Person</code></strong>. This means:
+<ul>
+<li>You can only say that a <strong>person</strong> knows another <strong>person</strong>.</li>
+<li>You cannot use <code>foaf:knows</code> to relate any other type of entities, even though it might be conceptually reasonable (e.g., a <strong>Syngent</strong> knowing a person).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Schema.org Example</strong>:
+<ul>
+<li><strong><code>schema:parent</code></strong>: Has a restrictive domain and range that assumes only people can have parents, but there could be scenarios in a fantasy world where a <strong>character</strong> has a non-human parent. Restricting <code>schema:parent</code> to only <code>schema:Person</code> would limit how this property could be applied in more complex ontologies.</li>
+</ul>
+</li>
+</ol>
+<h3 id="counter-example-using-minimal-restrictions">Counter-Example: Using Minimal Restrictions<a aria-hidden="true" class="anchor-heading icon-link" href="#counter-example-using-minimal-restrictions"></a></h3>
+<ul>
+<li><strong>RDFS Properties</strong>:
+<ul>
+<li><strong><code>rdfs:label</code></strong> and <strong><code>rdfs:seeAlso</code></strong> are examples of <strong>minimally restricted properties</strong>:
+<ul>
+<li><strong><code>rdfs:label</code></strong> can be used with any subject, with no domain specified, allowing it to be used in virtually any context where a human-readable label is needed.</li>
+<li><strong><code>rdfs:seeAlso</code></strong> also has no domain, allowing it to be used to provide additional references for any kind of RDF resource.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="considerations-for-your-use-case-in-kosmion">Considerations for Your Use Case in Kosmion:<a aria-hidden="true" class="anchor-heading icon-link" href="#considerations-for-your-use-case-in-kosmion"></a></h3>
+<ul>
+<li>To <strong>maximize reusability</strong>:
+<ul>
+<li>Avoid specifying strict <strong>domain</strong> and <strong>range</strong> for properties, especially for <strong>object properties</strong>.</li>
+<li>Only enforce <strong>datatype range</strong> when consistency is crucial, such as for numerical or date values.</li>
+</ul>
+</li>
+<li>For example, if you want a <strong>relator property</strong> that links any two entities, defining it without a specific domain and range will make it far more reusable across different classes and hierarchies.</li>
+</ul>
+<h3 id="conclusion">Conclusion:<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h3>
+<ul>
+<li><strong>Restrictive domain and range</strong> can make an ontology more <strong>rigid</strong> and less reusable, often forcing users to buy into a specific class structure.</li>
+<li>For <strong>reusable properties</strong>, keeping <strong>domain and range minimal</strong> allows for broader applicability and more <strong>flexible integration</strong> across ontologies.</li>
+</ul>
+<p>Would you like to adjust any of the properties in your current ontology draft to make them more reusable by removing restrictive domains or ranges?</p>
+<h2 id="to-make-immutable-rdf-feasible-theres-going-to-have-to-be-some-indirection-between-an-iri-and-what-you-might-call-a-relator-series-or-a-relator-succession-ie-a-set-of-micro-datasets-that-when-an-update-needs-to-be-made-a-new-micro-dataset-gets-created-with-the-latest-data-and-no-tombstone-the-previous-latest-dataset-get-a-tombstone-and-successor-set--and-then-either-a-pointer-gets-updated-on-the-entitys-iri-entry-or-a-pointer-gets-updated-on-the-dataset-point-to-the-entitys-iri-or-both">To make immutable RDF feasible, there's going to have to be some indirection between an IRI and what you might call a "relator series" or a "relator succession", i.e., a set of micro-datasets that, when an update needs to be made, a new micro-dataset gets created with the latest data and no tombstone, the previous "latest dataset" get a tombstone and successor set,  and then either a pointer gets updated on the entity's IRI entry, or a pointer gets updated on the dataset point to the entity's IRI, or both.<a aria-hidden="true" class="anchor-heading icon-link" href="#to-make-immutable-rdf-feasible-theres-going-to-have-to-be-some-indirection-between-an-iri-and-what-you-might-call-a-relator-series-or-a-relator-succession-ie-a-set-of-micro-datasets-that-when-an-update-needs-to-be-made-a-new-micro-dataset-gets-created-with-the-latest-data-and-no-tombstone-the-previous-latest-dataset-get-a-tombstone-and-successor-set--and-then-either-a-pointer-gets-updated-on-the-entitys-iri-entry-or-a-pointer-gets-updated-on-the-dataset-point-to-the-entitys-iri-or-both"></a></h2>
+<p>This is an interesting approach to handling <strong>immutable RDF</strong> while maintaining the <strong>succession of states</strong> for entities and their relationships. By introducing indirection and a concept of <strong>relator succession</strong>, you can manage updates efficiently without modifying the original triples, which aligns well with an immutable data philosophy.</p>
+<p>Here’s a breakdown of how this approach might work and how it could be integrated into your Kosmion ontology:</p>
+<h3 id="key-components-for-implementing-relator-succession">Key Components for Implementing Relator Succession:<a aria-hidden="true" class="anchor-heading icon-link" href="#key-components-for-implementing-relator-succession"></a></h3>
+<ol>
+<li>
+<p><strong>Relator Series/Succession</strong>:</p>
+<ul>
+<li>This involves creating a <strong>series of related relators</strong>, each representing an updated state of a particular relationship or entity.</li>
+<li>Each new version of a <strong>micro-dataset</strong> that replaces the previous one would include an <strong>updated pointer</strong> that points to the latest version.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using Tombstones and Successor Relations</strong>:</p>
+<ul>
+<li>When a <strong>new micro-dataset</strong> is created (for an update), the previous version receives:
+<ul>
+<li>A <strong>tombstone marker</strong> (e.g., <code>:tombstone</code> with a timestamp).</li>
+<li>A reference to its <strong>successor</strong> (e.g., <code>:relator-successor</code>), pointing to the newly created version.</li>
+</ul>
+</li>
+<li>This effectively chains the datasets, allowing a traversal to find the latest state while preserving historical data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Indirection and Mutable Pointers</strong>:</p>
+<ul>
+<li><strong>Mutable pointers</strong> could be implemented by having a designated <strong>IRI</strong> that always points to the current/latest micro-dataset for an entity. This IRI would not change, but the underlying <strong>pointer</strong> (an RDF statement) would be updated to reference the latest version.</li>
+<li>Alternatively, the <strong>dataset itself</strong> could include a mutable pointer that directs to the entity’s IRI or vice versa.</li>
+</ul>
+</li>
+</ol>
+<h3 id="practical-example-using-dave-richardson-data">Practical Example Using Dave Richardson Data<a aria-hidden="true" class="anchor-heading icon-link" href="#practical-example-using-dave-richardson-data"></a></h3>
+<p>To implement this for the <strong>Dave Richardson</strong> entity, consider introducing a relator mechanism that manages updates:</p>
+<h4 id="current-dataset">Current Dataset:<a aria-hidden="true" class="anchor-heading icon-link" href="#current-dataset"></a></h4>
+<pre class="language-turtle"><code class="language-turtle"><span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://xmlns.com/foaf/0.1/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://www.w3.org/ns/prov#<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/<span class="token punctuation">></span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Dave Richardson (Person)"</span> <span class="token punctuation">;</span>
+    <span class="token keyword">a</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">Person</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">name</span></span> <span class="token string">"Dave Richardson"</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">homepage</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span><span class="token local-name">wasDerivedFrom</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v0<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+    <span class="token punctuation">.</span>
+</code></pre>
+<h4 id="next-version-with-tombstone-and-successor">Next Version with Tombstone and Successor:<a aria-hidden="true" class="anchor-heading icon-link" href="#next-version-with-tombstone-and-successor"></a></h4>
+<p>Assume we need to update the homepage. A new micro-dataset would be created:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://xmlns.com/foaf/0.1/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://www.w3.org/ns/prov#<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Dave Richardson (Person)"</span> <span class="token punctuation">;</span>
+    <span class="token keyword">a</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">Person</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">name</span></span> <span class="token string">"Dave Richardson"</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">homepage</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://new-homepage.com/<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span><span class="token local-name">wasDerivedFrom</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v0<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+    <span class="token punctuation">.</span>
+
+<span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v0<span class="token punctuation">></span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">tombstone</span></span> <span class="token string">"2024-10-12T12:00:00Z"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">dateTime</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">relator-successor</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+    <span class="token punctuation">.</span>
+</code></pre>
+<h4 id="indirection-using-mutable-pointer">Indirection Using Mutable Pointer<a aria-hidden="true" class="anchor-heading icon-link" href="#indirection-using-mutable-pointer"></a></h4>
+<p>Instead of changing <code>&#x3C;https://djradon.github.io/dave-richardson/></code> directly, it could point to the latest <strong>versioned dataset</strong>:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/<span class="token punctuation">></span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">latestVersion</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+</code></pre>
+<p>This way:</p>
+<ul>
+<li>The IRI <code>&#x3C;https://djradon.github.io/dave-richardson/></code> always stays the same, acting as an <strong>anchor</strong> for the entity.</li>
+<li>The actual data is versioned, and changes are handled through <strong>succession relations</strong> and <strong>tombstones</strong>.</li>
+</ul>
+<h3 id="benefits-of-this-approach">Benefits of This Approach:<a aria-hidden="true" class="anchor-heading icon-link" href="#benefits-of-this-approach"></a></h3>
+<ol>
+<li>
+<p><strong>Immutability</strong>:</p>
+<ul>
+<li>RDF data remains <strong>immutable</strong>, ensuring that historical states are preserved.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Control</strong>:</p>
+<ul>
+<li>Users or agents querying the data can easily traverse the <strong>succession chain</strong> to understand how the data has evolved over time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clear Historical Provenance</strong>:</p>
+<ul>
+<li>Using <strong>PROV-O</strong> properties like <code>prov:wasDerivedFrom</code> makes it easy to trace the origins of each version.</li>
+</ul>
+</li>
+</ol>
+<h3 id="considerations">Considerations:<a aria-hidden="true" class="anchor-heading icon-link" href="#considerations"></a></h3>
+<ul>
+<li><strong>Query Complexity</strong>: Tracking the latest state involves traversing the chain of successors or following the <strong>mutable pointer</strong>.</li>
+<li><strong>Storage Overhead</strong>: Each update results in a new micro-dataset, which could lead to increased storage requirements, although it guarantees immutability.</li>
+</ul>
+<p>This solution provides a structured way to maintain immutable RDF data while still allowing for updates, and it could be very powerful in the context of <strong>Kosmion</strong>. Would you like to expand on this or add these mechanisms to your current draft?</p>
+<h2 id="the-iris-have-to-stay-the-same-latestversion-is-one-approach-mutable-pointer-and-its-a-good-one-but-a-you-have-to-keep-changing-it-so-its-not-consisten-with-immutability-elsewhere-i-guess-its-okay-to-have-2-classes-of-iris--b-theres-no-date-information-so-bitemporal-timetravel-is-tricky-is-there-any-mechanism-in-rdf-for-a-dataset-series-maybe-named-graphs-could-work-with-the-tombstone-attached-to-the-named-graphs">The IRIs have to stay the same. :latestVersion is one approach, "mutable pointer", and it's a good one, but a) you have to keep changing it (so it's not consisten with immutability elsewhere, I guess it's okay to have 2 classes of IRIs, ), b) there's no date information so bitemporal timetravel is tricky. Is there any mechanism in RDF for a "dataset series"? Maybe named graphs could work, with the tombstone attached to the named graphs.<a aria-hidden="true" class="anchor-heading icon-link" href="#the-iris-have-to-stay-the-same-latestversion-is-one-approach-mutable-pointer-and-its-a-good-one-but-a-you-have-to-keep-changing-it-so-its-not-consisten-with-immutability-elsewhere-i-guess-its-okay-to-have-2-classes-of-iris--b-theres-no-date-information-so-bitemporal-timetravel-is-tricky-is-there-any-mechanism-in-rdf-for-a-dataset-series-maybe-named-graphs-could-work-with-the-tombstone-attached-to-the-named-graphs"></a></h2>
+<h3 id="addressing-immutable-rdf-and-dataset-series">Addressing Immutable RDF and Dataset Series<a aria-hidden="true" class="anchor-heading icon-link" href="#addressing-immutable-rdf-and-dataset-series"></a></h3>
+<p>For implementing an immutable RDF approach while keeping <strong>IRIs consistent</strong> across versions, here are some mechanisms that could help, including considerations for <strong>dataset series</strong> and how <strong>named graphs</strong> could be leveraged.</p>
+<h3 id="challenge">Challenge:<a aria-hidden="true" class="anchor-heading icon-link" href="#challenge"></a></h3>
+<ul>
+<li><strong>IRIs need to remain consistent</strong> for entities, while <strong>updates</strong> should be managed in a way that preserves immutability.</li>
+<li>You are considering two classes of IRIs: 
+<ul>
+<li><strong>Mutable pointers</strong> (e.g., pointing to the latest version) for practical purposes.</li>
+<li><strong>Immutable identifiers</strong> that do not change, representing entities throughout time.</li>
+</ul>
+</li>
+<li><strong>Bitemporality</strong> complicates matters because tracking both <strong>transaction time</strong> and <strong>valid time</strong> requires information about when the dataset was valid as well as when it was recorded.</li>
+</ul>
+<h3 id="possible-mechanisms-to-implement-dataset-series">Possible Mechanisms to Implement Dataset Series<a aria-hidden="true" class="anchor-heading icon-link" href="#possible-mechanisms-to-implement-dataset-series"></a></h3>
+<h4 id="1-named-graphs-for-relator-series">1. <strong>Named Graphs for Relator Series</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#1-named-graphs-for-relator-series"></a></h4>
+<ul>
+<li>Use <strong>named graphs</strong> to manage <strong>dataset series</strong>. Each named graph could represent a specific <strong>version</strong> of the data, including metadata such as a <strong>tombstone</strong> or <strong>validity timestamps</strong>.</li>
+<li>Named graphs make it possible to define the <strong>scope</strong> of triples, allowing you to group all the data about a specific version under a named IRI.</li>
+</ul>
+<h5 id="example-with-named-graphs">Example with Named Graphs:<a aria-hidden="true" class="anchor-heading icon-link" href="#example-with-named-graphs"></a></h5>
+<pre class="language-turtle"><code class="language-turtle"><span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://xmlns.com/foaf/0.1/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://www.w3.org/ns/prov#<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token keyword">GRAPH</span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/<span class="token punctuation">></span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Dave Richardson (Person)"</span> <span class="token punctuation">;</span>
+        <span class="token keyword">a</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">Person</span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">name</span></span> <span class="token string">"Dave Richardson"</span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">homepage</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span><span class="token local-name">generatedAtTime</span></span> <span class="token string">"2024-10-12T12:00:00Z"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">dateTime</span></span> <span class="token punctuation">;</span>
+        <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">GRAPH</span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v2<span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/<span class="token punctuation">></span></span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Dave Richardson (Person)"</span> <span class="token punctuation">;</span>
+        <span class="token keyword">a</span> <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">Person</span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">name</span></span> <span class="token string">"Dave Richardson"</span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">foaf<span class="token punctuation">:</span></span><span class="token local-name">homepage</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://new-homepage.com/<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span><span class="token local-name">wasDerivedFrom</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">prov<span class="token punctuation">:</span></span><span class="token local-name">generatedAtTime</span></span> <span class="token string">"2024-11-01T08:00:00Z"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">dateTime</span></span> <span class="token punctuation">;</span>
+        <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+<span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">tombstone</span></span> <span class="token string">"2024-11-01T08:00:00Z"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">dateTime</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">relator-successor</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v2<span class="token punctuation">></span></span> <span class="token punctuation">;</span>
+    <span class="token punctuation">.</span>
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li>Each named graph (<code>v1</code>, <code>v2</code>) represents a specific version of the <strong>Dave Richardson</strong> dataset.</li>
+<li>The <strong>IRI</strong> (<code>&#x3C;https://djradon.github.io/dave-richardson/></code>) remains consistent across versions, but the different graphs manage successive states.</li>
+<li>The <code>:tombstone</code> property marks when the graph version is considered "invalid" or "superseded."</li>
+</ul>
+<h4 id="2-dataset-series-using-dcat-and-versioning">2. <strong>Dataset Series Using DCAT and Versioning</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#2-dataset-series-using-dcat-and-versioning"></a></h4>
+<ul>
+<li>You could use <strong>DCAT (Data Catalog Vocabulary)</strong> to describe a <strong>series of datasets</strong> that make up the entire <strong>relator succession</strong>.</li>
+<li>Each version can be represented as a <strong>distribution</strong> of a dataset, with specific properties that define its <strong>validity period</strong> and <strong>system time</strong>.</li>
+</ul>
+<h5 id="example-using-dcat">Example Using DCAT:<a aria-hidden="true" class="anchor-heading icon-link" href="#example-using-dcat"></a></h5>
+<pre class="language-turtle"><code class="language-turtle"><span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://www.w3.org/ns/dcat#<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+<span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">dct<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://purl.org/dc/terms/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/datasets/dave-richardson<span class="token punctuation">></span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">Dataset</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">dct<span class="token punctuation">:</span></span><span class="token local-name">title</span></span> <span class="token string">"Dave Richardson Dataset Series"</span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">distribution</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/datasets/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token punctuation">,</span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/datasets/dave-richardson/v2<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/datasets/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">Distribution</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">dct<span class="token punctuation">:</span></span><span class="token local-name">issued</span></span> <span class="token string">"2024-10-12T12:00:00Z"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">dateTime</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">dct<span class="token punctuation">:</span></span><span class="token local-name">validUntil</span></span> <span class="token string">"2024-11-01T08:00:00Z"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">dateTime</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">accessURL</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v1<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/datasets/dave-richardson/v2<span class="token punctuation">></span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">Distribution</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">dct<span class="token punctuation">:</span></span><span class="token local-name">issued</span></span> <span class="token string">"2024-11-01T08:00:00Z"</span><span class="token punctuation">^^</span><span class="token function"><span class="token prefix">xsd<span class="token punctuation">:</span></span><span class="token local-name">dateTime</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">dcat<span class="token punctuation">:</span></span><span class="token local-name">accessURL</span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/dave-richardson/v2<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+</code></pre>
+<p>Here:</p>
+<ul>
+<li>The dataset (<code>&#x3C;https://djradon.github.io/datasets/dave-richardson></code>) acts as a <strong>series</strong> of distributions, each representing a <strong>specific version</strong>.</li>
+<li><strong><code>dct:issued</code></strong> and <strong><code>dct:validUntil</code></strong> help manage the temporal aspects for each version.</li>
+</ul>
+<h4 id="3-using-prov-o-for-temporal-succession">3. <strong>Using PROV-O for Temporal Succession</strong>:<a aria-hidden="true" class="anchor-heading icon-link" href="#3-using-prov-o-for-temporal-succession"></a></h4>
+<ul>
+<li>Use <strong>PROV-O</strong> to manage the relationships between successive versions and handle bitemporal aspects.</li>
+<li>Each version of a dataset can use properties like:
+<ul>
+<li><strong><code>prov:wasDerivedFrom</code></strong> to point to the previous version.</li>
+<li><strong><code>prov:generatedAtTime</code></strong> for system time.</li>
+<li><strong><code>prov:invalidatedAtTime</code></strong> to mark when a version becomes obsolete.</li>
+</ul>
+</li>
+</ul>
+<h3 id="pros-and-cons-of-named-graphs-for-dataset-series">Pros and Cons of Named Graphs for Dataset Series<a aria-hidden="true" class="anchor-heading icon-link" href="#pros-and-cons-of-named-graphs-for-dataset-series"></a></h3>
+<ul>
+<li><strong>Pros</strong>:
+<ul>
+<li>Named graphs allow each version of the data to be <strong>self-contained</strong>, making it easy to represent a <strong>succession of states</strong>.</li>
+<li>By attaching metadata like <code>:tombstone</code> and <code>prov:wasDerivedFrom</code> to the named graph, you can manage both the <strong>valid time</strong> and <strong>system time</strong> aspects, supporting bitemporal requirements.</li>
+</ul>
+</li>
+<li><strong>Cons</strong>:
+<ul>
+<li>Managing and querying <strong>multiple named graphs</strong> can become complex, especially if your dataset series grows significantly.</li>
+<li>RDF stores must support <strong>named graphs</strong> efficiently for this to be practical.</li>
+</ul>
+</li>
+</ul>
+<h3 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h3>
+<ul>
+<li>The <strong>named graph</strong> approach combined with <strong>PROV-O</strong> and <strong>DCAT</strong> provides a robust way to manage <strong>immutable RDF</strong> while allowing for versioning and temporal tracking.</li>
+<li>You can manage <strong>IRIs consistently</strong> by having them always point to a conceptual entity, while the <strong>version information</strong> is managed separately in named graphs.</li>
+<li>The <strong>tombstone</strong> mechanism, along with <strong>mutable pointers</strong> like <code>:latestVersion</code>, helps balance immutability with practical requirements for updates.</li>
+</ul>
+<p>Let me know if you’d like to incorporate any of these ideas into your Kosmion ontology or if you’d like me to make specific updates to the current draft to reflect this!</p>

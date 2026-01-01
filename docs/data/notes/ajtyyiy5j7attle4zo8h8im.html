@@ -1,0 +1,52 @@
+<h1 id="datasets">Datasets<a aria-hidden="true" class="anchor-heading icon-link" href="#datasets"></a></h1>
+<ul>
+<li>
+<p>"it is sometimes desirable to work with multiple RDF graphs while keeping their contents separate. RDF datasets support this requirement."</p>
+</li>
+<li>
+<p>"We informally use the term RDF source to refer to a persistent yet mutable source or container of RDF graphs. An RDF source is a resource that may be said to have a state that can change over time. A snapshot of the state can be expressed as an RDF graph. For example, any web document that has an RDF-bearing representation may be considered an RDF source. Like all resources, RDF sources may be named with IRIs and therefore described in other RDF graphs."</p>
+</li>
+<li>
+<p>"An RDF dataset is a collection of RDF graphs. All but one of these graphs have an associated IRI or blank node. They are called named graphs, and the IRI or blank node is called the graph name. The remaining graph does not have an associated IRI, and is called the default graph of the RDF dataset."</p>
+</li>
+<li>
+<p>"There are many possible uses for RDF datasets. One such use is to hold snapshots of multiple RDF sources."</p>
+</li>
+<li>
+<p>"An RDF document is a document that encodes an RDF graph or RDF dataset in a concrete RDF syntax, such as Turtle"</p>
+</li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Dataset iris are different? Are they closed? </li>
+</ul>
+<h2 id="terms">Terms<a aria-hidden="true" class="anchor-heading icon-link" href="#terms"></a></h2>
+<ul>
+<li><strong><a href="https://www.w3.org/TR/vocab-dcat-3/#dataset-series">dataset series</a></strong>: data, somehow interrelated, that are published separately
+<ul>
+<li>analogous to ontology series</li>
+</ul>
+</li>
+</ul>
+<h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>
+<pre class="language-turtle"><code class="language-turtle"><span class="token keyword">@prefix</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>http://example.org/<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+
+<span class="token comment"># Default graph</span>
+<span class="token punctuation">{</span>
+  <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">subject1</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">predicate1</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">object1</span></span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Named graph</span>
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">graph1</span></span> <span class="token punctuation">{</span>
+  <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">subject2</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">predicate2</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">object2</span></span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+<span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">graph2</span></span> <span class="token punctuation">{</span>
+  <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">subject3</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">predicate3</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">object3</span></span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.ateam-oracle.com/post/rdf-datasets-named-and-default-graphs-concepts-and-how-to-query-them">https://www.ateam-oracle.com/post/rdf-datasets-named-and-default-graphs-concepts-and-how-to-query-them</a></li>
+<li><a href="https://www.w3.org/TR/rdf11-concepts/">https://www.w3.org/TR/rdf11-concepts/</a></li>
+</ul>

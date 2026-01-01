@@ -1,0 +1,52 @@
+<h1 id="m-ld">m-ld<a aria-hidden="true" class="anchor-heading icon-link" href="#m-ld"></a></h1>
+<ul>
+<li><a href="https://m-ld.org/">https://m-ld.org/</a></li>
+<li><a href="/wiki/notes/apvqqbptkdgrwrxqa318z90">Sharing</a></li>
+<li>creator: <a href="/wiki/notes/uqyz5kh2j3qyifww1jz3ax8">@george-svarovsky</a></li>
+<li>implementation:
+<ul>
+<li><a href="/wiki/notes/5yjnstvlq72pd2z52reyzg0">m-ld Javascript Engine</a></li>
+</ul>
+</li>
+<li>related: <a href="/wiki/notes/colifmdgrpheolby8rpaunn">json-rql</a> <a href="/wiki/notes/m6bdg4qh72u56bqpiweijtz">CRDT</a></li>
+<li>supports: <a href="/wiki/notes/cbu2jec4r9rhy2u5f65qlut">Ably</a> <a href="/wiki/notes/kufy1j0t6k0r66bogthlqfg">Mqtt</a> <a href="/wiki/notes/sxlnscqburmegmbxrv6hnjm">Socket.IO</a> </li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>no <a href="/wiki/notes/wbphhqnlm0szq467aqz0fb7">JSON-LD-star</a> support, but <a href="https://github.com/m-ld/m-ld-js/issues/182">https://github.com/m-ld/m-ld-js/issues/182</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li><strong>live and shareable</strong>: </li>
+<li><a href="/wiki/notes/ahbj9ejugov8rjiywj5qqc8">SHACL</a> support, see <a href="https://js.m-ld.org/classes/shapeconstrained.html">https://js.m-ld.org/classes/shapeconstrained.html</a></li>
+</ul>
+<h3 id="hosted-persistence-via-the-gateway">Hosted persistence via the Gateway<a aria-hidden="true" class="anchor-heading icon-link" href="#hosted-persistence-via-the-gateway"></a></h3>
+<ul>
+<li>For hosted persistence, we offer the m-ld Gateway, a server which (among other functions) operates as another participant in the domain, and thus keeps its own copy of the data, analogous to an IPFS pinning service. This Gateway service may be offered by the application developer for convenience, but it may also be operated by end user themselves if desired, preserving user control. Just as end users can bring their own pods to a Solid app, they can also bring their own Gateways to these collaborative apps.</li>
+</ul>
+<h2 id="philosophy">Philosophy<a aria-hidden="true" class="anchor-heading icon-link" href="#philosophy"></a></h2>
+<h3 id="web-app-data-securely-stored-in-reactive-replicated-linked-data-sets">web app data securely stored in reactive, replicated Linked Data sets<a aria-hidden="true" class="anchor-heading icon-link" href="#web-app-data-securely-stored-in-reactive-replicated-linked-data-sets"></a></h3>
+<ul>
+<li>possible for app developers to meet today's and tomorrow's feature expectations without the high costs and limitations of today's distributed data architectures. This foundational design principle combines ideas from the semantic web (machine-readable publishable interlinked data), personal data stores (user control of user data) and local-first software (collaboration without obligatory third parties).</li>
+</ul>
+<h3 id="coordination">Coordination<a aria-hidden="true" class="anchor-heading icon-link" href="#coordination"></a></h3>
+<ul>
+<li>There are two approaches to concurrency control that don't need a total ordering of changes. One is called Conflict-free Replicated Data Types (CRDTs), and the other Operational Transformation (OT).</li>
+<li>Humans employ myriad strategies for coordination. You withhold thoughts while someone else is talking. You undo and redo thoughts against new information, both before and after expressing them. You notice conflicts that corrupt the information or render it illogical, apply obvious resolutions, and negotiate others. You actively seek consensus, or delegate decisions.</li>
+</ul>
+<h3 id="message-delivery">Message Delivery<a aria-hidden="true" class="anchor-heading icon-link" href="#message-delivery"></a></h3>
+<p>Local-first web applications can still benefit from secure durable storage of data on a server. They also rely on a message delivery mechanism, which in practice must be either a deployed service (like a message broker) or a cloud service. While these are cheap to set up, they may become expensive in the long run due to operational costs, provider markup and service over-specification.</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://rdfjs.dev/m-ld">https://rdfjs.dev/m-ld</a></li>
+<li><a href="https://m-ld.org/news/#live-and-sharable">https://m-ld.org/news/#live-and-sharable</a></li>
+<li><a href="https://docs.google.com/document/d/1DrMr_PI6P81w1spiUDBTkOJGz0bPS2sZIXhCz51p7CE/edit">Web Zero, with m-ld</a></li>
+<li><a href="https://docs.google.com/document/d/17YnR6f8Xp69E09sO3BShSP5H6PXx3sDGNTVxNyvl56s/edit">Sustainable Web Apps, with m-ld</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/colifmdgrpheolby8rpaunn">json-rql</a></li>
+<li><a href="/wiki/notes/k7bbbq52jy4w200t8j6i3wh">Rdf JS</a></li>
+<li><a href="/wiki/notes/wqm09s60dkxpcrex3ms3j6c">Sustainable Web Apps</a></li>
+</ul>

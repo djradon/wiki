@@ -1,0 +1,38 @@
+<h1 id="spork">Spork<a aria-hidden="true" class="anchor-heading icon-link" href="#spork"></a></h1>
+<ul>
+<li><a href="/wiki/notes/d2dnsalrla3utcj3u6ic16w">Discrete Event Simulation Framework</a>
+<a href="/wiki/notes/lr2sgj6ra8folasyrw0arzy">Simulation-Framework</a> <a href="/wiki/notes/uvwi5izihjfbh2u2zwcvd49">Entity Component System</a></li>
+<li><a href="/wiki/notes/g1nvx5ler0bwd4fcc9ad3j7">Literate Programming</a> <a href="/wiki/notes/i8vw5f9c0sejj9rm4po0nem">Immutability</a></li>
+<li>repo: <a href="https://github.com/joinr/spork">https://github.com/joinr/spork</a></li>
+</ul>
+<h2 id="description">Description<a aria-hidden="true" class="anchor-heading icon-link" href="#description"></a></h2>
+<ul>
+<li>SPORK.sim presents a significant departure from traditional Discrete Event Simulations, since the architecture embraces functional programming and persistent data structures wholly, rather than focusing on mutation.</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>building the simulation transition functions (or step functions) as a composition of smaller functions
+<ul>
+<li>(as opposed to OOP-based classes or imperative mutation)</li>
+</ul>
+</li>
+<li>Optionally persistent, lazily computed stream of simulation history</li>
+<li>a database layer based on the Component-Entity-System paradigm</li>
+<li>Maintains the ability to have a classic observable/observer simulation model without sacrificing functional purity.
+<ul>
+<li>Where convenient (i.e. for logging, visualization, other side-effects).</li>
+</ul>
+</li>
+<li>Event-step (i.e. variable-width time-step) simulation.</li>
+<li>High-level transforms on the simulation history.
+<ul>
+<li>Familiar idioms like map, filter, reduce work out of the box, since history is merely a time-indexed stream of simulation contexts.</li>
+<li>Allows for precise reasoning about causality, tracing, debugging, etc.</li>
+</ul>
+</li>
+<li>Entity behaviors based on Behavior Trees, but can be as simple as a 2-line function.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.reddit.com/r/Clojure/comments/15b81ch/xx_clojure_entity_component_system_working_on/">https://www.reddit.com/r/Clojure/comments/15b81ch/xx_clojure_entity_component_system_working_on/</a></li>
+</ul>

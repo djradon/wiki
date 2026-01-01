@@ -1,0 +1,343 @@
+<h1 id="valid-time-rdf">Valid Time RDF<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-rdf"></a></h1>
+<ul>
+<li>url: <a href="https://academicworks.cuny.edu/cgi/viewcontent.cgi?article=5097&#x26;context=gc_etds">https://academicworks.cuny.edu/cgi/viewcontent.cgi?article=5097&#x26;context=gc_etds</a></li>
+</ul>
+<h2 id="log">Log<a aria-hidden="true" class="anchor-heading icon-link" href="#log"></a></h2>
+<ul>
+<li>t.2024.04.01.11: re-reading this on the plane, I'm amazed how much more helpful and concrete this seems now.</li>
+<li>t.2024.07.24.13 as much as I want it, I'm concerned that valid time is not existence time.
+<ul>
+<li>at the very least, it shouldn't mean birth-death
+<ul>
+<li>what if John comes back from the dead?</li>
+</ul>
+</li>
+<li>in an immutable data store, valid time needs to be reserved for "this fact was considered valid", from interpretation of "database"</li>
+<li>doesn't make sense to apply vt to (some) resources, because they are eternal</li>
+<li>if we use relators, same thing</li>
+<li>singleton predicates, maybe</li>
+<li>classic predicates/properties might be interesting... valid time properties </li>
+<li>you still need a way to refer to resources/entities at a given time, but probably an instant not an interval. </li>
+</ul>
+</li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>proposals of temporal extensions to RDF reported in the
+literatures mostly use RDF reification explicitly or implicitly</li>
+</ul>
+<h3 id="implicit-reification-based-temporal-model">Implicit Reification Based Temporal Model<a aria-hidden="true" class="anchor-heading icon-link" href="#implicit-reification-based-temporal-model"></a></h3>
+<p>implicit reification based models use different types of abstraction for handling reification. They do not employ reification vocabularies of RDF specifications. Two subcategories follow.</p>
+<h4 id="instantiating-identifying-conceptrelationship-iir">Instantiating-Identifying Concept/Relationship (IIR)<a aria-hidden="true" class="anchor-heading icon-link" href="#instantiating-identifying-conceptrelationship-iir"></a></h4>
+<p>In IIR models, a concept or relationship is reified and further temporalized. Either such relationship is abstracted as a new object, or a concept is viewed as four dimensional and instantiated to have temporal extents. Singleton Property converts each relationship to be universally unique. 4D fluents use concepts that view each resource as a perdurant. Fluents represent properties that change over time</p>
+<h4 id="singleton-property">Singleton Property<a aria-hidden="true" class="anchor-heading icon-link" href="#singleton-property"></a></h4>
+<p>The formal semantics of the <a href="/wiki/notes/9dzybsjq6mg0k2p8tomc2jc">singleton property</a> is derived from the standard RDF and RDFS semantics with the additional semantics extension for the vocabulary rdf:singletonPropertyOf. The singleton property gives rises to three cases of query patterns: data, metadata and mixed patterns which SPARQL supports. </p>
+<h4 id="4d-fluents">4D Fluents<a aria-hidden="true" class="anchor-heading icon-link" href="#4d-fluents"></a></h4>
+<ul>
+<li>Perdurantism is a philosophical theory of persistence and identity [34], and it is closely related to four dimensionalism. In the four dimensional view, an object that persists through time has distinct temporal parts at every time instant through its existence in time. Furthermore, each persisting object can be considered a four dimensional spacetime worm that stretches across space-time. Slicing the worm at a specific time interval or instant of the time dimension yields a temporal part.
+<ul>
+<li>t.2024.03.21.08: and endurant </li>
+</ul>
+</li>
+</ul>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Situational Calculus</span></div>
+<a href="/wiki/notes/dhv1x4dufgdor1bmw74u3fk" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^vmhpi7mrf12z" href="#^vmhpi7mrf12z"></a>"Fluent is a component of <a href="/wiki/notes/dhv1x4dufgdor1bmw74u3fk">Situational Calculus</a> which is a logical language for representing change. [46, 48]. It concerns situations, actions and fluents in a dynamic domain. Actions make the domain change from one situation to another. Fluents are situation-dependent functions for describing the effects of actions. In 4D Fluents model, fluents are properties that change over time [73]. These properties are special cases in that both the domain and range of them are temporal parts of the corresponding entities. " </li>
+</ul>
+</div></div><p></p><p></p>
+<ul>
+<li>In 4D Fluents model, fluents are properties that change over time [73]. These properties are special cases in that both the domain and range of them are temporal parts of the corresponding entities. TemporalPart is the main class for converting regular entities to 4D spacetime worm ones. OWL-Time ontology of [37] is used as time domain in 4D Fluents model. Particularly, a class TimeInterval derived from the equivalent class of OWL-Time is used for all temporal terms.
+<img src="/wiki/assets/images/2024-04-01-11-15-48.png"></li>
+<li>In Figure 3.5, individuals :John and :SW are two 4D entities. Each entity has temporal parts,
+:John@i1 and :SW@i1 respectively. The property :enrolled is transformed to a fluent whose domain and range are both temporal parts. Each temporal part is associated with a specific temporal extent , i.e., time interval, that denotes its valid time. One fluent property requires two extra ob- jects, i.e., temporal parts, and two properties, in contrast to reification, that uses one extra object and four properties as illustrated in Figure 2.10. </li>
+</ul>
+<h5 id="advantages">Advantages<a aria-hidden="true" class="anchor-heading icon-link" href="#advantages"></a></h5>
+<ul>
+<li>"OWL inverse operator and cardinality constraints are available and standard OWL reasoners can be used for inferencing."</li>
+<li>The 4D Fluents model is within standard RDF and OWL-DL. </li>
+<li>The running example
+query can be written in SPARQL 4D Fluents model:</li>
+</ul>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">SELECT</span> <span class="token variable">?ti</span> <span class="token variable">?tf</span>
+<span class="token keyword">WHERE</span> <span class="token punctuation">{</span><span class="token variable">?ts1</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalPartOf</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John.</span></span>
+<span class="token variable">?ts2</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalPartOf</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">SW.</span></span>
+<span class="token variable">?ts1</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">enrolled</span></span> <span class="token variable">?ts2</span><span class="token punctuation">.</span>
+<span class="token variable">?ts1</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExt</span></span> <span class="token variable">?i</span><span class="token punctuation">.</span>
+<span class="token variable">?ts2</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">temporalExt</span></span> <span class="token variable">?i</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasBeginning</span></span> <span class="token variable">?ti</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasEnd</span></span> <span class="token variable">?tf</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Since the 4D Fluents model imports OWL-Time [37], :i1 in Figure 3.5 is an OWL-Time interval, while ?ti and ?tf in the above query are two OWL-Time instants.</li>
+</ul>
+<h4 id="extended-4d-fluents">Extended 4D Fluents<a aria-hidden="true" class="anchor-heading icon-link" href="#extended-4d-fluents"></a></h4>
+<ul>
+<li><a href="/wiki/notes/8mrt9wt1w26m2f4u823amk7">Batsakis</a> et al. <a href="/wiki/notes/6zfu6tr0sb40gyi4wznjshy">extended 4D Fluents</a> model to incorporate qualitative temporal relations that have unknown temporal information... Semantics of the extended 4D Fluents model is based on the original 4D Fluents model, with the additional temporal semantics needed for qualitative temporal relations.</li>
+</ul>
+<p><img src="/wiki/assets/images/2024-04-01-11-24-36.png"></p>
+<ul>
+<li><a href="/wiki/notes/0cb47oy83g92jk5hwn4j20u">TOQL</a> [5] is the SQL-like query language for Extended 4D Fluents model. To accommodate querying qualitative temporal relations, additionally query constructs, such as ”AT” clause and Allen temporal operators [4], such as before, after, meets, etc., are included in TOQL.</li>
+</ul>
+<h4 id="temporal-web-ontology-language">Temporal Web Ontology Language<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-web-ontology-language"></a></h4>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">tOWL</span></div>
+<a href="/wiki/notes/nrkv4drjfk0hc0y7tmofrmw" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^927zza20f03z" href="#^927zza20f03z"></a>Fransincar et al. proposed an extension of the OWL-DL language, called tOWL [49], for representing time and changes in an ontology. tOWL uses a subset of OWL-DL whose foundation is the logic SHIN (D). This logic is sufficiently expressive and is decidable for a sound and complete reasoning algorithm [45]. The time domain of tOWL handles both instants and intervals that are modeled by rational numbers and a set of partial order relations over them. As a result, an actual time instant, an interval or Allen’s temporal relations [4] are all converted to rational number-based equivalent instants or relations.  </li>
+<li>For modeling changing values, tOWL employs the 4D Fluents model, i.e., perdurantist’s view [73]. tOWL is conceptualized as a layered approach. The foundation layer is OWL-DL and the extended concrete domain is the second layer. Time representation is at the third layer, which is defined by the concrete domain.</li>
+<li>Figure 3.7 gives the running example in tOWL. Note that tOWL requires separate intervals for :John and :SW. Therefore, a restriction on the equivalence of towl:interval1 and towl:interval2 is enforced by a relation towl:equal in Figure 3.7 which is one more triple used compared to 4D Fluents model in [73].
+<img src="/wiki/assets/images/2024-10-25-02-30-44.png"></li>
+<li>In tOWL, the time domain is based on rational numbers and relations over them. This approach makes tOWL more expressive in representing complex temporal relations. For instance, in Figure 3.7, a temporal constraint towl:interval1 equates towl:interval2 can be expressed with the equality of endpoints of the two intervals.</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^b8t2dt9958m2" href="#^b8t2dt9958m2"></a>OWL reduces the proliferation of objects by differentiating types of fluents as FluentObjectProperty and FluentDatatypeProperty. For a Fluent- DatatypeProperty, which relates a time slice to a typed value, three triples can be saved due to that the time slice is not needed for a typed value. </li>
+</ul>
+</div></div><p></p><p></p>
+<h3 id="relationship-to-entity-conversion-rec">Relationship to Entity Conversion (REC)<a aria-hidden="true" class="anchor-heading icon-link" href="#relationship-to-entity-conversion-rec"></a></h3>
+<p>In <a href="/wiki/notes/cd43bm85eemff81n7gufn99">REC</a> models, a relationship is transformed to a composite entity. The transformed entity comes in two forms: a new entity that implicitly reifies the original triple, or an abstract object that becomes a term for further use. As an example of REC models, N-ary relations provide a main modeling concept: a triple is objectified as a new entity and can further be associated to properties, such as time.</p>
+<h4 id="n-ary-relations">N-ary relations<a aria-hidden="true" class="anchor-heading icon-link" href="#n-ary-relations"></a></h4>
+<p>In principle, the N-ary relation is a generalization of reification. For each N-ary relation, a new class with an instance is introduced for it as if the relation is objectified. Further property assertions can be made with respect to the newly introduced instance. Figure 3.8 gives the running example in N-ary relations.</p>
+<p><img src="/wiki/assets/images/2024-10-21-03-01-13.png"></p>
+<p>The resource :enrolled1 in Figure 3.8 is introduced as a new instance encapsulating both the course name value, SW, and its valid time interval through two properties, :hasCourse and :hasVT. The relation (:John, :enrolled, :SW) is converted to an entity class :Enrollment. The property :enrolled is overloaded, so its range becomes the newly introduced class :Enrollment. Adding time to the original triple, i.e., (John, enrolled, SW), requires three more triples.</p>
+<p>N-ary relation approach does not require extension to RDF, RDFS or OWL vocabularies. It simply converts relationships to entities that encapsulate properties. The semantics for N-ary relation approach is based on RDF and RDFS semantics. In Figure 3.8, the new object :enrolled1 may also be represented by a blank node. A blank node does not have any meaning, but acts like a wrapper for grouping related objects.</p>
+<pre class="language-sparql"><code class="language-sparql"><span class="token keyword">SELECT</span> <span class="token variable">?ti</span> <span class="token variable">?tf</span>
+<span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">enrolled</span></span> <span class="token variable">?e</span><span class="token punctuation">.</span>
+<span class="token variable">?e</span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Enrollment.</span></span>
+<span class="token variable">?e</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasCourse</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">SW.</span></span>
+<span class="token variable">?e</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasVT</span></span> <span class="token variable">?i</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasBeginning</span></span> <span class="token variable">?ti</span><span class="token punctuation">.</span>
+<span class="token variable">?i</span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasFinish</span></span> <span class="token variable">?tf</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^v79ztcpa0633" href="#^v79ztcpa0633"></a>While N-ary relation approach can be applied to OWL, it would incur overheads. For instance, multiple inverse properties are needed for a N-ary relation. Moreover, the use of cardinality restrictions becomes limiting on some roles that depend on the class of some other roles <a id="fnref-53" class="fnref" href="#fn-53">53</a>. </p>
+<h4 id="valid-time-temporal-model">Valid-Time Temporal Model<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-temporal-model"></a></h4>
+<ul>
+<li>O’Connor et al. propose a valid-time temporal model and a SWRL-based [40] query mechanism for manipulating temporal knowledge in OWL ontologies</li>
+<li>In the valid-time temporal model, any existing OWL class can have temporal aspects as long as it subclasses temporal:Fact, which is the super class of all temporal facts. This avoids significant ontology rewriting in converting an ontology to a temporal version.</li>
+<li>The temporal expressivity of this model is further enhanced by using SWRL [40] to construct temporal rules. A set of temporal operators that includes Allen’s operators [4] is implemented as library-like built-ins for SWRL rules.</li>
+<li>Querying the temporal ontology is done by <a href="/wiki/notes/jvh4ig9tyukw8u60mp6zpi9">SQWRL</a></li>
+</ul>
+<h4 id="named-graphs">Named Graphs<a aria-hidden="true" class="anchor-heading icon-link" href="#named-graphs"></a></h4>
+<ul>
+<li>all triples share the same temporal extent are grouped in the same graph</li>
+<li>In an extreme case that each triple requires a different time reference, a significant
+amount of named graphs is needed. </li>
+<li>When triples may need multiple metadata annotation, using Named Graphs model becomes complex.</li>
+<li>τ SPARQL </li>
+</ul>
+<h2 id="rdf">RDF+<a aria-hidden="true" class="anchor-heading icon-link" href="#rdf"></a></h2>
+<p>RDF+ model [62] uses named graphs and triple-level identifiers. Named graphs are used in place of RDF reification. Triple identifiers allow explicit annotation of meta knowledge. RDF+ model has two type of statements: literal and meta knowledge statement. A RDF+ literal statement is a quintuple form (g, s, p, o, θ) where g is the graph’s IRI, s,p,o are standard RDF triple compo- nents, and θ is a statement identifier. Based on the triple identifier in the RDF+ literal statement, the RDF+ meta knowledge statement can be formed as (θ, π, ω). θ is the literal statement identifier, π is the meta knowledge property and ω is the range value of π. The set K of RDF+ literal statements and the set M of RDF+ meta knowledge statements constitute a RDF+ theory, </p>
+<h2 id="discussion">Discussion<a aria-hidden="true" class="anchor-heading icon-link" href="#discussion"></a></h2>
+<ul>
+<li>There are two temporal models in Instantiating-Identifying Concept/Relationship models. 4D Fluents [73, 6, 7] introduces temporal part for an entity changing over time. Each temporal part corresponds to a distinguishable timestamp. A fluent property associates two temporal parts. On the other hand, Singleton Property [52] ensures every relationship to be universally unique. As a result, an ordinary relationship, such as enrolled, becomes a relationship type.</li>
+</ul>
+<h2 id="valid-time-rdf-1">Valid Time RDF<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-rdf-1"></a></h2>
+<ul>
+<li>"As a result, a binary relationship actually incurs three timestamps: the valid
+time of the relationship and two participating entities."
+<ul>
+<li>t.2024.07.10.10 really? Do entities have timestamps? John might have a birth and death, but relationships involving John don't need to know that. </li>
+<li>Also, birth-death are not the same as valid. </li>
+<li>There's an asymmetry with valid time in open-world. if there's no valid-to, can you assume <strong><em>now</em></strong>? not in open-worlds. If there's no valid-from, you just assume it's missing. 
+<ul>
+<li>t.2024.08.03.16 seems like you could use SWRL or </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="valid-time-rdf-2">Valid Time RDF<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-rdf-2"></a></h2>
+<ul>
+<li>In this thesis, we adopt a modeling approach that employs ideas from the 4D view and originated from the study in [66], and propose the Valid Time RDF, or <a href="/wiki/notes/pf85k9oaoiuwlglhpqis5aj">Vtrdf Valid Time Rdf</a> in short</li>
+<li>VTRDF is based on temporal resource and temporal relationship or temporal fact.
+<ul>
+<li><strong>temporal resource</strong>: RDF-compliance resource equipped with a timestamp to denote its existence in time
+<ul>
+<li>Each temporal resource is a coalesce of all its temporal parts
+<ul>
+<li>i.e. wholly present during its existence in time</li>
+</ul>
+</li>
+<li>Temporal parts are derived by slicing or projecting a temporal resource on to the time dimension.</li>
+</ul>
+</li>
+<li><strong>temporal relationship</strong>: a factual assertion that relates qualified temporal resources, formed between either temporal parts or temporal resources provided that the participating parts or resources coexist in time</li>
+</ul>
+</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^6x6gy39e5d24" href="#^6x6gy39e5d24"></a>We introduce VTR, an infinite set of valid time resources, as the building block for VTRDF triples and VTRDF graphs 
+<ul>
+<li>valid time resource is a resource with its existence time or valid time</li>
+<li>In VTRDF, we consider a valid time resource as a collection of all its temporal parts.</li>
+<li>Assertions can be made with respect to both the collection and any individual temporal part.</li>
+<li>A temporal resource is a master resource, whereas all its temporal parts are member resources.</li>
+<li>Projections from the master resource to its temporal parts are possible via projection functions.</li>
+<li>The temporal aspects of the resources can use valid time, transaction time, or bitemporal.
+<ul>
+<li>In this research, we focus on the valid time.</li>
+<li>Hence, we would use valid time resources and temporal resources interchangeably as appropriate</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="notations-namespace-and-time-domain">Notations, Namespace, and Time Domain<a aria-hidden="true" class="anchor-heading icon-link" href="#notations-namespace-and-time-domain"></a></h3>
+<ul>
+<li>vtrdf: and vtrdfs: refer to the namespace of VTRDF vocabulary and VTRDF Schema vocabulary</li>
+<li>While the symbol # is used to denote an additional part of the primary resource in the standard RDF model, VTRDF requires a second fragment identifier to accommodate the valid time dimension.
+<ul>
+<li>t.2024.07.24.11 with slash IRIs, could work too</li>
+<li>The symbol • is used as a delimiter that separates the first fragment identifier from the valid</li>
+</ul>
+</li>
+<li>T is the set of time points with a linear order less-than (&#x3C;). For simplicity, we use the standard U.S. calendar dates as the unit of time points in the format of month/day/year, such as 1/10/1995</li>
+<li>Tɪ is the set of time intervals defined over T</li>
+<li>0 is the lower bound of the time axis whose interpretation is open for user’s need of data
+modeling.</li>
+<li>now is a special constant that represents the current time. Its value will change as time
+advances.</li>
+<li>∞ is a constant that represents the upper bound of the time axis.</li>
+<li>[0, ∞] is a special interval used to represent the maximal interval</li>
+</ul>
+<h3 id="running-example">Running Example<a aria-hidden="true" class="anchor-heading icon-link" href="#running-example"></a></h3>
+<ul>
+<li>John enrolled in the Semantic Web course
+(SW), lived in New York City (NYC), and had a valid time [2/1/2016, 5/31/2016).
+<ul>
+<li>t.2024.07.24.12 kinda weird choice, seems like enrolled and livedIn are unrelated
+<img src="/wiki/assets/images/2024-07-24-12-52-39.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="definitions">Definitions<a aria-hidden="true" class="anchor-heading icon-link" href="#definitions"></a></h3>
+<h4 id="valid-time-iri">valid time IRI<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-iri"></a></h4>
+<ul>
+<li>a valid time IRI consists of:
+<ul>
+<li>resource</li>
+<li>valid time</li>
+<li><a href="http://example.org/temporal-SW#John%E2%80%A2%5B01-10-1995%E2%80%93now%5D">http://example.org/temporal-SW#John•[01-10-1995–now]</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="valid-time-literal">Valid Time Literal<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-literal"></a></h4>
+<ul>
+<li>Let L be an infinite set of standard literals, [0, ∞] the maximal interval, and V T L = L × [0, ∞]
+be the Cartesian product.</li>
+<li>A valid time literal lt ∈ V T L represents a literal that is always valid in
+time.</li>
+<li>That is, all literals assume a default maximal interval [0, ∞] unless otherwise specified.</li>
+</ul>
+<h4 id="valid-time-data-type">Valid Time Data Type<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-data-type"></a></h4>
+<ul>
+<li>Let D be an infinite set of standard data types, [0, ∞] the maximal interval, and V T D =
+D × [0, ∞] be the Cartesian product. A valid time data type dt ∈ V T D is a data type recognized
+in the standard RDF with a default maximal interval [0, ∞].
+<ul>
+<li>Valid time data types are used to annotate valid time literals.</li>
+<li>A special data type vtrdf:langString[0, ∞] can also be used to denote a language-tagged string value.</li>
+</ul>
+</li>
+</ul>
+<h4 id="lexical-to-value-mapping-function-v-t-l2v">Lexical-to-Value Mapping Function V T L2V<a aria-hidden="true" class="anchor-heading icon-link" href="#lexical-to-value-mapping-function-v-t-l2v"></a></h4>
+<ul>
+<li>V T L2V is a partial mapping from the lexical space of valid time literals to the value space V. A valid time literal lt with a valid time data type dt denote the mapped value obtained from the value space. That is, V T L2V (lt, dt) = v where v ∈ V.</li>
+</ul>
+<h4 id="valid-time-property">Valid Time Property<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-property"></a></h4>
+<ul>
+<li>Let P be the set of any properties, including those defined in RDF and RDFS vocabularies [16], TI be the set of intervals, and V T P = P × TI be the Cartesian product of them. A valid time property pt ∈ V T P is any property that is valid during a specified interval i ∈ TI .</li>
+</ul>
+<h4 id="valid-time-blank-node">Valid Time Blank Node<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-blank-node"></a></h4>
+<ul>
+<li>Let B be an infinite set of blank nodes, TI be the set of intervals, and V T B = B × TI be the Cartesian product. A valid time blank node bt ∈ V T B denotes the existence of a resource whose valid time may or may not be known. For simplicity, every valid time blank node in the VTRDF model assumes a default maximal valid interval [0, ∞] unless otherwise specified. A valid time blank node is usually identified by a local identifier.</li>
+</ul>
+<h4 id="valid-time-resource-projection-function">Valid Time Resource Projection Function<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-resource-projection-function"></a></h4>
+<ul>
+<li>A valid time resource projection function...</li>
+</ul>
+<h4 id="valid-time-rdf-triple">Valid Time RDF Triple<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-time-rdf-triple"></a></h4>
+<p>A Valid Time RDF triple (st, pt, ot) satisfies the temporal constraint, called Temporal Triple Integrity,such that pt is bounded by the interval that is formed by the common valid time of st and ot.</p>
+<ul>
+<li>In other words, the temporal triple integrity requires that a valid time relationship can only be established between two existing resources with non-disjoint valid time</li>
+</ul>
+<h4 id="predicate-defining-time-pdt-and-resource-modeling-time-rmt">Predicate Defining Time (PDT) and Resource Modeling Time (RMT)<a aria-hidden="true" class="anchor-heading icon-link" href="#predicate-defining-time-pdt-and-resource-modeling-time-rmt"></a></h4>
+<ul>
+<li>rt takes PDT when it is used in a VTRDF triple as a predicate to define the time of a re- lationship. In this case, PDT corresponds to the interval during which the relationship is valid</li>
+<li>rt takes RMT when it is used in a VTRDF triple as a subject or an object that eventually involves in a relationship.
+<ul>
+<li>"RMT is the time that we want to store about the facts into the database."???</li>
+</ul>
+</li>
+</ul>
+<h4 id="valid-timeslice-operator">Valid Timeslice Operator<a aria-hidden="true" class="anchor-heading icon-link" href="#valid-timeslice-operator"></a></h4>
+<ul>
+<li>Given a VTRDF graph Gt and an interval i = [l, u), the valid time slice operator, TS, returns a temporal subgraph of Gt at i
+<img src="/wiki/assets/images/2024-07-24-12-55-11.png">
+<ul>
+<li>t.2024.07.24.12 i.e., it cuts everything down to the interval)</li>
+</ul>
+</li>
+</ul>
+<h4 id="vtrdf-subgraph">VTRDF Subgraph<a aria-hidden="true" class="anchor-heading icon-link" href="#vtrdf-subgraph"></a></h4>
+<ul>
+<li>in addition to the common-sense definition, a "valid timeslice of a VTRDF graph Gt is a <strong>temporal subgraph</strong> of it."</li>
+<li><img src="/wiki/assets/images/2024-07-24-12-53-09.png">
+<ul>
+<li>t.2024.07.24.12 is it a typo that fig 4.3 has "now" and fig.4.5 has "infinity"</li>
+</ul>
+</li>
+</ul>
+<h4 id="vtrdf-underlying-triplegraph">VTRDF Underlying Triple/Graph<a aria-hidden="true" class="anchor-heading icon-link" href="#vtrdf-underlying-triplegraph"></a></h4>
+<ul>
+<li>basically, de-temporalizing</li>
+<li>"If two or more triples agree on the subject or object, they are combined to one triple. "
+<ul>
+<li>t.2024.07.24.13 typo, should be "subject and object"</li>
+</ul>
+</li>
+</ul>
+<h4 id="vtrdf-graph-vocabulary">VTRDF Graph Vocabulary<a aria-hidden="true" class="anchor-heading icon-link" href="#vtrdf-graph-vocabulary"></a></h4>
+<ul>
+<li>the set of valid time IRIs that appear in Gt excluding valid time literals.</li>
+</ul>
+<h4 id="ground-vtrdf-graph">Ground VTRDF Graph<a aria-hidden="true" class="anchor-heading icon-link" href="#ground-vtrdf-graph"></a></h4>
+<ul>
+<li>no valid time blank nodes</li>
+</ul>
+<h3 id="vtrdf-vocabulary">VTRDF Vocabulary<a aria-hidden="true" class="anchor-heading icon-link" href="#vtrdf-vocabulary"></a></h3>
+<ul>
+<li>VTRDF Vocabulary is formulated as layers and RDF-compliant.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<hr>
+<h2 id="footnotes">Footnotes<a aria-hidden="true" class="anchor-heading icon-link" href="#footnotes"></a></h2>
+<ol>
+<li><span id="fn-53" style="width: 0; height: 0;"></span><p><a href="/wiki/notes/tq4knxb7t4ln11ktfuwiye3">Defining N-ary Relations on the Semantic Web</a><a class="fn" href="#fnref-53">˄</a></p></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/jvh4ig9tyukw8u60mp6zpi9">SQWRL</a></li>
+<li><a href="/wiki/notes/xbpa7vv9hwari8435fttsw3">Relator</a></li>
+<li><a href="/wiki/notes/gevpci170z4xpynl0eyhkhf">Temporality</a></li>
+<li><a href="/wiki/notes/nrkv4drjfk0hc0y7tmofrmw">tOWL</a></li>
+<li><a href="/wiki/notes/g09smnhcw1nclhr5qfrvnyc">Perdurantism</a></li>
+<li><a href="/wiki/notes/cd43bm85eemff81n7gufn99">Relationship to Entity Conversion</a></li>
+<li><a href="/wiki/notes/aqlimlaytofoqkt8f23z9cn">Relator</a></li>
+<li><a href="/wiki/notes/9dzybsjq6mg0k2p8tomc2jc">Singleton Propert</a></li>
+<li><a href="/wiki/notes/95i87rdf941m1gys955bjfr">Temporal Semantic Web</a></li>
+<li><a href="/wiki/notes/dhv1x4dufgdor1bmw74u3fk">Situational Calculus</a></li>
+</ul>

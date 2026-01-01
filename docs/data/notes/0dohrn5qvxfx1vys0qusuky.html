@@ -1,0 +1,74 @@
+<h1 id="getting_started_with_fluree">Getting_started_with_fluree<a aria-hidden="true" class="anchor-heading icon-link" href="#getting_started_with_fluree"></a></h1>
+<ul>
+<li>Use of Data is evolving
+<ul>
+<li>Solution: Collaborative Data Network</li>
+<li>semantics of data shouldn't sit in the app</li>
+<li>web3 semantics standards (rdf, owl, shacl); <a href="/wiki/notes/oCE86gPISrXMLGHJ6r0EM">Knowledge Graph</a> <a href="/wiki/notes/dvl16h8ypm0ny1ydmbf7395">Property Graph Database</a>; <a href="/wiki/notes/rgof5gwgwgrz3vp3394kfmq">JSON-LD</a>; <a href="/wiki/notes/gi70tkc04ypd9f0dqtwn98x">Flureeql</a></li>
+<li>decentralization
+<ul>
+<li>cryptographically provable identities</li>
+<li>real-time distributed ledgers</li>
+<li>trustless</li>
+<li>programmable logic (i.e., <a href="/wiki/notes/fawhvdlrzj7xl8e9rixo5z3">Contracts</a>
+<ul>
+<li>"much of programmability can be contained in the data and its constraints"</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="/wiki/assets/images/2023-12-07-08-10-51.png">)</li>
+<li><a href="/wiki/notes/Xc1Bz9oFeoNhPDd9VoJOf">Time Travel</a></li>
+</ul>
+</li>
+<li>Collaboration
+<ul>
+<li>Fluree's immutability allows rewind</li>
+<li>Compose Queries across data</li>
+<li>future: reasoning and inferencing</li>
+</ul>
+</li>
+</ul>
+<h2 id="questions">Questions<a aria-hidden="true" class="anchor-heading icon-link" href="#questions"></a></h2>
+<ul>
+<li>Q: how do you represent relations, ie. object properties
+<ul>
+<li>A: Here's a link to this in our docs, David! <a href="https://developers.flur.ee/docs/learn/tutorial/working-with-graph-data/#graph-crawling-in-our-select-clauses">https://developers.flur.ee/docs/learn/tutorial/working-with-graph-data/#graph-crawling-in-our-select-clauses</a></li>
+</ul>
+</li>
+<li>Q: can <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@type (Private)</a> have multiple keys, i.e., multiple inheritance/class-membership
+<ul>
+<li>A: Yes absolutely! Any instance can explicitly belong to multiple types, and inheritance can be multi-tiered</li>
+</ul>
+</li>
+<li>no need for <a href="/wiki/notes/8jjg521di8lf8f4x5f8mdie">Object Relational Mapping</a></li>
+<li>Q: do you see a need for some kind of object mapping SDK for marshalling data into code? maybe you have recommendation for existing json-to-plain-old-*-objects libraries?
+<ul>
+<li>A: It depends on your programming language as to if this is desirable or not. Many today are very comfortable working directly with data structures as a first-class citizen, but we may have some speciifc library support for languages that very object-centric. Even something like Java would be fairly easy to have a contructor to put JSON into an object without a library hopefully.</li>
+</ul>
+</li>
+<li>Q: There's Time-Travel support for "Transaction Time", but do you have any thoughts about time-travel for "valid time", aka </li>
+</ul>
+<h3 id="other-peoples-questions">Other people's questions<a aria-hidden="true" class="anchor-heading icon-link" href="#other-peoples-questions"></a></h3>
+<ul>
+<li>Q: the current example seems related to foaf ontology, do you have predefined vocabularies available like vcard, dc, skos, etc?, or do we have to include them from scratch?
+<ul>
+<li>A: The demo isn't using any pre-defined vocabulary, but absolutely can use any RDF-based ontology. Inferencing is largely limited today to RDFS-based descriptions, but we do have some limited OWL-based ontology support which I mentioned will be much more broad shortly (and in a very unique Fluree-like way).</li>
+</ul>
+</li>
+<li>Q: is there support for delegation/policy chains? For example: Person A has created the database. Person B gets read and write access to entity type A and B. In the case of a delegation chain; person B would be able to give (a subset of) the rights to what it can do to yet another person
+<ul>
+<li>A: Since policies are data, you can make policies about policies</li>
+</ul>
+</li>
+<li>Q: Access control?
+<ul>
+<li>A: REBAC: relationship-based access control
+<ul>
+<li>simple rules</li>
+</ul>
+</li>
+<li>A: multiple policy groups are "only one has to succeed" but you can express AND conditions</li>
+</ul>
+</li>
+</ul>

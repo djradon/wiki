@@ -1,0 +1,2 @@
+
+- [[c.sphere]] #communication #epistemology

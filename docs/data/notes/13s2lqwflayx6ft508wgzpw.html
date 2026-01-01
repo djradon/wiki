@@ -1,0 +1,95 @@
+<h1 id="atomic-data">Atomic Data<a aria-hidden="true" class="anchor-heading icon-link" href="#atomic-data"></a></h1>
+<ul>
+<li>published-by: <a href="/wiki/notes/ixo57369vpbk2dk99bv2s1e">Ontola</a></li>
+<li>related: <a href="/wiki/notes/lsqn84g8faksg2jxvbj9e1f">JSON-AD</a></li>
+<li>creators: <a href="/wiki/notes/mist15aof5be33fujp5r1az">@joep-meindertsma</a></li>
+</ul>
+<p><img src="/wiki/assets/images/2024-10-16-12-12-59.png"></p>
+<h2 id="thoughts">Thoughts<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts"></a></h2>
+<ul>
+<li>like <a href="/wiki/notes/y92NhrGekobR2uGJE2AqN">Solid</a>, requies the use of a personal server, aka <a href="/wiki/notes/0lodr705ku37f31hm32kxq1">Personal Online Datastore</a>.</li>
+<li>requiring resolvable properties and emphasizing resolvable URLs seems limiting.</li>
+<li>not being able to use common namespace:terms is kinda sad. you could adopt a no-modification- (or -restriction?-) -of-existing classes and properties</li>
+<li>giving up "anyone can say anything about anyone" is too much. 
+<ul>
+<li>i.e., "Atomic only allows those who control a resource's subject URL endpoint to edit the data. This means that you can't add triples about something that you don't control."</li>
+</ul>
+</li>
+<li>requiring online-ness and lookups for parsing is too troubling.</li>
+<li>it is true that minting IRIs is troublesome.</li>
+</ul>
+<h2 id="comparisons">Comparisons<a aria-hidden="true" class="anchor-heading icon-link" href="#comparisons"></a></h2>
+<h2 id="vs-rdf">vs <a href="/wiki/notes/cQHSPbwz5JLE40UxftY7w">RDF</a><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-rdf"></a></h2>
+<p>(from <a href="https://docs.atomicdata.dev/interoperability/rdf">https://docs.atomicdata.dev/interoperability/rdf</a>)</p>
+<ul>
+<li>Atomic calls the three parts of a Triple <code>subject</code>, <code>property</code> and <code>value</code>, instead of <code>subject</code>, <code>predicate</code>, <code>object</code>.</li>
+<li>Atomic does not support having multiple statements with the same <code>&#x3C;subject> &#x3C;predicate></code>, every combination must be unique.</li>
+<li>Atomic does not have <code>literals</code>, <code>named nodes</code> and <code>blank nodes</code> - these are all <code>values</code>, but with different datatypes.</li>
+<li>Atomic uses <code>nested Resources</code> and <code>paths</code> instead of <code>blank nodes</code></li>
+<li>Atomic requires URL (not URI) values in its <code>subjects</code> and <code>properties</code> (predicates), which means that they should be resolvable. Properties must resolve to an <code>Atomic Property</code>, which describes its datatype.</li>
+<li>Atomic only allows those who control a resource's <code>subject</code> URL endpoint to edit the data. This means that you can't add triples about something that you don't control.</li>
+<li>Atomic has no separate <code>datatype</code> field, but it requires that <code>Properties</code> (the resources that are shown when you follow a <code>predicate</code> value) specify a datatype. However, it is allowed to serialize the datatype explicitly, of course.</li>
+<li>Atomic has no separate <code>language</code> field.</li>
+<li>Atomic has a native Event (state changes) model (<a href="https://docs.atomicdata.dev/commits/intro">Atomic Commits</a>), which enables communication of state changes</li>
+<li>Atomic has a native Schema model (<a href="https://docs.atomicdata.dev/schema/intro">Atomic Schema</a>), which helps developers to know what data types they can expect (string, integer, link, array)</li>
+<li>Atomic does not support Named Graphs. These should not be needed, because all statements should be retrievable by fetching the Subject of a resource. However, it <em>is</em> allowed to include other resources in a response.</li>
+</ul>
+<h2 id="vs-solid">vs <a href="/wiki/notes/y92NhrGekobR2uGJE2AqN">Solid</a><a aria-hidden="true" class="anchor-heading icon-link" href="#vs-solid"></a></h2>
+<p><strong>similar goals</strong> to Atomic Data:</p>
+<ul>
+<li>Decentralize the web</li>
+<li>Make things more interoperable</li>
+<li>Give people more control over their data</li>
+</ul>
+<p>Technically, both are also similar:</p>
+<ul>
+<li>Usage of <strong>personal servers</strong>, or PODs (Personal Online Datastores). Both Atomic Data and Solid aim to provide users with a highly personal server where all sorts of data can be stored.</li>
+<li>Usage of <strong>linked data</strong>. All Atomic Data is valid RDF, which means that <strong>all Atomic Data is compatible with Solid</strong>. However, the other way around is more difficult. In other words, if you choose to use Atomic Data, you can always put it in your Solid Pod.</li>
+</ul>
+<p>But there are some important <strong>differences</strong>, too, which will be explained in more detail below.</p>
+<ul>
+<li>Atomic Data uses a strict built-in schema to ensure type safety</li>
+<li>Atomic Data standardizes state changes (which also provides version control / history, audit trails)</li>
+<li>Atomic Data is more easily serializable to other formats (like JSON)</li>
+<li>Atomic Data has different models for authentication, authorization and hierarchies</li>
+<li>Atomic Data does not depend on existing semantic web specifications</li>
+<li>Atomic Data is a smaller and younger project, and as of now a one-man show</li>
+</ul>
+<h3 id="atomic-data-is-more-easily-serializable-to-other-formats-like-json"><a href="https://docs.atomicdata.dev/interoperability/solid#atomic-data-is-more-easily-serializable-to-other-formats-like-json">Atomic Data is more easily serializable to other formats (like JSON)</a><a aria-hidden="true" class="anchor-heading icon-link" href="#atomic-data-is-more-easily-serializable-to-other-formats-like-json"></a></h3>
+<p>Atomic Data is designed with the modern (web)developer in mind. One of the things that developers expect, is to be able to traverse (JSON) objects easily. Doing this with RDF is not easily possible, because doing this requires <em>subject-predicate uniqueness</em>. Atomic Data does not have this problem (properties <em>must</em> be unique), which means that traversing objects becomes easy.</p>
+<p>Another problem that Atomic Data solves, is dealing with long URLs as property keys. Atomic Data uses <code>shortnames</code> to map properties to short, human-readable strings.</p>
+<p>For more information about these differences, see the previous <a href="https://docs.atomicdata.dev/interoperability/rdf">RDF chapter</a>.</p>
+<h3 id="authentication"><a href="https://docs.atomicdata.dev/interoperability/solid#authentication">Authentication</a><a aria-hidden="true" class="anchor-heading icon-link" href="#authentication"></a></h3>
+<p>Both Solid an Atomic Data use URLs to refer to individuals / users / Agents.</p>
+<p>Solid's identity system is called WebID. There are multiple supported authentication protocols, the most common being <a href="https://github.com/solid/webid-oidc-spec">WebID-OIDC</a>.</p>
+<p>Atomic Data's <a href="https://docs.atomicdata.dev/authentication">authentication model</a> is more similar to how SSH works. Atomic Data identities (Agents) are a combination of HTTP based, and cryptography (public / private key) based. In Atomic, all actions (from GET requests to Commits) are signed using the private key of the Agent. This makes Atomic Data a bit more unconventional, but also makes its auth mechanism very decentralized and lightweight.</p>
+<h3 id="solid-advantages">Solid advantages<a aria-hidden="true" class="anchor-heading icon-link" href="#solid-advantages"></a></h3>
+<ul>
+<li>No inbox or <a href="https://www.w3.org/TR/ldn/">notifications</a> yet (<a href="https://github.com/ontola/atomic-data/issues/28">issue</a>) (<a href="/wiki/notes/iuh5pffy3iolf1drdhy7g9s">Linked Data Notifications</a>)</li>
+<li>No OIDC support yet. (<a href="https://github.com/atomicdata-dev/atomic-server/issues/277">issue</a>)</li>
+<li>No support from a big community, a well-funded business or the inventor of the world wide web.</li>
+</ul>
+<h2 id="shortnames">Shortnames<a aria-hidden="true" class="anchor-heading icon-link" href="#shortnames"></a></h2>
+<ul>
+<li>Requiring Properties to resolve is part of what enables the type system of Atomic Schema - they provide the shortname and datatype.</li>
+</ul>
+<h3 id="advantages-of-shortnames">Advantages of Shortnames<a aria-hidden="true" class="anchor-heading icon-link" href="#advantages-of-shortnames"></a></h3>
+<p>Readability: Shortnames can make your transactions and queries more concise and easier to understand, especially when dealing with complex Property names.
+Brevity: They reduce data size in transaction payloads.
+Potential Namespace Management: Shortnames can play a role in how you manage namespaces within your data model.</p>
+<h3 id="important-considerations">Important Considerations<a aria-hidden="true" class="anchor-heading icon-link" href="#important-considerations"></a></h3>
+<ul>
+<li>Name Collisions: Atomic Data guarantees uniqueness of the Subject-Property combination, mitigating shortname collisions within the context of an entity. However, if resources from multiple Classes with the same shortname are mixed, clients need a strategy to resolve potential clashes (see the Atomic Data FAQ you linked earlier).</li>
+<li>Not a Replacement for Full URIs: Shortnames are a convenience mechanism. Internally, Atomic Data still relies on full Property URIs.</li>
+<li>each Property URL must resolve to an online Atomic Data Property.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://docs.atomicdata.dev/interoperability/solid">https://docs.atomicdata.dev/interoperability/solid</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/r7haeipou3w0kt8b06j5gmf">Atomicserver</a></li>
+<li><a href="/wiki/notes/ebbj5ovrdqvao6v4mhxxb0o">2024-10-18: What’s the Best Semantic Web Authoring Tool? desc: a grim survey of RDF data management apps</a></li>
+</ul>

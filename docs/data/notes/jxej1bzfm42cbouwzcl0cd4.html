@@ -1,0 +1,170 @@
+<h1 id="a-reusable-ontology-for-fluents-in-owl">A Reusable Ontology for Fluents in Owl<a aria-hidden="true" class="anchor-heading icon-link" href="#a-reusable-ontology-for-fluents-in-owl"></a></h1>
+<ul>
+<li><a href="https://www.researchgate.net/publication/221234960_A_Reusable_Ontology_for_Fluents_in_OWL">https://www.researchgate.net/publication/221234960_A_Reusable_Ontology_for_Fluents_in_OWL</a></li>
+<li>authors: <a href="/wiki/notes/nd9jv0vxttzc1gadynsa7ks">@christopher-welty</a></li>
+<li>published: 2006-01</li>
+<li>topics: <a href="/wiki/notes/g09smnhcw1nclhr5qfrvnyc">Perdurantism</a></li>
+</ul>
+<h2 id="abstract">Abstract<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract"></a></h2>
+<p>A critical problem for practical KR is dealing with relationships that change over time. This problem is compounded by representation languages such as OWL that are biased towards binary relations, even when the relationships that vary with time are binary. We discuss several approaches to this problem in OWL, and focus on the advantages of a four-dimensionalist (perdurantist) solution, which allows us to use more of the expressive power of the language.</p>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>synchronic, i.e. it refers to only one point in time</li>
+<li>diachronic, vary with time</li>
+<li>we consider fluents to be relations that hold within a certain time interval and not in others.</li>
+<li>In the original formulation of fluents discussed by McCarthy&#x26;Hayes, another choice presented is to add a meta-logical predicate to relate the relationship to a time interval. 
+<ul>
+<li>e.g. holds(ceoOf(Sam, IBM), t 1 )
+<ul>
+<li>OWL does not allow relationships themselves to participate in relationships, which this would require.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>requirement: fluents are round-trip compatible with a representation in <a href="/wiki/notes/hggu30jjns329pbe3pfymq2">KIF</a> that uses <em>holds</em>
+<ul>
+<li>they perform "more advanced temporal reasoning" with a special-purpose plugin for <a href="/wiki/notes/wxvanxwd8fh5bhiuwez2w5w">Jtp</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="solution-approaches-for-owl">Solution Approaches for OWL<a aria-hidden="true" class="anchor-heading icon-link" href="#solution-approaches-for-owl"></a></h3>
+<h4 id="reification">Reification<a aria-hidden="true" class="anchor-heading icon-link" href="#reification"></a></h4>
+<ul>
+<li>turn each tuple in the extension of a relation into an object that itself has binary relationships, typically called
+roles, identifying all the elements of the tuple
+<ul>
+<li>a reified relationship class, is created for each relation,</li>
+<li>e.g. for ceoOf(Sam, IBM, t 1 )</li>
+</ul>
+</li>
+</ul>
+<pre><code>Individual(IBM type(Company))
+Individual(JohnsHopkinsUniversity type(University))
+Individual(SamPalmisano type(Person))
+Individual(Rel1 type(CeoOf)
+value(CeoOf:ceo SamPalmisano)
+value(CeoOf:company IBM)
+value(CeoOf:holds t 1))
+</code></pre>
+<ul>
+<li>Reification has a number of known problems that are outlined in more detail in [Noy and Rector, 2005]. 
+<ul>
+<li>None of these are serious, but they are important to be aware of.</li>
+<li>proliferation of objects</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^t9qzkemy80rd" href="#^t9qzkemy80rd"></a><em>Redundant Objects</em>. Since relationship reifications are objects, it is possible to create multiple objects that reify the same relationship, where in other languages that permit n-ary predicates there would only be one tuple in the extension of the corresponding relation. This can be problematic when using reasoners (such as Racer [Haarslev and Möller, 2001]) that make a unique names assumption, as these multiple objects if present can be counted twice when satisfying counting axioms such as cardinality constraints.  </li>
+<li><em>Confusing ontology</em>. When classes and their instances are defined in an ontology, it is important to define what they refer to. The presence of reified relation classes and roles can create a confusion between events and fluents if one is not careful.
+<ul>
+<li>t.2024.08.07.03 yeah, but just be careful</li>
+</ul>
+</li>
+<li><em>Limited use of OWL reasoning</em>. The use of OWL language constructs becomes severely limited with reified relationships
+<ul>
+<li>simple reasoning about inverses can have the highest impact</li>
+<li>There is no a priori way todetermine which direction may be of more use to an end user.</li>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^zqsq4cdml6ud" href="#^zqsq4cdml6ud"></a>Reification prevents us from being able to express in OWL the relation inverses, 
+<ul>
+<li>thus we are stuck with whichever direction is stated in the text</li>
+</ul>
+</li>
+<li>Reification also prevents usage of the OWL operators transitive, symmetric, functional, and inverseFunctional on the intended relation.</li>
+</ul>
+</li>
+<li>Local range restrictions on properties in the reified relation class must also be understood to be global restrictions on the intended relation. 
+<ul>
+<li>To express the equivalent of local range restrictions on the intended relation, one must use nested restrictions on the role inverses
+<ul>
+<li>e.g. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>ObjectProperty(ManagerRel:manages
+  inverseOf(ManagerRel:managedBy))
+Class(Person partial
+  Restriction(ManagerRel:managedBy
+    allValuesFrom(
+      restriction(ManagerRel:manager
+        allValuesFrom(Person)))
+</code></pre>
+<ul>
+<li>Finally, for representing binary fluents, cardinality and value restrictions on the role inverses end up restricting the intended relation for all time
+<ul>
+<li>e.g. we cannot express in OWL that a person can have at most one manager at a time.</li>
+<li>the most we can say is a person can have at most one manager</li>
+<li>In most cases where such an axiom may be useful, e.g. the hasMother relation, it’s not clear the relation should be a fluent at all. </li>
+<li>At the very least, in our ontologies we could not find a use for cardinality or value restrictions on the role inverses.</li>
+</ul>
+</li>
+</ul>
+<h4 id="temporal-description-logics">Temporal Description Logics<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal-description-logics"></a></h4>
+<ul>
+<li>temporal description logics reduce to a modal logic, in which times (or situations) are removed from the syntax and instead are part of the implicit quantification with only one ordering relation.
+<ul>
+<li>we are unable to talk about what is true at any particular time in a temporal DL, we can only quantify over past and future times</li>
+<li>we can not use the full Allen calculus, which is critical to our application</li>
+</ul>
+</li>
+</ul>
+<h4 id="the-four-dimensional-approach">The Four-Dimensional Approach<a aria-hidden="true" class="anchor-heading icon-link" href="#the-four-dimensional-approach"></a></h4>
+<ul>
+<li>When two entities participate in some fluent, the fluent holds between temporal parts of those entities.</li>
+</ul>
+<h5 id="high-level-and-reusable-ontology-in-owl-for-4d-fluents">high-level and reusable ontology in OWL for 4D fluents<a aria-hidden="true" class="anchor-heading icon-link" href="#high-level-and-reusable-ontology-in-owl-for-4d-fluents"></a></h5>
+<pre><code>(Ontology 4dFluents
+  (Class TimeSlice)
+  (DisjointClasses TimeSlice TimeInterval)
+  (Property fluentProperty Symmetric
+    (domain TimeSlice)
+    (range TimeSlice))
+  (Property tsTimeSliceOf functional
+    (domain TimeSlice)
+    (range complementOf(TimeInterval)))
+  (Property tsTimeInterval Functional
+    (domain TimeSlice)
+    (range TimeInterval)))
+</code></pre>
+<ul>
+<li>As is often the case with high-level ontologies, there are more intended semantic constraints than can be expressed in OWL. 
+<ul>
+<li>we intend that time slices be maximal with respect to the time interval of all fluents it participates in.
+<ul>
+<li>i.e., the time interval of a time slice is defined to be the duration of the fluent holding.</li>
+<li>Thus if a time slice participates in more than one fluent, they (the fluents) must hold for precisely the same interval.
+<ul>
+<li>t.2024.08.02.06 seems problematic</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>two time slices of the same entity for the same interval are equal.</li>
+</ul>
+</li>
+<li>In our system, it is the responsibility of the component that transforms the output of text analysis into the knowledge-base to enforce these semantics</li>
+<li>The first advantage of the 4D representation is that we can use the OWL inverse operator in the expected way, as shown in the example ontology.</li>
+<li>Transitivity and symmetry also have the expected meaning, allowing us to express many spatial axioms in the OWL ontology:</li>
+<li>Cardinality restrictions can also be expressed with this approach in a way that was useful for our domain. We had several intended relations whose semantics required temporally qualified cardinality, such as “a company has at-most one CEO at a time”. 
+<ul>
+<li>does not prevent the unintended model in which a company has two overlapping time slices that have a hasCeo relation to different people</li>
+</ul>
+</li>
+<li>The 4D approach is the worst among the approaches discussed here with respect to the proliferation of objects. 
+<ul>
+<li>A single fluent requires two extra objects (the time slices) and four triples.</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h2>
+<ul>
+<li>reification of relationships further limits the use of what limited expressiveness OWL already has</li>
+<li></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/m3s2x1ajzacl8o0sfts1fcd">Representing Temporal Information in Lexical Linked Data</a></li>
+<li><a href="/wiki/notes/d7bj8xo0hmt9awmo76v4kd7">Everything Perdurant</a></li>
+<li><a href="/wiki/notes/958prd17uz4tl31043g4ai1">N Ary Relationships</a></li>
+</ul>

@@ -1,0 +1,30 @@
+<h1 id="ordered-data-in-rdf">Ordered Data in Rdf<a aria-hidden="true" class="anchor-heading icon-link" href="#ordered-data-in-rdf"></a></h1>
+<ul>
+<li><a href="https://ontola.io/blog/ordered-data-in-rdf">https://ontola.io/blog/ordered-data-in-rdf</a></li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>json-ld arrays are rdf:List</li>
+</ul>
+<h3 id="tldr">tl;dr<a aria-hidden="true" class="anchor-heading icon-link" href="#tldr"></a></h3>
+<p><strong>RDF Containers:</strong></p>
+<ul>
+<li>Come in three forms: <code>rdf:Seq</code> (ordered), <code>rdf:Bag</code> (unordered), <code>rdf:Alt</code> (alternatives with default)</li>
+<li>You can add new items by simply adding RDF triples</li>
+<li>Inserting items is hard: requires rewriting <em>many</em> statements</li>
+<li>Must be stored in a single graph / machine / server (centralized)</li>
+<li>Have a formally unknown ending (open world assumption)</li>
+</ul>
+<p><strong>RDF Collections:</strong></p>
+<ul>
+<li>An ordered chain of <code>rdf:List</code> resources</li>
+<li>You have to edit / remove statements before you can add new items</li>
+<li>Inserting items is easy: requires changing <em>just a few</em> statements</li>
+<li>Can span many graphs / machines / servers (decentralized)</li>
+<li>Have a known ending (the <code>rdf:nil</code>)</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/sgxfedlyabx9jl3jnfxbz1r">Successor</a></li>
+</ul>

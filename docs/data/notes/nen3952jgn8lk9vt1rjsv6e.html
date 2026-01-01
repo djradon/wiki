@@ -1,0 +1,34 @@
+<h1 id="pragmatics">Pragmatics<a aria-hidden="true" class="anchor-heading icon-link" href="#pragmatics"></a></h1>
+<h2 id="how-can-we-express-potentially-complex-sets-of-statements-with-different-change-semantics-or-as-we-can-now-more-precisely-say-with-different-pragmatics-using-triple-compounds-what-does-pragmatics-mean-in-this-context">"how can we express potentially complex sets of statements with different “change semantics” or, as we can now more precisely say, with different pragmatics using triple compounds?" What does pragmatics mean in this context?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-can-we-express-potentially-complex-sets-of-statements-with-different-change-semantics-or-as-we-can-now-more-precisely-say-with-different-pragmatics-using-triple-compounds-what-does-pragmatics-mean-in-this-context"></a></h2>
+<ul>
+<li><a href="/wiki/notes/wtr8mkilwzti5y5o9jp03dm">@chatgpt.4o</a>: </li>
+</ul>
+<p>In the context of the passage from the OntoGen introduction, the term <strong>"pragmatics"</strong> refers to the practical aspects of how RDF triples (or sets of RDF triples, referred to as "triple compounds") are used to convey meaning, especially in relation to the context, usage, or intention behind the data. Pragmatics in this sense goes beyond the mere structure of the data (syntax) or the direct meaning of the individual statements (semantics) to consider how these statements are interpreted or intended to be interpreted in specific situations.</p>
+<h3 id="explanation">Explanation:<a aria-hidden="true" class="anchor-heading icon-link" href="#explanation"></a></h3>
+<ol>
+<li>
+<p><strong>Syntax</strong>: This refers to the structure or format of the RDF triples. For example, RDF syntax dictates that each triple consists of a subject, predicate, and object.</p>
+</li>
+<li>
+<p><strong>Semantics</strong>: This involves the meaning of each individual triple. For instance, the triple <code>:John :hasFriend :Jane</code> conveys the idea that John has a friend named Jane.</p>
+</li>
+<li>
+<p><strong>Pragmatics</strong>: In this context, pragmatics relates to the broader interpretation and use of these triples in real-world situations, including:</p>
+<ul>
+<li><strong>Change Semantics</strong>: How the interpretation of the triples might change over time or in different contexts. For example, if a person’s status or role changes, the meaning of the relationships expressed in the RDF data might also shift.</li>
+<li><strong>Contextual Interpretation</strong>: How the meaning of triples might depend on additional context, such as the time at which the data was recorded, the authority or trustworthiness of the source, or the intentions behind creating the data.</li>
+<li><strong>Usage Scenarios</strong>: How the triples are used to achieve particular goals, such as decision-making, information retrieval, or communication between systems or people.</li>
+</ul>
+</li>
+</ol>
+<h3 id="example">Example:<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h3>
+<p>Imagine you have a set of triples that describe an employee's role in a company:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasRole</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Manager</span></span> <span class="token punctuation">.</span>
+<span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">John</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">hasRole</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Consultant</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<ul>
+<li><strong>Semantics</strong>: These triples simply state that John has the roles of Manager and Consultant.</li>
+<li><strong>Pragmatics</strong>: Pragmatics would consider the context: Is John currently active in both roles, or has he transitioned from Manager to Consultant? Is this information being used to make decisions about John's current responsibilities? If the data is being interpreted in the context of a specific time frame, pragmatics would account for how this data should be understood or acted upon at that time.</li>
+</ul>
+<h3 id="in-summary">In Summary:<a aria-hidden="true" class="anchor-heading icon-link" href="#in-summary"></a></h3>
+<p>In this context, <strong>pragmatics</strong> refers to how the meaning of RDF triples or compounds might vary based on the circumstances, intentions, and context of their use. It involves understanding the implications of the data in a more nuanced, real-world setting, particularly when dealing with "change semantics" or how information evolves over time or in different contexts.</p>

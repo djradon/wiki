@@ -1,0 +1,89 @@
+<h1 id="godot">Godot<a aria-hidden="true" class="anchor-heading icon-link" href="#godot"></a></h1>
+<p><a href="/wiki/notes/5dbrrn5fagfbt0n9pkdf48p">Game-Engine</a></p>
+<ul>
+<li><a href="/wiki/notes/tDlF56DXmsYdRy1Ts0Kmi">hasRepository</a> <a href="https://github.com/godotengine/godot">https://github.com/godotengine/godot</a></li>
+<li><a href="/wiki/notes/KdI5YmSylhts0ZkiJVRdf">hasSite</a> <a href="https://godotengine.org/">https://godotengine.org/</a></li>
+<li><a href="/wiki/notes/p2SVnpfUHaBBLWeSpqiPK">builtWith</a> <a class="color-tag" style="--tag-color: #4e5481;" href="/wiki/notes/9x5mxctvzz8hf8h29ca3dxr">#c++</a></li>
+<li><a href="/wiki/notes/xOWC0q0KKhXZfXNw5mPa9">hasScriptingLanguage</a> 
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">t.cs.languages.gdscript (Private)</a> </li>
+<li><a href="/wiki/notes/2MYxIAcVjpPWRLiA3DDtT">C#</a></li>
+<li><a class="color-tag" style="--tag-color: #4e5481;" href="/wiki/notes/9x5mxctvzz8hf8h29ca3dxr">#c++</a></li>
+<li>typescript via <a href="https://github.com/GodotExplorer/ECMAScript">https://github.com/GodotExplorer/ECMAScript</a> and <a href="/wiki/notes/4q7ruww2ji2xw64in8rrefd">QuickJS</a></li>
+<li><a class="color-tag" style="--tag-color: #fcc006;" href="/wiki/notes/fdqhhzcn9m5zj604dgasqi2">#rust</a></li>
+<li><a class="color-tag" style="--tag-color: #d8dcd6;" href="/wiki/notes/zves1circp5wlz2d3goyaak">#python</a> via <a href="https://godotengine.org/asset-library/asset/179">PythonScript</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>publish to web
+<ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^x343t4fze5lf" href="#^x343t4fze5lf"></a><a href="/wiki/notes/pr2ivxg0bll4j12d6cicf46">Issue</a>  
+<ul>
+<li>t.2023.10.09 Projects written in C# using Godot 4 currently cannot be exported to the web. To use C# on web platforms, use Godot 3 instead.</li>
+<li>Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs with SharedArrayBuffer and WebGL 2.0.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>dynamic execution
+<ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^lk1riz8a7a5e" href="#^lk1riz8a7a5e"></a><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@tool (Private)</a> makes scripts execute in the editor  <a href="https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html">https://docs.godotengine.org/en/stable/tutorials/plugins/running_code_in_the_editor.html</a> 
+<ul>
+<li>e.g. If your player doesn't use a sprite, but draws itself using code, you can make that drawing code execute in the editor to see your player.</li>
+</ul>
+</li>
+<li><a href="https://ask.godotengine.org/34626/dynamic-code">https://ask.godotengine.org/34626/dynamic-code</a></li>
+</ul>
+</li>
+<li><a href="/wiki/notes/gumh48vac0xpkly050yoryl">Wasm</a> <a href="https://docs.godotengine.org/en/acctable/contributing/development/compiling/compiling_for_web.html">support</a> via <a href="/wiki/notes/rfkssfis8g9pdvf5aa5lzfp">Emscripten</a>
+<ul>
+<li>Using Go for WebAssembly offers several advantages. First, Go provides a familiar and straightforward programming environment for web developers, making it easy to transition from traditional Go development to web development.</li>
+<li>Secondly, Go’s performance and concurrency features are well-suited for building efficient web applications that can handle heavy workloads.</li>
+<li>Finally, the combination of Go and WebAssembly allows for cross-platform compatibility, enabling the deployment of applications on various browsers without the need for plugins or additional dependencies.</li>
+</ul>
+</li>
+<li><a href="/wiki/notes/uvwi5izihjfbh2u2zwcvd49">Entity Component System</a> </li>
+</ul>
+<h2 id="cons">Cons<a aria-hidden="true" class="anchor-heading icon-link" href="#cons"></a></h2>
+<ul>
+<li>as of early 2024, no c# support for web platform</li>
+<li>does not support exception handling <a href="https://heroiclabs.com/docs/nakama/client-libraries/godot/">https://heroiclabs.com/docs/nakama/client-libraries/godot/</a> </li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@hendrik-mans (Private)</a>: "I love that Godot exists, but I hate it so much
+It is what it is, and if you take it as just that, it's alright, but as soon as you look at the terrible source code or otherwise interact with the project or the people in it, it gets so painful.
+My favorite Godot experience is how, after reporting something that's obviously broken, or opening a proposal for a new feature/change that I think might be useful because I use them in other engines, someone from the core team will always end up telling me how the bug/broken behavior might, in fact, be good, or how the thing that literally every other engine does is in fact bad
+How about a mute button that will disable sound when running the game/a scene? No, the user can just drop down their PC's volume for that!
+How about an icosphere geometry generator? lol what's an icosphere, that kinda looks funny, juse use a normal sphere!
+Shader code can't shadow global names in local variable names! Oh yeah we don't know if that is on purpose but it feels like if they can do that, it might confuse people
+But your language claims to be GLSL compatible, and in GLSL you can shadow global names! Oh yeah well it's still confusing
+How about being able to scale rigidbodies? THAT'S IMPOSSIBLE!!!!!
+No, it's not, literally every engine supports it (by internally scaling colliders)! oh yeah? well, that's kinda confusing. All rigidbodies should be the same size! If you need an object in several different sizes, just make copies of the scene and adjust the colliders manually!
+etc. etc. etc.
+It really is a terrible terrible terrible piece of software and the only chance one has at maybe enjoying it is to just think of fluffy little kittens every time you encounter something that's broken or bad. But do not, I repeat, do NOT engage with the project."
+<ul>
+<li><a href="https://discord.com/channels/844566064281026600/850335072242237470/1175129150068109367">https://discord.com/channels/844566064281026600/850335072242237470/1175129150068109367</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://github.com/abmarnie/godot-architecture-organization-advice">https://github.com/abmarnie/godot-architecture-organization-advice</a></li>
+<li><a href="https://chickensoft.games/blog/godot-csharp-2024/">https://chickensoft.games/blog/godot-csharp-2024/</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://godotengine.org/article/whats-new-in-csharp-for-godot-4-0/">https://godotengine.org/article/whats-new-in-csharp-for-godot-4-0/</a></li>
+<li><a href="https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine/">https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine/</a></li>
+<li><a href="https://programminghaven.home.blog/2020/01/30/designing-a-loosely-coupled-gdscript/">https://programminghaven.home.blog/2020/01/30/designing-a-loosely-coupled-gdscript/</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/wE7inwEaZAd4ocOXl4Sfp">Javelin</a></li>
+<li><a href="/wiki/notes/vsow09jllfj4mi2jyrp60w2">GameDemo</a></li>
+<li><a href="/wiki/notes/swwws6jl09wodgmoujy0fv2">Geodot Plugin</a></li>
+<li><a href="/wiki/notes/hs3pfpuq926ytwh3xqvsdgc">Nakama</a></li>
+<li><a href="/wiki/notes/tjovuj8uwg2fj2g40ldttzq">OpenXR</a></li>
+<li><a href="/wiki/notes/YEENs52Vldkdwe2jkkRpe">Stride3d</a></li>
+</ul>

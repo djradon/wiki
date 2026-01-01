@@ -1,0 +1,60 @@
+<h1 id="egeria">Egeria<a aria-hidden="true" class="anchor-heading icon-link" href="#egeria"></a></h1>
+<ul>
+<li>
+<p><a href="/wiki/notes/oye1v3fz1vyv59zw83tan5p">Data Discovery</a></p>
+</li>
+<li>
+<p>url: <a href="https://egeria-project.org/">https://egeria-project.org/</a></p>
+</li>
+<li>
+<p>built_on: <a href="/wiki/notes/pfdfufrswulzt29vvwunl7x">xtdb V1</a></p>
+</li>
+<li>
+<p>"Egeria supports an integration of different catalogs through a metadata event bus, but it doesn’t seem to be feature complete yet as of this writing. " t.2020.12.07</p>
+</li>
+</ul>
+<h2 id="topics">Topics<a aria-hidden="true" class="anchor-heading icon-link" href="#topics"></a></h2>
+<h3 id="roles-vs-personas">Roles vs Personas<a aria-hidden="true" class="anchor-heading icon-link" href="#roles-vs-personas"></a></h3>
+<ul>
+<li><a href="https://egeria-project.org/practices/coco-pharmaceuticals/roles-vs-personas/overview/">https://egeria-project.org/practices/coco-pharmaceuticals/roles-vs-personas/overview/</a> </li>
+<li><img src="/wiki/assets/images/2024-03-02-23-34-16.png"></li>
+<li>roles have a context. 
+<ul>
+<li>For example, Tessa is a manager, but not for everyone in Coco Pharmaceuticals. She is a manager of a specific team. Similarly, she may be a system owner, but not of all systems.</li>
+</ul>
+</li>
+<li>roles have a scope "and as we design the Egeria software, we need to be sure that this code is included with the definition of the role. We also need to ensure roles can be combined together to form the complete "job" that an individual performs."</li>
+</ul>
+<h3 id="schema">Schema<a aria-hidden="true" class="anchor-heading icon-link" href="#schema"></a></h3>
+<ul>
+<li>
+<p>"A schema describes the structure of the data associated with an Asset. The technology that supports the asset often limits the structural choices for data. For example:</p>
+<p>  A relational database organizes data into collections of tables and columns.
+Technologies such as JSON or XML, organizes data into nested structures.
+Graph databases organizes data in nodes and relationships.</p>
+</li>
+</ul>
+<p>These differences need to be represented in the Open Metadata Types. However, at the same time, data governance is concerned with the accuracy and appropriate use of individual data values. This is very expensive if each data item was governed individually so the data governance practices aim to group like data together, so they can be governed in a consistent way. As such, the open metadata types provide a root set of types that all the specific schema structures inherit from."</p>
+<ul>
+<li><a href="https://egeria-project.org/concepts/schema/">https://egeria-project.org/concepts/schema/</a></li>
+</ul>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<ul>
+<li>The Egeria community uses the Coco Pharmaceuticals personas to test that there is easy movement from role to role.</li>
+</ul>
+<p>This is implemented as follows:</p>
+<ul>
+<li>Each person has a personal profile (stored as Person entity) that describes the individual (persona).</li>
+<li>The Egeria community uses the Coco Pharmaceuticals <a href="https://egeria-project.org/practices/personas/overview">personas</a> to test that there is easy movement from role to role.</li>
+</ul>
+<p>This is implemented as follows:</p>
+<ul>
+<li>Each person has a personal profile <a href="https://egeria-project.org/types/1/0112-People">(stored as Person entity)</a> that describes the individual (persona).</li>
+<li>Linked off of the personal profile are person roles <a href="https://egeria-project.org/types/1/0112-Peoplel">(stored as PersonRole entity</a> that define each role (and their associated scope) that the person performs.</li>
+</ul>
+<p>The profile and role are managed primarily by the <a href="https://egeria-project.org/services/omas/community-profile/overview">Community Profile OMAS</a> and this drives the display on Egeria's user interfaces as well as some aspects of security.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/gvkx03wwwnwaf47l4l0er2k">Datahub</a></li>
+</ul>

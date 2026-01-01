@@ -1,0 +1,111 @@
+<h1 id="reconceptualizing-superwork-for-improved-access-to-popular-cultural-objects">Reconceptualizing Superwork for Improved Access to Popular Cultural Objects<a aria-hidden="true" class="anchor-heading icon-link" href="#reconceptualizing-superwork-for-improved-access-to-popular-cultural-objects"></a></h1>
+<ul>
+<li>
+<p><a href="https://cpb-us-e1.wpmucdn.com/sites.uw.edu/dist/2/3760/files/2019/09/Reconceptualizing-Superwork-for-Improved-Access.pdf">https://cpb-us-e1.wpmucdn.com/sites.uw.edu/dist/2/3760/files/2019/09/Reconceptualizing-Superwork-for-Improved-Access.pdf</a></p>
+</li>
+<li>
+<p>topics: <a href="/wiki/notes/46dpthl5tvubjfalrk28row">Superwork</a> <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">sh.t.multiverse (Private)</a></p>
+</li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>several researchers such
+as Carlyle (1996), Svenonius (2000), Antelman (2004), Smiraglia (2007), Kemp (2008), and Smiraglia et al. (2014) have discussed this concept. Similar or relevant concepts also exist in current bibliographic standards such as <a href="/wiki/notes/dek450y2cja0kq309elq8ch">Frbr</a>, FRBROO, and BIBFRAME 2.0. 
+<ul>
+<li>Smiraglia (2007) states that the notion of the superwork describes “the abstract intellectual concept of a given work that is the principle node around which all iterations of that work may be collocated”</li>
+<li>Antelman (2004) and Kemp (2008) have used the term in the context of overarching super-serials that span across all of the title changes that a serialized work might have undergone during the timeline of its publication
+<ul>
+<li>Example: Dr. Strange, a work which begins as part of Marvel Comics’ science-fiction/horror anthology Strange Tales (in issue #110), eventually expanding to the point of being the whole of the content of Strange Tales (by issue #169), before being renamed as Dr. Strange (also issue #169)
+<ul>
+<li>a superwork in this sense would encompass some of Strange Tales and all of Dr. Strange</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/wiki/notes/lobpfim9ape9er1mra6hykh">Frbroo</a> provides a rich set of tools with which the bibliographic universe can be modelled
+<ul>
+<li>e.g. F15 Complex Work
+<ul>
+<li>t.2024.08.22.10 now part of <a href="/wiki/notes/0re6p3cirbus3r42b35n2z8">Pressoo</a></li>
+<li>While the term complex work does not evoke the grand scope that a term like superwork does, the definition, scoping notes, and examples provided in the FRBROO document seem to, at first, closely align to the definition of superwork and scope of the examples provided later in this paper</li>
+<li>it does not seem as though works that are not intended by the creators to be part of one another... are to be modelled using the complex work entity mode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/wiki/notes/t9avbuul6ls4r382a52eftc">Bibframe</a> hasDerivative and derivativeOf
+properties</li>
+<li>we define superwork as an aggregate entity related by:
+<ul>
+<li>their origins (i.e., derivative works from some ur-work), or</li>
+<li>shared characteristics, such as theme, characters and world/universe.</li>
+</ul>
+</li>
+</ul>
+<h3 id="propertiescharacteristics-of-superwork">Properties/Characteristics of Superwork<a aria-hidden="true" class="anchor-heading icon-link" href="#propertiescharacteristics-of-superwork"></a></h3>
+<ul>
+<li>hasMember: A Superwork is a kind of aggregate.
+<ul>
+<li>At the very least they stand in a “hasPart” mereological relationship with the individual works that they are made of. </li>
+<li>More specifically, the individual works that make up a superwork stand in a mereonymic relationship with the superwork. </li>
+<li>If one models a superwork as the kind of thing that derives its identity from the works that compose it, then this narrower relationship is membership</li>
+<li>If one models a superwork as the kind of thing that is constituted of the works that compose it, then this relationship is constitution.</li>
+<li>If one believes that the works that compose a superwork are brought together through curatorial intervention, then the relationship is the much narrower gathered-into relationship and superworks are identical to bibliographic collections.</li>
+</ul>
+</li>
+<li>includesFormat: A Superwork encompasses multiple works in multiple formats related to one another in a multitude of complex ways
+<ul>
+<li>t.2024.08.22.11 disagree</li>
+<li>items in a superwork aggregation are related to one another beyond the curatorial sense of membership or the editorial sense of arrange- ment (i.e., they are not the same as collections or series</li>
+</ul>
+</li>
+<li>hasCreator: A Superwork will frequently contain works by several (and sometimes hundreds of) authors.
+<ul>
+<li>it is possible for a superwork to emerge based on works by a single author</li>
+</ul>
+</li>
+<li>hasTheme: A Superwork is aggregated around some theme or group of closely related themes.
+<ul>
+<li>shared fictional universes</li>
+<li>brands</li>
+<li>topics</li>
+</ul>
+</li>
+</ul>
+<h3 id="challenges">Challenges<a aria-hidden="true" class="anchor-heading icon-link" href="#challenges"></a></h3>
+<h4 id="superworks-as-non-bibliographic-entities">Superworks as (non-)Bibliographic Entities<a aria-hidden="true" class="anchor-heading icon-link" href="#superworks-as-non-bibliographic-entities"></a></h4>
+<ul>
+<li>Reconceptualizing superwork as an aggregation that primarily reflects something that users believe to be true about the bibliographic universe is a useful goal</li>
+<li>better conceptualized as a kind of super-topic? (as opposed to a bibliographic aggregate)
+<ul>
+<li>"After all, existing cataloging practices and digital information systems have well-developed senses of topical, genre-based, and agent-based access points"
+<ul>
+<li>While these access points suffice for querying a catalog system we found that they lacked the essential conceptual substance that differentiates bibliographic aggregations from mere search query results— <strong>conceptual mass</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>An alternative is to represent the superwork entity as an abstract entity to which multiple relevant works belong (akin to FRBR Group 1 entities). A benefit here would be a more straightforward collocation of these works under the superwork entity rather than users having to access the network of works that may be grouped under a shared concept, place, and other elements. </li>
+</ul>
+<h4 id="superworks-as-bibliographic-aggregates">Superworks as Bibliographic Aggregates<a aria-hidden="true" class="anchor-heading icon-link" href="#superworks-as-bibliographic-aggregates"></a></h4>
+<ul>
+<li>the items in a superwork do not seem to be grouped together through the curatorial process of selection. Therefore, it does not seem to be the case that superworks are the same kind of aggregation as a collection.</li>
+</ul>
+<h4 id="specialized-relationships-among-superwork-members">Specialized Relationships among Superwork Members<a aria-hidden="true" class="anchor-heading icon-link" href="#specialized-relationships-among-superwork-members"></a></h4>
+<h5 id="conceptualizing-crossover-superworks">Conceptualizing Crossover superworks<a aria-hidden="true" class="anchor-heading icon-link" href="#conceptualizing-crossover-superworks"></a></h5>
+<ul>
+<li>the mixed presence of characters from two different superworks in a crossover superwork made it feel unnatural to categorize the crossover superwork under one or the other superworks from which the characters originate.
+<ul>
+<li>t.2024.08.22.12 should be both... categories does kinda imply exclusive, but probably should be modelled as a mixin (RoleMixin)</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion<a aria-hidden="true" class="anchor-heading icon-link" href="#conclusion"></a></h2>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/4qppc4bpj9d3and3abrlvty">Superworks</a></li>
+<li><a href="/wiki/notes/gpjt0tgwkb6khor1tcvlgmb">Work, Expression, Manifestation, Item</a></li>
+</ul>

@@ -1,0 +1,25 @@
+<h1 id="twelve-factor">Twelve Factor<a aria-hidden="true" class="anchor-heading icon-link" href="#twelve-factor"></a></h1>
+<ul>
+<li><a href="https://12factor.net/">https://12factor.net/</a></li>
+</ul>
+<h2 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h2>
+<h2 id="i-codebase-one-codebase-tracked-in-revision-control-many-deploys">I. Codebase: One codebase tracked in revision control, many deploys<a aria-hidden="true" class="anchor-heading icon-link" href="#i-codebase-one-codebase-tracked-in-revision-control-many-deploys"></a></h2>
+<ul>
+<li>there should be a one-to-one correlation between an application and its codebase.</li>
+<li>If an application consists of multiple repositories (each with a different root commit), it is considered a distributed system rather than a single 12-factor app.</li>
+<li>To adhere to the 12-factor principles, shared code (common functionality) should be factored into libraries that can be included via a dependency manager.</li>
+</ul>
+<h2 id="ii-dependencies-explicitly-declare-and-isolate-dependencies">II. Dependencies: Explicitly declare and isolate dependencies<a aria-hidden="true" class="anchor-heading icon-link" href="#ii-dependencies-explicitly-declare-and-isolate-dependencies"></a></h2>
+<h2 id="iii-config-store-config-in-the-environment">III. Config: Store config in the environment<a aria-hidden="true" class="anchor-heading icon-link" href="#iii-config-store-config-in-the-environment"></a></h2>
+<h2 id="iv-backing-services-treat-backing-services-as-attached-resources">IV. Backing services: Treat backing services as attached resources<a aria-hidden="true" class="anchor-heading icon-link" href="#iv-backing-services-treat-backing-services-as-attached-resources"></a></h2>
+<h2 id="v-build-release-run-strictly-separate-build-and-run-stages">V. Build, release, run: Strictly separate build and run stages<a aria-hidden="true" class="anchor-heading icon-link" href="#v-build-release-run-strictly-separate-build-and-run-stages"></a></h2>
+<h2 id="vi-processes-execute-the-app-as-one-or-more-stateless-processes">VI. Processes: Execute the app as one or more stateless processes<a aria-hidden="true" class="anchor-heading icon-link" href="#vi-processes-execute-the-app-as-one-or-more-stateless-processes"></a></h2>
+<h2 id="vii-port-binding-export-services-via-port-binding">VII. Port binding: Export services via port binding<a aria-hidden="true" class="anchor-heading icon-link" href="#vii-port-binding-export-services-via-port-binding"></a></h2>
+<ul>
+<li>The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service.</li>
+</ul>
+<h2 id="viii-concurrency-scale-out-via-the-process-model">VIII. Concurrency: Scale out via the process model<a aria-hidden="true" class="anchor-heading icon-link" href="#viii-concurrency-scale-out-via-the-process-model"></a></h2>
+<h2 id="ix-disposability-maximize-robustness-with-fast-startup-and-graceful-shutdown">IX. Disposability: Maximize robustness with fast startup and graceful shutdown<a aria-hidden="true" class="anchor-heading icon-link" href="#ix-disposability-maximize-robustness-with-fast-startup-and-graceful-shutdown"></a></h2>
+<h2 id="x-devprod-parity-keep-development-staging-and-production-as-similar-as-possible">X. Dev/prod parity: Keep development, staging, and production as similar as possible<a aria-hidden="true" class="anchor-heading icon-link" href="#x-devprod-parity-keep-development-staging-and-production-as-similar-as-possible"></a></h2>
+<h2 id="xi-logs-treat-logs-as-event-streams">XI. Logs: Treat logs as event streams<a aria-hidden="true" class="anchor-heading icon-link" href="#xi-logs-treat-logs-as-event-streams"></a></h2>
+<h2 id="xii-admin-processes-run-adminmanagement-tasks-as-one-off-processes">XII. Admin processes: Run admin/management tasks as one-off processes<a aria-hidden="true" class="anchor-heading icon-link" href="#xii-admin-processes-run-adminmanagement-tasks-as-one-off-processes"></a></h2>

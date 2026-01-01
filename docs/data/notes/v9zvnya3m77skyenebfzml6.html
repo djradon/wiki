@@ -1,0 +1,61 @@
+<h1 id="bfo-2020">BFO 2020<a aria-hidden="true" class="anchor-heading icon-link" href="#bfo-2020"></a></h1>
+<ul>
+<li><a href="https://github.com/BFO-ontology/BFO-2020/">https://github.com/BFO-ontology/BFO-2020/</a></li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<h3 id="temporal">Temporal<a aria-hidden="true" class="anchor-heading icon-link" href="#temporal"></a></h3>
+<ul>
+<li>
+<p><a href="https://github.com/BFO-ontology/BFO-2020/blob/master/src/owl/profiles/temporal%20extensions/README.md">temporal extensions</a></p>
+<ul>
+<li>
+<p>To satisfy needs of the community then, the BFO development team encourages a strategy of developing and deploying Temporal Extensions which will provide users options for representing time in their domains.</p>
+</li>
+<li>
+<p>Given the need to represent time and change in many domains and the wide use of OWL in ontology circles, proposals have been offered by users of BFO for representing such phenomena within the binary constraints of OWL. Examples include:</p>
+<ul>
+<li><a href="https://github.com/BFO-ontology/BFO-2020/blob/master/src/owl/profiles/temporal%20extensions/temporalized%20relations/owl/README.md">Temporalized Relations</a>  
+<ul>
+<li><a href="https://github.com/BFO-ontology/BFO-2020/blob/master/src/owl/profiles/temporal%20extensions/temporalized%20relations/owl/bfo-temporalized-relations.ttl">https://github.com/BFO-ontology/BFO-2020/blob/master/src/owl/profiles/temporal%20extensions/temporalized%20relations/owl/bfo-temporalized-relations.ttl</a></li>
+</ul>
+</li>
+<li><a href="https://oborel.github.io/obo-relations/temporal-semantics/">Temporal Interpretation Annotation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="competency-questions-for-temporal-representation">Competency Questions for temporal representation<a aria-hidden="true" class="anchor-heading icon-link" href="#competency-questions-for-temporal-representation"></a></h4>
+<ul>
+<li><a href="https://github.com/CommonCoreOntology/CommonCoreOntologies/issues/118">https://github.com/CommonCoreOntology/CommonCoreOntologies/issues/118</a></li>
+</ul>
+<h5 id="how-to-turn-dates-into-into-temporal-information">How to turn dates into into temporal information<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-turn-dates-into-into-temporal-information"></a></h5>
+<ul>
+<li><a href="https://github.com/CommonCoreOntology/CommonCoreOntologies/issues/118#issuecomment-810285200">https://github.com/CommonCoreOntology/CommonCoreOntologies/issues/118#issuecomment-810285200</a></li>
+<li>Purposes:
+<ul>
+<li>reasoning and inferencing; when rules can't be express in (OWL?) DL, use <a href="/wiki/notes/tqj6kdyaahl2jwfa2o0rlos">Spin</a></li>
+<li>sparql queries for now or historical</li>
+<li>recording provenance. "text in a document that denotes a day, month, or year is typically as close as I can get to knowing the temporal region during which a process occurs."</li>
+<li>assumption: "The temporal region does not explicitly state the starting and ending moments, but these values can be calculated."</li>
+<li>I assert the process to be the subject of an <a href="/wiki/notes/66ntwxton1w8i9k4xqvzltb">Information Content Entity</a>, which in turn generically depends on an <a href="/wiki/notes/533duztpe94rdlicknmeef8">Information Bearing Entity</a>. The Information Bearing Entity is the subject of a triple in the above form, where the predicate is cco:has_date_value and the object is a literal, either with a language tag or of type xsd:string.</li>
+<li>I create a temporal interval based on the text literal. I associate the temporal interval with the process and the Information Content Entity.</li>
+</ul>
+</li>
+</ul>
+<pre><code>:process occupies-temporal-region :tr .
+:tr designated-by :ice .
+:ice generically-depends-on-at-all-times :ibe .
+:ibe has-date-value "March 31"@en .
+</code></pre>
+<p>This establishes provenance. Next I create temporal instants representing the first and last instants of March 31:</p>
+<pre><code>:instant-01 a cco:TemporalInstant .
+:instant-02 a cco:TemporalInstant .
+:tr has-first-instant :instant-01 .
+:tr has-last-instant :instant-02 .
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/zbfyvlhb3d6dpl9o5iyyzuh">Dolce Vs Ufo Vs Gfo Vs Sumo</a></li>
+</ul>

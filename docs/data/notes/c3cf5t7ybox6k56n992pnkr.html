@@ -1,0 +1,114 @@
+<h1 id="gufo">gUFO<a aria-hidden="true" class="anchor-heading icon-link" href="#gufo"></a></h1>
+<ul>
+<li><a href="https://nemo-ufes.github.io/gufo/">https://nemo-ufes.github.io/gufo/</a></li>
+<li>similar: <a href="/wiki/notes/3oygg06p6jjbt68la0azf1f">eUFO</a></li>
+</ul>
+<h2 id="issues">Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#issues"></a></h2>
+<ul>
+<li>not OWL-DL because powerclasses? (punning)</li>
+<li>doesn't support <a href="/wiki/notes/64ugzw02qgdm4umxjzj2mv1">Multi-Level Theory</a>, see <a href="/wiki/notes/dp4w7jmpsawbe3rj7kxa7sf">37 Multi Level</a> </li>
+<li>abstract and concrete are disjoint, but e.g. wemi... things are a blend</li>
+</ul>
+<h2 id="features">Features<a aria-hidden="true" class="anchor-heading icon-link" href="#features"></a></h2>
+<ul>
+<li>
+<p>Treating aspects as endurants (i.e., reifying aspects) allows us to consider the properties of aspects themselves, and track their change in time.</p>
+</li>
+<li>
+<p>temporal aspects of concrete individuals can be captured with the data properties gufo:hasBeginPointInXSDDate, gufo:hasBeginPointInXSDDateTimeStamp, gufo:hasEndPointInXSDDate and gufo:hasEndPointInXSDDateTimeStamp</p>
+</li>
+<li>
+<p><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^io6179ll2dle" href="#^io6179ll2dle"></a>A key feature of UFO (and hence, gUFO) is that it includes two taxonomies: one with classes whose instances are individuals (classes in this taxonomy include gufo:Object, gufo:Event) and another with classes whose instances are types (classes in this taxonomy include gufo:Kind, gufo:Phase, gufo:Category). </p>
+</li>
+</ul>
+<h3 id="taxonomy">Taxonomy<a aria-hidden="true" class="anchor-heading icon-link" href="#taxonomy"></a></h3>
+<ul>
+<li>Individual
+<ul>
+<li>AbstractIndividual</li>
+<li>ConcreteIndividual
+<ul>
+<li>Endurant
+<ul>
+<li>Object</li>
+<li>Aspect</li>
+</ul>
+</li>
+<li>Event</li>
+<li>Situation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Type
+<ul>
+<li>AbstractIndividualType</li>
+<li>ConcreteIndividualType
+<ul>
+<li>EndurantType
+<ul>
+<li>Sortal
+<ul>
+<li>Kind</li>
+<li>Phase</li>
+<li>Role</li>
+<li>SubKind</li>
+</ul>
+</li>
+<li>NonSortal
+<ul>
+<li>Category</li>
+<li>PhaseMixin</li>
+<li>RoleMixin</li>
+<li>Mixin</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EventType</li>
+<li>SituationType</li>
+</ul>
+</li>
+<li>RelationshipType</li>
+</ul>
+</li>
+</ul>
+<h3 id="usage-scenarios">Usage Scenarios<a aria-hidden="true" class="anchor-heading icon-link" href="#usage-scenarios"></a></h3>
+<p>Considering these two taxonomies, the following usage scenarios are envisioned and discussed in this document where appropriate:</p>
+<ol>
+<li>A UFO-based ontology <em>instantiates</em> gUFO classes in the taxonomy of individuals<br>
+For example, <code>:Earth rdf:type gufo:Object</code> and <code>:WorldCup1970Final rdf:type gufo:Event</code>.</li>
+<li>A UFO-based ontology <em>specializes</em> gUFO classes in the taxonomy of individuals<br>
+For example, <code>:Planet rdfs:subClassOf gufo:Object</code> and <code>:SoccerMatch rdfs:subClassOf gufo:Event</code>.</li>
+<li>A UFO-based ontology <em>instantiates</em> gUFO classes in the taxonomy of types<br>
+For example, <code>:Planet rdf:type gufo:Kind</code>, <code>:Child rdf:type gufo:Phase</code>.</li>
+<li>A UFO-based ontology <em>specializes</em> gUFO classes in the taxonomy of types<br>
+For example, <code>:PersonPhase rdfs:subClassOf gufo:Phase</code>.</li>
+</ol>
+<p>Users may combine the various scenarios discussed. For example, users will often employ scenarios 2 and 3 in combination as shown in the following fragment, which defines a "Person" class that specializes gufo:Object and instantiates gufo:Kind:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Person</span></span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix">owl<span class="token punctuation">:</span></span><span class="token local-name">Class</span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">subClassOf</span></span> <span class="token function"><span class="token prefix">gufo<span class="token punctuation">:</span></span><span class="token local-name">Object</span></span> <span class="token punctuation">;</span>
+        <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix">gufo<span class="token punctuation">:</span></span><span class="token local-name">Kind</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<h2 id="questions">Questions<a aria-hidden="true" class="anchor-heading icon-link" href="#questions"></a></h2>
+<ul>
+<li>"Every gufo:Endurant instantiates one and only one gufo:Kind" - so no flying cars?
+<ul>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">@chatgpt (Private)</a>: define a new kind, or use a generalization</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="/wiki/notes/3pwkeuh0e1c0zdkmxkqwema">Ontology Implementation with gUFO a Hands on Tutorial</a></li>
+<li></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/uup0x4gcs3ilsku9xbw4xcx">Semantic Modeling for Data</a></li>
+<li><a href="/wiki/notes/imx167fidgm5kg7qht8lkh2">Kosmion Log</a></li>
+<li><a href="/wiki/notes/rtuuqd5q8nrxidfii77jh9n">Unified Foundational Ontology</a></li>
+<li><a href="/wiki/notes/x4h93xhzc9ab85h4x3tlfko">Class Vs Individual</a></li>
+<li><a href="/wiki/notes/pffjx545yi3rpv85hx18wqk">2024-10-19: Progress Report for Subscriber</a></li>
+</ul>

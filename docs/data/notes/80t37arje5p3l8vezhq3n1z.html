@@ -1,0 +1,33 @@
+<h1 id="the-most-common-domain-driven-design-mistake">The Most Common Domain Driven Design Mistake<a aria-hidden="true" class="anchor-heading icon-link" href="#the-most-common-domain-driven-design-mistake"></a></h1>
+<ul>
+<li><a href="https://medium.com/navalia/the-most-common-domain-driven-design-mistake-6c3f90e0ec2b">https://medium.com/navalia/the-most-common-domain-driven-design-mistake-6c3f90e0ec2b</a></li>
+</ul>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<ul>
+<li>
+<p>A “Bounded Context” is an area of the business where certain processes and rules apply. It’s where the Central Concept shows up repeatedly under different set of rules that make sense for each Bounded Context, such as:</p>
+<p>  Account in banking looks different to Loan Origination vs. Billing vs. Debt Collections vs. Marketing &#x26; Communications.
+Policy in Insurance looks different to Underwriting vs. Claims vs. Inspections.
+Product in Supply Chain Management looks different to Planning vs. Sourcing vs. Inventory Management vs. Delivery.
+Reservation in Airlines looks different to Booking vs. Operations vs. Cargo Management vs. Loyalty.
+Order in eCommerce looks different to Purchasing vs. Supply Chain vs. Fulfillment vs. Customer Support.
+Customer in eCommerce looks different to Advertising vs. Ordering vs. Shipping.</p>
+</li>
+<li>
+<p>claiming a single view of Accounts goes against the core principles of DDD as it results in an inflexible, bloated Domain Model.</p>
+</li>
+</ul>
+<h3 id="unnecessary-coupling">Unnecessary Coupling<a aria-hidden="true" class="anchor-heading icon-link" href="#unnecessary-coupling"></a></h3>
+<p>The first is that the Accounts Bounded Context becomes a ‘God Domain,’ taking on more responsibility than it should. As a result, this creates tight coupling with other Bounded Contexts.</p>
+<h3 id="decomposition">Decomposition<a aria-hidden="true" class="anchor-heading icon-link" href="#decomposition"></a></h3>
+<p>Here is an example of how we may decompose Accounts into Aggregates within different Bounded Contexts:</p>
+<p><img src="/wiki/assets/images/2024-04-11-22-09-12.png"></p>
+<h2 id="comments">Comments<a aria-hidden="true" class="anchor-heading icon-link" href="#comments"></a></h2>
+<ul>
+<li>"The majority of REST examples tend to be concept oriented, and basically just expose the database as things. This leads to incredibly chatty protocols, and all sorts of problems. When you design the bounded contexts and (REST) APIs around processes it becomes much better. But you also need to toss in CQRS and events to communicate changes between these bounded contexts."</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/uiRn7j6XyPab2s5egCzo0">Domain-Driven Design</a></li>
+</ul>

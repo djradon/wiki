@@ -1,0 +1,78 @@
+<h1 id="foundry-vtt">Foundry-VTT<a aria-hidden="true" class="anchor-heading icon-link" href="#foundry-vtt"></a></h1>
+<ul>
+<li><a href="/wiki/notes/mctn3xbkjf85qw6olvg07eg">Virtual Tabletop</a></li>
+</ul>
+<h2 id="integrations">Integrations<a aria-hidden="true" class="anchor-heading icon-link" href="#integrations"></a></h2>
+<ul>
+<li>map-imports: <a href="/wiki/notes/Ek6Crnj4V3WvJiKYicjX6">Dungeon-Draft</a> <a href="/wiki/notes/o1wenlz0pw7jnxr2bi036mh">Dungeon Alchemist</a></li>
+<li>content-integrations: <a href="/wiki/notes/ywi0peiEnRQezkWYMYwjq">WorldAnvil</a> <a href="/wiki/notes/hcnbqqaxi7bgl4xecuhxqpa">dScryb</a> <a href="/wiki/notes/09r8fwbsb4h7ghiz5rt1pry">Syrinscape</a> <a href="/wiki/notes/pk7hjuk1txtwqlecxv0uw0r">Plutonium</a></li>
+<li>others: <a href="/wiki/notes/e95f0fg8ljf6sr280uqv5rz">Kanka</a> (via <a href="/wiki/notes/a1k3du2bkw439r2p772uqmb">Kanka Foundry</a>) <a href="/wiki/notes/mi0yuzeush40f9giom9u4zg">The Only Sheet</a> <a href="/wiki/notes/y54l5ygqpimrwx99qkyxp9a">Lava Flow</a></li>
+<li>built-on: <a href="/wiki/notes/no846ruv0d6u0oh9jmk65n9">Pixi.js</a></li>
+</ul>
+<h2 id="solutions">Solutions<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions"></a></h2>
+<h3 id="cloud-hosting">Cloud Hosting<a aria-hidden="true" class="anchor-heading icon-link" href="#cloud-hosting"></a></h3>
+<ul>
+<li><a href="/wiki/notes/c2g3wgvyz0stcvv92gsyx3x">The Forge</a></li>
+<li><a href="/wiki/notes/4fgbb1535a75h1r29smp9md">Foundry Server</a></li>
+<li><a href="/wiki/notes/5vbb9v41i2z7nufqmp8262f">Molten Hosting</a></li>
+</ul>
+<h2 id="user-stories">User Stories<a aria-hidden="true" class="anchor-heading icon-link" href="#user-stories"></a></h2>
+<h3 id="modding">modding<a aria-hidden="true" class="anchor-heading icon-link" href="#modding"></a></h3>
+<ul>
+<li>"easily it can be modded which puts it's automation above that of what I've witnessed in any other VTT. "</li>
+<li>" there is a thing about platforms where the one that is pretty popular and moddable attracts the best modders, which means it becomes much better and attracts more great modders and users.. Foundry has snowballed to a point where a DM who is a bit technical and wants to add mods has an amazing variety of options. "</li>
+</ul>
+<h3 id="planning">planning<a aria-hidden="true" class="anchor-heading icon-link" href="#planning"></a></h3>
+<ul>
+<li>"I've been enjoying writing my new campaign in Obsidian. Wiki style links and an add on allows for pinnable maps. There are a number of other plug ins specifically for D&#x26;D or similar. "</li>
+<li>"I've since moved to running sessions directly off of journal entries. There's nothing better than being able to control the game world with in-line links and scripts"</li>
+<li>"While I love Foundry, I always found a little janky to use it to worldbuild and to take notes. I love using Obsidian and I currently use it to plan my sessions and worldbuild. However, I would very much like to use a single app to all my TTRPG needs."</li>
+</ul>
+<h3 id="gm-website">GM Website<a aria-hidden="true" class="anchor-heading icon-link" href="#gm-website"></a></h3>
+<ul>
+<li>"Honestly, I just found the friction of trying to world-build within Foundry too high, even with mods.</li>
+</ul>
+<p>So, I have elected to move everything "not nailed down in Foundry" to a website I control (built using Hugo) -- though I strongly considered using <a href="/wiki/notes/ecvz3j0itxsng5jsjtrhzh3">Legend Keeper</a> for a hot-second (but I wanted my files local). So, I just fired up a webserver on the same machine as the foundry server and deployed from a Hugo site I build in VSCode.</p>
+<p>Then, in Foundry, I'll have journal entries that are just HTML iframes to particular sites. I mean, hell, my players are already using the browser in Foundry. They might as well be able to leverage the power of browsing while we play, too. The Arc browser makes this a breeze, too, with it's good tab, spaces, and window controls. Edge can do similar.</p>
+<p>Now, the only stuff in Foundry really are just the mechanical fiddly bits needed to run the game. Everything else is sitting in the website. And then my private notes/wiki in Obsidian (yes, I tinkered with using Obsidian to manage the website, but I did't like 1. paying the extra fee for Obsidian Publish when I already had a perfectly fine host and 2. I really wanted a lot of control over the player-facing site. Love Obsidian as my GM wiki, though."</p>
+<h2 id="development">Development<a aria-hidden="true" class="anchor-heading icon-link" href="#development"></a></h2>
+<h3 id="module-development">Module Development<a aria-hidden="true" class="anchor-heading icon-link" href="#module-development"></a></h3>
+<p>Modules extend and modify the behavior of Foundry Virtual Tabletop and its game systems. At a conceptual level, think of each Module as a "plug-in" or "add-on" which changes the software behavior in small (or large) ways. Modules can alter the behavior of the core software in several different ways:</p>
+<p>Content
+Modules which add data in the form of compendium packs of Adventures, Actors, Items, Scenes, Journal Entries, Roll Tables, or Playlists.
+Interface
+Modules which change the way the UI looks or behaves, changing the aesthetics and user experience of the software.
+Functionality
+Modules which add entirely new functionalities or features which do not exist in the base software, or modules which change the behavior of core features so they behave differently.
+Translation
+Modules which add support for translation of text displayed in Foundry VTT into other languages. </p>
+<h3 id="system-development">System Development<a aria-hidden="true" class="anchor-heading icon-link" href="#system-development"></a></h3>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://www.reddit.com/r/FoundryVTT/comments/10gt7jt/what_options_are_there_for_organizing_world/">https://www.reddit.com/r/FoundryVTT/comments/10gt7jt/what_options_are_there_for_organizing_world/</a></li>
+<li><a href="https://www.reddit.com/r/FoundryVTT/comments/1asnse4/there_are_modules_to_use_foundry_to_worldbuild/">https://www.reddit.com/r/FoundryVTT/comments/1asnse4/there_are_modules_to_use_foundry_to_worldbuild/</a></li>
+</ul>
+<h3 id="learning-resources">Learning Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#learning-resources"></a></h3>
+<ul>
+<li><a href="https://foundryvtt.com/article/module-development/">https://foundryvtt.com/article/module-development/</a></li>
+<li><a href="https://forge-vtt.com/game/demo">https://forge-vtt.com/game/demo</a></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.reddit.com/r/FoundryVTT/comments/10mmkj0/where_do_i_start_creating_a_game_system/">https://www.reddit.com/r/FoundryVTT/comments/10mmkj0/where_do_i_start_creating_a_game_system/</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/z13fdfj8nzhbhr7ibjz4w2t">Foundry Client-side API</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/ywi0peiEnRQezkWYMYwjq">WorldAnvil</a></li>
+<li><a href="/wiki/notes/uu0wew4q7xhtyf5z241tu6s">Chronos Builder</a></li>
+<li><a href="/wiki/notes/pk7hjuk1txtwqlecxv0uw0r">Plutonium</a></li>
+<li><a href="/wiki/notes/c2g3wgvyz0stcvv92gsyx3x">The Forge</a></li>
+<li><a href="/wiki/notes/sti2qutq54vq2t36wm8z4r5">Ember</a></li>
+<li><a href="/wiki/notes/bKzmyGQZRf8Z7VcQ3gg9m">Virtual Tabletop</a></li>
+</ul>

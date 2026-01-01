@@ -1,0 +1,53 @@
+<h1 id="2024-11-03-code-is-flowing">2024-11-03: Code Is Flowing<a aria-hidden="true" class="anchor-heading icon-link" href="#2024-11-03-code-is-flowing"></a></h1>
+<p><em>We could live in that waterfall.</em></p>
+<p>I just started a new conversation with ChatGPT. In response to its “What can I help with?”, I gave a rather impersonal message: “blog update about my semantic flow cli.” Usually I’m a bit friendlier.</p>
+<p>Without my asking, it filled a canvas with <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">a suggested update (Private)</a> that I hated before even looking at it. Then I tried to read it and started finding falsehoods and lameness everywhere.</p>
+<p>Yes, I’m hostile to synthetic prose. But ChatGPT at least gave me a skeleton and the motivational annoyance to get things going. So for experiment’s sake, the meat of this update is going to be a rewrite of ChatGPT’s intolerable draft. </p>
+<p>I’ll admit though... I’m curious to hear its feedback. Maybe I’ll post it in the comments.</p>
+<p><a href="https://djradon.github.io/wiki/notes/74xz2kw8sjpc5ifkske9z3c/"><img src="/wiki/assets/images/2024-11-03-07-51-56.png" alt="The Midnight Sun"></a>
+<small>Norma pouring some precious water, from <em><a href="/wiki/notes/74xz2kw8sjpc5ifkske9z3c">The Midnight Sun (s03e10)</a></em></small></p>
+<hr>
+<p>To my four subscribers and posterity:</p>
+<p>I’m reluctantly sharing an update about the <a href="https://github.com/semantic-flow/sf-cli">Semantic Flow CLI</a> I’ve been bumbling through. At the moment, this under-designed command-line tool will set up a folder hierarchy and a configuration file for a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">semantic site “root” repository (Private)</a>, the foundation of the Semantic Flow RDF versioning and self-publishing methodology. I’m excited to be in the flow with an actual piece of software, I’m eager to get back to it, and the kids need breakfast. So I’ll try to make this quick.</p>
+<h2 id="semantic-flow-cli-key-features">Semantic Flow CLI: Key Features<a aria-hidden="true" class="anchor-heading icon-link" href="#semantic-flow-cli-key-features"></a></h2>
+<h3 id="reference-pages-for-de-referenceable-entity-iris">Reference Pages for De-referenceable entity IRIs<a aria-hidden="true" class="anchor-heading icon-link" href="#reference-pages-for-de-referenceable-entity-iris"></a></h3>
+<p>You may know that Semantic Web data is composed of triples that link together resources. The subject is the resource being described. The predicate is a property resource that defines the relationship. And an object is another resource that is related to the subject. </p>
+<p>For two examples:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">the-old-man-in-the-cave</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">helped</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">goldsmith</span></span> <span class="token punctuation">.</span>
+</code></pre>
+<p>You may also know that an IRI is a URL that supports international characters and doesn’t necessarily locate a web page, although it should. IRIs are how resources are identified (or uniquely named, if you prefer) on the Semantic Web.</p>
+<p>The above examples use namespacing to hide the full IRI, which otherwise might look something like this:</p>
+<pre class="language-turtle"><code class="language-turtle"><span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/the-old-man-in-the-cave<span class="token punctuation">></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/ns/d/helped<span class="token punctuation">></span></span> <span class="token url"><span class="token punctuation">&#x3C;</span>https://djradon.github.io/ns/d/goldsmith<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+</code></pre>
+<p>From the <a href="/wiki/notes/gkoh9mrjektubnprg2yjlhs">W3c</a>’s <a href="/wiki/notes/0cyhuhf7h9gv3ttcrkrv8x6">RDF 1.1 Concepts and Abstract Syntax</a> recommendation: “Any IRI or literal denotes something in the world (the "universe of discourse"). These things are called resources. Anything can be a resource, including physical things, documents, abstract concepts, numbers and strings; the term is synonymous with "entity" as it is used in the RDF Semantics specification. The resource denoted by an IRI is called its referent...” and “The IRI owner can establish the intended referent by means of a specification or other document that explains what is denoted... A good way of communicating the intended referent is to set up the IRI so that it dereferences to such a document.”</p>
+<p>Semantic Flow can generate these documents. I’m calling them reference pages.</p>
+<h3 id="namespace-and-iri-curation">Namespace and IRI curation<a aria-hidden="true" class="anchor-heading icon-link" href="#namespace-and-iri-curation"></a></h3>
+<p>Semantic Flow is about publishing RDF data, and useful RDF resources need a namespace, a place where their identifiers can live and be made legible. I’d like to be able to create <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">git repositories of semantic data (Private)</a> that can define and populate <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">namespaces (Private)</a> in a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Semantic Flow site (Private)</a> with a single deft command, or at worst a series of prompts.</p>
+<h3 id="dataset-series-handling">Dataset Series Handling<a aria-hidden="true" class="anchor-heading icon-link" href="#dataset-series-handling"></a></h3>
+<p>The central conceit of Semantic Flow is that every entity worth its salt should be associated with at least two <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">sets of versioned datasets (Private)</a>: a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">catalog series (Private)</a> and a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">default series (Private)</a>. Grouping dataset versions into a series is the heart of Semantic Flow, and the CLI will help automate version bumps at the entity level. When changes are made to entity data (in the default series or otherwise), sf-cli can update the corresponding catalog automatically.</p>
+<h3 id="template-integration">Template Integration<a aria-hidden="true" class="anchor-heading icon-link" href="#template-integration"></a></h3>
+<p>When generating the HTML <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">reference pages (Private)</a>, you should be able to apply one or more templates to effectively convey information visually and make the pages usable. </p>
+<h2 id="tech-stack">Tech Stack<a aria-hidden="true" class="anchor-heading icon-link" href="#tech-stack"></a></h2>
+<p>I’m building the CLI using Deno, which has been a frustrating experience so far, no fault of Deno’s. Eventually, Deno’s ability to run untrusted remote code in a hopefully-secure way might be a great foundation for composable, interactive <a href="https://theoldmaninthecave.substack.com/p/lets-reboot-the-semantic-web-with-alternate-realities">alternate realities</a>. </p>
+<p>I’m using <a href="/wiki/notes/x6lci70dmeaya4mstrdg9b8">Deno Cliffy</a> for the command-line framework although I keep glancing at <a href="/wiki/notes/i1211kezxlz8q23n9eb6j58">Oclif</a> and <a href="/wiki/notes/kn3h16trg2bql5lbem3grhw">Inquirer.js</a>.</p>
+<h2 id="challenges">Challenges<a aria-hidden="true" class="anchor-heading icon-link" href="#challenges"></a></h2>
+<p>From smallest to biggest: </p>
+<ul>
+<li>
+<p>Dealing with <a href="https://github.com/c4spar/deno-cliffy/issues/763">Cliffy and Deno release candidate compatibility</a> has been tricky.</p>
+</li>
+<li>
+<p>The CLI only has one command so far and it’s already a ball of razors in need of decomposition.</p>
+</li>
+<li>
+<p><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">sflow.concepts.immutability (Private)</a> holds a great deal of promise for data management. See <a href="https://docs.xtdb.com/tutorials/immutability-walkthrough/part-1.html">XTDB’s walkthrough</a> for some insight. But I’m doing a lot of mental hand-waving right now: Will entity references in Semantic Flow-compatible RDF data have to specify the version they’re referring to? Or can some kind of software reasoner figure it out based on context? </p>
+</li>
+</ul>
+<h2 id="whats-next">What’s Next?<a aria-hidden="true" class="anchor-heading icon-link" href="#whats-next"></a></h2>
+<ul>
+<li>importing a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Root Repo (Private)</a> in a different root repo</li>
+<li>scanning Data Repos for covered IRIs and minting some primitive <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">sflow.concepts.reference-page (Private)</a></li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">sflow.products.sf-ontology (Private)</a> with classes and properties to support this whole effort</li>
+<li>docs with clarifying examples</li>
+</ul>
+<p>I’m expecting to get a beta version out... no time soon. ChatGPT has been a valuable, tireless coding partner, but I could use more than its credulous efforts to get things flowing. So please reach out if you’re a javascript code reviewer or seasoned ontologist.</p>

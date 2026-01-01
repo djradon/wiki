@@ -1,0 +1,46 @@
+<h1 id="orchestration">Orchestration<a aria-hidden="true" class="anchor-heading icon-link" href="#orchestration"></a></h1>
+<p><img src="/wiki/assets/images/2023-10-06-14-20-41.png"></p>
+<ul>
+<li>
+<p>similar: <a href="/wiki/notes/zg536sp9c87sy4lgv1wqn8n">Workflow</a></p>
+</li>
+<li>
+<p>related: <a href="/wiki/notes/3tczusavbqsr54n2gp88jl1">Choreography</a></p>
+<ul>
+<li>but they're not opposites; it's kinda a false distinction. if systems determine their behavior based on messages, and the messages are "do this by then", you're getting orchestrated</li>
+</ul>
+</li>
+<li>
+<p><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^21ydosqb6dt1" href="#^21ydosqb6dt1"></a>"a dedicated workflow service acts as the central orchestrator, coordinating the various microservices involved in a business process. This service initiates the process flow, manages the sequence of events and service invocations, and handles errors or retries as needed. The orchestration pattern simplifies the development and maintenance of complex event-driven processes while providing better observability and control compared to the choreography pattern." </p>
+</li>
+</ul>
+<h2 id="implementations">Implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#implementations"></a></h2>
+<ul>
+<li><a href="/wiki/notes/6ummq8oeqd6vi0fznn1s7gq">Workflow Core</a></li>
+<li><a href="/wiki/notes/pl9ptj43nqfbpjdenq89vxt">Prefect</a></li>
+<li><a href="/wiki/notes/ntoplz1ephb277ktutqibro">Temporal</a></li>
+<li><a href="/wiki/notes/9lz4tx65j4mrzco11tvp7y1">Infinitic</a> pulsar</li>
+<li><a href="/wiki/notes/oedk14ox9zzzzlyhxtrvjsf">Argo Events</a> kubernetes</li>
+<li><a href="/wiki/notes/56b9por7bedkksnflfeptw3">Flogo</a> kafka and pulsar</li>
+<li><a href="/wiki/notes/xamtfy8jv5x3uz59ybdffhe">iWF</a> Go, requires <a href="/wiki/notes/dsj58bgzyou3l5dtjjsvb5g">Cadence</a></li>
+</ul>
+<h2 id="resources">Resources<a aria-hidden="true" class="anchor-heading icon-link" href="#resources"></a></h2>
+<ul>
+<li><a href="https://dzone.com/articles/orchestration-pattern-managing-distributed-transac">https://dzone.com/articles/orchestration-pattern-managing-distributed-transac</a>
+<ul>
+<li>"We have designed an appropriate architecture where all services operate within their bounded context. However, we still need a component that is aware of the entire business workflow."</li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://gillesbarbier.medium.com/an-easy-path-from-api-based-microservices-to-an-event-driven-architecture-for-improved-reliability-00d7d0bc3828">https://gillesbarbier.medium.com/an-easy-path-from-api-based-microservices-to-an-event-driven-architecture-for-improved-reliability-00d7d0bc3828</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki/notes/9lz4tx65j4mrzco11tvp7y1">Infinitic</a></li>
+<li><a href="/wiki/notes/rsqds8jgt1igv9c2hr5bp0j">Tekton</a></li>
+<li><a href="/wiki/notes/3tczusavbqsr54n2gp88jl1">Choreography</a></li>
+<li><a href="/wiki/notes/3fh0o75ztyvi7sqq2xqkp2s">Fantastic Nine</a></li>
+</ul>

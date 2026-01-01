@@ -1,0 +1,31 @@
+<h1 id="base-platform-for-knowledge-graphs-with-free-software">Base Platform for Knowledge Graphs with Free Software<a aria-hidden="true" class="anchor-heading icon-link" href="#base-platform-for-knowledge-graphs-with-free-software"></a></h1>
+<ul>
+<li><a href="https://ceur-ws.org/Vol-3401/paper6.pdf">https://ceur-ws.org/Vol-3401/paper6.pdf</a></li>
+<li>mentions: <a href="/wiki/notes/5s2dskuhqq5w8ikcp36no4c">Trifid</a> <a href="/wiki/notes/q70p5lhd25be4um9apg8g9g">Lodview</a> <a href="/wiki/notes/7lb8d0whhuu71jg2vqnftv3">Graph Explorer</a> <a href="/wiki/notes/4kq6mpeiwm27s19ghqdgr0k">Linked Data Viewer</a> <a href="/wiki/notes/glvjiombfpzqtonqefj7zpf">Rdf Surveyor</a> <a href="/wiki/notes/rbory1awky5r4t4r6s10ljw">Shiro</a> <a href="/wiki/notes/9seikmak5mfjtzxlhphkfkw">5 Star Open Data Model</a> <a href="/wiki/notes/a0jree9lq3avg0r27xxxq86">Widoco</a></li>
+<li>keywords: <a href="/wiki/notes/oCE86gPISrXMLGHJ6r0EM">Knowledge Graph</a></li>
+</ul>
+<p><img src="/wiki/assets/images/2024-10-01-11-42-38.png"></p>
+<h2 id="abstract">Abstract<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract"></a></h2>
+<p>We present an Open Source base platform for the CoyPu knowledge graph project in the resilience domain. We report on our experiences with several tools which are used to create, maintain, serve, view and explore a modular large-scale knowledge graph, as well as the adaptions that were necessary to enable frictionless interaction from both performance and usability perspectives. For this purpose, several adjustments had to be made. We provide a broad view of different programs which are of relevance to this domain. We demonstrate that while it is already possible to achieve good results with free software, there are still several pain points that need to be addressed. Resolution of these issues is often not only a matter of configuration but requires modification of the source code as well.</p>
+<h2 id="highlights">Highlights<a aria-hidden="true" class="anchor-heading icon-link" href="#highlights"></a></h2>
+<h3 id="introduction">Introduction<a aria-hidden="true" class="anchor-heading icon-link" href="#introduction"></a></h3>
+<ul>
+<li>While general approaches for KG development and maintenance are proposed, limited guidance regarding the selection of efficient tools for implementing these methodologies is available.</li>
+</ul>
+<h3 id="related-work">Related Work<a aria-hidden="true" class="anchor-heading icon-link" href="#related-work"></a></h3>
+<ul>
+<li>While certain commercial tools like <a href="/wiki/notes/2c9qoloybsswav1gtpo5wx9">metaphactory</a> or the <a href="/wiki/notes/8faqb2u0fl72g4jtcjebuoh">Enterprise Knowledge Graph Platform</a> claim to offer comprehensive, all-in-one solutions, free and open-source alternatives often only address specific aspects. Consequently, users seeking to employ free and open-source tools must combine multiple applications and platforms to arrive at a complete knowledge graph platform.</li>
+</ul>
+<h3 id="solutions-and-other-tools">Solutions and Other Tools<a aria-hidden="true" class="anchor-heading icon-link" href="#solutions-and-other-tools"></a></h3>
+<h4 id="ontology-authoring">Ontology Authoring<a aria-hidden="true" class="anchor-heading icon-link" href="#ontology-authoring"></a></h4>
+<ul>
+<li>protege for ontology authoring</li>
+<li><a href="/wiki/notes/a0jree9lq3avg0r27xxxq86">Widoco</a> for documentation and visualization</li>
+<li><a href="/wiki/notes/3qkop07okl626mmlmu94uk2">Rdf Processing Toolkit</a> for usage statistics</li>
+<li><a href="/wiki/notes/2uloxe5noitk7dvdbrjwoef">RDFUnit</a></li>
+</ul>
+<h4 id="mapping-structured-data-to-rdf-data">Mapping structured data to RDF data.<a aria-hidden="true" class="anchor-heading icon-link" href="#mapping-structured-data-to-rdf-data"></a></h4>
+<p>-Several different tools were used by the different project partners, for example <a href="/wiki/notes/qthvz2xkv3bgcrlj0m8gd17">Tarql</a>, <a href="/wiki/notes/3qkop07okl626mmlmu94uk2">Rdf Processing Toolkit</a> or Morph-KGC [ 20 ]. Each tool was chosen by the familiarity of the expert user and applicability to the data source that is to be mapped. Tarql for instance is an excellent choice to map CSV to RDF. RPT on the other hand can easily process CSV, JSON, and XML input files as well as web APIs and remote services using SPARQL, and Morph-KGC can map CSV or connect to SQL databases using <a href="/wiki/notes/xEBEc34U3TNhEDWguJ7ID">RML</a>.</p>
+<ul>
+<li>Especially the way to register custom functions in RML is quite heavy-handed, whereas RPT allows defining such functions using either JavaScript or Java annotations.</li>
+</ul>

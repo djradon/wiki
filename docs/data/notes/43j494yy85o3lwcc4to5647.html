@@ -1,0 +1,18 @@
+<h1 id="they-laughed-at-my-no-jwt-rule-until-our-breach-post-mortem-went-viral-for-the-right-reasons">They Laughed at My No JWT Rule until Our Breach Post Mortem Went Viral for the Right Reasons<a aria-hidden="true" class="anchor-heading icon-link" href="#they-laughed-at-my-no-jwt-rule-until-our-breach-post-mortem-went-viral-for-the-right-reasons"></a></h1>
+<ul>
+<li><a href="https://medium.com/c-sharp-programming/they-laughed-at-my-no-jwt-rule-until-our-breach-post-mortem-went-viral-for-the-right-reasons-3e427244463a">https://medium.com/c-sharp-programming/they-laughed-at-my-no-jwt-rule-until-our-breach-post-mortem-went-viral-for-the-right-reasons-3e427244463a</a></li>
+</ul>
+<h2 id="summary">Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#summary"></a></h2>
+<p>Key Tools We Used</p>
+<pre><code>SPIRE/SPIFFE for issuing and rotating workload certs
+Envoy for terminating mTLS at the edge with SDS
+Wireshark for incident packet analysis
+.NET 8 Certificate Authentication Middleware for service-side validation
+HashiCorp Vault for initial CA bootstrapping (later replaced by in-house HSM integration)
+</code></pre>
+<p>Lessons We Learned</p>
+<pre><code>The best security is silent. No alert is often a good thing — when the bad actor gets no response.
+Rotate early, rotate often. Cert rotation sounds scary until you automate it — and then it’s your best friend.
+Trust boundaries should be enforced at the network level, not just the code level.
+If your service doesn’t need to parse auth headers, don’t make it. Let the cert do the talking.
+</code></pre>

@@ -1,0 +1,11 @@
+<h1 id="markdown-ld">Markdown-LD<a aria-hidden="true" class="anchor-heading icon-link" href="#markdown-ld"></a></h1>
+<ul>
+<li>repo: <a href="https://github.com/ozekik/markdown-ld">https://github.com/ozekik/markdown-ld</a></li>
+<li>eg <a href="https://ozekik.github.io/markdown-ld/">https://ozekik.github.io/markdown-ld/</a></li>
+</ul>
+<h2 id="specification">Specification<a aria-hidden="true" class="anchor-heading icon-link" href="#specification"></a></h2>
+<p>A Markdown-LD document MUST have a level-1 heading which represents the name of the graph described under the heading.</p>
+<p>Level-1, level-2, and level-3 headings MUST be immediately followed by a line of inline code for its RDF term in Turtle syntax.</p>
+<p>A pair of a heading and a line of inline code is called <em>Markdown-LD heading</em>.</p>
+<p>A level-1 Markdown-LD heading MAY be immediately followed by a code block for <code>@base</code> and <code>@prefix</code> directives and other implicit RDF triples in Turtle syntax.</p>
+<p>Until the next heading, Markdown texts after the code block are treated as comments.</p>

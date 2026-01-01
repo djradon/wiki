@@ -1,0 +1,10 @@
+
+.next
+node_modules
+public-notes
+predicates
+classes
+.dendron.port
+.dendron.port.cli
+.dendron.ws
+package-lock.json

@@ -1,0 +1,106 @@
+<h1 id="type-theory-as-the-unifying-foundation-for-modern-database">Type Theory as the Unifying Foundation for Modern Database<a aria-hidden="true" class="anchor-heading icon-link" href="#type-theory-as-the-unifying-foundation-for-modern-database"></a></h1>
+<ul>
+<li>
+<p><a href="/wiki/notes/sf73ld5ellpb4b4syweenrw">hostedBy</a> <a href="/wiki/notes/unx2vvhm8vczgbrxea2uln1">@alvin-leung</a></p>
+</li>
+<li>
+<p><a href="/wiki/notes/adgskplb1ccmiz23nuxeu2a">Speaker</a> <a href="/wiki/notes/dof4nm6dzzf6krr9plzp019">@christoph-dorn</a></p>
+</li>
+<li>
+<p>problems with relational, graph, document, triplestore/rdf:</p>
+<ul>
+<li>mismatch of conceptual and logical model
+<ul>
+<li>object-relational mismatch, reification, multi-valued attributes</li>
+<li>lack of support for polymorphic and highly connected data</li>
+</ul>
+</li>
+<li>no easy system extensibility and maintability
+<ul>
+<li>imperative, long, complex, brittle queries</li>
+<li>no facility for composable, generic queries that are highly reusable</li>
+<li><img src="/wiki/assets/images/2023-11-16-09-07-33.png"></li>
+</ul>
+</li>
+<li>semantic data integrity is easily violated
+<ul>
+<li>no meaningful data validation due to no sufficiently expressive schemas</li>
+<li>data redundancies need to be carefully synced
+<ul>
+<li><img src="/wiki/assets/images/2023-11-16-09-08-22.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><img src="/wiki/assets/images/2023-11-16-09-09-55.png"></p>
+</li>
+<li>
+<p>"general theory of composable structure" is a natural start point for re-inventing</p>
+<ul>
+<li><img src="/wiki/assets/images/2023-11-16-09-10-48.png"></li>
+</ul>
+</li>
+<li>
+<p>typedb conceptual data model is a unification of relational, graph, and document</p>
+</li>
+<li>
+<p>Modernization of Math</p>
+<ul>
+<li>classical relational algebra: sets and relations (aka predicates and predicate logic)</li>
+<li>modeling everything in sets and relations is non-practical</li>
+<li>composable systems: types and dependent type
+<ul>
+<li>facts become data in types that can be referenced</li>
+<li>dependencies can be composed</li>
+<li><a href="/wiki/notes/9am2urgbfvixcnyyuxvpjdu">Practical Foundation of Modern Mathematics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>crash course in type theory</p>
+<ul>
+<li>a type is a description of a domain that a variable can range over
+<ul>
+<li>dependent types have definitions that include other variables</li>
+</ul>
+</li>
+<li>in predicate logic, dependent pair types can compose</li>
+</ul>
+</li>
+<li>
+<p><img src="/wiki/assets/images/2023-11-16-09-24-46.png"></p>
+</li>
+<li>
+<p>type polymorphism</p>
+<ul>
+<li>inheritance polymorphism</li>
+<li>interface "</li>
+<li>parametric "
+<ul>
+<li>defines generic functionality for (variabilized) types, enabling semantically generic queries</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>reasoning engine</p>
+</li>
+<li>
+<p>result: a unifying foundation for modern database</p>
+<ul>
+<li><img src="/wiki/assets/images/2023-11-16-09-42-40.png"></li>
+</ul>
+</li>
+<li>
+<p>summary:</p>
+<ul>
+<li><a href="/wiki/notes/Ej3tbATdXqr9WwU1ASciK">TypeDB</a> implements the unifying type-theoretic, polymorphic paradigm</li>
+<li>so extensible, adaptable, safe and robust</li>
+<li>fast-evolving ecosystem</li>
+</ul>
+</li>
+</ul>

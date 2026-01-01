@@ -1,0 +1,58 @@
+<h1 id="soar">Soar<a aria-hidden="true" class="anchor-heading icon-link" href="#soar"></a></h1>
+<ul>
+<li><a href="/wiki/notes/gxezmbn764qcc7ec6jgqfpk">Cognitive Architecture</a></li>
+<li>url: <a href="http://soar.eecs.umich.edu/">http://soar.eecs.umich.edu/</a> </li>
+<li>repo: <a href="https://github.com/SoarGroup/Soar">https://github.com/SoarGroup/Soar</a></li>
+<li>written-in: <a class="color-tag" style="--tag-color: #4e5481;" href="/wiki/notes/9x5mxctvzz8hf8h29ca3dxr">#c++</a> </li>
+</ul>
+<h2 id="documentation"><a href="/wiki/notes/wsyy3doe23l6oq19vl61y68">Documentation</a><a aria-hidden="true" class="anchor-heading icon-link" href="#documentation"></a></h2>
+<h3 id="httpssoareecsumichedudownloadsdocumentationsoarmanualpdf"><a href="https://soar.eecs.umich.edu/downloads/Documentation/SoarManual.pdf">https://soar.eecs.umich.edu/downloads/Documentation/SoarManual.pdf</a><a aria-hidden="true" class="anchor-heading icon-link" href="#httpssoareecsumichedudownloadsdocumentationsoarmanualpdf"></a></h3>
+<h4 id="ch-1">Ch. 1<a aria-hidden="true" class="anchor-heading icon-link" href="#ch-1"></a></h4>
+<ul>
+<li>all deliberate goal -oriented behavior can be cast as the selection and application of operators to a state</li>
+<li>Working memory is organized as objects. 
+<ul>
+<li>Objects are described in terms of their attributes; the values of the attributes may correspond to sub-objects, so the description of the state can have a hierarchical organization</li>
+</ul>
+</li>
+<li>A Soar program contains the knowledge to be used for solving a specific task </li>
+</ul>
+<h5 id="types-of-procedural-knowledge">Types of Procedural Knowledge<a aria-hidden="true" class="anchor-heading icon-link" href="#types-of-procedural-knowledge"></a></h5>
+<ol>
+<li>Inference Rules
+In Soar, we call these state elaborations. This knowledge provides monotonic inferences
+that can be made about the state in a given situation. The knowledge created by such
+rules are not persistent and exist only as long as the conditions of the rules are met.</li>
+<li>Operator Proposal Knowledge
+Knowledge about when a particular operator is appropriate for a situation. Note
+that multiple operators may be appropriate in a given context. So, Soar also needs
+knowledge to determine which of the candidates to choose:</li>
+<li>Operator Selection Knowledge:
+Knowledge about the desirability of an operator in a particular situation. Such knowl-
+edge can be either in terms of a single operator (e.g. never choose this operator in this
+situation) or relational (e.g. prefer this operator over another in this situation).</li>
+<li>Operator Application Rules
+Knowledge of how a specific selected operator modifies the state. This knowledge
+creates persistent changes to the state that remain even after the rule no longer matches
+or the operator is no longer selected.</li>
+</ol>
+<h3 id="httpsarxivorgftparxivpapers2205220503854pdf"><a href="https://arxiv.org/ftp/arxiv/papers/2205/2205.03854.pdf">https://arxiv.org/ftp/arxiv/papers/2205/2205.03854.pdf</a><a aria-hidden="true" class="anchor-heading icon-link" href="#httpsarxivorgftparxivpapers2205220503854pdf"></a></h3>
+<h3 id=""><a aria-hidden="true" class="anchor-heading icon-link" href="#"></a></h3>
+<ul>
+<li><a aria-hidden="true" class="block-anchor anchor-heading icon-link" id="^jxijnmn32t8u" href="#^jxijnmn32t8u"></a>"The ultimate in intelligence would be complete rationality which would imply the ability to use all available knowledge for every task that the system encounters. Unfortunately, the complexity of retrieving relevant knowledge puts this goal out of reach as the body of knowledge increases, the tasks are made more diverse, and the requirements in system response time more stringent."  </li>
+<li>"Through Soar 8, there has been a single framework for all tasks and subtasks (problem spaces), a single representation of permanent knowledge (productions), a single representation of temporary knowledge (objects with attributes and values), a single mechanism for generating goals (automatic subgoaling), and a single learning mechanism (chunking). We have revisited this assumption as we attempt to ensure that all available knowledge can be captured at runtime without disrupting task performance. This is leading to multiple learning mechanisms (chunking, reinforcement learning, episodic learning, and semantic learning), and multiple representations of long-term knowledge (productions for procedural knowledge, semantic memory, and episodic memory)."</li>
+</ul>
+<h2 id="comparisons">Comparisons<a aria-hidden="true" class="anchor-heading icon-link" href="#comparisons"></a></h2>
+<ul>
+<li><a href="https://advancesincognitivesystems.github.io/acs2021/data/ACS-21_paper_6.pdf">https://advancesincognitivesystems.github.io/acs2021/data/ACS-21_paper_6.pdf</a>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/wiki/notes/077se2w5whkl9bf6ehwu1vf">Jsoar</a></li>
+<li><a href="/wiki/notes/kv11eqohmcky58s19rxbgra">Rosie</a></li>
+</ol>
